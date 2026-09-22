@@ -1,75 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Form</title>
+    <title>ASD | Feedback Form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monda:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../assets/images/cover.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/custom.css" type="text/css">
+
     <!-- Tailwind CSS Framework CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Base page styling and custom colors */
-        body {
-            font-family: sans-serif;
-            color: #374151; /* Equates to text-gray-700 */
-        }
-
-        .brand-pink {
-            color: #e5007d;
-        }
-
-        .border-brand-pink {
-            border-color: #e5007d;
-        }
-
-        /* Custom design for Checkboxes and Radio buttons */
-        .form-input-custom {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            flex-shrink: 0;
-            margin-top: 2px;
-            height: 1.25rem;
-            width: 1.25rem;
-            display: inline-block;
-            vertical-align: middle;
-            background-origin: border-box;
-            user-select: none;
-            background-color: #fff;
-            border-width: 1px;
-            border-color: #d1d5db; /* Equates to gray-300 */
-        }
-
-        /* Custom active/checked state styles */
-        .form-input-custom:checked {
-            border-color: transparent;
-            background-color: #e5007d;
-            background-size: 100% 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        /* Circular style for Radio buttons */
-        .form-radio {
-            border-radius: 100%;
-        }
-
-        .form-radio:checked {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
-        }
-
-        /* Square style for Checkboxes */
-        .form-checkbox {
-            border-radius: 0;
-        }
-
-        .form-checkbox:checked {
-            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
-        }
-    </style>
 </head>
 
-<body class="bg-white relative">
+<!-- 1. 這裡加入了 feedback-body -->
+<body class="feedback-body bg-white relative">
 
     <!-- Decorative sidebar panel visible on medium screens and larger -->
     <div class="fixed top-0 right-0 h-full w-5 bg-[#e5007d] hidden md:block"></div>
@@ -77,18 +25,23 @@
     <!-- Main Content Container -->
     <div class="container mx-auto px-4 sm:px-8 lg:px-20 py-12">
 
-        <!-- Header Section: Logo and Report Meta Details -->
-        <header class="flex justify-between items-start mb-12">
-            <div>
-                <img src="https://i.imgur.com/GCIa4zJ.png" alt="Architectural Services Department Logo" class="h-10">
-            </div>
-            <div class="text-right">
-                <p class="text-5xl font-light tracking-wider text-gray-700">2026</p>
-                <p class="text-xs tracking-widest text-gray-500">Sustainability Report</p>
+        <header class="feedback-header mb-12">
+            <div class="feedback-header-row">
+                <!-- 左邊政府 Logo：將對齊下方的 "Feedback" -->
+                <div class="feedback-logo-left">
+                    <a href="https://www.archsd.gov.hk/en/" class="nav-link" target="_blank">
+                        <img src="../assets/images/asd-logo.svg" alt="Site Logo" title="Sustainability Report 2026">
+                    </a>
+                </div>
+                <!-- 右邊 SD2026 Logo：將對齊下方的表單右側 -->
+                <div class="feedback-logo-right">
+                    <a href="index.html" class="nav-link">
+                        <img src="../assets/images/SD2026.svg" alt="Site Title" title="Sustainability Report 2026">
+                    </a>
+                </div>
             </div>
         </header>
 
-        <!-- Main Form Container -->
         <main class="flex flex-col lg:flex-row gap-x-16 gap-y-10">
 
             <!-- Sidebar Info Panel -->
@@ -100,36 +53,38 @@
                 </div>
             </div>
 
-            <!-- Interactive Feedback Form (lg:mt-14 aligns it vertically with the "Feedback" title) -->
+            <!-- Interactive Feedback Form -->
             <form id="feedbackForm" class="w-full lg:w-2/3 space-y-8 pr-0 md:pr-6 lg:mt-14">
 
                 <!-- Question 1: Purpose of reading the report -->
-                <div class="border-t-2 border-brand-pink pt-3">
+                <!-- 2. 改為 feedback-border-brand-pink 和 feedback-brand-pink -->
+                <div class="border-t-2 feedback-border-brand-pink pt-3">
                     <div class="flex flex-col sm:flex-row">
                         <div class="w-full sm:w-1/3 pr-4 mb-4 sm:mb-0">
-                            <label class="font-semibold brand-pink">Why did you read our Sustainability Report 2026?</label>
+                            <label class="font-semibold feedback-brand-pink">Why did you read our Sustainability Report 2026?</label>
                             <p class="text-sm text-gray-500 mt-1">You may choose more than one.</p>
                         </div>
                         <div class="w-full sm:w-2/3">
                             <div class="space-y-2">
+                                <!-- 3. 改為 feedback-form-input-custom 和 feedback-form-checkbox -->
                                 <div class="flex items-start pt-1">
-                                    <input type="checkbox" class="form-input-custom form-checkbox mr-3">
+                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox mr-3">
                                     <label>General Interest</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="checkbox" class="form-input-custom form-checkbox mr-3">
+                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox mr-3">
                                     <label>Our Sustainability Performance Benchmarking</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="checkbox" class="form-input-custom form-checkbox mr-3">
+                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox mr-3">
                                     <label>Research and Educational Purposes</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="checkbox" class="form-input-custom form-checkbox mr-3">
+                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox mr-3">
                                     <label>Investment Purposes</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="checkbox" class="form-input-custom form-checkbox mr-3">
+                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox mr-3">
                                     <label class="mr-2 whitespace-nowrap">Other(s), please specify:</label>
                                     <input type="text" class="bg-gray-100 border-b border-gray-400 focus:border-pink-500 outline-none w-full px-1">
                                 </div>
@@ -138,18 +93,15 @@
                     </div>
                 </div>
 
-                <!-- Question 2: Matrix Rating Block (Uses exact grid layouts for perfect alignment) -->
+                <!-- Question 2: Matrix Rating Block -->
                 <div class="w-full">
 
-                    <!-- Grid Header Row (Positioned above the pink divider line) -->
+                    <!-- Grid Header Row -->
                     <div class="flex flex-col sm:flex-row mb-1">
-                        <!-- Left spacing to align exactly with the label block below -->
                         <div class="w-full sm:w-1/3 pr-4"></div>
-
-                        <!-- Right scoring scale header -->
                         <div class="w-full sm:w-2/3">
                             <div class="grid grid-cols-6 gap-x-2 text-center text-sm text-gray-600 font-normal">
-                                <div class="col-span-1"></div> <!-- Spacer for category label alignment -->
+                                <div class="col-span-1"></div>
                                 <div class="break-words">Excellent</div>
                                 <div class="break-words">Good</div>
                                 <div class="break-words">Fair</div>
@@ -160,82 +112,83 @@
                     </div>
 
                     <!-- Divider pink accent line -->
-                    <div class="border-t-2 border-brand-pink mb-4"></div>
+                    <!-- 4. 改為 feedback-border-brand-pink -->
+                    <div class="border-t-2 feedback-border-brand-pink mb-4"></div>
 
-                    <!-- Grid Content Row (Positioned below the pink divider line) -->
+                    <!-- Grid Content Row -->
                     <div class="flex flex-col sm:flex-row">
                         <!-- Section Label -->
                         <div class="w-full sm:w-1/3 pr-4 mb-4 sm:mb-0">
-                            <label class="font-semibold brand-pink">Please rate the quality of our Sustainability Report 2026</label>
+                            <label class="font-semibold feedback-brand-pink">Please rate the quality of our Sustainability Report 2026</label>
                             <p class="text-sm text-gray-500 mt-1">based on the following criteria:</p>
                         </div>
 
                         <!-- Interactive Radio Matrix -->
+                        <!-- 5. 這裡所有的單選框都改為 feedback-form-input-custom 和 feedback-form-radio -->
                         <div class="w-full sm:w-2/3 space-y-2">
                             <!-- Matrix Row: Content Clarity -->
                             <div class="grid grid-cols-6 gap-x-2 items-center border-b border-gray-100 pb-2">
                                 <div class="col-span-1 text-left text-sm font-medium text-gray-700">Content clarity</div>
-                                <div class="text-center"><input type="radio" name="clarity" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="clarity" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="clarity" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="clarity" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="clarity" class="form-input-custom form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="clarity" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="clarity" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="clarity" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="clarity" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="clarity" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
                             </div>
 
                             <!-- Matrix Row: Ease of finding information -->
                             <div class="grid grid-cols-6 gap-x-2 items-center border-b border-gray-100 pb-2">
                                 <div class="col-span-1 text-left text-sm font-medium text-gray-700">Ease of finding information</div>
-                                <div class="text-center"><input type="radio" name="ease" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="ease" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="ease" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="ease" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="ease" class="form-input-custom form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="ease" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="ease" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="ease" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="ease" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="ease" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
                             </div>
 
                             <!-- Matrix Row: Overall rating -->
                             <div class="grid grid-cols-6 gap-x-2 items-center pb-2">
                                 <div class="col-span-1 text-left text-sm font-medium text-gray-700">Overall rating</div>
-                                <div class="text-center"><input type="radio" name="overall" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="overall" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="overall" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="overall" class="form-input-custom form-radio mx-auto"></div>
-                                <div class="text-center"><input type="radio" name="overall" class="form-input-custom form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="overall" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="overall" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="overall" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="overall" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
+                                <div class="text-center"><input type="radio" name="overall" class="feedback-form-input-custom feedback-form-radio mx-auto"></div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- Question 3: User demographics description -->
-                <div class="border-t-2 border-brand-pink pt-3">
+                <div class="border-t-2 feedback-border-brand-pink pt-3">
                     <div class="flex flex-col sm:flex-row">
                         <div class="w-full sm:w-1/3 pr-4 mb-4 sm:mb-0">
-                            <label class="font-semibold brand-pink">Which of the following best describes you?</label>
+                            <label class="font-semibold feedback-brand-pink">Which of the following best describes you?</label>
                         </div>
                         <div class="w-full sm:w-2/3">
                             <div class="space-y-2">
                                 <div class="flex items-start pt-1">
-                                    <input type="radio" name="user_type" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Academic / Professional Body</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="user_type" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>ArchSD's Staff</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="user_type" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Construction industry / Consultant / Contractor / Supplier</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="user_type" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>General Public</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="user_type" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Non-governmental Organisation</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="user_type" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Other Government Department</label>
                                 </div>
                             </div>
@@ -244,35 +197,35 @@
                 </div>
 
                 <!-- Question 4: Acquisition channel -->
-                <div class="border-t-2 border-brand-pink pt-3">
+                <div class="border-t-2 feedback-border-brand-pink pt-3">
                     <div class="flex flex-col sm:flex-row">
                         <div class="w-full sm:w-1/3 pr-4 mb-4 sm:mb-0">
-                            <label class="font-semibold brand-pink">Where did you learn about the ArchSD Sustainability Report?</label>
+                            <label class="font-semibold feedback-brand-pink">Where did you learn about the ArchSD Sustainability Report?</label>
                         </div>
                         <div class="w-full sm:w-2/3">
                             <div class="space-y-2">
                                 <div class="flex items-start pt-1">
-                                    <input type="radio" name="source" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Mass media (e.g. TV, newspaper, magazine, radio)</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="source" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Internet (e.g. ArchSD Website and search engine)</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="source" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Exhibition</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="source" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Social Media (e.g. Archi Tour@Facebook / architourhk@Instagram / ARCHSDGOVHK@YouTube)</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="source" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label>Meeting / Seminar / Workshop</label>
                                 </div>
                                 <div class="flex items-start border-t border-gray-200 pt-2">
-                                    <input type="radio" name="source" class="form-input-custom form-radio mr-3">
+                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio mr-3">
                                     <label class="mr-2 whitespace-nowrap">Other(s), please specify:</label>
                                     <input type="text" class="bg-gray-100 border-b border-gray-400 focus:border-pink-500 outline-none w-full px-1">
                                 </div>
@@ -282,10 +235,10 @@
                 </div>
 
                 <!-- Question 5: Additional open-ended feedback -->
-                <div class="border-t-2 border-brand-pink pt-3">
+                <div class="border-t-2 feedback-border-brand-pink pt-3">
                     <div class="flex flex-col sm:flex-row">
                         <div class="w-full sm:w-1/3 pr-4 mb-4 sm:mb-0">
-                            <label class="font-semibold brand-pink">Additional Comments</label>
+                            <label class="font-semibold feedback-brand-pink">Additional Comments</label>
                         </div>
                         <div class="w-full sm:w-2/3">
                             <textarea class="w-full h-24 p-2 border border-gray-200 bg-gray-100 focus:outline-none focus:border-pink-500" placeholder="Which section(s) of the report did you find most informative or useful? What would you suggest to help us improve the report quality? Do you have any comment or suggestion on our sustainability performance or future reports?"></textarea>
@@ -296,27 +249,37 @@
                 <!-- Form submission buttons -->
                 <div class="flex justify-end items-center gap-6 pt-4">
                     <button type="reset" class="text-gray-600 hover:text-black">&lt;&lt; Reset</button>
-                    <button type="submit" class="brand-pink font-semibold hover:opacity-80">Submit &gt;&gt;</button>
+                    <!-- 6. 改為 feedback-brand-pink -->
+                    <button type="submit" class="feedback-brand-pink font-semibold hover:opacity-80">Submit &gt;&gt;</button>
                 </div>
             </form>
         </main>
 
-        <!-- Footer Notice and Confidentiality Disclaimer -->
-        <footer class="text-center mt-16 text-xs text-gray-500">
-            <p>You can also send an email to imu@archsd.gov.hk. The information will be used in strict confidence and for statistical purposes only.</p>
+        <!-- 3. Footer (200px) -->
+        <footer class="site-footer">
+            <div class="container">
+                <p class="mb-0 text-white-5">2026 &copy; | Important notices | Privacy | Sitemap</p>
+            </div>
         </footer>
-    </div>
 
-    <!-- Client-side form event handling script -->
-    <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Thank you for your feedback!');
-        });
-        document.getElementById('feedbackForm').addEventListener('reset', function (e) {
-            console.log('Form has been reset.');
-        });
-    </script>
+    <!-- 4. Back to Top Button -->
+    <button id="back-to-top" tabindex="0" role="button" aria-label="Back to Top"><img src="../assets/images/back-to-top.svg" alt="Back to Top" title="Back to Top"></button>
+
+    <!-- 5. JavaScript 引用 (GSAP, ScrollTrigger, ScrollToPlugin, Lottie, Bootstrap) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <script src="../assets/js/qrcode.min.js" defer></script>
+    <script src="../assets/js/general.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
+    <script src="../assets/js/homepage.js" defer></script>
+
+    <!-- 6. 動態與互動腳本 -->
+    <script></script>
+<!-- Toast 提示框容器 -->
+<div id="copy-toast" class="copy-toast">The URL has been copied to the clipboard!</div>
 </body>
-
 </html>
