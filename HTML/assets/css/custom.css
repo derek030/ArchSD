@@ -549,3 +549,126 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
 }
 
+/* =================================================================
+   Feedback Form Navigation & Footer Alignment Styles
+==================================================================== */
+
+/* 分頁導覽線與外層容器 */
+.feedback-page-nav-line {
+    padding-top: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    margin-left: 0 !important;   /* 🟢 消除 Bootstrap Row 預設向左偏移 */
+    margin-right: 0 !important;  /* 🟢 消除 Bootstrap Row 預設向右偏移 */
+}
+
+.feedback-page-nav-link {
+    text-decoration: none !important;
+    color: #565a5f !important;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.feedback-page-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* =================================================================
+   Feedback Page Navigation Icons & Colors
+==================================================================== */
+
+/* 分頁導覽外層容器 */
+.feedback-page-nav-line {
+    border-top: none !important;
+    padding-top: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.feedback-page-nav-link {
+    text-decoration: none !important;
+    color: #565a5f !important; /* 預設文字顏色 */
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.feedback-page-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* 🟢 控制圖示的尺寸 */
+.feedback-page-nav-icon,
+.feedback-page-nav img {
+    width: 44px;  /* 配合您 custom.css 第 185 行的標準尺寸 */
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* 🟢 預設圖示顏色：轉為暗灰色 (#565a5f) */
+.feedback-page-nav img {
+    width: 44px;
+    height: auto;
+    /* 精確轉換為 #565a5f 暗灰色 */
+	filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(89%) contrast(90%);
+}
+
+/* 🟢 旋轉方向調整 */
+/* 返回圖示：向左（預設若為向左則不需旋轉，若原本向右則設為 rotate(180deg) 或不旋轉） */
+.feedback-page-back img {
+    /* 如果您的 page-nav-icon.svg 預設是向左，則不需要旋轉；若預設向右，請取消下方註解： */
+    /* transform: rotate(0deg); */
+}
+
+/* 前進圖示：向右（配合原本 page-nav-next 的旋轉 180 度設計） */
+.feedback-page-next img {
+    transform: rotate(180deg);
+}
+
+.feedback-page-nav-title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #565a5f;
+    transition: color 0.3s ease;
+}
+
+/* =================================================================
+   Feedback Form Buttons - Minimal Gray to Brand Green Hover
+==================================================================== */
+
+.feedback-btn-reset,
+.feedback-btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent !important; /* ⚪ 平常狀態：完全透明無背景 */
+    color: #565a5f !important;                 /* 🟢 平常狀態：使用您的專屬暗灰色 */
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 24px !important;             /* 預留與 Hover 相同的內距，防止版面跳動 */
+    border: 1px solid transparent !important;  /* 預留透明邊框 */
+    transition: all 0.25s ease-in-out !important; /* 讓 Hover 變色非常滑順 */
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+/* 🟢 滑鼠懸停（Hover）時：文字維持暗灰色，並顯現亮綠色底色 (#82f000) */
+.feedback-btn-reset:hover,
+.feedback-btn-submit:hover {
+    background-color: #82f000 !important;      /* 🟢 顯現亮綠色背景 */
+    color: #565a5f !important;                 /* 🟢 文字依然保持暗灰色 */
+    border-color: #82f000 !important;          /* 邊框同步轉為綠色 */
+}
+
+/* 點擊（Active）時的輕微回饋 */
+.feedback-btn-reset:active,
+.feedback-btn-submit:active {
+    transform: translateY(1px);
+    opacity: 0.9;
+}
+
+
