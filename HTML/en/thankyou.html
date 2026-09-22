@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD | Thank You</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monda:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Site favicon and custom styles -->
+    <link rel="shortcut icon" href="../assets/images/cover.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/custom.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" crossorigin="anonymous">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* 🟢 確保 Feedback 標題字體與首頁及其他頁面 100% 一致 */
+        .feedback-page-title {
+            font-family: 'Monda', sans-serif !important;
+            font-size: 3.375rem !important; /* 對齊 custom.css 中的 h2.section-title 尺寸 */
+            font-weight: 900 !important;
+            line-height: 1.11 !important;
+            color: #565a5f !important; /* 對齊 var(--darkGreyColor) */
+        }
+
+        /* 🟢 完美對齊原稿的綠色短底線（100px 寬，與其他頁面 footer 頂部綠線一致） */
+        .feedback-green-bar {
+            width: 100px !important;
+            height: 6px !important;
+            background-color: #82f000 !important; /* var(--mainGreenColor) */
+            margin-top: 1rem !important;
+        }
+    </style>
+</head>
+
+<body class="feedback-body bg-white relative">
+
+    <!-- Decorative right-side accent bar -->
+    <div class="fixed top-0 right-0 h-full w-5 bg-[#e5007d] hidden md:block"></div>
+
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-4 sm:px-8 lg:px-20 py-12">
+
+        <!-- Header Section -->
+        <header class="feedback-header mb-12">
+            <div class="feedback-header-row">
+                <!-- 左邊政府 Logo：對齊下方的 "Feedback" 邊界 -->
+                <div class="feedback-logo-left">
+                    <a href="https://www.archsd.gov.hk/en/" class="nav-link" target="_blank" rel="noreferrer">
+                        <img src="../assets/images/asd-logo.svg" alt="ArchSD Logo" title="Sustainability Report 2026">
+                    </a>
+                </div>
+                <!-- 右邊 SD2026 Logo -->
+                <div class="feedback-logo-right">
+                    <a href="index.html" class="nav-link">
+                        <img src="../assets/images/SD2026.svg" alt="Sustainability Report 2026" title="Sustainability Report 2026">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- 🟢 移除 items-start 改用最齊平的頂部對齊，並移除右側 mt 限制，確保左右在同一條水平線起跑 -->
+        <main class="flex flex-col lg:flex-row gap-x-16 gap-y-10 min-h-[400px] items-start pt-12">
+
+            <!-- 👈 左側 1/3 欄位：Feedback 標題與短綠底線 (完美對應 custom.css 規範) -->
+            <div class="w-full lg:w-1/3 flex flex-col items-start justify-start">
+                <h1 class="feedback-page-title">
+                    Feedback
+                </h1>
+                <!-- 🟢 精準長度的綠色短裝飾線 (100px 寬，高度 6px) -->
+                <div class="feedback-green-bar"></div>
+            </div>
+
+            <!-- 👉 右側 2/3 欄位：文字與按鈕 (頂部對齊，完全垂直貼齊) -->
+            <div class="w-full lg:w-2/3 flex flex-col justify-start items-start space-y-8">
+                <!-- 感謝文字內容 -->
+                <div class="text-gray-600 leading-relaxed space-y-2">
+                    <!-- 第一行 (大字，輕量 font-light) -->
+                    <h2 class="text-3xl md:text-4xl font-light text-gray-800 m-0" style="color: #374151 !important; font-family: 'Inter', sans-serif;">
+                        Thank you.
+                    </h2>
+                    <!-- 第二行 -->
+                    <p class="text-lg md:text-xl text-gray-500 m-0 font-light" style="font-family: 'Inter', sans-serif;">
+                        We appreciate your feedback.
+                    </p>
+                </div>
+
+                
+            </div>
+
+        </main>
+
+        <!-- Report Verification 和 Glossary 分頁連結 -->
+        <div class="feedback-page-nav-line row justify-content-between">
+            <div class="col-6 p-0">
+                <a href="report-verification.html" class="feedback-page-nav-link">
+                    <div class="feedback-page-nav feedback-page-back">
+                        <div aria-hidden="true">
+                            <img src="../assets/images/page-nav-icon.svg" class="feedback-page-nav-icon" alt="">
+                        </div>
+                        <p class="feedback-page-nav-title ms-2">Report Verification</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 p-0 text-end flex justify-end">
+                <a href="glossary.html" class="feedback-page-nav-link">
+                    <div class="feedback-page-nav feedback-page-next">
+                        <p class="feedback-page-nav-title me-2">Glossary</p>
+                        <div aria-hidden="true">
+                            <img src="../assets/images/page-nav-icon.svg" class="feedback-page-nav-icon" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="feedback-site-footer">
+            <div class="footer-green-bar"></div>
+            <p class="mb-0 text-white-5">2026 &copy; | <a target="_blank" aria-label="This link will open in new window - Important notices" href="https://www.archsd.gov.hk/en/important-notices.html" rel="noreferrer">Important notices</a> | <a target="_blank" aria-label="This link will open in new window - Privacy" href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noreferrer">Privacy</a> |
+                <a aria-label="This link will open in new window - Sitemap" href="sitemap.html">Sitemap</a>
+            </p>
+        </footer>
+
+    </div> <!-- Container 結束 -->
+
+    <!-- Back-to-top button -->
+    <button type="button" id="back-to-top" tabindex="0" aria-label="Back to Top">
+        <img src="../assets/images/back-to-top.svg" alt="Back to Top" title="Back to Top">
+    </button>
+
+    <!-- JavaScript libraries -->
+    <script src="../assets/js/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- Site utility scripts -->
+    <script src="../assets/js/general.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
+
+    <!-- GSAP ScrollTrigger 動態定位 Back-to-top 腳本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const backToTop = document.getElementById('back-to-top');
+            const footer = document.querySelector('.feedback-site-footer');
+
+            if (backToTop && footer) {
+                ScrollTrigger.create({
+                    trigger: footer,
+                    start: "top bottom", 
+                    end: "bottom bottom",   
+                    onUpdate: (self) => {
+                        const progress = self.progress; 
+                        const footerHeight = footer.offsetHeight; 
+                        const targetBottom = 30 + (progress * footerHeight);
+                        
+                        gsap.to(backToTop, {
+                            bottom: targetBottom,
+                            duration: 0.1,
+                            overwrite: "auto"
+                        });
+                    },
+                    onLeaveBack: () => {
+                        gsap.to(backToTop, {
+                            bottom: 30,
+                            duration: 0.2,
+                            overwrite: "auto"
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
