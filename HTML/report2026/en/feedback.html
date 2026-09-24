@@ -627,6 +627,43 @@
             });
 
         });
+
+        // =============================================================
+        // GSAP Scroll-Triggered Animations
+        // =============================================================
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Set the initial "hidden" state for all question blocks.
+        gsap.set("#feedbackForm > fieldset, #feedbackForm > div.feedback-border-brand-pink", {
+            autoAlpha: 0,
+            y: 50
+        });
+
+        // 2. Animate each block into view when it enters/leaves the viewport.
+        ScrollTrigger.batch("#feedbackForm > fieldset, #feedbackForm > div.feedback-border-brand-pink", {
+            start: "top 90%",
+            end: "bottom 10%",
+
+            // THIS IS THE KEY CHANGE:
+            // This tells the animation to play when entering and reverse when leaving,
+            // from either direction (scrolling down or scrolling up).
+            toggleActions: "play reverse play reverse",
+
+            // The animation itself
+            onEnter: batch => gsap.to(batch, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                stagger: 0.15,
+                overwrite: true // Prevents animations from overlapping if you scroll fast
+            }),
+            // The reverse animation
+            onLeave: batch => gsap.to(batch, { autoAlpha: 0, y: -50, duration: 0.4, ease: "power1.in", overwrite: true }),
+            onEnterBack: batch => gsap.to(batch, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out", stagger: 0.15, overwrite: true }),
+            onLeaveBack: batch => gsap.to(batch, { autoAlpha: 0, y: 50, duration: 0.4, ease: "power1.in", overwrite: true })
+        });
+
     </script>
 
 </body>
