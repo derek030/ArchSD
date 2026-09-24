@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml:lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,35 +9,38 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monda:wght@400..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Monda:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <!-- Bootstrap CSS (Self-hosted) -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Site favicon and custom styles -->
+    <!-- Site Favicon and Custom Styles -->
     <link rel="shortcut icon" href="../assets/images/cover.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/custom.css" type="text/css">
 </head>
 
 <body class="white-header">
 
+    <!-- Accessibility: Skip Link -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
+    <!-- Main Content Container (Keeps Header, Content and Footer aligned) -->
     <div class="container">
 
-        <!-- Page header: Logos and Report Title -->
+        <!-- Page Header -->
         <header class="fixed-header d-flex align-items-center">
             <div class="container h-100">
                 <div class="row justify-content-between align-items-center">
-                    <div class="col-8 asd-logo"><a href="https://www.archsd.gov.hk/tc/"
-                            class="nav-link d-flex align-items-end" target="_blank"><img
-                                src="../assets/images/asd-logo.svg" alt="Site Logo"
-                                title="Sustainability Report 2026"></a></div>
-                    <div class="col-4 SD2026 site-title"><a href="index.html" class="nav-link "><img
-                                src="../assets/images/SD2026.svg" alt="Site Title"
-                                title="Sustainability Report 2026"></a></div>
+                    <div class="col-8 asd-logo">
+                        <a href="https://www.archsd.gov.hk/tc/" class="nav-link d-flex align-items-end" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/images/asd-logo.svg" alt="Architectural Services Department Logo">
+                        </a>
+                    </div>
+                    <div class="col-4 SD2026 site-title">
+                        <a href="index.html" class="nav-link">
+                            <img src="../assets/images/SD2026.svg" alt="Sustainability Report 2026 Title">
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -45,124 +48,71 @@
         <!-- Menu Placeholder -->
         <div id="nav-placeholder"></div>
 
-        <!-- Main Content -->
-        <main id="main-content" class="row" tabindex="-1">
+        <!-- Main Content Section -->
+        <main id="main-content" class="row gy-5 gx-lg-5" tabindex="-1">
 
-            <!-- Left Column (Search Control Area) -->
-            <aside class="col-12 col-md-4">
-                <h1 class="display-5 fw-light text-dark mb-4">Search</h1>
+            <!-- Left Column: Search Input & Meta Info (1/3 Width) -->
+            <aside class="col-12 col-lg-4">
+                <h1 class="display-5 fw-light text-dark mb-4" style="font-family: 'Monda', sans-serif;">Search</h1>
 
-                <!-- Search Form -->
-                <form id="searchForm" class="mb-4" role="search" aria-label="Website search">
+                <!-- Search Form (Prevent default submit for Pure Frontend experience) -->
+                <form id="searchForm" role="search" class="mb-4">
                     <label for="searchInput" class="visually-hidden">Search Keyword</label>
                     <div class="input-group">
-                        <input type="text" id="searchInput" placeholder="Search for..." class="form-control bg-light"
-                            aria-label="Search for keywords" required>
+                        <input type="text" id="searchInput" placeholder="Search for..." class="form-control bg-light" required>
                         <button type="submit" class="btn btn-outline-secondary" aria-label="Submit search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                             </svg>
                         </button>
                     </div>
                 </form>
 
-                <!-- Search Meta Information -->
+                <!-- Search Meta Info (Dynamic Frontend Render) -->
                 <div id="searchMeta" class="small text-body-secondary" role="status" aria-live="polite">
                     <p>Searched Keyword: <strong class="text-dark">sustainability projects</strong></p>
-                    <p>Results 1 - 10 of about <strong class="text-dark">50</strong>. Search took 0.002 seconds.</p>
+                    <p>Results 1 - 3 of about <strong class="text-dark">3</strong>. Search took 0.002 seconds.</p>
                 </div>
             </aside>
 
-            <!-- Right Column (Search Results Area) -->
-            <div class="col-12 col-md-8 mt-5 mt-md-0" role="region" aria-labelledby="search-results-heading">
+            <!-- Right Column: Search Results Area (2/3 Width) -->
+            <div class="col-12 col-lg-8" role="region" aria-labelledby="search-results-heading">
                 <h2 id="search-results-heading" class="visually-hidden">Search Results</h2>
-
+                
+                <!-- Dynamic Results Wrapper -->
                 <div id="searchResults" class="d-flex flex-column gap-4">
-                    <!-- Tip: Search results will be dynamically rendered into this block -->
-
-                    <!-- Sample Result 1 -->
-                    <div class="border-bottom pb-3">
-                        <h3 class="fs-5 mb-1"><a href="#" class="text-decoration-none result-title">Awards and
-                                Recognition</a></h3>
-                        <p class="small text-body-secondary mb-1">...繁 简 SUSTAINABILITY REPORT 2021 search A A
-                            A...Project Director/1 Mr. Michael Li Project...</p>
-                        <p class="small text-body-tertiary mb-0">
-                            <span
-                                class="text-break">www.archsd.gov.hk/archsd/html/report2025/en/awards-n-achievements.html
-                                - 23.8K</span>
-                            <a href="#" class="text-decoration-none result-title-cached ms-2">Cached</a>
-                        </p>
-                    </div>
-
-                    <!-- Sample Result 2 -->
-                    <div class="border-bottom pb-3">
-                        <h3 class="fs-5 mb-1"><a href="#" class="text-decoration-none result-title">Refurbishment of
-                                Toilet</a></h3>
-                        <p class="small text-body-secondary mb-1">...繁 简 SUSTAINABILITY REPORT 2021 search A A
-                            A...Project Director/1 Mr. Michael Li Project...</p>
-                        <p class="small text-body-tertiary mb-0">
-                            <span
-                                class="text-break">www.archsd.gov.hk/archsd/html/report2025/en/awards-n-achievements.html
-                                - 23.8K</span>
-                            <a href="#" class="text-decoration-none result-title-cached ms-2">Cached</a>
-                        </p>
-                    </div>
-
-                    <!-- Sample Result 3 -->
-                    <div class="border-bottom pb-3">
-                        <h3 class="fs-5 mb-1"><a href="#" class="text-decoration-none result-title">Interview with
-                                External Stakeholder</a></h3>
-                        <p class="small text-body-secondary mb-1">...繁 简 SUSTAINABILITY REPORT 2021 search A A
-                            A...Project Director/1 Mr. Michael Li Project...</p>
-                        <p class="small text-body-tertiary mb-0">
-                            <span
-                                class="text-break">www.archsd.gov.hk/archsd/html/report2025/en/awards-n-achievements.html
-                                - 23.8K</span>
-                            <a href="#" class="text-decoration-none result-title-cached ms-2">Cached</a>
-                        </p>
-                    </div>
+                    <!-- Default Static Mock Results (Will be refreshed upon submitting the form) -->
                 </div>
             </div>
+
         </main>
 
-        <!-- Site footer -->
+        <!-- Site Footer -->
         <footer class="site-footer mt-5" role="contentinfo">
             <div class="row">
                 <div class="col-12">
-
-                    <!-- Footer accent line -->
                     <div class="footer-green-bar"></div>
-
-                    <!-- Footer links -->
-                    <p class="mb-0 text-white-5">
+                    <p class="mb-0 small">
                         2026 &copy; |
-                        <a target="_blank" aria-label="Important notices (opens in a new window)"
-                            href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
+                        <a target="_blank" aria-label="Important notices (opens in a new window)" href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
                             Important notices
-                        </a>
-                        |
-                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)"
-                            href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
+                        </a> |
+                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)" href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
                             Privacy
-                        </a>
-                        |
+                        </a> |
                         <a aria-label="Go to Sitemap" href="sitemap.html">
                             Sitemap
                         </a>
                     </p>
-
                 </div>
             </div>
         </footer>
-    </div>
 
+    </div> <!-- Container End -->
 
-
-    <!-- Back-to-top button -->
+    <!-- Back-to-top Button -->
     <button type="button" id="back-to-top" tabindex="0" aria-label="Back to Top">
-        <img src="../assets/images/back-to-top.svg" alt="Back to Top" title="Back to Top">
+        <img src="../assets/images/back-to-top.svg" alt="" role="presentation">
     </button>
 
     <!-- JavaScript Libraries -->
@@ -171,105 +121,108 @@
     <script src="../assets/js/ScrollToPlugin.min.js"></script>
     <script src="../assets/js/lottie.min.js"></script>
 
-    <!-- Site Utility Scripts -->
+    <!-- Utility Scripts -->
     <script src="../assets/js/qrcode.min.js" defer></script>
     <script src="../assets/js/general.js" defer></script>
     <script src="../assets/js/menu.js" defer></script>
-
-    <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
 
-    <!-- Page-specific JavaScript Logic -->
+    <!-- Pure Frontend Search Controller -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchForm = document.getElementById('searchForm');
             const searchInput = document.getElementById('searchInput');
 
-            // Listen for form submission
+            // 1. Initial Load: Render default results using mockup data
+            performMockSearch("sustainability projects");
+
+            // 2. Handle Form Submit (Frontend Only Mock Search)
             searchForm.addEventListener('submit', (event) => {
-                event.preventDefault(); // Prevent the form's default submission behavior
+                event.preventDefault();
                 const query = searchInput.value.trim();
                 if (query) {
-                    // --- BACKEND SEARCH LOGIC INTEGRATION POINT ---
-                    // Trigger backend API request here
-                    // ----------------------------------------------
-                    console.log(`Searching for keyword: ${query}`);
-
-                    // Pseudo-code for fetching and rendering results:
-                    // executeBackendSearch(query).then(renderSearchResults);
+                    performMockSearch(query);
                 }
             });
-        });
 
-        /**
-         * Executes a backend search (pseudo-code).
-         * @param {string} keyword The search keyword.
-         */
-        async function executeBackendSearch(keyword) {
-            // In a real application, you would use fetch or another HTTP library
-            // to send a request to your backend API.
-            // const response = await fetch(`/api/search?q=${encodeURIComponent(keyword)}`);
-            // const data = await response.json();
-            // return data;
+            /**
+             * Simulated search function that generates placeholder data.
+             */
+            function performMockSearch(keyword) {
+                // Temporary Loading State
+                const resultsContainer = document.getElementById('searchResults');
+                resultsContainer.innerHTML = '<p class="text-muted">Searching results...</p>';
 
-            // For demonstration purposes, returning mock data
-            const mockData = {
-                keyword: keyword,
-                totalResults: 15,
-                searchTime: 0.05,
-                items: [
-                    {
-                        title: `Search Result 1 for ${keyword}`,
-                        snippet: 'This is the first search result snippet for ' + keyword + '...',
-                        url: 'https://example.com/result1',
-                        size: '15.1K'
-                    },
-                    {
-                        title: `Search Result 2 for ${keyword}`,
-                        snippet: 'This is the second search result snippet for ' + keyword + '...',
-                        url: 'https://example.com/result2',
-                        size: '22.4K'
-                    }
-                ]
-            };
-            return mockData;
-        }
+                setTimeout(() => {
+                    const mockData = {
+                        keyword: keyword,
+                        totalResults: 3,
+                        searchTime: (Math.random() * 0.1).toFixed(3),
+                        items: [
+                            {
+                                title: "Awards and Recognition",
+                                snippet: `...繁 简 SUSTAINABILITY REPORT 2026 search A A A... Discover key accomplishments and honors regarding our ${keyword} achievements...`,
+                                url: "www.archsd.gov.hk/archsd/html/report2026/en/awards-n-achievements.html",
+                                size: "23.8K"
+                            },
+                            {
+                                title: "Green Environments & Climate Resilience",
+                                snippet: `...This section details our innovative architecture layouts, green building materials, and active ${keyword} guidelines for urban development...`,
+                                url: "www.archsd.gov.hk/archsd/html/report2026/en/green-environments.html",
+                                size: "18.4K"
+                            },
+                            {
+                                title: "Stakeholder Engagement & Interviews",
+                                snippet: `...Read about the interview scripts and valuable input given by external organizations on our upcoming ${keyword} roadmap...`,
+                                url: "www.archsd.gov.hk/archsd/html/report2026/en/stakeholder-engagement.html",
+                                size: "31.2K"
+                            }
+                        ]
+                    };
 
-        /**
-         * Renders the search results data onto the page.
-         * @param {Object} data The data object containing search results.
-         */
-        function renderSearchResults(data) {
-            // 1. Update search meta information
-            const searchMeta = document.getElementById('searchMeta');
-            searchMeta.innerHTML = `
-                <p>Searched Keyword: <strong class="text-dark">${data.keyword}</strong></p>
-                <p>Results 1 - ${data.items.length} of about <strong class="text-dark">${data.totalResults}</strong>. Search took ${data.searchTime} seconds.</p>
-            `;
-
-            // 2. Clear existing results and render new ones
-            const resultsContainer = document.getElementById('searchResults');
-            resultsContainer.innerHTML = ''; // Clear old results
-
-            if (data.items.length === 0) {
-                resultsContainer.innerHTML = '<p>No results found.</p>';
-                return;
+                    renderSearchResults(mockData);
+                }, 300); // 300ms simulated network delay
             }
 
-            data.items.forEach(item => {
-                const resultElement = `
-                    <div class="border-bottom pb-3">
-                        <h3 class="fs-5 mb-1"><a href="${item.url}" class="text-decoration-none result-title">${item.title}</a></h3>
-                        <p class="small text-body-secondary mb-1">${item.snippet}</p>
-                        <p class="small text-body-tertiary mb-0">
-                            <span class="text-break">${item.url} - ${item.size}</span>
-                            <a href="#" class="text-decoration-none result-title-cached ms-2">Cached</a>
-                        </p>
-                    </div>
+            /**
+             * Standardized Renderer function.
+             * Future developers only need to pass actual API JSON to this function!
+             */
+            function renderSearchResults(data) {
+                // Update Meta Info
+                const searchMeta = document.getElementById('searchMeta');
+                searchMeta.innerHTML = `
+                    <p>Searched Keyword: <strong class="text-dark">${escapeHTML(data.keyword)}</strong></p>
+                    <p>Results 1 - ${data.items.length} of about <strong class="text-dark">${data.totalResults}</strong>. Search took ${data.searchTime} seconds.</p>
                 `;
-                resultsContainer.innerHTML += resultElement;
-            });
-        }
+
+                // Render Results
+                const resultsContainer = document.getElementById('searchResults');
+                resultsContainer.innerHTML = '';
+
+                data.items.forEach(item => {
+                    const resultHtml = `
+                        <div class="border-bottom pb-3">
+                            <h3 class="fs-5 mb-1" style="font-family: 'Inter', sans-serif;">
+                                <a href="#" class="text-decoration-none text-primary fw-semibold">${escapeHTML(item.title)}</a>
+                            </h3>
+                            <p class="small text-secondary mb-1">${escapeHTML(item.snippet)}</p>
+                            <p class="small text-muted mb-0">
+                                <span class="text-break">${escapeHTML(item.url)} - ${item.size}</span>
+                                <a href="#" class="text-decoration-none text-secondary ms-2 small">Cached</a>
+                            </p>
+                        </div>
+                    `;
+                    resultsContainer.innerHTML += resultHtml;
+                });
+            }
+
+            function escapeHTML(str) {
+                return str.replace(/[&<>'"]/g, 
+                    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+                );
+            }
+        });
     </script>
 </body>
 
