@@ -9,7 +9,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monda:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monda:wght@400..700&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -19,7 +21,7 @@
     <link rel="stylesheet" href="../assets/css/custom.css" type="text/css">
 </head>
 
-<body class="feedback-body bg-white position-relative">
+<body class="white-header">
 
     <a href="#main-content" class="skip-to-content visually-hidden-focusable">Skip to main content</a>
 
@@ -27,23 +29,17 @@
     <div class="container">
 
         <!-- Page header and site logos -->
-        <header class="feedback-header mb-5 mt-4" role="banner">
-            <div class="feedback-header-row">
-
-                <!-- ArchSD logo -->
-                <div class="feedback-logo-left">
-                    <a href="https://www.archsd.gov.hk/en/" class="nav-link" target="_blank" rel="noopener" aria-label="Architectural Services Department (Opens in a new window)">
-                        <img src="../assets/images/asd-logo.svg" alt="Architectural Services Department Logo">
-                    </a>
+        <header class="fixed-header d-flex align-items-center">
+            <div class="container h-100">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-8 asd-logo"><a href="https://www.archsd.gov.hk/tc/"
+                            class="nav-link d-flex align-items-end" target="_blank"><img
+                                src="../assets/images/asd-logo.svg" alt="Site Logo"
+                                title="Sustainability Report 2026"></a></div>
+                    <div class="col-4 SD2026 site-title"><a href="index.html" class="nav-link "><img
+                                src="../assets/images/SD2026.svg" alt="Site Title"
+                                title="Sustainability Report 2026"></a></div>
                 </div>
-
-                <!-- Sustainability Report 2026 logo -->
-                <div class="feedback-logo-right">
-                    <a href="index.html" class="nav-link" aria-label="Go to Sustainability Report 2026 Homepage">
-                        <img src="../assets/images/SD2026.svg" alt="Sustainability Report 2026 Logo">
-                    </a>
-                </div>
-
             </div>
         </header>
 
@@ -89,32 +85,39 @@
                             <div class="d-flex flex-column gap-2">
 
                                 <div class="d-flex align-items-start pt-1">
-                                    <input type="checkbox" id="q1-opt1" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <input type="checkbox" id="q1-opt1"
+                                        class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
                                     <label for="q1-opt1">General Interest</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="checkbox" id="q1-opt2" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <input type="checkbox" id="q1-opt2"
+                                        class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
                                     <label for="q1-opt2">Our Sustainability Performance Benchmarking</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="checkbox" id="q1-opt3" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <input type="checkbox" id="q1-opt3"
+                                        class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
                                     <label for="q1-opt3">Research and Educational Purposes</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="checkbox" id="q1-opt4" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <input type="checkbox" id="q1-opt4"
+                                        class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
                                     <label for="q1-opt4">Investment Purposes</label>
                                 </div>
 
                                 <!-- Other reason option with free-text input -->
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="checkbox" id="q1-other" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <input type="checkbox" id="q1-other"
+                                        class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
                                     <label for="q1-other" class="me-2 text-nowrap">
                                         Other(s), please specify:
                                     </label>
-                                    <input type="text" id="q1-other-text" class="q1-other-text bg-light border-0 border-bottom border-secondary outline-none w-100 px-1" aria-label="Specify other reason for reading the report">
+                                    <input type="text" id="q1-other-text"
+                                        class="q1-other-text bg-light border-0 border-bottom border-secondary outline-none w-100 px-1"
+                                        aria-label="Specify other reason for reading the report">
                                 </div>
 
                             </div>
@@ -125,7 +128,7 @@
 
                 <!-- Question 2 -->
                 <fieldset class="w-100 mb-4 border-0 p-0 m-0">
-                    
+
                     <!-- Rating scale header -->
                     <div class="row mb-1 d-none d-sm-flex" aria-hidden="true">
                         <div class="col-sm-4"></div>
@@ -162,28 +165,41 @@
 
                                 <!-- Rating: Content clarity -->
                                 <div class="row align-items-center border-bottom border-light pb-2">
-                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary" id="clarity-title">
+                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary"
+                                        id="clarity-title">
                                         Content clarity
                                     </div>
                                     <div class="col d-flex justify-content-around mt-1 mt-sm-0">
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-excellent" name="clarity" value="excellent" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Excellent">
-                                            <label for="clarity-excellent" class="d-sm-none small text-muted">Excellent</label>
+                                            <input type="radio" id="clarity-excellent" name="clarity" value="excellent"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Content clarity: Excellent">
+                                            <label for="clarity-excellent"
+                                                class="d-sm-none small text-muted">Excellent</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-good" name="clarity" value="good" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Good">
+                                            <input type="radio" id="clarity-good" name="clarity" value="good"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Content clarity: Good">
                                             <label for="clarity-good" class="d-sm-none small text-muted">Good</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-fair" name="clarity" value="fair" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Fair">
+                                            <input type="radio" id="clarity-fair" name="clarity" value="fair"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Content clarity: Fair">
                                             <label for="clarity-fair" class="d-sm-none small text-muted">Fair</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-marginal" name="clarity" value="marginal" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Marginal">
-                                            <label for="clarity-marginal" class="d-sm-none small text-muted">Marginal</label>
+                                            <input type="radio" id="clarity-marginal" name="clarity" value="marginal"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Content clarity: Marginal">
+                                            <label for="clarity-marginal"
+                                                class="d-sm-none small text-muted">Marginal</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-poor" name="clarity" value="poor" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Poor">
+                                            <input type="radio" id="clarity-poor" name="clarity" value="poor"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Content clarity: Poor">
                                             <label for="clarity-poor" class="d-sm-none small text-muted">Poor</label>
                                         </div>
                                     </div>
@@ -191,28 +207,41 @@
 
                                 <!-- Rating: Ease of finding information -->
                                 <div class="row align-items-center border-bottom border-light pb-2">
-                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary" id="ease-title">
+                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary"
+                                        id="ease-title">
                                         Ease of finding info
                                     </div>
                                     <div class="col d-flex justify-content-around mt-1 mt-sm-0">
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-excellent" name="ease" value="excellent" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Excellent">
-                                            <label for="ease-excellent" class="d-sm-none small text-muted">Excellent</label>
+                                            <input type="radio" id="ease-excellent" name="ease" value="excellent"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Ease of finding information: Excellent">
+                                            <label for="ease-excellent"
+                                                class="d-sm-none small text-muted">Excellent</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-good" name="ease" value="good" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Good">
+                                            <input type="radio" id="ease-good" name="ease" value="good"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Ease of finding information: Good">
                                             <label for="ease-good" class="d-sm-none small text-muted">Good</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-fair" name="ease" value="fair" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Fair">
+                                            <input type="radio" id="ease-fair" name="ease" value="fair"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Ease of finding information: Fair">
                                             <label for="ease-fair" class="d-sm-none small text-muted">Fair</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-marginal" name="ease" value="marginal" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Marginal">
-                                            <label for="ease-marginal" class="d-sm-none small text-muted">Marginal</label>
+                                            <input type="radio" id="ease-marginal" name="ease" value="marginal"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Ease of finding information: Marginal">
+                                            <label for="ease-marginal"
+                                                class="d-sm-none small text-muted">Marginal</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-poor" name="ease" value="poor" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Poor">
+                                            <input type="radio" id="ease-poor" name="ease" value="poor"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Ease of finding information: Poor">
                                             <label for="ease-poor" class="d-sm-none small text-muted">Poor</label>
                                         </div>
                                     </div>
@@ -220,28 +249,41 @@
 
                                 <!-- Rating: Overall report quality -->
                                 <div class="row align-items-center pb-2">
-                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary" id="overall-title">
+                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary"
+                                        id="overall-title">
                                         Overall rating
                                     </div>
                                     <div class="col d-flex justify-content-around mt-1 mt-sm-0">
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-excellent" name="overall" value="excellent" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Excellent">
-                                            <label for="overall-excellent" class="d-sm-none small text-muted">Excellent</label>
+                                            <input type="radio" id="overall-excellent" name="overall" value="excellent"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Overall rating: Excellent">
+                                            <label for="overall-excellent"
+                                                class="d-sm-none small text-muted">Excellent</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-good" name="overall" value="good" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Good">
+                                            <input type="radio" id="overall-good" name="overall" value="good"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Overall rating: Good">
                                             <label for="overall-good" class="d-sm-none small text-muted">Good</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-fair" name="overall" value="fair" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Fair">
+                                            <input type="radio" id="overall-fair" name="overall" value="fair"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Overall rating: Fair">
                                             <label for="overall-fair" class="d-sm-none small text-muted">Fair</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-marginal" name="overall" value="marginal" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Marginal">
-                                            <label for="overall-marginal" class="d-sm-none small text-muted">Marginal</label>
+                                            <input type="radio" id="overall-marginal" name="overall" value="marginal"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Overall rating: Marginal">
+                                            <label for="overall-marginal"
+                                                class="d-sm-none small text-muted">Marginal</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-poor" name="overall" value="poor" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Poor">
+                                            <input type="radio" id="overall-poor" name="overall" value="poor"
+                                                class="feedback-form-input-custom feedback-form-radio"
+                                                aria-label="Overall rating: Poor">
                                             <label for="overall-poor" class="d-sm-none small text-muted">Poor</label>
                                         </div>
                                     </div>
@@ -269,34 +311,40 @@
                             <div class="d-flex flex-column gap-2">
 
                                 <div class="d-flex align-items-start pt-1">
-                                    <input type="radio" id="user-type-academic" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="user-type-academic" name="user_type"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="user-type-academic">Academic / Professional Body</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="user-type-staff" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="user-type-staff" name="user_type"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="user-type-staff">ArchSD's Staff</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="user-type-industry" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="user-type-industry" name="user_type"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="user-type-industry">
                                         Construction industry / Consultant / Contractor / Supplier
                                     </label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="user-type-public" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="user-type-public" name="user_type"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="user-type-public">General Public</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="user-type-ngo" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="user-type-ngo" name="user_type"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="user-type-ngo">Non-governmental Organisation</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="user-type-gov" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="user-type-gov" name="user_type"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="user-type-gov">Other Government Department</label>
                                 </div>
 
@@ -322,26 +370,30 @@
                             <div class="d-flex flex-column gap-2">
 
                                 <div class="d-flex align-items-start pt-1">
-                                    <input type="radio" id="source-massmedia" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="source-massmedia" name="source"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="source-massmedia">
                                         Mass media (e.g. TV, newspaper, magazine, radio)
                                     </label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="source-internet" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="source-internet" name="source"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="source-internet">
                                         Internet (e.g. ArchSD Website and search engine)
                                     </label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="source-exhibition" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="source-exhibition" name="source"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="source-exhibition">Exhibition</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="source-socialmedia" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="source-socialmedia" name="source"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="source-socialmedia">
                                         Social Media (e.g. Archi Tour@Facebook /
                                         architourhk@Instagram / ARCHSDGOVHK@YouTube)
@@ -349,17 +401,21 @@
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="source-meeting" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="source-meeting" name="source"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="source-meeting">Meeting / Seminar / Workshop</label>
                                 </div>
 
                                 <!-- Other source option with free-text input -->
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" id="q4-other" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <input type="radio" id="q4-other" name="source"
+                                        class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
                                     <label for="q4-other" class="me-2 text-nowrap">
                                         Other(s), please specify:
                                     </label>
-                                    <input type="text" id="q4-other-text" class="q4-other-text bg-light border-0 border-bottom border-secondary outline-none w-100 px-1" aria-label="Specify other source information">
+                                    <input type="text" id="q4-other-text"
+                                        class="q4-other-text bg-light border-0 border-bottom border-secondary outline-none w-100 px-1"
+                                        aria-label="Specify other source information">
                                 </div>
 
                             </div>
@@ -381,7 +437,9 @@
 
                         <!-- Free-text feedback -->
                         <div class="col-12 col-sm-8">
-                            <textarea id="comments-textarea" class="feedback-textarea-fixed p-3 border border-light bg-light" placeholder="Which section(s) of the report did you find most informative or useful? What would you suggest to help us improve the report quality? Do you have any comment or suggestion on our sustainability performance or future reports?"></textarea>
+                            <textarea id="comments-textarea"
+                                class="feedback-textarea-fixed p-3 border border-light bg-light"
+                                placeholder="Which section(s) of the report did you find most informative or useful? What would you suggest to help us improve the report quality? Do you have any comment or suggestion on our sustainability performance or future reports?"></textarea>
                         </div>
 
                     </div>
@@ -391,7 +449,8 @@
                 <div class="d-flex justify-content-end align-items-center gap-4 pt-4">
 
                     <!-- Reset form -->
-                    <button type="reset" class="feedback-btn-reset border-0 bg-transparent" aria-label="Reset all form answers">
+                    <button type="reset" class="feedback-btn-reset border-0 bg-transparent"
+                        aria-label="Reset all form answers">
                         &lt;&lt; Reset
                     </button>
 
@@ -410,7 +469,8 @@
 
             <!-- Previous page: Report Verification -->
             <div class="col-6 p-0">
-                <a href="javascript:void(0);" class="feedback-page-nav-link text-decoration-none" aria-label="Navigate to previous page: Report Verification">
+                <a href="javascript:void(0);" class="feedback-page-nav-link text-decoration-none"
+                    aria-label="Navigate to previous page: Report Verification">
                     <div class="feedback-page-nav feedback-page-back d-flex align-items-center">
                         <div aria-hidden="true">
                             <img src="../assets/images/page-nav-icon.svg" class="feedback-page-nav-icon" alt="">
@@ -424,7 +484,8 @@
 
             <!-- Next page: Glossary -->
             <div class="col-6 p-0 text-end d-flex justify-content-end">
-                <a href="javascript:void(0);" class="feedback-page-nav-link text-decoration-none" aria-label="Navigate to next page: Glossary">
+                <a href="javascript:void(0);" class="feedback-page-nav-link text-decoration-none"
+                    aria-label="Navigate to next page: Glossary">
                     <div class="feedback-page-nav feedback-page-next d-flex align-items-center">
                         <p class="feedback-page-nav-title me-2 mb-0">
                             Glossary
@@ -449,11 +510,13 @@
                     <!-- Footer links -->
                     <p class="mb-0 text-white-5">
                         2026 &copy; |
-                        <a target="_blank" aria-label="Important notices (opens in a new window)" href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
+                        <a target="_blank" aria-label="Important notices (opens in a new window)"
+                            href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
                             Important notices
                         </a>
                         |
-                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)" href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
+                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)"
+                            href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
                             Privacy
                         </a>
                         |
@@ -476,7 +539,6 @@
         <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
         <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
         <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
-        <script src="../assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
         <!-- Site utility scripts -->
         <script src="../assets/js/qrcode.min.js" defer></script>
