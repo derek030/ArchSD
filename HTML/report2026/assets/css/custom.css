@@ -462,6 +462,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
   text-align: left;
   margin-top: 0;                  /* Space Before: 0pt */
   margin-bottom: 0.75rem;         /* Space After: 12pt is ~12px */
+  color: #000000;                     /* Standard body text color */
 }
 
 .p3-caption-style {
@@ -494,6 +495,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     letter-spacing: -0.01em;      /* Tracking: -10 is -10/1000em */
     text-align: left;
     margin-bottom: 0.625rem;      /* Space After: 10pt (10px) */
+    color: #000000;                     /* Standard body text color */
 }
 
 @media (max-width: 767.98px) {
@@ -699,6 +701,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: #000000;
     border-radius: 4px;
     transition: all 0.25s ease-in-out;
+}
+
+#comments-textarea::placeholder {
+    color: #A0A0A0;
+    opacity: 1; /* Ensures the color is not faded in some browsers like Firefox */
 }
 
 .form-footer-notice {
