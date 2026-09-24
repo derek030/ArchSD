@@ -701,8 +701,27 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transition: all 0.25s ease-in-out;
 }
 
-.feedback-btn-reset,
-.feedback-btn-submit {
+.form-footer-notice {
+    /* Add 45px space above this text */
+    margin-top: 45px !important;
+}
+
+.form-footer-notice a {
+    color: #ff32cd;
+    text-decoration: underline;
+}
+
+.form-footer-notice p {
+    /* Remove default paragraph margins to prevent extra space */
+    margin-bottom: 0 !important;
+}
+
+.form-footer-notice + .d-flex.justify-content-end {
+    margin-top: 100px !important;
+    padding-top: 0 !important; /* Override the existing pt-4 */
+}
+
+.feedback-btn-reset {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -710,6 +729,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: #565a5f !important;
     font-weight: 600;
     font-size: 0.95rem;
+    height: 2.75rem;
+    padding: 10px 24px !important;
+    border: 1px solid transparent !important;
+    transition: all 0.25s ease-in-out !important;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.feedback-btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent !important;
+    color: #ff32cd !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    height: 2.75rem;
     padding: 10px 24px !important;
     border: 1px solid transparent !important;
     transition: all 0.25s ease-in-out !important;
@@ -723,6 +759,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .feedback-btn-submit:hover {
+    color: #565a5f !important;
     background-color: #82f000 !important;
     border-color: #82f000 !important;
 }
