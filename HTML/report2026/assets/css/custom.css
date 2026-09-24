@@ -833,28 +833,21 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* =================================================================
    Search Page Custom Layout
    ================================================================= */
-
-/* Spacing under the white header */
-main#main-content {
-    padding-top: var(--header-height) !important;
-    margin-top: 2rem !important;
-}
-
-/* Spacer to vertically align the first search result with the search input field */
-.search-results-align-spacer {
-    height: calc(1.2 * 3rem + 1.5rem); /* Matches Bootstrap h1.display-5 line-height and mb-4 spacing */
-}
-
-@media (max-width: 767.9px) {
-    /* Remove the vertical alignment spacer on mobile screens since columns stack vertically */
-    .search-results-align-spacer {
-        display: none !important;
+   @media (min-width: 992px) {
+    .search-page#main-content {
+        padding-top: 134px !important;
     }
 }
 
-/* =================================================================
-   Embedded Search Bar Style (Matches Design Screenshot)
-   ================================================================= */
+.embedded-search-input::placeholder {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #565A5F;
+    opacity: 1;
+}
 
 /* Container wrapping the input and the overlapping icon button */
 .embedded-search-wrapper {
@@ -862,7 +855,7 @@ main#main-content {
     width: 100%;
 }
 
-/* Rounded, clean input field with padding on the right for the button */
+/* clean input field with padding on the right for the button */
 .embedded-search-input {
     width: 100%;
     height: 48px;
@@ -898,10 +891,6 @@ main#main-content {
     transition: color 0.25s ease-in-out;
 }
 
-/* =================================================================
-   Search Results - Pink Title Styling
-   ================================================================= */
-
 /* Force search result links to use the brand pink color */
 #searchResults .result-title,
 #searchResults h3 a {
@@ -918,3 +907,10 @@ main#main-content {
     color: #ff32cd !important;
     text-decoration: underline !important;
 }
+
+@media (min-width: 992px) {
+    .content-align-spacer {
+        padding-top: 134px !important;
+    }
+}
+
