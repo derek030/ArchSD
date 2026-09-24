@@ -86,26 +86,26 @@ header.fixed-header.scrolled {background-color: #fff;}
 	cursor: pointer; z-index: 2; overflow: hidden; transition: background-color 0.3s ease;
 }
 /* .nav-toggle:hover, .nav-toggle:focus, .nav-wrapper.active .nav-toggle {background-color: #565a5f; outline-offset: -2px !important;} */
-/* default：粉紅色 */
+/* Default state */
 .nav-toggle {
     background-color: #ff32cd;
     transition: background-color 0.3s ease;
 }
 
-/* 變灰色的情況：Hover、鍵盤 Tab 聚焦、或者 Menu 打開時 (active) */
+/* Gray state: Active when hovered, Tab-focused, or when the menu is open */
 .nav-toggle:hover, 
 .nav-toggle:focus-visible, 
 .nav-wrapper.active .nav-toggle {
     background-color: #565a5f !important;
 }
 
-/* 鍵盤 Tab 聚焦時的綠色外框 */
+/* Accessibility: Highlight green border only during keyboard Tab navigation */
 .nav-toggle:focus-visible {
     outline: 3px solid #82f000 !important; 
     outline-offset: -3px !important;
 }
 
-/* 滑鼠點擊後，且 Menu 已經收起的情況下：變回粉紅色 */
+/* Mouse click focus cleanup: Instantly reverts back to pink when menu is closed */
 .nav-wrapper:not(.active) .nav-toggle:focus:not(:focus-visible) {
     background-color: #ff32cd;
     outline: none !important;
