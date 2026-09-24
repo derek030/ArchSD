@@ -686,3 +686,25 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-radius: 4px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
+
+/* =================================================================
+   Search Page Custom Layout
+   ================================================================= */
+
+/* Spacing under the white header */
+main#main-content {
+    padding-top: var(--header-height) !important;
+    margin-top: 2rem !important;
+}
+
+/* Spacer to vertically align the first search result with the search input field */
+.search-results-align-spacer {
+    height: calc(1.2 * 3rem + 1.5rem); /* Matches Bootstrap h1.display-5 line-height and mb-4 spacing */
+}
+
+@media (max-width: 767.9px) {
+    /* Remove the vertical alignment spacer on mobile screens since columns stack vertically */
+    .search-results-align-spacer {
+        display: none !important;
+    }
+}
