@@ -637,3 +637,28 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transform: translateY(1px);
     opacity: 0.9;
 }
+
+.skip-to-content {
+    position: absolute !important;
+    left: -9999px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    z-index: 10000;
+}
+
+.skip-to-content:focus {
+    left: 50% !important;
+    top: 15px !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 10px 20px !important;
+    background-color: #e5007d !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
