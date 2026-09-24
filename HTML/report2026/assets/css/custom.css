@@ -452,126 +452,232 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 ::selection {color: inherit; background: var(--mainGreenColor);}
 .material-topics-title ::selection {color: inherit; background: var(--mainPinkColor);}
 
-/* =================================================================
-   Feedback Form Dedicated Header Styles
-==================================================================== */
-.feedback-header {
-    width: 100%;
-    padding: 0;
+.p2-body-style {
+  /* Basic Character Formats */
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;                /* 16pt is a standard body size, equivalent to 16px */
+  font-weight: 300;               /* Corresponds to 'Light' font style */
+  line-height: 1.5;               /* Leading (24pt) / Font Size (16pt) */
+  letter-spacing: -0.01em;        /* Tracking: -10 is -10/1000em */
+  text-align: left;
+  margin-top: 0;                  /* Space Before: 0pt */
+  margin-bottom: 0.75rem;         /* Space After: 12pt is ~12px */
 }
 
-.feedback-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.p3-caption-style {
+    font-family: "Inter", sans-serif; /* Standard modern body font */
+    font-size: 1rem;                  /* 16px (standard highly legible body size) */
+    line-height: 1.35;                /* Standard compact paragraph vertical rhythm (~22px) */
+    letter-spacing: -0.015em;         /* Tracking: -15/1000 em for a clean modern finish */
+    text-align: left;
+    font-weight: 700; /* Bold weight for emphasis */
 }
 
-.feedback-logo-left {
-    display: flex;
-    justify-content: flex-start;
+.p4-table-title {
+    font-family: "Monda", sans-serif; 
+    font-weight: 700; /* Bold weight for emphasis */
+    font-size: 20pt;
+    line-height: 25pt; /* This is 'Leading' */
+    letter-spacing: -0.015em; /* This is 'Tracking' (-15/1000 em) */
+    font-kerning: normal; /* This is 'Kerning' */
+    text-align: left;
+    margin-top: 0.375rem;         /* Space Before: 6pt (6px) */
+    margin-bottom: 0.5rem;        /* Space After: 8pt (8px) */
+    color: #ff7adc;
 }
 
-.feedback-logo-left img {
-    width: auto;
-    height: 51px;
-    max-height: 51px;
-    padding: 0 !important;
-    margin: 0 !important;
+.p5-table-body {
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;       /* Equivalent to 14px */
+    font-weight: 400;             /* Corresponds to 'Regular' font style */
+    line-height: 1.4;             /* A proportional line height (approx. 20px) */
+    letter-spacing: -0.01em;      /* Tracking: -10 is -10/1000em */
+    text-align: left;
+    margin-bottom: 0.625rem;      /* Space After: 10pt (10px) */
 }
 
-.feedback-logo-right {
-    display: flex;
-    justify-content: flex-end;
+@media (max-width: 767.98px) {
+  .mobile-h1 {
+    font-family: "Inter", sans-serif; /* Assuming 'Inter' is your heading font */
+    font-size: 2.3rem;            /* Equivalent to 28pt or ~37px */
+    line-height: 1.21;              /* Leading (34pt) / Font Size (28pt) */
+    letter-spacing: -0.01em;        /* Tracking: -10 is -10/1000em */
+    font-kerning: auto;             /* Browser-optimized kerning, similar to 'Optical' */
+    text-align: left;
+    margin-top: 0.1875rem;            /* Space Before: 2.25pt is ~3px */
+  }
+
+  .mobile-h2 {
+    /* Basic Character Formats */
+    font-size: 1.8rem;              /* 22pt is approx. 29px */
+    line-height: 1.15;              /* Leading (25pt) / Font Size (22pt) */
+    letter-spacing: -0.01em;        /* Tracking: -10 is -10/1000em */
+    font-kerning: auto;             /* 'Optical' Kerning */
+    text-align: left;
+    margin-top: 1.25rem;            /* Space Before: 15pt is ~20px */
+    margin-bottom: 0.5rem;          /* Space After: 6pt is ~8px */
+  }
 }
 
-.feedback-logo-right img {
-    width: auto;
-    height: 66px;
-    max-height: 66px;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-@media (max-width: 767.9px) {
-    .feedback-logo-left img {
-        height: 38px;
-        max-height: 38px;
-    }
-    .feedback-logo-right img {
-        height: 50px;
-        max-height: 50px;
-    }
-}
 
 /* =================================================================
    Feedback Form Custom Styles
 ==================================================================== */
-.feedback-body {
-    font-family: sans-serif;
-    color: #374151;
-}
-
+/* --- 1. Brand & Accent Styling --- */
 .feedback-brand-pink {
-    color: #e5007d;
+    color: #ff32cd;
 }
 
 .feedback-border-brand-pink {
-    border-color: #e5007d;
+    border-top: 5px solid #ff32cd !important;
 }
 
-.feedback-form-input-custom {
+/* --- 2. Layout & Spacing (Based on Design Specifications) --- */
+
+/* Align form with the intro text on desktop */
+@media (min-width: 992px) {
+    .feedback-page #feedbackForm {
+        padding-top: 134px;
+        padding-left: 0 !important;
+    }
+}
+
+/* Spacing for the main "Feedback" title block */
+.feedback-page .title-block {
+    margin-bottom: 32px;
+    padding-bottom: 0;
+}
+
+/* Space from the pink border to the content below it */
+.feedback-page #feedbackForm fieldset,
+.feedback-page #feedbackForm .border-top {
+    padding-top: 25px !important;
+}
+
+/* Space between entire question blocks (fieldsets) */
+.feedback-page #feedbackForm fieldset,
+.feedback-page #feedbackForm .mb-4 {
+    margin-bottom: 45px !important;
+}
+
+/* Space between a question's title and its description text */
+.feedback-page .col-sm-4 .p4-table-title {
+    margin-bottom: 32px !important;
+}
+
+/* Vertical spacing (20px total) between checkbox/radio options */
+.option-row {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* --- 3. Dynamic Baseline Alignment for Labels & Inputs --- */
+
+/* 
+ * Forces options to align to the top (flex-start) rather than centered.
+ * This ensures that when a label wraps to multiple lines (like Social Media),
+ * the checkbox or radio button stays perfectly aligned with the first line.
+ */
+.option-row.d-flex.align-items-center {
+    align-items: flex-start !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Adds a slight top margin to the input to align baseline with the first line of text */
+.option-row.d-flex.align-items-center .feedback-form-input-custom {
+    margin-top: 3px !important;
+}
+
+/* Removes bottom margin from labels to keep row heights consistent */
+.option-row label,
+.option-row label.p5-table-body {
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0 !important;
+}
+
+/* --- 4. Rating Matrix (Question 2) Alignment Fixes --- */
+
+/* Ensures the rating header uses full column width */
+.feedback-page .rating-header-row {
+    padding: 0 !important;
+}
+
+/* Vertically centers the rating criteria labels with the radio buttons */
+.feedback-page .rating-matrix-row {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    border-bottom: 1px solid #edf0f0;
+    padding: 8px 0;
+}
+
+.feedback-page .rating-matrix-label {
+    padding-right: 1.5rem;
+}
+
+/* Removes bottom margin from rating matrix header labels */
+.text-muted .p5-table-body {
+    margin-bottom: 0 !important;
+}
+
+/* --- 5. Custom Form Inputs (Checkboxes & Radios) --- */
+
+.feedback-form-checkbox,
+.feedback-form-radio {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    flex-shrink: 0;
-    margin-top: 2px;
-    height: 1.25rem;
-    width: 1.25rem;
-    display: inline-block;
-    vertical-align: middle;
-    background-origin: border-box;
-    user-select: none;
-    background-color: #fff;
-    border: 1px solid #8a909a !important;
-    transition: border-color 0.15s ease-in-out;
-}
-
-.feedback-form-input-custom:hover {
-    border-color: #e5007d !important;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc !important;
+    background-color: #ffffff;
+    outline: none;
     cursor: pointer;
-}
-
-.feedback-form-input-custom:checked {
-    border-color: transparent !important;
-    background-color: #e5007d;
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.feedback-form-radio {
-    border-radius: 100%;
-}
-
-.feedback-form-radio:checked {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .feedback-form-checkbox {
-    border-radius: 0;
+    border-radius: 3px;
 }
 
-.feedback-form-checkbox:checked {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+.feedback-form-radio {
+    border-radius: 50%;
 }
+
+/* Hover State */
+.feedback-form-checkbox:hover,
+.feedback-form-radio:hover {
+    border-color: #ff32cd !important;
+}
+
+/* Checked State */
+.feedback-form-checkbox:checked {
+    background-color: #ff7adc !important;
+    border-color: #ff7adc !important;
+}
+
+.feedback-form-radio:checked {
+    background-color: #ff32cd !important;
+    border-color: #ff32cd !important;
+}
+
+/* Accessibility Focus Outline */
+.feedback-form-checkbox:focus-visible,
+.feedback-form-radio:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 122, 220, 0.5);
+}
+
+/* --- 6. Text Area & Action Buttons --- */
 
 .feedback-textarea-fixed {
-    width: 100% !important;       
-    height: 300px !important;       
-    min-height: 300px !important;   
-    max-height: 300px !important;  
-    resize: none !important;        
+    width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+    resize: none !important;
     box-sizing: border-box !important;
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
@@ -581,79 +687,30 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transition: all 0.25s ease-in-out;
 }
 
-/* =================================================================
-   Feedback Page Navigation Styles (分頁導航與圖示樣式)
-==================================================================== */
-.feedback-page-nav-line {
-    border-top: none !important;
-    padding-top: 2rem;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-    margin-left: 0 !important;  
-    margin-right: 0 !important; 
-}
-
-.feedback-page-nav-link {
-    text-decoration: none !important;
-    color: #565a5f !important;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.feedback-page-nav {
-    display: flex;
-    align-items: center;
-}
-
-.feedback-page-nav-icon,
-.feedback-page-nav img {
-    width: 44px; 
-    height: auto;
-    transition: all 0.3s ease;
-}
-
-.feedback-page-nav img {
-    filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(89%) contrast(90%);
-}
-
-.feedback-page-next img {
-    transform: rotate(180deg);
-}
-
-.feedback-page-nav-title {
-    margin: 0;
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #565a5f;
-    transition: color 0.3s ease;
-}
-
-
-/* =================================================================
-   4. Feedback Form Buttons (表單重置與提交按鈕)
-==================================================================== */
-
 .feedback-btn-reset,
 .feedback-btn-submit {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent !important; 
-    color: #565a5f !important;             
+    background-color: transparent !important;
+    color: #565a5f !important;
     font-weight: 600;
     font-size: 0.95rem;
-    padding: 10px 24px !important;             
-    border: 1px solid transparent !important;  
+    padding: 10px 24px !important;
+    border: 1px solid transparent !important;
     transition: all 0.25s ease-in-out !important;
     cursor: pointer;
     text-decoration: none !important;
 }
 
-.feedback-btn-reset:hover,
+.feedback-btn-reset:hover {
+    background-color: #ff32cd !important;
+    border-color: #ff32cd !important;
+}
+
 .feedback-btn-submit:hover {
-    background-color: #82f000 !important;      
-    color: #565a5f !important;               
-    border-color: #82f000 !important;         
+    background-color: #82f000 !important;
+    border-color: #82f000 !important;
 }
 
 .feedback-btn-reset:active,
@@ -661,6 +718,36 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transform: translateY(1px);
     opacity: 0.9;
 }
+
+/* --- 7. Button & Page Navigation Precise Spacing (130px) --- */
+
+/* Reset bottom margin on form to prevent spacing leakage */
+.feedback-page #feedbackForm {
+    margin-bottom: 0 !important;
+}
+
+/* Clean bottom padding and margin on action button row */
+.feedback-page #feedbackForm .d-flex.justify-content-end.pt-4 {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Locks a precise 130px spacing between form submit row and pagination */
+.prev-next {
+    margin-top: 130px !important;
+    padding-top: 0 !important;
+    width: 100%;
+}
+
+/* Ensure old navigation classes do not compound layout spacing */
+.feedback-page-nav-line {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* ==========================================================================
+   skip content link for accessibility (visually hidden but accessible to screen readers)
+   ========================================================================== */
 
 .skip-to-content {
     position: absolute !important;
@@ -679,7 +766,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: auto !important;
     height: auto !important;
     padding: 10px 20px !important;
-    background-color: #e5007d !important;
+    background-color: #ff32cd !important;
     color: #ffffff !important;
     font-weight: 600;
     text-decoration: none !important;
@@ -762,7 +849,7 @@ main#main-content {
 /* Force search result links to use the brand pink color */
 #searchResults .result-title,
 #searchResults h3 a {
-    color: #e5007d !important; 
+    color: #ff32cd !important; 
     text-decoration: none !important;
     transition: color 0.25s ease-in-out;
 }
