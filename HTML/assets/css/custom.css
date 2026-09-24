@@ -74,7 +74,6 @@ header.fixed-header.scrolled {background-color: #fff;}
 .site-title {display: flex; justify-content: flex-end;}
 .asd-logo img {width: auto; height: 51px; max-height: 51px; padding-right: 1rem; transition: all 0.3s ease;}
 .site-title img {width: 100%; height: 66px; max-height: 66px; padding-left: 1rem; filter: brightness(0) invert(1); transition: all 0.3s ease;}
-.site-title2 img {width: 100%; height: 66px; max-height: 66px; padding-left: 1rem; transition: all 0.3s ease;}
 .nav-menu .site-title {padding-top: 0.5rem;}
 /* menu */
 .nav-wrapper {
@@ -434,10 +433,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 ==================================================================== */
 .feedback-header {
     width: 100%;
-    padding: 0; /* 移除容器內部的 Padding */
+    padding: 0;
 }
 
-/* 使用 Flex 佈局，讓兩側 Logo 撐滿並貼緊 Container 的邊緣 */
 .feedback-header-row {
     display: flex;
     justify-content: space-between;
@@ -445,7 +443,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 100%;
 }
 
-/* 左邊 Logo：完全靠左，與下方 "Feedback" 完美左對齊 */
 .feedback-logo-left {
     display: flex;
     justify-content: flex-start;
@@ -455,11 +452,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: auto;
     height: 51px;
     max-height: 51px;
-    padding: 0 !important; /* 清除所有可能干擾對齊的內縮 */
+    padding: 0 !important;
     margin: 0 !important;
 }
 
-/* 右邊 Logo：完全靠右，與下方表單最右側完美右對齊 */
 .feedback-logo-right {
     display: flex;
     justify-content: flex-end;
@@ -469,11 +465,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: auto;
     height: 66px;
     max-height: 66px;
-    padding: 0 !important; /* 清除所有可能干擾對齊的內縮 */
+    padding: 0 !important;
     margin: 0 !important;
 }
 
-/* 手機版適應：等比例縮小 Logo 尺寸 */
 @media (max-width: 767.9px) {
     .feedback-logo-left img {
         height: 38px;
@@ -485,15 +480,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
-
 /* =================================================================
    Feedback Form Custom Styles
 ==================================================================== */
-
-/* 基礎頁面樣式與品牌顏色設定 */
 .feedback-body {
     font-family: sans-serif;
-    color: #374151; /* 相當於 text-gray-700 */
+    color: #374151;
 }
 
 .feedback-brand-pink {
@@ -504,7 +496,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-color: #e5007d;
 }
 
-/* 複選框 (Checkbox) 與單選框 (Radio) 的自訂外觀 */
 .feedback-form-input-custom {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -518,20 +509,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     background-origin: border-box;
     user-select: none;
     background-color: #fff;
-    border-width: 1px;
-    border-color: #d1d5db; /* 相當於 gray-300 */
+    border: 1px solid #8a909a !important;
+    transition: border-color 0.15s ease-in-out;
 }
 
-/* 點選/選取狀態的樣式 */
+.feedback-form-input-custom:hover {
+    border-color: #e5007d !important;
+    cursor: pointer;
+}
+
 .feedback-form-input-custom:checked {
-    border-color: transparent;
+    border-color: transparent !important;
     background-color: #e5007d;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* 單選框 (Radio) 的圓形外觀 */
 .feedback-form-radio {
     border-radius: 100%;
 }
@@ -540,7 +534,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 }
 
-/* 複選框 (Checkbox) 的方形外觀 */
 .feedback-form-checkbox {
     border-radius: 0;
 }
@@ -550,31 +543,30 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .feedback-textarea-fixed {
-    width: 100% !important;        /* 寬度撐滿右側的 2/3 欄位 */
-    height: 300px !important;       /* 🟢 鎖定高度為 300px (約可容納 10 行文字) */
-    min-height: 300px !important;   /* 🟢 限制最小高度 */
-    max-height: 300px !important;   /* 🟢 限制最大高度 */
-    resize: none !important;        /* 🔴 關鍵：徹底禁用右下角的拖拉縮放功能 */
+    width: 100% !important;       
+    height: 300px !important;       
+    min-height: 300px !important;   
+    max-height: 300px !important;  
+    resize: none !important;        
     box-sizing: border-box !important;
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     line-height: 1.5;
     color: #000000;
-    border-radius: 4px;             /* 輕微圓角顯得更精緻 */
+    border-radius: 4px;
     transition: all 0.25s ease-in-out;
 }
 
 /* =================================================================
-   Feedback Form Navigation & Footer Alignment Styles
+   Feedback Page Navigation Styles (分頁導航與圖示樣式)
 ==================================================================== */
-
-/* 分頁導覽線與外層容器 */
 .feedback-page-nav-line {
+    border-top: none !important;
     padding-top: 2rem;
     margin-top: 5rem;
     margin-bottom: 3rem;
-    margin-left: 0 !important;   /* 🟢 消除 Bootstrap Row 預設向左偏移 */
-    margin-right: 0 !important;  /* 🟢 消除 Bootstrap Row 預設向右偏移 */
+    margin-left: 0 !important;  
+    margin-right: 0 !important; 
 }
 
 .feedback-page-nav-link {
@@ -589,56 +581,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     align-items: center;
 }
 
-/* =================================================================
-   Feedback Page Navigation Icons & Colors
-==================================================================== */
-
-/* 分頁導覽外層容器 */
-.feedback-page-nav-line {
-    border-top: none !important;
-    padding-top: 2rem;
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-.feedback-page-nav-link {
-    text-decoration: none !important;
-    color: #565a5f !important; /* 預設文字顏色 */
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.feedback-page-nav {
-    display: flex;
-    align-items: center;
-}
-
-/* 🟢 控制圖示的尺寸 */
 .feedback-page-nav-icon,
 .feedback-page-nav img {
-    width: 44px;  /* 配合您 custom.css 第 185 行的標準尺寸 */
+    width: 44px; 
     height: auto;
     transition: all 0.3s ease;
 }
 
-/* 🟢 預設圖示顏色：轉為暗灰色 (#565a5f) */
 .feedback-page-nav img {
-    width: 44px;
-    height: auto;
-    /* 精確轉換為 #565a5f 暗灰色 */
-	filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(89%) contrast(90%);
+    filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(89%) contrast(90%);
 }
 
-/* 🟢 旋轉方向調整 */
-/* 返回圖示：向左（預設若為向左則不需旋轉，若原本向右則設為 rotate(180deg) 或不旋轉） */
-.feedback-page-back img {
-    /* 如果您的 page-nav-icon.svg 預設是向左，則不需要旋轉；若預設向右，請取消下方註解： */
-    /* transform: rotate(0deg); */
-}
-
-/* 前進圖示：向右（配合原本 page-nav-next 的旋轉 180 度設計） */
 .feedback-page-next img {
     transform: rotate(180deg);
 }
@@ -651,8 +604,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transition: color 0.3s ease;
 }
 
+
 /* =================================================================
-   Feedback Form Buttons - Minimal Gray to Brand Green Hover
+   4. Feedback Form Buttons (表單重置與提交按鈕)
 ==================================================================== */
 
 .feedback-btn-reset,
@@ -660,30 +614,26 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent !important; /* ⚪ 平常狀態：完全透明無背景 */
-    color: #565a5f !important;                 /* 🟢 平常狀態：使用您的專屬暗灰色 */
+    background-color: transparent !important; 
+    color: #565a5f !important;             
     font-weight: 600;
     font-size: 0.95rem;
-    padding: 10px 24px !important;             /* 預留與 Hover 相同的內距，防止版面跳動 */
-    border: 1px solid transparent !important;  /* 預留透明邊框 */
-    transition: all 0.25s ease-in-out !important; /* 讓 Hover 變色非常滑順 */
+    padding: 10px 24px !important;             
+    border: 1px solid transparent !important;  
+    transition: all 0.25s ease-in-out !important;
     cursor: pointer;
     text-decoration: none !important;
 }
 
-/* 🟢 滑鼠懸停（Hover）時：文字維持暗灰色，並顯現亮綠色底色 (#82f000) */
 .feedback-btn-reset:hover,
 .feedback-btn-submit:hover {
-    background-color: #82f000 !important;      /* 🟢 顯現亮綠色背景 */
-    color: #565a5f !important;                 /* 🟢 文字依然保持暗灰色 */
-    border-color: #82f000 !important;          /* 邊框同步轉為綠色 */
+    background-color: #82f000 !important;      
+    color: #565a5f !important;               
+    border-color: #82f000 !important;         
 }
 
-/* 點擊（Active）時的輕微回饋 */
 .feedback-btn-reset:active,
 .feedback-btn-submit:active {
     transform: translateY(1px);
     opacity: 0.9;
 }
-
-
