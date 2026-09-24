@@ -21,24 +21,26 @@
 
 <body class="feedback-body bg-white position-relative">
 
+    <a href="#main-content" class="skip-to-content visually-hidden-focusable">Skip to main content</a>
+
     <!-- Main page container -->
     <div class="container">
 
         <!-- Page header and site logos -->
-        <header class="feedback-header mb-5 mt-4">
+        <header class="feedback-header mb-5 mt-4" role="banner">
             <div class="feedback-header-row">
 
                 <!-- ArchSD logo -->
                 <div class="feedback-logo-left">
-                    <a href="https://www.archsd.gov.hk/en/" class="nav-link" target="_blank">
-                        <img src="../assets/images/asd-logo.svg" alt="Site Logo" title="Sustainability Report 2026">
+                    <a href="https://www.archsd.gov.hk/en/" class="nav-link" target="_blank" rel="noopener" aria-label="Architectural Services Department (Opens in a new window)">
+                        <img src="../assets/images/asd-logo.svg" alt="Architectural Services Department Logo">
                     </a>
                 </div>
 
                 <!-- Sustainability Report 2026 logo -->
                 <div class="feedback-logo-right">
-                    <a href="index.html" class="nav-link">
-                        <img src="../assets/images/SD2026.svg" alt="Site Title" title="Sustainability Report 2026">
+                    <a href="index.html" class="nav-link" aria-label="Go to Sustainability Report 2026 Homepage">
+                        <img src="../assets/images/SD2026.svg" alt="Sustainability Report 2026 Logo">
                     </a>
                 </div>
 
@@ -48,11 +50,10 @@
         <!-- menu -->
         <div id="nav-placeholder"></div>
 
-        <!-- Feedback page content -->
-        <main class="row g-lg-5 gy-4">
+        <main id="main-content" class="row g-lg-5 gy-4" tabindex="-1">
 
             <!-- Introduction panel -->
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4" role="region" aria-label="Introduction">
                 <h1 class="h1 fw-light text-secondary">Feedback</h1>
 
                 <div class="text-muted mt-4">
@@ -69,15 +70,15 @@
             <!-- Feedback questionnaire -->
             <form id="feedbackForm" class="col-12 col-lg-8 ps-lg-4 mt-lg-5">
 
-                <!-- Question 1: Purpose of reading the report -->
-                <div class="border-top border-2 feedback-border-brand-pink pt-3 mb-4">
+                <!-- Question 1 -->
+                <fieldset class="border-top border-2 feedback-border-brand-pink pt-3 mb-4">
                     <div class="row">
 
                         <!-- Question title and description -->
                         <div class="col-12 col-sm-4 mb-3 mb-sm-0">
-                            <label class="fw-semibold feedback-brand-pink d-block">
+                            <legend class="fw-semibold feedback-brand-pink d-block fs-6 border-0 p-0 m-0">
                                 Why did you read our Sustainability Report 2026?
-                            </label>
+                            </legend>
                             <p class="small text-muted mt-1 mb-0">
                                 You may choose more than one.
                             </p>
@@ -88,45 +89,45 @@
                             <div class="d-flex flex-column gap-2">
 
                                 <div class="d-flex align-items-start pt-1">
-                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
-                                    <label>General Interest</label>
+                                    <input type="checkbox" id="q1-opt1" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <label for="q1-opt1">General Interest</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
-                                    <label>Our Sustainability Performance Benchmarking</label>
+                                    <input type="checkbox" id="q1-opt2" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <label for="q1-opt2">Our Sustainability Performance Benchmarking</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
-                                    <label>Research and Educational Purposes</label>
+                                    <input type="checkbox" id="q1-opt3" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <label for="q1-opt3">Research and Educational Purposes</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="checkbox" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
-                                    <label>Investment Purposes</label>
+                                    <input type="checkbox" id="q1-opt4" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
+                                    <label for="q1-opt4">Investment Purposes</label>
                                 </div>
 
                                 <!-- Other reason option with free-text input -->
                                 <div class="d-flex align-items-start border-top border-light pt-2">
                                     <input type="checkbox" id="q1-other" class="feedback-form-input-custom feedback-form-checkbox q1-checkbox me-3 mt-1">
-                                    <label class="me-2 text-nowrap">
+                                    <label for="q1-other" class="me-2 text-nowrap">
                                         Other(s), please specify:
                                     </label>
-                                    <input type="text" class="q1-other-text bg-light border-0 border-bottom border-secondary outline-none w-100 px-1">
+                                    <input type="text" id="q1-other-text" class="q1-other-text bg-light border-0 border-bottom border-secondary outline-none w-100 px-1" aria-label="Specify other reason for reading the report">
                                 </div>
 
                             </div>
                         </div>
 
                     </div>
-                </div>
+                </fieldset>
 
-                <!-- Question 2: Sustainability Report rating matrix -->
-                <div class="w-100 mb-4">
-
+                <!-- Question 2 -->
+                <fieldset class="w-100 mb-4 border-0 p-0 m-0">
+                    
                     <!-- Rating scale header -->
-                    <div class="row mb-1 d-none d-sm-flex">
+                    <div class="row mb-1 d-none d-sm-flex" aria-hidden="true">
                         <div class="col-sm-4"></div>
                         <div class="col-sm-8">
                             <div class="row text-center small text-muted fw-normal">
@@ -147,9 +148,9 @@
 
                         <!-- Rating section title -->
                         <div class="col-12 col-sm-4 mb-3 mb-sm-0">
-                            <label class="fw-semibold feedback-brand-pink d-block">
+                            <legend class="fw-semibold feedback-brand-pink d-block fs-6 border-0 p-0 m-0">
                                 Please rate the quality of our Sustainability Report 2026
-                            </label>
+                            </legend>
                             <p class="small text-muted mt-1 mb-0">
                                 based on the following criteria:
                             </p>
@@ -161,87 +162,87 @@
 
                                 <!-- Rating: Content clarity -->
                                 <div class="row align-items-center border-bottom border-light pb-2">
-                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary">
+                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary" id="clarity-title">
                                         Content clarity
                                     </div>
                                     <div class="col d-flex justify-content-around mt-1 mt-sm-0">
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="clarity" value="excellent" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Excellent</label>
+                                            <input type="radio" id="clarity-excellent" name="clarity" value="excellent" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Excellent">
+                                            <label for="clarity-excellent" class="d-sm-none small text-muted">Excellent</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="clarity" value="good" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Good</label>
+                                            <input type="radio" id="clarity-good" name="clarity" value="good" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Good">
+                                            <label for="clarity-good" class="d-sm-none small text-muted">Good</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="clarity" value="fair" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Fair</label>
+                                            <input type="radio" id="clarity-fair" name="clarity" value="fair" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Fair">
+                                            <label for="clarity-fair" class="d-sm-none small text-muted">Fair</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="clarity" value="marginal" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Marginal</label>
+                                            <input type="radio" id="clarity-marginal" name="clarity" value="marginal" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Marginal">
+                                            <label for="clarity-marginal" class="d-sm-none small text-muted">Marginal</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="clarity" value="poor" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Poor</label>
+                                            <input type="radio" id="clarity-poor" name="clarity" value="poor" class="feedback-form-input-custom feedback-form-radio" aria-label="Content clarity: Poor">
+                                            <label for="clarity-poor" class="d-sm-none small text-muted">Poor</label>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Rating: Ease of finding information -->
                                 <div class="row align-items-center border-bottom border-light pb-2">
-                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary">
+                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary" id="ease-title">
                                         Ease of finding info
                                     </div>
                                     <div class="col d-flex justify-content-around mt-1 mt-sm-0">
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="ease" value="excellent" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Excellent</label>
+                                            <input type="radio" id="ease-excellent" name="ease" value="excellent" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Excellent">
+                                            <label for="ease-excellent" class="d-sm-none small text-muted">Excellent</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="ease" value="good" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Good</label>
+                                            <input type="radio" id="ease-good" name="ease" value="good" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Good">
+                                            <label for="ease-good" class="d-sm-none small text-muted">Good</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="ease" value="fair" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Fair</label>
+                                            <input type="radio" id="ease-fair" name="ease" value="fair" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Fair">
+                                            <label for="ease-fair" class="d-sm-none small text-muted">Fair</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="ease" value="marginal" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Marginal</label>
+                                            <input type="radio" id="ease-marginal" name="ease" value="marginal" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Marginal">
+                                            <label for="ease-marginal" class="d-sm-none small text-muted">Marginal</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="ease" value="poor" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Poor</label>
+                                            <input type="radio" id="ease-poor" name="ease" value="poor" class="feedback-form-input-custom feedback-form-radio" aria-label="Ease of finding information: Poor">
+                                            <label for="ease-poor" class="d-sm-none small text-muted">Poor</label>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Rating: Overall report quality -->
                                 <div class="row align-items-center pb-2">
-                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary">
+                                    <div class="col-12 col-sm-2 text-start small fw-medium text-secondary" id="overall-title">
                                         Overall rating
                                     </div>
                                     <div class="col d-flex justify-content-around mt-1 mt-sm-0">
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="overall" value="excellent" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Excellent</label>
+                                            <input type="radio" id="overall-excellent" name="overall" value="excellent" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Excellent">
+                                            <label for="overall-excellent" class="d-sm-none small text-muted">Excellent</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="overall" value="good" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Good</label>
+                                            <input type="radio" id="overall-good" name="overall" value="good" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Good">
+                                            <label for="overall-good" class="d-sm-none small text-muted">Good</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="overall" value="fair" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Fair</label>
+                                            <input type="radio" id="overall-fair" name="overall" value="fair" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Fair">
+                                            <label for="overall-fair" class="d-sm-none small text-muted">Fair</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="overall" value="marginal" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Marginal</label>
+                                            <input type="radio" id="overall-marginal" name="overall" value="marginal" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Marginal">
+                                            <label for="overall-marginal" class="d-sm-none small text-muted">Marginal</label>
                                         </div>
                                         <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" name="overall" value="poor" class="feedback-form-input-custom feedback-form-radio">
-                                            <label class="d-sm-none small text-muted">Poor</label>
+                                            <input type="radio" id="overall-poor" name="overall" value="poor" class="feedback-form-input-custom feedback-form-radio" aria-label="Overall rating: Poor">
+                                            <label for="overall-poor" class="d-sm-none small text-muted">Poor</label>
                                         </div>
                                     </div>
                                 </div>
@@ -250,17 +251,17 @@
                         </div>
 
                     </div>
-                </div>
+                </fieldset>
 
-                <!-- Question 3: Respondent profile -->
-                <div class="border-top border-2 feedback-border-brand-pink pt-3 mb-4">
+                <!-- Question 3 -->
+                <fieldset class="border-top border-2 feedback-border-brand-pink pt-3 mb-4">
                     <div class="row">
 
                         <!-- Question title -->
                         <div class="col-12 col-sm-4 mb-3 mb-sm-0">
-                            <label class="fw-semibold feedback-brand-pink d-block">
+                            <legend class="fw-semibold feedback-brand-pink d-block fs-6 border-0 p-0 m-0">
                                 Which of the following best describes you?
-                            </label>
+                            </legend>
                         </div>
 
                         <!-- Respondent type options -->
@@ -268,52 +269,52 @@
                             <div class="d-flex flex-column gap-2">
 
                                 <div class="d-flex align-items-start pt-1">
-                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>Academic / Professional Body</label>
+                                    <input type="radio" id="user-type-academic" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="user-type-academic">Academic / Professional Body</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>ArchSD's Staff</label>
+                                    <input type="radio" id="user-type-staff" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="user-type-staff">ArchSD's Staff</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>
+                                    <input type="radio" id="user-type-industry" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="user-type-industry">
                                         Construction industry / Consultant / Contractor / Supplier
                                     </label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>General Public</label>
+                                    <input type="radio" id="user-type-public" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="user-type-public">General Public</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>Non-governmental Organisation</label>
+                                    <input type="radio" id="user-type-ngo" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="user-type-ngo">Non-governmental Organisation</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>Other Government Department</label>
+                                    <input type="radio" id="user-type-gov" name="user_type" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="user-type-gov">Other Government Department</label>
                                 </div>
 
                             </div>
                         </div>
 
                     </div>
-                </div>
+                </fieldset>
 
-                <!-- Question 4: How the respondent learned about the report -->
-                <div class="border-top border-2 feedback-border-brand-pink pt-3 mb-4">
+                <!-- Question 4 -->
+                <fieldset class="border-top border-2 feedback-border-brand-pink pt-3 mb-4">
                     <div class="row">
 
                         <!-- Question title -->
                         <div class="col-12 col-sm-4 mb-3 mb-sm-0">
-                            <label class="fw-semibold feedback-brand-pink d-block">
+                            <legend class="fw-semibold feedback-brand-pink d-block fs-6 border-0 p-0 m-0">
                                 Where did you learn about the ArchSD Sustainability Report?
-                            </label>
+                            </legend>
                         </div>
 
                         <!-- Information source options -->
@@ -321,66 +322,66 @@
                             <div class="d-flex flex-column gap-2">
 
                                 <div class="d-flex align-items-start pt-1">
-                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>
+                                    <input type="radio" id="source-massmedia" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="source-massmedia">
                                         Mass media (e.g. TV, newspaper, magazine, radio)
                                     </label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>
+                                    <input type="radio" id="source-internet" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="source-internet">
                                         Internet (e.g. ArchSD Website and search engine)
                                     </label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>Exhibition</label>
+                                    <input type="radio" id="source-exhibition" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="source-exhibition">Exhibition</label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>
+                                    <input type="radio" id="source-socialmedia" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="source-socialmedia">
                                         Social Media (e.g. Archi Tour@Facebook /
                                         architourhk@Instagram / ARCHSDGOVHK@YouTube)
                                     </label>
                                 </div>
 
                                 <div class="d-flex align-items-start border-top border-light pt-2">
-                                    <input type="radio" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label>Meeting / Seminar / Workshop</label>
+                                    <input type="radio" id="source-meeting" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
+                                    <label for="source-meeting">Meeting / Seminar / Workshop</label>
                                 </div>
 
                                 <!-- Other source option with free-text input -->
                                 <div class="d-flex align-items-start border-top border-light pt-2">
                                     <input type="radio" id="q4-other" name="source" class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label class="me-2 text-nowrap">
+                                    <label for="q4-other" class="me-2 text-nowrap">
                                         Other(s), please specify:
                                     </label>
-                                    <input type="text" class="q4-other-text bg-light border-0 border-bottom border-secondary outline-none w-100 px-1">
+                                    <input type="text" id="q4-other-text" class="q4-other-text bg-light border-0 border-bottom border-secondary outline-none w-100 px-1" aria-label="Specify other source information">
                                 </div>
 
                             </div>
                         </div>
 
                     </div>
-                </div>
+                </fieldset>
 
-                <!-- Question 5: Additional comments -->
+                <!-- Question 5 -->
                 <div class="border-top border-2 feedback-border-brand-pink pt-3 mb-4">
                     <div class="row">
 
                         <!-- Question title -->
                         <div class="col-12 col-sm-4 mb-3 mb-sm-0">
-                            <label class="fw-semibold feedback-brand-pink d-block">
+                            <label for="comments-textarea" class="fw-semibold feedback-brand-pink d-block">
                                 Additional Comments
                             </label>
                         </div>
 
                         <!-- Free-text feedback -->
                         <div class="col-12 col-sm-8">
-                            <textarea class="feedback-textarea-fixed p-3 border border-light bg-light" placeholder="Which section(s) of the report did you find most informative or useful? What would you suggest to help us improve the report quality? Do you have any comment or suggestion on our sustainability performance or future reports?"></textarea>
+                            <textarea id="comments-textarea" class="feedback-textarea-fixed p-3 border border-light bg-light" placeholder="Which section(s) of the report did you find most informative or useful? What would you suggest to help us improve the report quality? Do you have any comment or suggestion on our sustainability performance or future reports?"></textarea>
                         </div>
 
                     </div>
@@ -390,12 +391,12 @@
                 <div class="d-flex justify-content-end align-items-center gap-4 pt-4">
 
                     <!-- Reset form -->
-                    <button type="reset" class="feedback-btn-reset border-0 bg-transparent">
+                    <button type="reset" class="feedback-btn-reset border-0 bg-transparent" aria-label="Reset all form answers">
                         &lt;&lt; Reset
                     </button>
 
                     <!-- Submit form -->
-                    <button type="submit" class="feedback-btn-submit border-0">
+                    <button type="submit" class="feedback-btn-submit border-0" aria-label="Submit feedback form">
                         Submit &gt;&gt;
                     </button>
 
@@ -405,11 +406,11 @@
         </main>
 
         <!-- Previous and next page navigation -->
-        <div class="feedback-page-nav-line row justify-content-between mt-5">
+        <nav class="feedback-page-nav-line row justify-content-between mt-5" aria-label="Page Navigation">
 
             <!-- Previous page: Report Verification -->
             <div class="col-6 p-0">
-                <a href="report-verification.html" class="feedback-page-nav-link text-decoration-none">
+                <a href="javascript:void(0);" class="feedback-page-nav-link text-decoration-none" aria-label="Navigate to previous page: Report Verification">
                     <div class="feedback-page-nav feedback-page-back d-flex align-items-center">
                         <div aria-hidden="true">
                             <img src="../assets/images/page-nav-icon.svg" class="feedback-page-nav-icon" alt="">
@@ -423,7 +424,7 @@
 
             <!-- Next page: Glossary -->
             <div class="col-6 p-0 text-end d-flex justify-content-end">
-                <a href="glossary.html" class="feedback-page-nav-link text-decoration-none">
+                <a href="javascript:void(0);" class="feedback-page-nav-link text-decoration-none" aria-label="Navigate to next page: Glossary">
                     <div class="feedback-page-nav feedback-page-next d-flex align-items-center">
                         <p class="feedback-page-nav-title me-2 mb-0">
                             Glossary
@@ -435,10 +436,10 @@
                 </a>
             </div>
 
-        </div>
+        </nav>
 
         <!-- Site footer -->
-        <footer class="site-footer mt-5">
+        <footer class="site-footer mt-5" role="contentinfo">
             <div class="row">
                 <div class="col-12">
 
@@ -448,15 +449,15 @@
                     <!-- Footer links -->
                     <p class="mb-0 text-white-5">
                         2026 &copy; |
-                        <a target="_blank" aria-label="This link will open in new window - Important notices" href="https://www.archsd.gov.hk/en/important-notices.html" rel="noreferrer">
+                        <a target="_blank" aria-label="Important notices (opens in a new window)" href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
                             Important notices
                         </a>
                         |
-                        <a target="_blank" aria-label="This link will open in new window - Privacy" href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noreferrer">
+                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)" href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
                             Privacy
                         </a>
                         |
-                        <a aria-label="This link will open in new window - Sitemap" href="sitemap.html">
+                        <a aria-label="Go to Sitemap" href="sitemap.html">
                             Sitemap
                         </a>
                     </p>
