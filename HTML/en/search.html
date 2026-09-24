@@ -46,7 +46,7 @@
         <!-- menu -->
         <div id="nav-placeholder"></div>
 
-        <main id="main-content" class="row g-lg-5 gy-4" tabindex="-1">
+        <main id="main-content" class="row " tabindex="-1">
 
             <!-- Left Column: Search Input Area (1/3 Width) -->
             <aside class="col-12 col-md-4">
@@ -55,10 +55,13 @@
                 <!-- Search Form -->
                 <form id="searchForm" role="search" class="mb-4">
                     <label for="searchInput" class="visually-hidden">Search Keyword</label>
-                    <div class="input-group">
-                        <input type="text" id="searchInput" placeholder="Search for..." class="form-control bg-light" required>
-                        <button type="submit" class="btn btn-outline-secondary" aria-label="Submit search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    <div class="embedded-search-wrapper">
+                        <input type="text" id="searchInput" placeholder="Search for..." class="embedded-search-input"
+                            required>
+
+                        <!-- Embedded Search Button inside the input -->
+                        <button type="submit" class="embedded-search-btn" aria-label="Submit search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-search" viewBox="0 0 16 16" aria-hidden="true">
                                 <path
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
@@ -66,6 +69,7 @@
                         </button>
                     </div>
                 </form>
+
 
                 <!-- Search Meta Info (Dynamic Frontend Render) -->
                 <div id="searchMeta" class="small text-body-secondary" role="status" aria-live="polite">

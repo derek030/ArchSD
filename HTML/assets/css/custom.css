@@ -708,3 +708,70 @@ main#main-content {
         display: none !important;
     }
 }
+
+/* =================================================================
+   Embedded Search Bar Style (Matches Design Screenshot)
+   ================================================================= */
+
+/* Container wrapping the input and the overlapping icon button */
+.embedded-search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Rounded, clean input field with padding on the right for the button */
+.embedded-search-input {
+    width: 100%;
+    height: 48px;
+    padding: 10px 50px 10px 20px !important; /* Extra padding on the right so text doesn't overlap the button */
+    font-size: 1rem;
+    color: #565a5f;
+    background-color: #ffffff !important; /* Full white background */
+    border: 1px solid #b9bec0 !important; /* Light grey border */
+    outline: none !important;
+    box-shadow: none !important;
+    transition: border-color 0.25s ease-in-out;
+}
+
+/* Floating button nested absolutely inside the right side of the input field */
+.embedded-search-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    cursor: pointer;
+}
+
+/* Icon style matching screenshot color */
+.embedded-search-btn svg {
+    color: #565a5f;
+    transition: color 0.25s ease-in-out;
+}
+
+/* =================================================================
+   Search Results - Pink Title Styling
+   ================================================================= */
+
+/* Force search result links to use the brand pink color */
+#searchResults .result-title,
+#searchResults h3 a {
+    color: #e5007d !important; 
+    text-decoration: none !important;
+    transition: color 0.25s ease-in-out;
+}
+
+/* Hover & Focus state: color transition or underline */
+#searchResults .result-title:hover,
+#searchResults h3 a:hover,
+#searchResults .result-title:focus,
+#searchResults h3 a:focus {
+    color: #ff32cd !important;
+    text-decoration: underline !important;
+}
