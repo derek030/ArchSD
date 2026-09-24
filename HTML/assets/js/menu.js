@@ -181,18 +181,34 @@ function initMenuLogic() {
     }
 
     const currentCell = trigger.closest('.appendix-cell');
-    if (!currentCell || trigger.closest('.fonts-size-block, .langs-block, .forward-block')) return;
+    // if (!currentCell || trigger.closest('.fonts-size-block, .langs-block, .forward-block')) return;
 
-    e.preventDefault();
-    const isAlreadyOpen = currentCell.classList.contains('is-active');
-    closeAllSubmenus();
+    // e.preventDefault();
+    // const isAlreadyOpen = currentCell.classList.contains('is-active');
+    // closeAllSubmenus();
 
-    if (!isAlreadyOpen) {
-      currentCell.classList.add('is-active');
-      trigger.classList.add('is-active');
-      const subMenu = currentCell.querySelector('.extra-submenu');
-      if (subMenu) subMenu.querySelectorAll('a').forEach(a => a.setAttribute('tabindex', '0'));
-    }
+    // if (!isAlreadyOpen) {
+    //   currentCell.classList.add('is-active');
+    //   trigger.classList.add('is-active');
+    //   const subMenu = currentCell.querySelector('.extra-submenu');
+    //   if (subMenu) subMenu.querySelectorAll('a').forEach(a => a.setAttribute('tabindex', '0'));
+    // }
+    const hasSubmenu = currentCell && currentCell.querySelector('.extra-submenu, .fonts-size-block, .langs-block, .forward-block');
+
+    if (trigger.closest('.fonts-size-block, .langs-block, .forward-block')) return;
+
+    if (hasSubmenu) {
+      e.preventDefault();
+      const isAlreadyOpen = currentCell.classList.contains('is-active');
+      closeAllSubmenus();
+
+      if (!isAlreadyOpen) {
+        currentCell.classList.add('is-active');
+        trigger.classList.add('is-active');
+        const subMenu = currentCell.querySelector('.extra-submenu');
+        if (subMenu) subMenu.querySelectorAll('a').forEach(a => a.setAttribute('tabindex', '0'));
+      }
+    } 
   }, true);
 
   function closeAllSubmenus() {
