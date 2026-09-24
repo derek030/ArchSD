@@ -57,7 +57,7 @@
                     <label for="searchInput" class="visually-hidden">Search Keyword</label>
                     <div class="input-group">
                         <input type="text" id="searchInput" placeholder="Search for..." class="form-control bg-light"
-                            value="sustainability projects">
+                            aria-label="Search for keywords" required>
                         <button type="submit" class="btn btn-outline-secondary" aria-label="Submit search">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-search" viewBox="0 0 16 16">
@@ -126,7 +126,39 @@
                 </div>
             </div>
         </main>
+
+        <!-- Site footer -->
+        <footer class="site-footer mt-5" role="contentinfo">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Footer accent line -->
+                    <div class="footer-green-bar"></div>
+
+                    <!-- Footer links -->
+                    <p class="mb-0 text-white-5">
+                        2026 &copy; |
+                        <a target="_blank" aria-label="Important notices (opens in a new window)"
+                            href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
+                            Important notices
+                        </a>
+                        |
+                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)"
+                            href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
+                            Privacy
+                        </a>
+                        |
+                        <a aria-label="Go to Sitemap" href="sitemap.html">
+                            Sitemap
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+        </footer>
     </div>
+
+
 
     <!-- Back-to-top button -->
     <button type="button" id="back-to-top" tabindex="0" aria-label="Back to Top">
