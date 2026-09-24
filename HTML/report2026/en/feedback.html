@@ -73,7 +73,7 @@
             <form id="feedbackForm" class="col-12 col-lg-7 offset-lg-1 ps-lg-0">
 
                 <!-- Question 1 -->
-                <fieldset class="feedback-border-brand-pink">
+                <fieldset class="feedback-border-brand-pink fieldset-q1">
                     <div class="row">
 
                         <!-- Question title and description -->
@@ -140,25 +140,25 @@
 
                 <!-- Question 2 -->
                 <fieldset>
-
-                    <!-- Rating scale header -->
-                    <div class="row mb-1 d-none d-sm-flex" aria-hidden="true">
+                    <!-- Rating scale header (Unaltered, for reference) -->
+                    <div class="row mb-3 d-none d-sm-flex" aria-hidden="true">
                         <div class="col-sm-4"></div>
                         <div class="col-sm-8">
-                            <div class="row text-center small text-muted fw-normal">
+                            <div class="row small text-muted fw-normal">
                                 <div class="col-2"></div>
-                                <div class="col-2 text-wrap p5-table-body">Excellent</div>
-                                <div class="col-2 text-wrap p5-table-body">Good</div>
-                                <div class="col-2 text-wrap p5-table-body">Fair</div>
-                                <div class="col-2 text-wrap p5-table-body">Marginal</div>
-                                <div class="col-2 text-wrap p5-table-body">Poor</div>
+                                <div class="col-2 text-wrap p5-table-body text-center">Excellent</div>
+                                <div class="col-2 text-wrap p5-table-body text-center">Good</div>
+                                <div class="col-2 text-wrap p5-table-body text-center">Fair</div>
+                                <div class="col-2 text-wrap p5-table-body text-center">Marginal</div>
+                                <div class="col-2 text-wrap p5-table-body text-center">Poor</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Section separator -->
-                    <div class="border-top border-2 feedback-border-brand-pink mb-4"></div>
+                    <div class="feedback-border-brand-pink"></div>
 
+                    <!-- The Row containing the titles and the entire rating matrix -->
                     <div class="row">
 
                         <!-- Rating section title -->
@@ -171,130 +171,120 @@
                             </p>
                         </div>
 
-                        <!-- Rating matrix -->
                         <div class="col-12 col-sm-8">
                             <div class="d-flex flex-column gap-2">
 
                                 <!-- Rating: Content clarity -->
-                                <div class="row align-items-center border-bottom border-light pb-2">
-                                    <div class="p5-table-body col-12 col-sm-2" id="clarity-title">
+                                <div class="row align-items-center border-bottom border-light pb-2 pt-2">
+                                    <div class="p5-table-body col-2" id="clarity-title">
                                         Content clarity
                                     </div>
-                                    <div class="col d-flex justify-content-around mt-1 mt-sm-0">
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-excellent" name="clarity" value="excellent"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Content clarity: Excellent">
-                                            <label for="clarity-excellent"
-                                                class="d-sm-none small text-muted">Excellent</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-good" name="clarity" value="good"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Content clarity: Good">
-                                            <label for="clarity-good" class="d-sm-none small text-muted">Good</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-fair" name="clarity" value="fair"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Content clarity: Fair">
-                                            <label for="clarity-fair" class="d-sm-none small text-muted">Fair</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-marginal" name="clarity" value="marginal"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Content clarity: Marginal">
-                                            <label for="clarity-marginal"
-                                                class="d-sm-none small text-muted">Marginal</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="clarity-poor" name="clarity" value="poor"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Content clarity: Poor">
-                                            <label for="clarity-poor" class="d-sm-none small text-muted">Poor</label>
-                                        </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="clarity-excellent" name="clarity" value="excellent"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Content clarity: Excellent">
+                                        <label for="clarity-excellent"
+                                            class="d-sm-none small text-muted">Excellent</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="clarity-good" name="clarity" value="good"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Content clarity: Good">
+                                        <label for="clarity-good" class="d-sm-none small text-muted">Good</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="clarity-fair" name="clarity" value="fair"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Content clarity: Fair">
+                                        <label for="clarity-fair" class="d-sm-none small text-muted">Fair</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="clarity-marginal" name="clarity" value="marginal"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Content clarity: Marginal">
+                                        <label for="clarity-marginal"
+                                            class="d-sm-none small text-muted">Marginal</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="clarity-poor" name="clarity" value="poor"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Content clarity: Poor">
+                                        <label for="clarity-poor" class="d-sm-none small text-muted">Poor</label>
+                                    </div>
+                                </div>
+
+                                <!-- Rating: Visual design -->
+                                <div class="row align-items-center border-bottom border-light pb-2 pt-2">
+                                    <div class="p5-table-body col-2" id="visual-title">
+                                        Visual design
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="visual-excellent" name="visual" value="excellent"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Visual design: Excellent">
+                                        <label for="visual-excellent"
+                                            class="d-sm-none small text-muted">Excellent</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="visual-good" name="visual" value="good"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Visual design: Good">
+                                        <label for="visual-good" class="d-sm-none small text-muted">Good</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="visual-fair" name="visual" value="fair"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Visual design: Fair">
+                                        <label for="visual-fair" class="d-sm-none small text-muted">Fair</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="visual-marginal" name="visual" value="marginal"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Visual design: Marginal">
+                                        <label for="visual-marginal" class="d-sm-none small text-muted">Marginal</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="visual-poor" name="visual" value="poor"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Visual design: Poor">
+                                        <label for="visual-poor" class="d-sm-none small text-muted">Poor</label>
                                     </div>
                                 </div>
 
                                 <!-- Rating: Ease of finding information -->
-                                <div class="row align-items-center border-bottom border-light pb-2">
-                                    <div class="p5-table-body col-12 col-sm-2" id="ease-title">
-                                        Ease of finding info
+                                <div class="row align-items-center pb-2 pt-2">
+                                    <div class="p5-table-body col-2" id="ease-title">
+                                        Ease of finding information
                                     </div>
-                                    <div class="col d-flex justify-content-around mt-1 mt-sm-0">
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-excellent" name="ease" value="excellent"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Ease of finding information: Excellent">
-                                            <label for="ease-excellent"
-                                                class="d-sm-none small text-muted">Excellent</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-good" name="ease" value="good"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Ease of finding information: Good">
-                                            <label for="ease-good" class="d-sm-none small text-muted">Good</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-fair" name="ease" value="fair"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Ease of finding information: Fair">
-                                            <label for="ease-fair" class="d-sm-none small text-muted">Fair</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-marginal" name="ease" value="marginal"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Ease of finding information: Marginal">
-                                            <label for="ease-marginal"
-                                                class="d-sm-none small text-muted">Marginal</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="ease-poor" name="ease" value="poor"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Ease of finding information: Poor">
-                                            <label for="ease-poor" class="d-sm-none small text-muted">Poor</label>
-                                        </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="ease-excellent" name="ease" value="excellent"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Ease of finding information: Excellent">
+                                        <label for="ease-excellent" class="d-sm-none small text-muted">Excellent</label>
                                     </div>
-                                </div>
-
-                                <!-- Rating: Overall report quality -->
-                                <div class="row align-items-center pb-2">
-                                    <div class="p5-table-body col-12 col-sm-2" id="overall-title">
-                                        Overall rating
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="ease-good" name="ease" value="good"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Ease of finding information: Good">
+                                        <label for="ease-good" class="d-sm-none small text-muted">Good</label>
                                     </div>
-                                    <div class="col d-flex justify-content-around mt-1 mt-sm-0">
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-excellent" name="overall" value="excellent"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Overall rating: Excellent">
-                                            <label for="overall-excellent"
-                                                class="d-sm-none small text-muted">Excellent</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-good" name="overall" value="good"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Overall rating: Good">
-                                            <label for="overall-good" class="d-sm-none small text-muted">Good</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-fair" name="overall" value="fair"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Overall rating: Fair">
-                                            <label for="overall-fair" class="d-sm-none small text-muted">Fair</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-marginal" name="overall" value="marginal"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Overall rating: Marginal">
-                                            <label for="overall-marginal"
-                                                class="d-sm-none small text-muted">Marginal</label>
-                                        </div>
-                                        <div class="d-flex align-items-center gap-1">
-                                            <input type="radio" id="overall-poor" name="overall" value="poor"
-                                                class="feedback-form-input-custom feedback-form-radio"
-                                                aria-label="Overall rating: Poor">
-                                            <label for="overall-poor" class="d-sm-none small text-muted">Poor</label>
-                                        </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="ease-fair" name="ease" value="fair"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Ease of finding information: Fair">
+                                        <label for="ease-fair" class="d-sm-none small text-muted">Fair</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="ease-marginal" name="ease" value="marginal"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Ease of finding information: Marginal">
+                                        <label for="ease-marginal" class="d-sm-none small text-muted">Marginal</label>
+                                    </div>
+                                    <div class="col-2 text-center">
+                                        <input type="radio" id="ease-poor" name="ease" value="poor"
+                                            class="feedback-form-input-custom feedback-form-radio"
+                                            aria-label="Ease of finding information: Poor">
+                                        <label for="ease-poor" class="d-sm-none small text-muted">Poor</label>
                                     </div>
                                 </div>
 
@@ -319,42 +309,44 @@
                         <div class="col-12 col-sm-8">
                             <div class="d-flex flex-column gap-2">
 
-                                <div class="p5-table-body">
+                                <div class="option-row d-flex align-items-center">
                                     <input type="radio" id="user-type-academic" name="user_type"
                                         class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label for="user-type-academic">Academic / Professional Body</label>
+                                    <label for="user-type-academic" class="p5-table-body">Academic / Professional
+                                        Body</label>
                                 </div>
 
-                                <div class="p5-table-body">
+                                <div class="option-row d-flex align-items-center">
                                     <input type="radio" id="user-type-staff" name="user_type"
                                         class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label for="user-type-staff">ArchSD's Staff</label>
+                                    <label for="user-type-staff" class="p5-table-body">ArchSD's Staff</label>
                                 </div>
 
-                                <div class="p5-table-body">
+                                <div class="option-row d-flex align-items-center">
                                     <input type="radio" id="user-type-industry" name="user_type"
                                         class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label for="user-type-industry">
+                                    <label for="user-type-industry" class="p5-table-body">
                                         Construction industry / Consultant / Contractor / Supplier
                                     </label>
                                 </div>
 
-                                <div class="p5-table-body">
+                                <div class="option-row d-flex align-items-center">
                                     <input type="radio" id="user-type-public" name="user_type"
                                         class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label for="user-type-public">General Public</label>
+                                    <label for="user-type-public" class="p5-table-body">General Public</label>
                                 </div>
 
-                                <div class="p5-table-body">
+                                <div class="option-row d-flex align-items-center">
                                     <input type="radio" id="user-type-ngo" name="user_type"
                                         class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label for="user-type-ngo">Non-governmental Organisation</label>
+                                    <label for="user-type-ngo" class="p5-table-body">Non-governmental
+                                        Organisation</label>
                                 </div>
 
-                                <div class="p5-table-body">
+                                <div class="option-row d-flex align-items-center">
                                     <input type="radio" id="user-type-gov" name="user_type"
                                         class="feedback-form-input-custom feedback-form-radio me-3 mt-1">
-                                    <label for="user-type-gov">Other Government Department</label>
+                                    <label for="user-type-gov" class="p5-table-body">Other Government Department</label>
                                 </div>
 
                             </div>
@@ -363,7 +355,6 @@
                     </div>
                 </fieldset>
 
-                <!-- Question 4 -->
                 <!-- Question 4 -->
                 <fieldset class="feedback-border-brand-pink">
                     <div class="row">
@@ -439,9 +430,8 @@
 
 
                 <!-- Question 5 -->
-                <div class="feedback-border-brand-pink">
+                <fieldset class="feedback-border-brand-pink">
                     <div class="row">
-
                         <!-- Question title -->
                         <div class="col-12 col-sm-4 mb-3 mb-sm-0">
                             <label for="comments-textarea" class="p4-table-title">
@@ -455,9 +445,8 @@
                                 class="p5-table-body feedback-textarea-fixed p-3 border border-light bg-light"
                                 placeholder="Which section(s) of the report did you find most informative or useful? What would you suggest to help us improve the report quality? Do you have any comment or suggestion on our sustainability performance or future reports?"></textarea>
                         </div>
-
                     </div>
-                </div>
+                </fieldset>
 
                 <!-- Form action buttons -->
                 <div class="d-flex justify-content-end align-items-center gap-4 pt-4">
@@ -593,11 +582,11 @@
                 if (!$('[name=clarity]:checked', this).val()) {
                     alert('Please rate the "Content clarity" (Question 2).');
                     return false;
+                } else if (!$('[name=visual]:checked', this).val()) {
+                    alert('Please rate the "Visual Design" (Question 2).');
+                    return false;
                 } else if (!$('[name=ease]:checked', this).val()) {
                     alert('Please rate the "Ease of finding information" (Question 2).');
-                    return false;
-                } else if (!$('[name=overall]:checked', this).val()) {
-                    alert('Please rate the "Overall rating" (Question 2).');
                     return false;
                 }
 

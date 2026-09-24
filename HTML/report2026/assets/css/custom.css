@@ -483,7 +483,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     text-align: left;
     margin-top: 0.375rem;         /* Space Before: 6pt (6px) */
     margin-bottom: 0.5rem;        /* Space After: 8pt (8px) */
-    color: #ff7adc;
+    color: #ff32cd;
 }
 
 .p5-table-body {
@@ -523,7 +523,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* =================================================================
    Feedback Form Custom Styles
 ==================================================================== */
-/* --- 1. Brand & Accent Styling --- */
 .feedback-brand-pink {
     color: #ff32cd;
 }
@@ -532,9 +531,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-top: 5px solid #ff32cd !important;
 }
 
-/* --- 2. Layout & Spacing (Based on Design Specifications) --- */
-
-/* Align form with the intro text on desktop */
 @media (min-width: 992px) {
     .feedback-page #feedbackForm {
         padding-top: 134px;
@@ -542,16 +538,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
-/* Spacing for the main "Feedback" title block */
 .feedback-page .title-block {
     margin-bottom: 32px;
     padding-bottom: 0;
 }
 
-/* Space from the pink border to the content below it */
 .feedback-page #feedbackForm fieldset,
 .feedback-page #feedbackForm .border-top {
-    padding-top: 25px !important;
+    padding-top: 20px !important;
 }
 
 /* Space between entire question blocks (fieldsets) */
@@ -567,17 +561,18 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* Vertical spacing (20px total) between checkbox/radio options */
 .option-row {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    border-bottom: 0.66px solid #dee2e6 !important; /* 0.66px 精準對應 0.5pt */
+    padding-top: 1rem !important;     /* Increases vertical space to 16px */
+    padding-bottom: 1rem !important;
+}
+
+.option-row:last-of-type,
+.feedback-page #feedbackForm .row.align-items-center:last-of-type {
+    border-bottom: none !important;
 }
 
 /* --- 3. Dynamic Baseline Alignment for Labels & Inputs --- */
 
-/* 
- * Forces options to align to the top (flex-start) rather than centered.
- * This ensures that when a label wraps to multiple lines (like Social Media),
- * the checkbox or radio button stays perfectly aligned with the first line.
- */
 .option-row.d-flex.align-items-center {
     align-items: flex-start !important;
     padding-top: 10px;
@@ -615,6 +610,22 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .feedback-page .rating-matrix-label {
     padding-right: 1.5rem;
+}
+
+.feedback-page .rating-matrix-row,
+.feedback-page #feedbackForm .row.align-items-center.border-bottom {
+    border-bottom: 0.66px solid #dee2e6 !important; /* 使用與其他選項一致的淺灰色底線 */
+    padding-top: 15px !important;                 /* 微調高度，讓點選範圍更舒適 */
+    padding-bottom: 15px !important;
+}
+
+.feedback-page #feedbackForm .row.align-items-center:last-of-type {
+    border-bottom: none !important;
+}
+
+.feedback-page .row.align-items-center {
+    display: flex;
+    align-items: center;
 }
 
 /* Removes bottom margin from rating matrix header labels */
@@ -655,8 +666,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* Checked State */
 .feedback-form-checkbox:checked {
-    background-color: #ff7adc !important;
-    border-color: #ff7adc !important;
+    background-color: #ff32cd !important;
+    border-color: #ff32cd !important;
 }
 
 .feedback-form-radio:checked {
@@ -668,6 +679,18 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .feedback-form-checkbox:focus-visible,
 .feedback-form-radio:focus-visible {
     box-shadow: 0 0 0 3px rgba(255, 122, 220, 0.5);
+}
+
+.feedback-page #feedbackForm .fieldset-q1 {
+    margin-bottom: 25px !important;
+}
+
+.feedback-border-brand-pink + .row {
+    margin-top: 25px !important;
+}
+
+#feedbackForm > .feedback-border-brand-pink {
+    margin-bottom: 45px !important;
 }
 
 /* --- 6. Text Area & Action Buttons --- */
