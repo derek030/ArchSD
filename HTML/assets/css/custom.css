@@ -85,7 +85,31 @@ header.fixed-header.scrolled {background-color: #fff;}
 	position: absolute; top: 0; right: 0; width: 45px; height: 100dvh; background-color: #ff32cd; color: #fff; padding: 0; border: none;
 	cursor: pointer; z-index: 2; overflow: hidden; transition: background-color 0.3s ease;
 }
-.nav-toggle:hover, .nav-toggle:focus, .nav-wrapper.active .nav-toggle {background-color: #565a5f; outline-offset: -2px !important;}
+/* .nav-toggle:hover, .nav-toggle:focus, .nav-wrapper.active .nav-toggle {background-color: #565a5f; outline-offset: -2px !important;} */
+/* default：粉紅色 */
+.nav-toggle {
+    background-color: #ff32cd;
+    transition: background-color 0.3s ease;
+}
+
+/* 變灰色的情況：Hover、鍵盤 Tab 聚焦、或者 Menu 打開時 (active) */
+.nav-toggle:hover, 
+.nav-toggle:focus-visible, 
+.nav-wrapper.active .nav-toggle {
+    background-color: #565a5f !important;
+}
+
+/* 鍵盤 Tab 聚焦時的綠色外框 */
+.nav-toggle:focus-visible {
+    outline: 3px solid #82f000 !important; 
+    outline-offset: -3px !important;
+}
+
+/* 滑鼠點擊後，且 Menu 已經收起的情況下：變回粉紅色 */
+.nav-wrapper:not(.active) .nav-toggle:focus:not(:focus-visible) {
+    background-color: #ff32cd;
+    outline: none !important;
+}
 .menu-switch {width: 35px; height: auto; transition: 0.3s ease;}
 .nav-toggle .menu-switch polyline {fill: none; stroke: #ffffff; stroke-width: 2.5px; stroke-linecap: square; stroke-linejoin: round; transition: stroke 0.3s ease;}
 .nav-toggle:hover .menu-switch polyline, .nav-wrapper.active .menu-switch polyline {stroke: #ff7adc;}
