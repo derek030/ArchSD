@@ -995,10 +995,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     position: absolute;
     z-index: 1;
     opacity: 0.15;
-    left: 50px;
     top: -135px;
     width: 100%;
-    max-width: 750px;
+    max-width: 650px;
 }
 
 .thankyou-title-img {
