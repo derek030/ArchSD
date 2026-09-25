@@ -642,6 +642,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         background-color: #cccccc;
     }
 
+    .feedback-page .option-row input[type="text"] {
+        margin-top: 10px; 
+    }
+
     .feedback-btn-reset,
     .feedback-btn-submit {
         padding: 10px 16px !important;
@@ -681,13 +685,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .option-row.d-flex.align-items-center {
-    align-items: flex-start !important;
+    align-items: center !important;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.option-row.d-flex.align-items-center .feedback-form-input-custom {
-    margin-top: 3px !important;
 }
 
 .option-row label,
