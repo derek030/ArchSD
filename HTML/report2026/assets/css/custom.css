@@ -788,9 +788,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 45px !important;
 }
 
+.feedback-page .q1-other-text,
+.feedback-page .q4-other-text {
+    background-color: #EDF0F0 !important;
+    height: 30px !important;
+    margin-bottom: 0 !important;
+}
 /* --- Textarea Controls --- */
 
 .feedback-textarea-fixed {
+    background-color: #EDF0F0 !important;
     width: 100% !important;
     height: 300px !important;
     min-height: 300px !important;
