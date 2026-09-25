@@ -1034,3 +1034,37 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 1.25rem;
     padding-top: 1.56rem;
 }
+
+/* --- Thank You Page Mobile Fixes --- */
+@media (max-width: 767.98px) {
+
+    .thankyou-content-wrapper {
+        margin-top: 40px; 
+    }
+
+    .thankyou-bg-img {
+        left: 13%;
+        width: 90%;
+        height: 100%;
+    }
+
+    .thankyou-title-img {
+        top: 31%; 
+        left: 1.5%;
+        transform: translateX(-50%);
+        bottom: auto; 
+        width: 80%;   
+    }
+
+    .thankyou-text {       
+        top: 54%; 
+        left: 45%;
+        transform: translate(-50%, -50%);
+        text-align: center; 
+        width: 90%; 
+        font-size: 1.5rem; 
+        line-height: 1.15;  
+        padding-top: 0;
+        margin-top: 0;
+    }
+}
