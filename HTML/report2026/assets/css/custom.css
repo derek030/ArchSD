@@ -983,42 +983,54 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .thankyou-page-container {
     position: relative;
-    overflow-x: hidden; 
 }
 
 .thankyou-content-wrapper {
     position: relative;
-    min-height: 200px; 
+    width: 100%;
+    max-width: 650px; /* Adjust to match your design's maximum width */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .thankyou-bg-img {
-    position: absolute;
-    z-index: 1;
-    opacity: 0.15;
-    top: -135px;
+    position: relative;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 650px;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
 }
 
 .thankyou-title-img {
     position: absolute;
+    bottom: 50%; /* Positions it near the bottom of the component */
+    left: -10%;
+    transform: translateX(-50%);
+    width: 80%;  /* Scales proportionally with the container */
+    height: auto;
     z-index: 3;
-    width: 100%;
-    max-width: 500px;
-    top: -40px; 
-    left: -10px;
 }
 
 .thankyou-text {
+    position: absolute;   
+    top: 48%;  
+    left: 31.5%; 
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: start;
+    margin: 0;
+    
     font-family: "Monda", sans-serif;
-    font-size: 33px;
-    line-height: 3.00rem;
+    font-size: 2.125rem;
+    line-height: 2.25rem;
     letter-spacing: -0.025em;
+    font-kerning: normal; 
     font-weight: 700;
     color: #565a5f !important;
-    padding-top: 1.56rem;
+    z-index: 2;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
-    position: relative;
-    z-index: 2;
+    padding-top: 1.56rem;
 }
