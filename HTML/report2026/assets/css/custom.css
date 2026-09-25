@@ -555,371 +555,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         color: #000000;
     }
 }
-/* --- Feedback Page Layout --- */
-
-.feedback-brand-pink {
-    color: #ff32cd;
-}
-
-.feedback-border-brand-pink {
-    border-top: 5px solid #ff32cd !important;
-}
-
-@media (min-width: 992px) {
-    .feedback-page #feedbackForm {
-        padding-top: 134px;
-        padding-left: 0 !important;
-    }
-}
-
-@media (max-width: 991.98px) {
-    #feedbackForm {
-        margin-top: 45px;
-    }
-}
-
-/* --- Feedback Page Buttons (Universal & Mobile Layout) --- */
-
-.feedback-btn-reset,
-.feedback-btn-submit {
-    font-family: 'Monda', sans-serif;
-    font-size: 2.1rem; /* 25pt custom style */
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent !important;
-    border: 1px solid transparent !important;
-    transition: all 0.25s ease-in-out !important;
-    cursor: pointer;
-    text-decoration: none !important;
-    padding: 0 16px !important;
-    height: auto; 
-}
-
-.feedback-btn-reset {
-    color: #565a5f !important;
-}
-
-.feedback-btn-submit {
-    color: #ff32cd !important;
-}
-
-.feedback-btn-reset:hover {
-    background-color: #ff32cd !important;
-    border-color: #ff32cd !important;
-}
-
-.feedback-btn-submit:hover {
-    color: #565a5f !important;
-    background-color: #82f000 !important;
-    border-color: #82f000 !important;
-}
-
-.feedback-btn-reset:active,
-.feedback-btn-submit:active {
-    transform: translateY(1px);
-    opacity: 0.9;
-}
-
-@media (max-width: 767.98px) {
-    .feedback-page #feedbackForm .d-flex.justify-content-end {
-        justify-content: center !important;
-        gap: 1.5rem !important;
-        position: relative;
-    }
-
-    .feedback-page #feedbackForm .d-flex.justify-content-end::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        height: 30px;
-        width: 1px;
-        background-color: #cccccc;
-    }
-
-    .feedback-page .option-row input[type="text"] {
-        margin-top: 10px; 
-    }
-
-    .feedback-btn-reset,
-    .feedback-btn-submit {
-        padding: 10px 16px !important;
-    }
-}
-
-/* --- Feedback Form Structure & Elements --- */
-
-.feedback-page .title-block {
-    margin-bottom: 32px;
-    padding-bottom: 0;
-}
-
-.feedback-page #feedbackForm fieldset,
-.feedback-page #feedbackForm .border-top {
-    padding-top: 20px !important;
-}
-
-.feedback-page #feedbackForm fieldset,
-.feedback-page #feedbackForm .mb-4 {
-    margin-bottom: 45px !important;
-}
-
-.feedback-page .col-sm-4 .p4-table-title {
-    margin-bottom: 32px !important;
-}
-
-.option-row {
-    border-bottom: 0.66px solid #000000 !important; 
-    padding-top: 1rem !important;    
-    padding-bottom: 1rem !important;
-}
-
-.option-row:last-of-type,
-.feedback-page #feedbackForm .row.align-items-center:last-of-type {
-    border-bottom: none !important;
-}
-
-.option-row.d-flex.align-items-center {
-    align-items: center !important;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.option-row label,
-.option-row label.p5-table-body {
-    cursor: pointer;
-    user-select: none;
-    margin-bottom: 0 !important;
-}
-
-/* --- Rating Matrix Styles --- */
-
-.feedback-page .rating-header-row {
-    padding: 0 !important;
-}
-
-.feedback-page .rating-matrix-row {
-    display: flex;
-    align-items: center;
-    min-height: 50px;
-    border-bottom: 1px solid #edf0f0;
-    padding: 8px 0;
-}
-
-.feedback-page .rating-matrix-label {
-    padding-right: 1.5rem;
-}
-
-.feedback-page .rating-matrix-row,
-.feedback-page #feedbackForm .row.align-items-center.border-bottom {
-    border-bottom: 0.66px solid #000000 !important; 
-    padding-top: 15px !important;                 
-    padding-bottom: 15px !important;
-}
-
-.feedback-page #feedbackForm .row.align-items-center:last-of-type {
-    border-bottom: none !important;
-}
-
-.feedback-page .row.align-items-center {
-    display: flex;
-    align-items: center;
-}
-
-.text-muted .p5-table-body {
-    margin-bottom: 0 !important;
-}
-
-/* --- Custom Checkbox & Radio Controls --- */
-
-.feedback-form-checkbox,
-.feedback-form-radio {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ccc !important;
-    background-color: #ffffff;
-    outline: none;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.feedback-form-checkbox {
-    border-radius: 3px;
-}
-
-.feedback-form-radio {
-    border-radius: 50%;
-}
-
-.feedback-form-checkbox:hover,
-.feedback-form-radio:hover {
-    border-color: #ff32cd !important;
-}
-
-.feedback-form-checkbox:checked,
-.feedback-form-radio:checked {
-    background-color: #ff32cd !important;
-    border-color: #ff32cd !important;
-}
-
-.feedback-form-checkbox:focus-visible,
-.feedback-form-radio:focus-visible {
-    box-shadow: 0 0 0 3px rgba(255, 122, 220, 0.5);
-}
-
-.feedback-page #feedbackForm .fieldset-q1 {
-    margin-bottom: 25px !important;
-}
-
-.feedback-border-brand-pink + .row {
-    margin-top: 25px !important;
-}
-
-#feedbackForm > .feedback-border-brand-pink {
-    margin-bottom: 45px !important;
-}
-
-.feedback-page .q1-other-text,
-.feedback-page .q4-other-text {
-    background-color: #EDF0F0 !important;
-    height: 30px !important;
-    margin-bottom: 0 !important;
-}
-/* --- Textarea Controls --- */
-
-.feedback-textarea-fixed {
-    background-color: #EDF0F0 !important;
-    width: 100% !important;
-    height: 300px !important;
-    min-height: 300px !important;
-    max-height: 300px !important;
-    resize: none !important;
-    box-sizing: border-box !important;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #000000;
-    border-radius: 4px;
-    transition: all 0.25s ease-in-out;
-}
-
-#comments-textarea::placeholder {
-    color: #A0A0A0;
-    opacity: 1;
-}
-
-/* --- Footer & Pagination Layout --- */
-
-.form-footer-notice {
-    margin-top: 45px !important;
-}
-
-.form-footer-notice a {
-    font-weight: 700;
-    color: #ff32cd;
-    text-decoration: underline;
-}
-
-.form-footer-notice p {
-    margin-bottom: 0 !important;
-}
-
-.form-footer-notice + .d-flex.justify-content-end {
-    margin-top: 100px !important;
-    padding-top: 0 !important; 
-}
-
-.feedback-page #feedbackForm {
-    margin-bottom: 0 !important;
-}
-
-.feedback-page #feedbackForm .d-flex.justify-content-end.pt-4 {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-.prev-next {
-    margin-top: 130px !important;
-    padding-top: 0 !important;
-    width: 100%;
-}
-
-.feedback-page-nav-line {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-/* =================================================================
-   Feedback Form Mobile Layout
-   ================================================================= */
-@media (max-width: 767.98px) {
-
-    /* --- Q1 Header Layout --- */
-    .q-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%; 
-    }
-
-    .q-header > .mobile-p4-table-title {
-        flex: 1 1 54%; 
-        margin-bottom: 0 !important;
-    }
-    
-    .q-header > .mobile-p2-body {
-        flex: 1 1 46%;       
-        margin-top: 10px !important;
-        margin-bottom: 0 !important;
-    }
-    
-    /* --- Custom Checkbox & Radio Styles --- */
-    .feedback-form-checkbox:checked {
-        background-color: #ff32cd !important;
-        border-color: #ff32cd !important;
-        background-image: none;
-    }
-
-    .feedback-form-radio {
-        position: relative;
-    }
-
-    .feedback-form-radio:checked::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #ff32cd;
-    }
-     .feedback-form-radio:checked {
-         border-color: #ff32cd !important;
-    }
-
-    /* --- 3. Hide Redundant Labels (Keep this rule) --- */
-    .feedback-page .rating-matrix-row .d-sm-none {
-        display: none !important;
-    }
-    
-    /* ... The rest of your mobile styles ... */
-    .feedback-page .rating-matrix-row .d-sm-none {
-        display: none !important;
-    }
-}
-
-
 
 /* --- Accessibility Utilities --- */
 
@@ -946,6 +581,325 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     text-decoration: none !important;
     border-radius: 4px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* --- FEEDBACK PAGE --- */
+.feedback-page .title-block {
+    margin-bottom: 32px;
+    padding-bottom: 0;
+}
+
+.feedback-page #feedbackForm {
+    margin-bottom: 0 !important;
+}
+
+.feedback-page #feedbackForm fieldset {
+    margin-bottom: 45px !important;
+    padding-top: 20px !important;
+}
+
+.feedback-page #feedbackForm .fieldset-q1 {
+    margin-bottom: 25px !important;
+}
+
+.feedback-border-brand-pink {
+    border-top: 5px solid var(--mainPinkColor) !important;
+}
+
+#feedbackForm > .feedback-border-brand-pink {
+    margin-bottom: 45px !important;
+}
+
+.feedback-border-brand-pink + .row {
+    margin-top: 25px !important;
+}
+
+@media (min-width: 992px) {
+    .feedback-page #feedbackForm {
+        padding-top: 134px;
+        padding-left: 0 !important;
+    }
+}
+
+/* --- Question & Option Rows --- */
+.feedback-page .col-sm-4 .p4-table-title {
+    margin-bottom: 32px !important;
+}
+
+.option-row {
+    border-bottom: 0.66px solid #000000 !important;
+    padding: 10px 0 !important;
+    display: flex;
+    align-items: center !important;
+}
+
+.option-row:last-of-type {
+    border-bottom: none !important;
+}
+
+.option-row label {
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0 !important;
+}
+
+/* --- Custom Form Controls (Checkbox, Radio, Text) --- */
+.feedback-form-checkbox,
+.feedback-form-radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc !important;
+    background-color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.feedback-form-checkbox {
+    border-radius: 3px;
+}
+
+.feedback-form-radio {
+    border-radius: 50%;
+}
+
+.feedback-form-checkbox:hover,
+.feedback-form-radio:hover {
+    border-color: var(--mainPinkColor) !important;
+}
+
+.feedback-form-checkbox:checked,
+.feedback-form-radio:checked {
+    background-color: var(--mainPinkColor) !important;
+    border-color: var(--mainPinkColor) !important;
+}
+
+.feedback-form-checkbox:focus-visible,
+.feedback-form-radio:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 122, 220, 0.5);
+}
+
+.feedback-page .q1-other-text,
+.feedback-page .q4-other-text {
+    background-color: #EDF0F0 !important;
+    height: 30px !important;
+    margin-bottom: 0 !important; /* Fix for vertical alignment */
+}
+
+/* --- Rating Matrix (Question 2) --- */
+.feedback-page .rating-matrix-row,
+.feedback-page #feedbackForm .row.align-items-center.border-bottom {
+    border-bottom: 0.66px solid #000000 !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+.feedback-page #feedbackForm .row.align-items-center:last-of-type {
+    border-bottom: none !important;
+}
+
+.feedback-page .rating-matrix-label {
+    padding-right: 1.5rem;
+}
+
+.text-muted .p5-table-body {
+    margin-bottom: 0 !important;
+}
+
+/* --- Textarea & Footer --- */
+.feedback-textarea-fixed {
+    background-color: #EDF0F0 !important;
+    width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+    resize: none !important;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #000000;
+    transition: all 0.25s ease-in-out;
+}
+
+#comments-textarea::placeholder {
+    color: #A0A0A0;
+    opacity: 1;
+}
+
+.form-footer-notice {
+    margin-top: 45px !important;
+}
+
+.form-footer-notice p {
+    margin-bottom: 0 !important;
+}
+
+.form-footer-notice a {
+    font-weight: 700;
+    color: var(--mainPinkColor);
+    text-decoration: underline;
+}
+
+/* --- Action Buttons (Reset, Submit) --- */
+.feedback-btn-reset,
+.feedback-btn-submit {
+    font-family: 'Monda', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    padding: 0 16px !important;
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    transition: all 0.25s ease-in-out !important;
+    cursor: pointer;
+}
+
+.feedback-btn-reset {
+    color: var(--darkGreyColor) !important;
+}
+
+.feedback-btn-submit {
+    color: var(--mainPinkColor) !important;
+}
+
+.feedback-btn-reset:hover {
+    background-color: var(--mainPinkColor) !important;
+    border-color: var(--mainPinkColor) !important;
+    color: #ffffff !important;
+}
+
+.feedback-btn-submit:hover {
+    color: var(--darkGreyColor) !important;
+    background-color: var(--mainGreenColor) !important;
+    border-color: var(--mainGreenColor) !important;
+}
+
+.feedback-btn-reset:active,
+.feedback-btn-submit:active {
+    transform: translateY(1px);
+    opacity: 0.9;
+}
+
+.form-footer-notice + .d-flex.justify-content-end {
+    margin-top: 100px !important;
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* --- Page Navigation (Prev/Next) --- */
+.prev-next {
+    margin-top: 130px !important;
+    padding-top: 0 !important;
+    width: 100%;
+}
+
+
+/* --- MOBILE RESPONSIVE STYLES (FEEDBACK FORM) --- */
+@media (max-width: 991.98px) {
+    #feedbackForm {
+        margin-top: 45px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .feedback-page .option-row input[type="text"] {
+        margin-top: 10px;
+    }
+
+    /* --- Question Headers --- */
+    .q-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .q-header > .mobile-p4-table-title {
+        flex: 1 1 54%;
+        margin-bottom: 0 !important;
+    }
+
+    .q-header > .mobile-p2-body {
+        flex: 1 1 46%;
+        margin-top: 10px !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* --- Rating Matrix (Q2) --- */
+    .feedback-page fieldset:nth-of-type(2) .p4-table-title {
+        font-family: "Inter", sans-serif;
+        font-size: 18pt;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .feedback-page .col-sm-8 .row.d-sm-none .col {
+        font-family: "Inter", sans-serif;
+        font-size: 10pt;
+        font-weight: 700;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .feedback-page .rating-matrix-row .d-sm-none {
+        display: none !important;
+    }
+
+    /* --- Custom Radio/Checkbox Appearance --- */
+    .feedback-form-radio {
+        position: relative;
+    }
+
+    .feedback-form-radio:checked {
+        border-color: var(--mainPinkColor) !important;
+        background-color: #ffffff !important;
+    }
+
+    .feedback-form-radio:checked::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--mainPinkColor);
+    }
+    
+    .feedback-form-checkbox:checked {
+        background-image: none;
+    }
+
+    /* --- Action Buttons (Reset/Submit) --- */
+    .feedback-page #feedbackForm .d-flex.justify-content-end {
+        justify-content: center !important;
+        gap: 1.5rem !important;
+        position: relative;
+    }
+
+    .feedback-page #feedbackForm .d-flex.justify-content-end::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 30px;
+        width: 1px;
+        background-color: #cccccc;
+    }
+
+    .feedback-btn-reset,
+    .feedback-btn-submit {
+        padding: 10px 16px !important;
+    }
 }
 
 /* --- Search Page Styles --- */
