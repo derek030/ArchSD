@@ -453,77 +453,76 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .material-topics-title ::selection {color: inherit; background: var(--mainPinkColor);}
 
 .p2-body-style {
-  /* Basic Character Formats */
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;                /* 16pt is a standard body size, equivalent to 16px */
-  font-weight: 300;               /* Corresponds to 'Light' font style */
-  line-height: 1.5;               /* Leading (24pt) / Font Size (16pt) */
-  letter-spacing: -0.01em;        /* Tracking: -10 is -10/1000em */
-  text-align: left;
-  margin-top: 0;                  /* Space Before: 0pt */
-  margin-bottom: 0.75rem;         /* Space After: 12pt is ~12px */
-  color: #000000;                     /* Standard body text color */
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #000000;
 }
 
 .p3-caption-style {
-    font-family: "Inter", sans-serif; /* Standard modern body font */
-    font-size: 1rem;                  /* 16px (standard highly legible body size) */
-    line-height: 1.35;                /* Standard compact paragraph vertical rhythm (~22px) */
-    letter-spacing: -0.015em;         /* Tracking: -15/1000 em for a clean modern finish */
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
     text-align: left;
-    font-weight: 700;                 /* Bold weight for emphasis */
+    font-weight: 700;
 }
 
 .p4-table-title {
     font-family: "Monda", sans-serif; 
-    font-weight: 700;                 /* Bold weight for emphasis */
+    font-weight: 700;
     font-size: 20pt;
-    line-height: 25pt;                /* This is 'Leading' */
-    letter-spacing: -0.015em;         /* This is 'Tracking' (-15/1000 em) */
-    font-kerning: normal;             /* This is 'Kerning' */
+    line-height: 25pt;
+    letter-spacing: -0.015em;
+    font-kerning: normal;
     text-align: left;
-    margin-top: 0.375rem;             /* Space Before: 6pt (6px) */
-    margin-bottom: 0.5rem;            /* Space After: 8pt (8px) */
+    margin-top: 0.375rem;
+    margin-bottom: 0.5rem;
     color: #ff32cd;
 }
 
 .p5-table-body {
     font-family: "Inter", sans-serif;
-    font-size: 0.875rem;          /* Equivalent to 14px */
-    font-weight: 400;             /* Corresponds to 'Regular' font style */
-    line-height: 1.4;             /* A proportional line height (approx. 20px) */
-    letter-spacing: -0.01em;      /* Tracking: -10 is -10/1000em */
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
     text-align: left;
-    margin-bottom: 0.625rem;      /* Space After: 10pt (10px) */
-    color: #000000;                     /* Standard body text color */
+    margin-bottom: 0.625rem;
+    color: #000000;
 }
+
+/* --- Mobile Responsive Typography --- */
 
 @media (max-width: 767.98px) {
-  .mobile-h1 {
-    font-family: "Inter", sans-serif; /* Assuming 'Inter' is your heading font */
-    font-size: 2.3rem;               /* Equivalent to 28pt or ~37px */
-    line-height: 1.21;               /* Leading (34pt) / Font Size (28pt) */
-    letter-spacing: -0.01em;         /* Tracking: -10 is -10/1000em */
-    font-kerning: auto;              /* Browser-optimized kerning, similar to 'Optical' */
-    text-align: left;
-    margin-top: 0.1875rem;           /* Space Before: 2.25pt is ~3px */
-  }
+    .mobile-h1 {
+        font-family: "Inter", sans-serif;
+        font-size: 2.3rem;
+        line-height: 1.21;
+        letter-spacing: -0.01em;
+        font-kerning: auto;
+        text-align: left;
+        margin-top: 0.1875rem;
+    }
 
-  .mobile-h2 {
-    /* Basic Character Formats */
-    font-size: 1.8rem;              /* 22pt is approx. 29px */
-    line-height: 1.15;              /* Leading (25pt) / Font Size (22pt) */
-    letter-spacing: -0.01em;        /* Tracking: -10 is -10/1000em */
-    font-kerning: auto;             /* 'Optical' Kerning */
-    text-align: left;
-    margin-top: 1.25rem;            /* Space Before: 15pt is ~20px */
-    margin-bottom: 0.5rem;          /* Space After: 6pt is ~8px */
-  }
+    .mobile-h2 {
+        font-size: 1.8rem;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        font-kerning: auto;
+        text-align: left;
+        margin-top: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
 }
 
-/* =================================================================
-   Feedback Form Custom Styles
-==================================================================== */
+/* --- Feedback Page Layout --- */
+
 .feedback-brand-pink {
     color: #ff32cd;
 }
@@ -545,226 +544,13 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
-@media (max-width: 767.98px) {
-    /* Target the container for the buttons */
-    .feedback-page #feedbackForm .d-flex.justify-content-end {
-        justify-content: center !important; /* Center the buttons on the page */
-        gap: 1.5rem !important; /* Reduce the space between the buttons */
-        position: relative; /* Required for positioning the separator line */
-    }
-
-    /* Create the vertical separator line */
-    .feedback-page #feedbackForm .d-flex.justify-content-end::before {
-        content: '';
-        position: absolute;
-        left: 50%; /* Position in the horizontal center */
-        top: 50%; /* Position in the vertical center */
-        transform: translate(-50%, -50%); /* Precisely center the line */
-        height: 24px; /* Set the height of the line */
-        width: 1px; /* Set the thickness of the line */
-        background-color: #cccccc; /* Set the color of the line */
-    }
-
-    .feedback-btn-reset,
-    .feedback-btn-submit {
-        padding: 10px 16px !important;
-    }
-}
-
-.feedback-page .title-block {
-    margin-bottom: 32px;
-    padding-bottom: 0;
-}
-
-.feedback-page #feedbackForm fieldset,
-.feedback-page #feedbackForm .border-top {
-    padding-top: 20px !important;
-}
-
-/* Space between entire question blocks (fieldsets) */
-.feedback-page #feedbackForm fieldset,
-.feedback-page #feedbackForm .mb-4 {
-    margin-bottom: 45px !important;
-}
-
-/* Space between a question's title and its description text */
-.feedback-page .col-sm-4 .p4-table-title {
-    margin-bottom: 32px !important;
-}
-
-/* Vertical spacing (20px total) between checkbox/radio options */
-.option-row {
-    border-bottom: 0.66px solid #dee2e6 !important; 
-    padding-top: 1rem !important;    
-    padding-bottom: 1rem !important;
-}
-
-.option-row:last-of-type,
-.feedback-page #feedbackForm .row.align-items-center:last-of-type {
-    border-bottom: none !important;
-}
-
-.option-row.d-flex.align-items-center {
-    align-items: flex-start !important;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-/* Adds a slight top margin to the input to align baseline with the first line of text */
-.option-row.d-flex.align-items-center .feedback-form-input-custom {
-    margin-top: 3px !important;
-}
-
-/* Removes bottom margin from labels to keep row heights consistent */
-.option-row label,
-.option-row label.p5-table-body {
-    cursor: pointer;
-    user-select: none;
-    margin-bottom: 0 !important;
-}
-
-/* Ensures the rating header uses full column width */
-.feedback-page .rating-header-row {
-    padding: 0 !important;
-}
-
-/* Vertically centers the rating criteria labels with the radio buttons */
-.feedback-page .rating-matrix-row {
-    display: flex;
-    align-items: center;
-    min-height: 50px;
-    border-bottom: 1px solid #edf0f0;
-    padding: 8px 0;
-}
-
-.feedback-page .rating-matrix-label {
-    padding-right: 1.5rem;
-}
-
-.feedback-page .rating-matrix-row,
-.feedback-page #feedbackForm .row.align-items-center.border-bottom {
-    border-bottom: 0.66px solid #dee2e6 !important; 
-    padding-top: 15px !important;                 
-    padding-bottom: 15px !important;
-}
-
-.feedback-page #feedbackForm .row.align-items-center:last-of-type {
-    border-bottom: none !important;
-}
-
-.feedback-page .row.align-items-center {
-    display: flex;
-    align-items: center;
-}
-
-/* Removes bottom margin from rating matrix header labels */
-.text-muted .p5-table-body {
-    margin-bottom: 0 !important;
-}
-
-.feedback-form-checkbox,
-.feedback-form-radio {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ccc !important;
-    background-color: #ffffff;
-    outline: none;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.feedback-form-checkbox {
-    border-radius: 3px;
-}
-
-.feedback-form-radio {
-    border-radius: 50%;
-}
-
-/* Hover State */
-.feedback-form-checkbox:hover,
-.feedback-form-radio:hover {
-    border-color: #ff32cd !important;
-}
-
-/* Checked State */
-.feedback-form-checkbox:checked {
-    background-color: #ff32cd !important;
-    border-color: #ff32cd !important;
-}
-
-.feedback-form-radio:checked {
-    background-color: #ff32cd !important;
-    border-color: #ff32cd !important;
-}
-
-/* Accessibility Focus Outline */
-.feedback-form-checkbox:focus-visible,
-.feedback-form-radio:focus-visible {
-    box-shadow: 0 0 0 3px rgba(255, 122, 220, 0.5);
-}
-
-.feedback-page #feedbackForm .fieldset-q1 {
-    margin-bottom: 25px !important;
-}
-
-.feedback-border-brand-pink + .row {
-    margin-top: 25px !important;
-}
-
-#feedbackForm > .feedback-border-brand-pink {
-    margin-bottom: 45px !important;
-}
-
-.feedback-textarea-fixed {
-    width: 100% !important;
-    height: 300px !important;
-    min-height: 300px !important;
-    max-height: 300px !important;
-    resize: none !important;
-    box-sizing: border-box !important;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #000000;
-    border-radius: 4px;
-    transition: all 0.25s ease-in-out;
-}
-
-#comments-textarea::placeholder {
-    color: #A0A0A0;
-    opacity: 1;
-}
-
-.form-footer-notice {
-    /* Add 45px space above this text */
-    margin-top: 45px !important;
-}
-
-.form-footer-notice a {
-    color: #ff32cd;
-    text-decoration: underline;
-}
-
-.form-footer-notice p {
-    /* Remove default paragraph margins to prevent extra space */
-    margin-bottom: 0 !important;
-}
-
-.form-footer-notice + .d-flex.justify-content-end {
-    margin-top: 100px !important;
-    padding-top: 0 !important; 
-}
+/* --- Feedback Page Buttons (Universal & Mobile Layout) --- */
 
 .feedback-btn-reset,
 .feedback-btn-submit {
     font-family: 'Monda', sans-serif;
-    font-size: 1.525rem;
-    font-weight: 700; /* Bold */
+    font-size: 2.1rem; /* 25pt custom style */
+    font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.02em;
     display: inline-flex;
@@ -804,33 +590,233 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     opacity: 0.9;
 }
 
-/* Reset bottom margin on form to prevent spacing leakage */
+@media (max-width: 767.98px) {
+    .feedback-page #feedbackForm .d-flex.justify-content-end {
+        justify-content: center !important;
+        gap: 1.5rem !important;
+        position: relative;
+    }
+
+    .feedback-page #feedbackForm .d-flex.justify-content-end::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 30px;
+        width: 1px;
+        background-color: #cccccc;
+    }
+
+    .feedback-btn-reset,
+    .feedback-btn-submit {
+        padding: 10px 16px !important;
+    }
+}
+
+/* --- Feedback Form Structure & Elements --- */
+
+.feedback-page .title-block {
+    margin-bottom: 32px;
+    padding-bottom: 0;
+}
+
+.feedback-page #feedbackForm fieldset,
+.feedback-page #feedbackForm .border-top {
+    padding-top: 20px !important;
+}
+
+.feedback-page #feedbackForm fieldset,
+.feedback-page #feedbackForm .mb-4 {
+    margin-bottom: 45px !important;
+}
+
+.feedback-page .col-sm-4 .p4-table-title {
+    margin-bottom: 32px !important;
+}
+
+.option-row {
+    border-bottom: 0.66px solid #dee2e6 !important; 
+    padding-top: 1rem !important;    
+    padding-bottom: 1rem !important;
+}
+
+.option-row:last-of-type,
+.feedback-page #feedbackForm .row.align-items-center:last-of-type {
+    border-bottom: none !important;
+}
+
+.option-row.d-flex.align-items-center {
+    align-items: flex-start !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.option-row.d-flex.align-items-center .feedback-form-input-custom {
+    margin-top: 3px !important;
+}
+
+.option-row label,
+.option-row label.p5-table-body {
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0 !important;
+}
+
+/* --- Rating Matrix Styles --- */
+
+.feedback-page .rating-header-row {
+    padding: 0 !important;
+}
+
+.feedback-page .rating-matrix-row {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    border-bottom: 1px solid #edf0f0;
+    padding: 8px 0;
+}
+
+.feedback-page .rating-matrix-label {
+    padding-right: 1.5rem;
+}
+
+.feedback-page .rating-matrix-row,
+.feedback-page #feedbackForm .row.align-items-center.border-bottom {
+    border-bottom: 0.66px solid #dee2e6 !important; 
+    padding-top: 15px !important;                 
+    padding-bottom: 15px !important;
+}
+
+.feedback-page #feedbackForm .row.align-items-center:last-of-type {
+    border-bottom: none !important;
+}
+
+.feedback-page .row.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.text-muted .p5-table-body {
+    margin-bottom: 0 !important;
+}
+
+/* --- Custom Checkbox & Radio Controls --- */
+
+.feedback-form-checkbox,
+.feedback-form-radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc !important;
+    background-color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.feedback-form-checkbox {
+    border-radius: 3px;
+}
+
+.feedback-form-radio {
+    border-radius: 50%;
+}
+
+.feedback-form-checkbox:hover,
+.feedback-form-radio:hover {
+    border-color: #ff32cd !important;
+}
+
+.feedback-form-checkbox:checked,
+.feedback-form-radio:checked {
+    background-color: #ff32cd !important;
+    border-color: #ff32cd !important;
+}
+
+.feedback-form-checkbox:focus-visible,
+.feedback-form-radio:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 122, 220, 0.5);
+}
+
+.feedback-page #feedbackForm .fieldset-q1 {
+    margin-bottom: 25px !important;
+}
+
+.feedback-border-brand-pink + .row {
+    margin-top: 25px !important;
+}
+
+#feedbackForm > .feedback-border-brand-pink {
+    margin-bottom: 45px !important;
+}
+
+/* --- Textarea Controls --- */
+
+.feedback-textarea-fixed {
+    width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+    resize: none !important;
+    box-sizing: border-box !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #000000;
+    border-radius: 4px;
+    transition: all 0.25s ease-in-out;
+}
+
+#comments-textarea::placeholder {
+    color: #A0A0A0;
+    opacity: 1;
+}
+
+/* --- Footer & Pagination Layout --- */
+
+.form-footer-notice {
+    margin-top: 45px !important;
+}
+
+.form-footer-notice a {
+    color: #ff32cd;
+    text-decoration: underline;
+}
+
+.form-footer-notice p {
+    margin-bottom: 0 !important;
+}
+
+.form-footer-notice + .d-flex.justify-content-end {
+    margin-top: 100px !important;
+    padding-top: 0 !important; 
+}
+
 .feedback-page #feedbackForm {
     margin-bottom: 0 !important;
 }
 
-/* Clean bottom padding and margin on action button row */
 .feedback-page #feedbackForm .d-flex.justify-content-end.pt-4 {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
 
-/* Locks a precise 130px spacing between form submit row and pagination */
 .prev-next {
     margin-top: 130px !important;
     padding-top: 0 !important;
     width: 100%;
 }
 
-/* Ensure old navigation classes do not compound layout spacing */
 .feedback-page-nav-line {
     margin-top: 0 !important;
     padding-top: 0 !important;
 }
 
-/* ==========================================================================
-   skip content link for accessibility (visually hidden but accessible to screen readers)
-   ========================================================================== */
+/* --- Accessibility Utilities --- */
 
 .skip-to-content {
     position: absolute !important;
@@ -857,10 +843,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* =================================================================
-   Search Page Custom Layout
-   ================================================================= */
-   @media (min-width: 992px) {
+/* --- Search Page Styles --- */
+
+@media (min-width: 992px) {
     .search-page#main-content {
         padding-top: 134px !important;
     }
@@ -876,27 +861,24 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     opacity: 1;
 }
 
-/* Container wrapping the input and the overlapping icon button */
 .embedded-search-wrapper {
     position: relative;
     width: 100%;
 }
 
-/* clean input field with padding on the right for the button */
 .embedded-search-input {
     width: 100%;
     height: 48px;
-    padding: 10px 50px 10px 20px !important; /* Extra padding on the right so text doesn't overlap the button */
+    padding: 10px 50px 10px 20px !important;
     font-size: 1rem;
     color: #565a5f;
-    background-color: #ffffff !important; /* Full white background */
-    border: 1px solid #b9bec0 !important; /* Light grey border */
+    background-color: #ffffff !important;
+    border: 1px solid #b9bec0 !important;
     outline: none !important;
     box-shadow: none !important;
     transition: border-color 0.25s ease-in-out;
 }
 
-/* Floating button nested absolutely inside the right side of the input field */
 .embedded-search-btn {
     position: absolute;
     top: 50%;
@@ -912,13 +894,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     cursor: pointer;
 }
 
-/* Icon style matching screenshot color */
 .embedded-search-btn svg {
     color: #565a5f;
     transition: color 0.25s ease-in-out;
 }
 
-/* Force search result links to use the brand pink color */
 #searchResults .result-title,
 #searchResults h3 a {
     color: #ff32cd !important; 
@@ -926,7 +906,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transition: color 0.25s ease-in-out;
 }
 
-/* Hover & Focus state: color transition or underline */
 #searchResults .result-title:hover,
 #searchResults h3 a:hover,
 #searchResults .result-title:focus,
@@ -941,9 +920,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
-/* =================================================================
-   Thank You Page Layout
-   ================================================================= */
+/* --- Thank You Page Styles --- */
 
 .thankyou-page-container {
     position: relative;
@@ -952,13 +929,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .thankyou-content-wrapper {
     position: relative;
-    /* Define a minimum height for the wrapper to contain the absolutely positioned elements */
     min-height: 200px; 
 }
 
 .thankyou-bg-img {
     position: absolute;
-    z-index: 1; /* Place it above the base layer but below text/images */
+    z-index: 1;
     opacity: 0.15;
     left: 50px;
     top: -135px;
@@ -968,24 +944,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .thankyou-title-img {
     position: absolute;
-    z-index: 3; /* Highest layer */
+    z-index: 3;
     width: 100%;
     max-width: 500px;
-    /* Position from the top of the wrapper */
     top: -40px; 
     left: -10px;
 }
 
 .thankyou-text {
-    font-family: "Monda", sans-serif;          /* Font: Monda */
-    font-size: 33px;                   /* Size: 34pt converted to rem */
-    line-height: 3.00rem;                 /* Leading: 36pt converted to rem */
-    letter-spacing: -0.025em;             /* Tracking: -25 converted to em */
-    font-weight: 700;                     /* Monda font bold weight */
+    font-family: "Monda", sans-serif;
+    font-size: 33px;
+    line-height: 3.00rem;
+    letter-spacing: -0.025em;
+    font-weight: 700;
     color: #565a5f !important;
-    padding-top: 1.56rem;                 /* 25px translated to rem */
-    margin-top: 1.25rem;                  /* Space Before: 15pt translated to rem */
-    margin-bottom: 1.25rem;               /* Space After: 15pt translated to rem */
-    position: relative; /* Position relative to the flow, but with z-index */
-    z-index: 2; /* Place it above the background image */
+    padding-top: 1.56rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    z-index: 2;
 }
