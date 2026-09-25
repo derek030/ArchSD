@@ -563,10 +563,7 @@
     <!-- Feedback form validation and interaction logic -->
     <script>
         $(function () {
-
-            // =============================================================
             // Form submission validation
-            // =============================================================
             $('#feedbackForm').on('submit', function (e) {
                 e.preventDefault();
 
@@ -620,9 +617,7 @@
                 window.location.href = "thankyou.html";
             });
 
-            // =============================================================
             // Form reset handling
-            // =============================================================
             $('#feedbackForm').on('reset', function () {
                 // Clear the additional text fields after the form is reset.
                 setTimeout(function () {
@@ -635,18 +630,16 @@
 
         });
 
-        // =================================================================
         // GSAP Scroll-Triggered Animations (Dynamic Enter & Exit)
-        // =================================================================
         gsap.registerPlugin(ScrollTrigger);
 
-        // 1. Set the initial "hidden" state for all question blocks.
+        // Set the initial "hidden" state for all question blocks.
         gsap.set("#feedbackForm > fieldset, #feedbackForm > div.feedback-border-brand-pink", {
             autoAlpha: 0,
             y: 50
         });
 
-        // 2. Animate each block dynamically based on scroll direction.
+        // Animate each block dynamically based on scroll direction.
         ScrollTrigger.batch("#feedbackForm > fieldset, #feedbackForm > div.feedback-border-brand-pink", {
             start: "top 90%", // Trigger when entering from the bottom
             end: "bottom 10%", // Trigger when exiting through the top
