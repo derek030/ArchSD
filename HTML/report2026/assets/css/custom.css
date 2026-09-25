@@ -816,6 +816,58 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding-top: 0 !important;
 }
 
+/* =================================================================
+   Feedback Form Mobile Layout
+   ================================================================= */
+@media (max-width: 767.98px) {
+
+    /* --- Q1 Header Layout --- */
+    .q-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%; 
+    }
+
+    .q-header > .p4-table-title {
+        flex: 1 1 65%; 
+        margin-bottom: 0 !important;
+    }
+    
+    .q-header > .p2-body-style {
+        flex: 1 1 35%;       
+        margin-top: 10px !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* --- Custom Checkbox & Radio Styles --- */
+    .feedback-form-checkbox:checked {
+        background-color: #ff32cd !important;
+        border-color: #ff32cd !important;
+        background-image: none;
+    }
+
+    .feedback-form-radio {
+        position: relative;
+    }
+
+    .feedback-form-radio:checked::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ff32cd;
+    }
+     .feedback-form-radio:checked {
+         border-color: #ff32cd !important;
+         background-color: #ffffff !important;
+    }
+}
+
 /* --- Accessibility Utilities --- */
 
 .skip-to-content {
