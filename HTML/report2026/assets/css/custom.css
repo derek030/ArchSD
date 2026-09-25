@@ -670,7 +670,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .option-row {
-    border-bottom: 0.66px solid #dee2e6 !important; 
+    border-bottom: 0.66px solid #000000 !important; 
     padding-top: 1rem !important;    
     padding-bottom: 1rem !important;
 }
@@ -717,7 +717,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .feedback-page .rating-matrix-row,
 .feedback-page #feedbackForm .row.align-items-center.border-bottom {
-    border-bottom: 0.66px solid #dee2e6 !important; 
+    border-bottom: 0.66px solid #000000 !important; 
     padding-top: 15px !important;                 
     padding-bottom: 15px !important;
 }
