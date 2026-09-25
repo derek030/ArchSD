@@ -26,7 +26,7 @@
     <!-- Accessibility: Skip Link -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-    <!-- Page header: Logos and Report Title -->
+    <!-- Page header and site logos -->
     <header class="fixed-header d-flex align-items-center">
         <div class="container h-100">
             <div class="row justify-content-between align-items-center">
@@ -44,73 +44,75 @@
         </div>
     </header>
 
-    <!-- Main Content Container -->
-    <div class="container">
-
-
-
-        <!-- Menu Placeholder -->
+    <!-- Main page container -->
+    <div class="container thankyou-container">
+        <!-- menu -->
         <div id="nav-placeholder"></div>
 
-        <!-- Main Feedback Block (2-Column Grid Layout) -->
-        <main id="main-content" class="row">
+        <main id="main-content" class="row feedback-page" tabindex="-1">
 
-            <!-- Left Side: Page Title and Green Indicator (1/3 Width) -->
-            <div class="col-12 col-lg-4 d-flex flex-column align-items-start justify-content-start">
-                <h1 class="feedback-page-title">
-                    Feedback
-                </h1>
+            <!-- Left Column for "Feedback" Title -->
+            <div class="col-12 col-lg-4" role="region" aria-label="Introduction">
+                <div class="title-block">
+                    <h2 class="section-title">Feedback</h2>
+                </div>
             </div>
 
-            <!-- Right Side: Content block (2/3 Width) -->
-            <div class="col-12 col-lg-8 d-flex flex-column align-items-start justify-content-start gap-3">
-                <h2 class="text-dark font-light m-0" style="font-family: 'Inter', sans-serif;">
-                    Thank you.
-                </h2>
-                <p class="text-secondary m-0 font-light" style="font-family: 'Inter', sans-serif; font-size: 1.25rem;">
-                    We appreciate your feedback.
-                </p>
+            <!-- Right Column for Animated Content -->
+            <div class="col-12 col-lg-8 d-flex align-items-center justify-content-center thankyou-main-wrapper">
+
+                <div class="position-relative">
+                    <!-- Background Image (Animated) -->
+                    <img src="../assets/images/appendix-feedback.png" class="thankyou-bg-img"
+                        alt="Decorative background">
+
+                    <!-- Foreground Content -->
+                    <div class="thankyou-content">
+                        <img src="../assets/images/appendix-feedback-thankyou.png" class="thankyou-title-img"
+                            alt="Thank You">
+                        <h2 class="thankyou-text">We appreciate your feedback</h2>
+                    </div>
+                </div>
             </div>
 
+            <!-- Previous and next page navigation -->
+            <div class="prev-next" id="prev-next">
+                <nav aria-label="Page navigation" class="w-100">
+                    <div class="row mx-0">
+                        <div class="col-6 p-0 d-flex justify-content-start">
+                            <a href="#" class="page-nav-link" aria-label="Previous page">
+                                <div class="page-nav d-flex align-items-center">
+                                    <div class="page-nav-back d-flex align-items-center" aria-hidden="true">
+                                        <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="">
+                                    </div>
+                                    <p class="page-nav-title ms-2 mb-0">
+                                        <span class="visually-hidden">Previous page: </span>Report Verification
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-6 p-0 d-flex justify-content-end">
+                            <a href="#" class="page-nav-link" aria-label="Next page">
+                                <div class="page-nav d-flex align-items-center justify-content-end">
+                                    <p class="page-nav-title me-2 mb-0">
+                                        <span class="visually-hidden">Next page: </span>Glossary
+                                    </p>
+                                    <div class="page-nav-next d-flex align-items-center" aria-hidden="true">
+                                        <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon"
+                                            style="transform: scaleX(-1);" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
         </main>
 
-        <!-- Pagination Links -->
-        <nav class="feedback-page-nav-line row justify-content-between mt-5" aria-label="Page Navigation">
-
-            <!-- Previous page: Report Verification -->
-            <div class="col-6 p-0">
-                <a href="javascript:void(0);" class="feedback-page-nav-link text-decoration-none"
-                    aria-label="Navigate to previous page: Report Verification">
-                    <div class="feedback-page-nav feedback-page-back d-flex align-items-center">
-                        <div aria-hidden="true">
-                            <img src="../assets/images/page-nav-icon.svg" class="feedback-page-nav-icon" alt="">
-                        </div>
-                        <p class="feedback-page-nav-title ms-2 mb-0">
-                            Report Verification
-                        </p>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Next page: Glossary -->
-            <div class="col-6 p-0 text-end d-flex justify-content-end">
-                <a href="javascript:void(0);" class="feedback-page-nav-link text-decoration-none"
-                    aria-label="Navigate to next page: Glossary">
-                    <div class="feedback-page-nav feedback-page-next d-flex align-items-center">
-                        <p class="feedback-page-nav-title me-2 mb-0">
-                            Glossary
-                        </p>
-                        <div aria-hidden="true">
-                            <img src="../assets/images/page-nav-icon.svg" class="feedback-page-nav-icon" alt="">
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </nav>
-
         <!-- Site footer -->
-        <footer class="site-footer mt-5" role="contentinfo">
+        <footer class="site-footer " role="contentinfo">
             <div class="row">
                 <div class="col-12">
 
@@ -138,10 +140,9 @@
                 </div>
             </div>
         </footer>
+    </div>
 
-    </div> <!-- Container End -->
-
-    <!-- Back-to-top button -->
+     <!-- Back-to-top button -->
     <button type="button" id="back-to-top" tabindex="0" aria-label="Back to Top">
         <img src="../assets/images/back-to-top.svg" alt="Back to Top" title="Back to Top">
     </button>
@@ -151,49 +152,28 @@
     <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
     <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
     <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+    <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>7
 
     <!-- Site Utility Scripts -->
     <script src="../assets/js/general.js" defer></script>
     <script src="../assets/js/menu.js" defer></script>
 
-    <!-- GSAP Back-to-top Script -->
+    <!-- Animation Script is now included -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            gsap.registerPlugin(ScrollTrigger);
+        $(function () {
+            gsap.set(".thankyou-bg-img, .thankyou-title-img", { autoAlpha: 0 });
 
-            const backToTop = document.getElementById('back-to-top');
-            const footer = document.querySelector('.feedback-site-footer');
+            gsap.fromTo(".thankyou-bg-img",
+                { xPercent: -50, autoAlpha: 0 },
+                { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.5 }
+            );
+            gsap.fromTo(".thankyou-title-img",
+                { xPercent: 50, autoAlpha: 0 },
+                { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.8 }
+            );
 
-            if (backToTop && footer) {
-                ScrollTrigger.create({
-                    trigger: footer,
-                    start: "top bottom",
-                    end: "bottom bottom",
-                    onUpdate: (self) => {
-                        const progress = self.progress;
-                        const footerHeight = footer.offsetHeight;
-                        const targetBottom = 30 + (progress * footerHeight);
-
-                        gsap.to(backToTop, {
-                            bottom: targetBottom,
-                            duration: 0.1,
-                            overwrite: "auto"
-                        });
-                    },
-                    onLeaveBack: () => {
-                        gsap.to(backToTop, {
-                            bottom: 30,
-                            duration: 0.2,
-                            overwrite: "auto"
-                        });
-                    }
-                });
-            }
         });
     </script>
-
 </body>
 
 </html>
