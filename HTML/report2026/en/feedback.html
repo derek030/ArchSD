@@ -450,7 +450,8 @@
 
                 <div class="form-footer-notice">
                     <p class="p2-body-style">
-                        You can also send an email to <a href="mailto:imu@archsd.gov.hk">imu@archsd.gov.hk</a>. The information will be used in strict confidence and for statistical purposes only.
+                        You can also send an email to <a href="mailto:imu@archsd.gov.hk">imu@archsd.gov.hk</a>. The
+                        information will be used in strict confidence and for statistical purposes only.
                     </p>
                 </div>
 
@@ -634,9 +635,9 @@
 
         });
 
-        // =============================================================
-        // GSAP Scroll-Triggered Animations
-        // =============================================================
+        // =================================================================
+        // GSAP Scroll-Triggered Animations (Dynamic Enter & Exit)
+        // =================================================================
         gsap.registerPlugin(ScrollTrigger);
 
         // 1. Set the initial "hidden" state for all question blocks.
@@ -645,30 +646,37 @@
             y: 50
         });
 
-        // 2. Animate each block into view when it enters/leaves the viewport.
+        // 2. Animate each block dynamically based on scroll direction.
         ScrollTrigger.batch("#feedbackForm > fieldset, #feedbackForm > div.feedback-border-brand-pink", {
-            start: "top 90%",
-            end: "bottom 10%",
+            start: "top 90%", // Trigger when entering from the bottom
+            end: "bottom 10%", // Trigger when exiting through the top
 
-            // THIS IS THE KEY CHANGE:
-            // This tells the animation to play when entering and reverse when leaving,
-            // from either direction (scrolling down or scrolling up).
-            toggleActions: "play reverse play reverse",
-
-            // The animation itself
+            // Trigger entrance animation when scrolling down
             onEnter: batch => gsap.to(batch, {
                 autoAlpha: 1,
                 y: 0,
                 duration: 0.8,
                 ease: "power2.out",
                 stagger: 0.15,
-                overwrite: true // Prevents animations from overlapping if you scroll fast
+                overwrite: "auto"
             }),
-            // The reverse animation
-            onLeave: batch => gsap.to(batch, { autoAlpha: 0, y: -50, duration: 0.4, ease: "power1.in", overwrite: true }),
-            onEnterBack: batch => gsap.to(batch, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power2.out", stagger: 0.15, overwrite: true }),
-            onLeaveBack: batch => gsap.to(batch, { autoAlpha: 0, y: 50, duration: 0.4, ease: "power1.in", overwrite: true })
+
+            // TRIGGER EXIT: Dismiss and slide down when scrolling back UP past the trigger point
+            onLeaveBack: batch => gsap.to(batch, {
+                autoAlpha: 0,
+                y: 50,
+                duration: 0.5,
+                ease: "power2.in",
+                stagger: 0.1,
+                overwrite: "auto"
+            }),
+
+            // Keep elements visible when scrolling way past them to the bottom
+            onLeave: () => { },
+            onEnterBack: () => { }
         });
+
+
 
     </script>
 
