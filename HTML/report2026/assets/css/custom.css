@@ -898,7 +898,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
      .feedback-form-radio:checked {
          border-color: #ff32cd !important;
-         background-color: #ffffff !important;
     }
 
     .feedback-page fieldset:nth-of-type(2) .p4-table-title {
