@@ -539,6 +539,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
+@media (max-width: 991.98px) {
+    #feedbackForm {
+        margin-top: 45px;
+    }
+}
+
 .feedback-page .title-block {
     margin-bottom: 32px;
     padding-bottom: 0;
