@@ -519,8 +519,42 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         margin-top: 1.25rem;
         margin-bottom: 0.5rem;
     }
-}
 
+    .mobile-p2-body {
+        font-family: "Inter", sans-serif;
+        font-weight: 300;
+        font-size: 14pt;
+        line-height: 20pt;
+        letter-spacing: -0.01em;
+        margin-top: 8pt;
+        margin-bottom: 6pt;
+        text-align: left;
+    }
+
+    .mobile-p4-table-title {
+        font-family: "Monda", sans-serif; 
+        font-weight: 700;
+        font-size: 16pt;
+        line-height: 20pt;
+        letter-spacing: -0.02em;
+        font-kerning: normal;
+        text-align: left;
+        margin-top: 6pt;
+        margin-bottom: 8pt;
+        color: #ff32cd;
+    }
+
+    .mobile-p5-table-body {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 12pt;
+        line-height: 18pt;
+        letter-spacing: -0.01em;
+        margin-bottom: 10pt;
+        text-align: left;
+        color: #000000;
+    }
+}
 /* --- Feedback Page Layout --- */
 
 .feedback-brand-pink {
@@ -829,13 +863,13 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         width: 100%; 
     }
 
-    .q-header > .p4-table-title {
-        flex: 1 1 65%; 
+    .q-header > .mobile-p4-table-title {
+        flex: 1 1 54%; 
         margin-bottom: 0 !important;
     }
     
-    .q-header > .p2-body-style {
-        flex: 1 1 35%;       
+    .q-header > .mobile-p2-body {
+        flex: 1 1 46%;       
         margin-top: 10px !important;
         margin-bottom: 0 !important;
     }
@@ -866,7 +900,39 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
          border-color: #ff32cd !important;
          background-color: #ffffff !important;
     }
+
+    .feedback-page fieldset:nth-of-type(2) .p4-table-title {
+        font-family: "Inter", sans-serif;
+        font-size: 18pt;
+        font-weight: 700; /* Bold */
+        line-height: 1.3; /* Adjust line-height for the new font size */
+    }
+
+    .feedback-page .col-sm-8 .row.d-sm-none .col {
+        font-family: "Inter", sans-serif;
+        font-size: 10pt;
+        font-weight: 700; /* Bold */
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    /* --- 3. Hide Redundant Labels (Keep this rule) --- */
+    .feedback-page .rating-matrix-row .d-sm-none {
+        display: none !important;
+    }
+
+    .feedback-page .col-sm-8 .row.d-sm-none .col {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    
+    /* ... The rest of your mobile styles ... */
+    .feedback-page .rating-matrix-row .d-sm-none {
+        display: none !important;
+    }
 }
+
+
 
 /* --- Accessibility Utilities --- */
 
