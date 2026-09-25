@@ -565,7 +565,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         background-color: #cccccc; /* Set the color of the line */
     }
 
-    /* Optional: Adjust button padding if needed for a tighter fit */
     .feedback-btn-reset,
     .feedback-btn-submit {
         padding: 10px 16px !important;
@@ -738,7 +737,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 #comments-textarea::placeholder {
     color: #A0A0A0;
-    opacity: 1; /* Ensures the color is not faded in some browsers like Firefox */
+    opacity: 1;
 }
 
 .form-footer-notice {
@@ -758,12 +757,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .form-footer-notice + .d-flex.justify-content-end {
     margin-top: 100px !important;
-    padding-top: 0 !important; /* Override the existing pt-4 */
+    padding-top: 0 !important; 
 }
 
 .feedback-btn-reset,
 .feedback-btn-submit {
-    /* --- NEW FONT STYLES --- */
     font-family: 'Monda', sans-serif;
     font-size: 1.525rem;
     font-weight: 700; /* Bold */
@@ -778,7 +776,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     cursor: pointer;
     text-decoration: none !important;
     padding: 0 16px !important;
-    height: auto; /* Allow height to adjust to the new font size */
+    height: auto; 
 }
 
 .feedback-btn-reset {
