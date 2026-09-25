@@ -824,6 +824,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .form-footer-notice a {
+    font-weight: 700;
     color: #ff32cd;
     text-decoration: underline;
 }
@@ -907,29 +908,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
          border-color: #ff32cd !important;
     }
 
-    .feedback-page fieldset:nth-of-type(2) .p4-table-title {
-        font-family: "Inter", sans-serif;
-        font-size: 18pt;
-        font-weight: 700; /* Bold */
-        line-height: 1.3; /* Adjust line-height for the new font size */
-    }
-
-    .feedback-page .col-sm-8 .row.d-sm-none .col {
-        font-family: "Inter", sans-serif;
-        font-size: 10pt;
-        font-weight: 700; /* Bold */
-        padding-left: 2px;
-        padding-right: 2px;
-    }
-
     /* --- 3. Hide Redundant Labels (Keep this rule) --- */
     .feedback-page .rating-matrix-row .d-sm-none {
         display: none !important;
-    }
-
-    .feedback-page .col-sm-8 .row.d-sm-none .col {
-        padding-left: 2px;
-        padding-right: 2px;
     }
     
     /* ... The rest of your mobile styles ... */
