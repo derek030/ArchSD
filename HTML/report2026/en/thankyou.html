@@ -49,31 +49,34 @@
         <!-- menu -->
         <div id="nav-placeholder"></div>
 
-        <main id="main-content" class="row feedback-page" tabindex="-1">
+        <div class="container thankyou-page-container">
 
-            <!-- Left Column for "Feedback" Title -->
-            <div class="col-12 col-lg-4" role="region" aria-label="Introduction">
-                <div class="title-block">
-                    <h2 class="section-title">Feedback</h2>
+            <main id="main-content" class="row" tabindex="-1">
+
+                <!-- Row 1: "Feedback" Section Title -->
+                <div class="col-12">
+                    <div class="title-block">
+                        <h2 class="section-title">Feedback</h2>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Right Column for Animated Content -->
-            <div class="col-12 col-lg-8 d-flex align-items-center justify-content-center thankyou-main-wrapper">
+                <!-- Row 2: Thank You Content, placed in the correct grid columns -->
+                <div class="col-md-7 offset-md-5">
+                    <div class="thankyou-content-wrapper">
+                        <!-- Background Image - Positioned relative to the container -->
+                        <img src="../assets/images/appendix-feedback.png" class="thankyou-bg-img"
+                            alt="Decorative background spiral">
 
-                <div class="position-relative">
-                    <!-- Background Image (Animated) -->
-                    <img src="../assets/images/appendix-feedback.png" class="thankyou-bg-img"
-                        alt="Decorative background">
-
-                    <!-- Foreground Content -->
-                    <div class="thankyou-content">
+                        <!-- "Thank You" PNG - Positioned above the text -->
                         <img src="../assets/images/appendix-feedback-thankyou.png" class="thankyou-title-img"
                             alt="Thank You">
+
+                        <!-- "We appreciate..." Text -->
                         <h2 class="thankyou-text">We appreciate your feedback</h2>
                     </div>
                 </div>
-            </div>
+
+            </main>
 
             <!-- Previous and next page navigation -->
             <div class="prev-next" id="prev-next">
@@ -109,71 +112,70 @@
                     </div>
                 </nav>
             </div>
-        </main>
 
-        <!-- Site footer -->
-        <footer class="site-footer " role="contentinfo">
-            <div class="row">
-                <div class="col-12">
+            <!-- Site footer -->
+            <footer class="site-footer " role="contentinfo">
+                <div class="row">
+                    <div class="col-12">
 
-                    <!-- Footer accent line -->
-                    <div class="footer-green-bar"></div>
+                        <!-- Footer accent line -->
+                        <div class="footer-green-bar"></div>
 
-                    <!-- Footer links -->
-                    <p class="mb-0 text-white-5">
-                        2026 &copy; |
-                        <a target="_blank" aria-label="Important notices (opens in a new window)"
-                            href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
-                            Important notices
-                        </a>
-                        |
-                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)"
-                            href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
-                            Privacy
-                        </a>
-                        |
-                        <a aria-label="Go to Sitemap" href="sitemap.html">
-                            Sitemap
-                        </a>
-                    </p>
+                        <!-- Footer links -->
+                        <p class="mb-0 text-white-5">
+                            2026 &copy; |
+                            <a target="_blank" aria-label="Important notices (opens in a new window)"
+                                href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
+                                Important notices
+                            </a>
+                            |
+                            <a target="_blank" aria-label="Privacy Policy (opens in a new window)"
+                                href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
+                                Privacy
+                            </a>
+                            |
+                            <a aria-label="Go to Sitemap" href="sitemap.html">
+                                Sitemap
+                            </a>
+                        </p>
 
+                    </div>
                 </div>
-            </div>
-        </footer>
-    </div>
+            </footer>
+        </div>
 
-     <!-- Back-to-top button -->
-    <button type="button" id="back-to-top" tabindex="0" aria-label="Back to Top">
-        <img src="../assets/images/back-to-top.svg" alt="Back to Top" title="Back to Top">
-    </button>
+        <!-- Back-to-top button -->
+        <button type="button" id="back-to-top" tabindex="0" aria-label="Back to Top">
+            <img src="../assets/images/back-to-top.svg" alt="Back to Top" title="Back to Top">
+        </button>
 
-    <!-- JavaScript Libraries -->
-    <script src="../assets/js/gsap.min.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>7
+        <!-- JavaScript Libraries -->
+        <script src="../assets/js/gsap.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
-    <!-- Site Utility Scripts -->
-    <script src="../assets/js/general.js" defer></script>
-    <script src="../assets/js/menu.js" defer></script>
+        <!-- Site Utility Scripts -->
+        <script src="../assets/js/general.js" defer></script>
+        <script src="../assets/js/menu.js" defer></script>
 
-    <!-- Animation Script is now included -->
-    <script>
-        $(function () {
-            gsap.set(".thankyou-bg-img, .thankyou-title-img", { autoAlpha: 0 });
+        <!-- Animation Script is now included -->
+        <script>
+            $(function () {
+                gsap.set(".thankyou-bg-img, .thankyou-title-img", { autoAlpha: 0 });
 
-            gsap.fromTo(".thankyou-bg-img",
-                { xPercent: -50, autoAlpha: 0 },
-                { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.5 }
-            );
-            gsap.fromTo(".thankyou-title-img",
-                { xPercent: 50, autoAlpha: 0 },
-                { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.8 }
-            );
+                gsap.fromTo(".thankyou-bg-img",
+                    { xPercent: -50, autoAlpha: 0 },
+                    { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.5 }
+                );
+                gsap.fromTo(".thankyou-title-img",
+                    { xPercent: 50, autoAlpha: 0 },
+                    { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.8 }
+                );
 
-        });
-    </script>
+            });
+        </script>
 </body>
 
 </html>

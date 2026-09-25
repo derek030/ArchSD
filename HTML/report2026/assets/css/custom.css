@@ -915,55 +915,43 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* =================================================================
-   Thank You Page Styles (Final Version with Column Fix)
+   Final Thank You Page Layout (Coordinate-Based)
    ================================================================= */
-.thankyou-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+
+.thankyou-page-container {
+    position: relative;
+    overflow-x: hidden; 
 }
 
-.thankyou-container main#main-content {
-    flex-grow: 1; 
+.thankyou-content-wrapper {
+    position: relative;
+    /* Define a minimum height for the wrapper to contain the absolutely positioned elements */
+    min-height: 200px; 
 }
 
-.thankyou-main-wrapper {
-    min-height: 35vh; /* Give it a large minimum height to allow centering */
-    display: flex;
-    align-items: center;
-}
-
-/* Background Image Styling */
 .thankyou-bg-img {
     position: absolute;
-    top: 70%;
-    left: 61%;
-    transform: translate(-50%, -50%);
+    z-index: 1; /* Place it above the base layer but below text/images */
+    opacity: 0.15;
+    left: 50px;
+    top: -135px;
     width: 100%;
-    max-width: 900px;
-    height: auto;
-    z-index: 1;
-    opacity: 0.2;
+    max-width: 750px;
 }
 
-/* Foreground Content Container */
-.thankyou-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* "Thank You" Title Image */
 .thankyou-title-img {
-    margin-bottom: -25px;
-    margin-left: -5px; 
-    max-width: 500px;
+    position: absolute;
+    z-index: 3; /* Highest layer */
     width: 100%;
+    max-width: 500px;
+    /* Position from the top of the wrapper */
+    top: -40px; 
+    left: -10px;
 }
 
-/* "we appreciate" Text Styling */
 .thankyou-text {
     font-family: "Monda", sans-serif;          /* Font: Monda */
-    font-size: 2.83rem;                   /* Size: 34pt converted to rem */
+    font-size: 33px;                   /* Size: 34pt converted to rem */
     line-height: 3.00rem;                 /* Leading: 36pt converted to rem */
     letter-spacing: -0.025em;             /* Tracking: -25 converted to em */
     font-weight: 700;                     /* Monda font bold weight */
@@ -971,6 +959,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding-top: 1.56rem;                 /* 25px translated to rem */
     margin-top: 1.25rem;                  /* Space Before: 15pt translated to rem */
     margin-bottom: 1.25rem;               /* Space After: 15pt translated to rem */
+    position: relative; /* Position relative to the flow, but with z-index */
+    z-index: 2; /* Place it above the background image */
 }
-
-
