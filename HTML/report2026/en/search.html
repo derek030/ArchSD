@@ -32,13 +32,16 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-8 asd-logo d-none d-sm-block"><a href="https://www.archsd.gov.hk/en/"
                         class="nav-link d-flex align-items-end" target="_blank"><img src="../assets/images/asd-logo.svg"
-                            alt="Site Logo" title="Sustainability Report 2026"></a></div>
+                            alt="Architectural Services Department (ArchSD) Logo"
+                            title="Sustainability Report 2026"></a></div>
                 <div class="col-8 asd-logo d-block d-sm-none"><a href="https://www.archsd.gov.hk/en/"
                         class="nav-link d-flex align-items-end" target="_blank"><img
-                            src="../assets/images/asd-logoM.svg" alt="Site Logo" title="Sustainability Report 2026"></a>
+                            src="../assets/images/asd-logoM.svg" alt="Architectural Services Department (ArchSD) Logo"
+                            title="Sustainability Report 2026"></a>
                 </div>
                 <div class="col-4 SD2026 site-title"><a href="index.html" class="nav-link "><img
-                            src="../assets/images/SD2026.svg" alt="Site Title" title="Sustainability Report 2026"></a>
+                            src="../assets/images/SD2026.svg" alt="Sustainability Report 2026 Home"
+                            title="Sustainability Report 2026"></a>
                 </div>
             </div>
         </div>
@@ -56,7 +59,7 @@
             <div class="page-title d-none" aria-hidden="true">Search</div>
 
             <!-- Left Column: Search Input Area (1/3 Width) -->
-            <div class="col-12 col-lg-4" role="region">
+            <div class="col-12 col-lg-4" role="search">
                 <div class="title-block">
                     <h2 class="section-title">Search</h2>
                 </div>
@@ -66,8 +69,8 @@
                 <form id="searchForm" role="search" class="mb-4">
                     <label for="searchInput" class="visually-hidden">Search Keyword</label>
                     <div class="embedded-search-wrapper">
-                        <input type="text" id="searchInput" placeholder="Search for..." class="embedded-search-input"
-                            required>
+                        <input type="text" id="searchInput" name="query" placeholder="Search for..."
+                            class="embedded-search-input" required>
 
                         <!-- Embedded Search Button inside the input -->
                         <button type="submit" class="embedded-search-btn" aria-label="Submit search">
@@ -232,12 +235,12 @@
                         const resultHtml = `
                         <div class="border-bottom pb-3">
                             <h3 class="fs-5 mb-1" style="font-family: 'Inter', sans-serif;">
-                                <a href="#" class="text-decoration-none text-primary fw-semibold">${escapeHTML(item.title)}</a>
+                                <a href="javascript:void(0);" class="text-decoration-none text-primary fw-semibold">${escapeHTML(item.title)}</a>
                             </h3>
                             <p class="small text-secondary mb-1">${escapeHTML(item.snippet)}</p>
                             <p class="small text-muted mb-0">
                                 <span class="text-break">${escapeHTML(item.url)} - ${item.size}</span>
-                                <a href="#" class="text-decoration-none text-secondary ms-2 small">Cached</a>
+                                <a href="javascript:void(0);" class="text-decoration-none text-secondary ms-2 small">Cached</a>
                             </p>
                         </div>
                     `;
