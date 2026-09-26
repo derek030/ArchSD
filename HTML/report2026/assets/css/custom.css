@@ -990,13 +990,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .thankyou-page-container {
     position: relative;
-    overflow-x: hidden;
 }
 
 .thankyou-content-wrapper {
     position: relative;
     width: 100%;
-    max-width: 650px; /* Adjust to match design's maximum width */
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1013,10 +1012,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .thankyou-title-img {
     position: absolute;
-    bottom: 50%; /* Positions it near the bottom of the component */
+    bottom: 50%;
     left: -10%;
     transform: translateX(-50%);
-    width: 80%;  /* Scales proportionally with the container */
+    width: 80%;
     height: auto;
     z-index: 3;
 }
