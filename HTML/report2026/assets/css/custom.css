@@ -744,13 +744,21 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* --- Action Buttons (Reset, Submit) --- */
 .feedback-btn-reset,
 .feedback-btn-submit {
-    padding: 0 !important;
-    border: none !important;
-    background: transparent !important;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background: transparent;
     cursor: pointer;
-    line-height: 0;
-    position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-btn-reset img,
+.feedback-btn-submit img {
+    height: 100%;
+    width: auto;
+    display: block;
 }
 
 /* Hide the hover image by default on ALL devices */
