@@ -996,7 +996,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .thankyou-content-wrapper {
     position: relative;
     width: 100%;
-    max-width: 650px; /* Adjust to match your design's maximum width */
+    max-width: 650px; /* Adjust to match design's maximum width */
     margin-left: auto;
     margin-right: auto;
 }
