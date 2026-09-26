@@ -659,10 +659,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.feedback-form-checkbox {
-    border-radius: 3px;
-}
-
 .feedback-form-radio {
     border-radius: 50%;
 }
