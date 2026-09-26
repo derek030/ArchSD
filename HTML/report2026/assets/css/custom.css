@@ -990,6 +990,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .thankyou-page-container {
     position: relative;
+    overflow-x: hidden;
 }
 
 .thankyou-content-wrapper {
