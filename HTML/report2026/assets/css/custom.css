@@ -744,42 +744,54 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* --- Action Buttons (Reset, Submit) --- */
 .feedback-btn-reset,
 .feedback-btn-submit {
-    font-family: 'Monda', sans-serif;
-    font-size: 2.1rem;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    padding: 0 16px !important;
-    background-color: transparent !important;
-    border: 1px solid transparent !important;
-    transition: all 0.25s ease-in-out !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
     cursor: pointer;
+    line-height: 0;
+    position: relative;
+    display: inline-block;
 }
 
-.feedback-btn-reset {
-    color: var(--darkGreyColor) !important;
+/* Hide the hover image by default on ALL devices */
+.feedback-btn-reset .btn-img-hover,
+.feedback-btn-submit .btn-img-hover {
+    display: none !important;
 }
 
-.feedback-btn-submit {
-    color: var(--mainPinkColor) !important;
+/* Show the default image by default */
+.feedback-btn-reset .btn-img-default,
+.feedback-btn-submit .btn-img-default {
+    display: block !important;
 }
 
-.feedback-btn-reset:hover {
-    background-color: var(--mainPinkColor) !important;
-    border-color: var(--mainPinkColor) !important;
-    color: #ffffff !important;
+/* --- DESKTOP: Hover-Swap for Mouse Devices --- */
+@media (hover: hover) and (pointer: fine) {
+    .feedback-btn-reset:hover .btn-img-default,
+    .feedback-btn-submit:hover .btn-img-default {
+        display: none !important;
+    }
+    .feedback-btn-reset:hover .btn-img-hover,
+    .feedback-btn-submit:hover .btn-img-hover {
+        display: block !important;
+    }
 }
 
-.feedback-btn-submit:hover {
-    color: var(--darkGreyColor) !important;
-    background-color: var(--mainGreenColor) !important;
-    border-color: var(--mainGreenColor) !important;
+/* --- MOBILE & TOUCH: Active-Swap on Tap/Press --- */
+/* This swaps the image instantly when tapped, but reverts immediately when released */
+.feedback-btn-reset:active .btn-img-default,
+.feedback-btn-submit:active .btn-img-default {
+    display: none !important;
+}
+
+.feedback-btn-reset:active .btn-img-hover,
+.feedback-btn-submit:active .btn-img-hover {
+    display: block !important;
 }
 
 .feedback-btn-reset:active,
 .feedback-btn-submit:active {
-    transform: translateY(1px);
-    opacity: 0.9;
+    transform: scale(0.98);
 }
 
 .form-footer-notice + .d-flex.justify-content-end {
@@ -855,7 +867,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
     .feedback-form-radio:checked {
         border-color: var(--mainPinkColor) !important;
-        background-color: #ffffff !important;
     }
 
     .feedback-form-radio:checked::before {
@@ -894,7 +905,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
     .feedback-btn-reset,
     .feedback-btn-submit {
-        padding: 10px 16px !important;
+        padding: 0 !important;
     }
 }
 
