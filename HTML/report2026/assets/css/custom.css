@@ -602,12 +602,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 25px !important;
 }
 
-.feedback-border-brand-pink {
+.feedback-border-brand-pink,
+.feedback-border-brand-pink-q2 {
     border-top: 5px solid var(--mainPinkColor) !important;
 }
 
-#feedbackForm > .feedback-border-brand-pink {
+.feedback-border-brand-pink {
     margin-bottom: 45px !important;
+}
+
+.feedback-border-brand-pink-q2 {
+    margin-bottom: 20px !important;
 }
 
 .feedback-border-brand-pink + .row {
