@@ -708,12 +708,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     text-align: center;
 }
 
-@media (max-width: 991.98px) {
-    .rating-options-wrapper {
-        padding-left: 0.5rem;
-    }
-}
-
 .feedback-page .rating-matrix-row,
 .feedback-page #feedbackForm .row.align-items-center.border-bottom {
     border-bottom: 0.66px solid #000000 !important;
@@ -807,13 +801,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .feedback-btn-submit .btn-img-default {
     display: block !important;
 }
-
 /* --- DESKTOP: Hover-Swap for Mouse Devices --- */
 @media (hover: hover) and (pointer: fine) {
+
     .feedback-btn-reset:hover .btn-img-default,
     .feedback-btn-submit:hover .btn-img-default {
         display: none !important;
     }
+
     .feedback-btn-reset:hover .btn-img-hover,
     .feedback-btn-submit:hover .btn-img-hover {
         display: block !important;
@@ -837,7 +832,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transform: scale(0.98);
 }
 
-.form-footer-notice + .d-flex.justify-content-end {
+.form-footer-notice+.d-flex.justify-content-end {
     margin-top: 100px !important;
     padding-top: 0 !important;
     margin-bottom: 0 !important;
@@ -876,11 +871,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         width: 100%;
     }
 
-    .q-header > .p4-table-title {
+    .q-header>.p4-table-title {
         flex: 1 1 54%;
     }
 
-    .q-header > .p2-body-style {
+    .q-header>.p2-body-style {
         flex: 1 1 46%;
         margin-top: 10px !important;
         margin-bottom: 0 !important;
@@ -923,7 +918,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         border-radius: 50%;
         background-color: var(--mainPinkColor);
     }
-    
+
     .feedback-form-checkbox:checked {
         background-image: none;
     }
@@ -945,6 +940,196 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         pointer-events: none;
     }
 }
+
+/* --- Feedback: 當屏幕寬度小於 1000px 時強制切換為流動版視圖 --- */
+@media (max-width: 999.98px) {
+    
+    /* 1. 將「左側介紹欄」和「右側表單欄」改為上下垂直堆疊 */
+    .feedback-page .col-md-4,
+    .feedback-page .col-md-7 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    /* 2. 移除右側表單原本在桌面版留出的左邊距（Offset） */
+    .feedback-page .offset-md-1 {
+        margin-left: 0;
+    }
+    
+    /* 3. 將「問題標題」與「選項內容」改為上下堆疊，不再並排 */
+    .feedback-page .fieldset-q1 .col-sm-4,
+    .feedback-page .fieldset-q1 .col-sm-8,
+    .feedback-page fieldset .col-sm-4,
+    .feedback-page fieldset .col-sm-8 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    /* 4. 調整問題內容的對齊，縮減左邊距 */
+    .feedback-page .q-content {
+        margin-left: 0 !important;
+    }
+
+    /* 5. 隱藏桌面版的評分表頭，並強制顯示流動版的評分表頭 */
+    .feedback-page .rating-header.d-none.d-sm-flex {
+        display: none !important;
+    }
+    .feedback-page .rating-header.d-flex.d-sm-none {
+        display: flex !important;
+    }
+
+    /* --- 新增：確保 Q2 評分選項在流動版維持單行 --- */
+    /* 即使在流動版，也讓評分標題佔 33% 寬度 */
+    .feedback-page .q2-option .col-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+    /* 讓評分按鈕組佔 66% 寬度 */
+    .feedback-page .q2-option .col-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+
+    /* --- 同步您現有的流動版字體樣式 --- */
+    .feedback-h2-content {
+        margin-bottom: 15px;
+    }
+
+    .feedback-page .option-row input[type="text"] {
+        margin-top: 10px;
+    }
+
+    /* --- Question Headers --- */
+    .q-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .q-header>.p4-table-title {
+        flex: 1 1 54%;
+    }
+
+    .q-header>.p2-body-style {
+        flex: 1 1 46%;
+        margin-top: 3px !important;
+        margin-left: 10px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .feedback-page .col-sm-4 .p4-table-title {
+        margin-bottom: 15px !important;
+    }
+
+    /* --- Rating Matrix (Q2) --- */
+    .feedback-page .col-sm-8 .row.d-sm-none .col {
+        font-family: "Inter", sans-serif;
+        font-size: 10pt;
+        font-weight: 700;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .feedback-page .rating-matrix-row .d-sm-none {
+        display: none !important;
+    }
+
+    /* --- Custom Radio/Checkbox Appearance --- */
+    .feedback-form-radio {
+        position: relative;
+    }
+
+    .feedback-form-radio:checked {
+        border-color: var(--mainPinkColor) !important;
+    }
+
+    .feedback-form-radio:checked::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--mainPinkColor);
+    }
+
+    .feedback-form-checkbox:checked {
+        background-image: none;
+    }
+
+    /* --- Action Buttons (Reset/Submit) --- */
+    .feedback-page #feedbackForm .d-flex.justify-content-end {
+        justify-content: center !important;
+        gap: 1.5rem !important;
+        position: relative;
+    }
+
+    .feedback-btn-reset,
+    .feedback-btn-submit {
+        padding: 0 !important;
+    }
+
+    .feedback-btn-reset img,
+    .feedback-btn-submit img {
+        pointer-events: none;
+    }
+
+    .feedback-page .p2-body-style {
+        font-family: "Inter", sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: -2%;
+        text-align: left;
+    }
+
+    .feedback-page .p4-table-title {
+        font-family: "Monda", sans-serif; 
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: -3%;
+        text-align: left;
+        color: #ff32cd;
+    }
+
+    .feedback-page .p5-table-body {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -1.5%;
+        text-align: left;
+        color: #000000;
+    }
+
+    .rating-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        margin-left: -10px !important;
+    }
+
+    .rating-labels-wrapper,
+    .rating-options-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-left: 0;  /* 移除會造成錯位的 padding */
+        padding-right: 0; /* 移除會造成錯位的 padding */
+    }
+
+    /* 2. 讓標頭文字和選項按鈕在各自的空間內置中 */
+    .rating-header-label,
+    .rating-option {
+        flex: 1; /* 讓每個項目平均分配寬度 */
+        text-align: center; /* 將內容（文字和按鈕）置中 */
+    }
+}
+
+
 
 /* --- Search Page Styles --- */
 
