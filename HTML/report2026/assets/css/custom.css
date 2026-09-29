@@ -847,13 +847,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
     .q-header > .p4-table-title {
         flex: 1 1 54%;
-        margin-bottom: 10pt !important;
     }
 
     .q-header > .p2-body-style {
         flex: 1 1 46%;
         margin-top: 10px !important;
         margin-bottom: 0 !important;
+    }
+
+    .feedback-page .col-sm-4 .p4-table-title {
+        margin-bottom: 15px !important;
     }
 
     /* --- Rating Matrix (Q2) --- */
