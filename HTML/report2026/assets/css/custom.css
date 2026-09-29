@@ -841,7 +841,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* --- MOBILE RESPONSIVE STYLES (FEEDBACK FORM) --- */
 /* --- Feedback: 當屏幕寬度小於 1000px 時強制切換為流動版視圖 --- */
 @media (max-width: 999.98px) {
-
     .feedback-page .col-md-4,
     .feedback-page .col-md-7 {
         flex: 0 0 auto;
@@ -966,18 +965,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
     .feedback-page .p2-body-style {
         font-family: "Inter", sans-serif;
+        font-size: 16px;
         font-weight: 300;
-        font-size: 14px;
-        line-height: 17px;
-        letter-spacing: -2%;
+        line-height: 24px;
+        letter-spacing: -3.13%;
         text-align: left;
+        color: #000000;
     }
 
     .feedback-page .p4-table-title {
         font-family: "Monda", sans-serif;
+        font-size: 20px;
         font-weight: 700;
-        font-size: 16px;
-        line-height: 21px;
+        line-height: 25px;
         letter-spacing: -3%;
         text-align: left;
         color: #ff32cd;
@@ -985,9 +985,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
     .feedback-page .p5-table-body {
         font-family: "Inter", sans-serif;
+        font-size: 14px;
         font-weight: 400;
-        font-size: 12px;
-        line-height: 15px;
+        line-height: 17px;
         letter-spacing: -1.5%;
         text-align: left;
         color: #000000;
@@ -1014,6 +1014,37 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         text-align: center;
     }
 
+}
+
+@media (max-width: 575.98px) {
+    .feedback-page .p2-body-style {
+        font-family: "Inter", sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: -2%;
+        text-align: left;
+    }
+
+    .feedback-page .p4-table-title {
+        font-family: "Monda", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: -3%;
+        text-align: left;
+        color: #ff32cd;
+    }
+
+    .feedback-page .p5-table-body {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -1.5%;
+        text-align: left;
+        color: #000000;
+    }
 }
 
 /* --- Search Page Styles --- */
