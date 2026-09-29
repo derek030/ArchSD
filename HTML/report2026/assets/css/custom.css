@@ -982,11 +982,18 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .search-result-item {
     border-bottom: 0.5px solid var(--darkGreyColor);
+    padding-bottom: 20px !important;
+    margin-bottom: 20px !important;
 }
 
 .search-result-item:last-child {
     border-bottom: none;
-    margin-bottom: 0;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.result-title {
+    margin-bottom: 8px !important;
 }
 
 .result-title a {

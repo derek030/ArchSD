@@ -64,7 +64,6 @@
                     <h2 class="section-title">Search</h2>
                 </div>
 
-
                 <!-- Search Form -->
                 <form id="searchForm" role="search" class="mb-4">
                     <label for="searchInput" class="visually-hidden">Search Keyword</label>
@@ -100,7 +99,7 @@
                 <div class="search-results-align-spacer"></div>
 
                 <!-- Dynamic Results Wrapper -->
-                <div id="searchResults" class="d-flex flex-column gap-4">
+                <div id="searchResults" class="d-flex flex-column">
                     <!-- This will be populated by JavaScript -->
                 </div>
                 
@@ -267,16 +266,16 @@
                         <!-- 搜尋結果卡片 -->
                         <div class="search-result-item">
                             <!-- 1. 標題 (title) -->
-                            <h3 class="result-title">
+                            <div class="result-title">
                                 <a href="javascript:void(0);">${escapeHTML(item.title)}</a>
-                            </h3>
+                            </div>
                             
                             <!-- 2. 內容 / 摘要 (content) -->
-                            <p class="result-content">${highlightKeyword(item.snippet, fullResults.keyword)}</p>
+                            <div class="result-content">${highlightKeyword(item.snippet, fullResults.keyword)}</div>
 
                             
                             <!-- 底部資訊列 -->
-                            <p class="d-flex align-items-center gap-2 flex-wrap">
+                            <div class="d-flex align-items-center gap-2 flex-wrap">
                                 <!-- 3. 連結 (link) -->
                                 <span class="result-link">${escapeHTML(item.url)}</span>
                                 
@@ -285,7 +284,7 @@
                                 
                                 <!-- 5. 暫存連結 (cached link) -->
                                 <a href="javascript:void(0);" class="result-cached-link">Cached</a>
-                            </p>
+                            </div>
                         </div>
                     `;
                         resultsContainer.innerHTML += resultHtml;
@@ -295,10 +294,6 @@
                 
                 /**
                  * Generates and renders pagination controls.
-                 */
-                                /**
-                 * Generates and renders a custom minimalist pagination control.
-                 * Uses standard <img> tag for page nav icons.
                  */
                 function renderPaginationControls() {
                     const totalPages = Math.ceil(fullResults.totalResults / ITEMS_PER_PAGE);
@@ -413,23 +408,14 @@
                         return escapeHTML(text || '');
                     }
 
-                    // 1. Split the search query into an array of individual words.
-                    //    The filter removes any empty strings from double spaces.
                     const words = keyword.split(' ').filter(word => word.length > 0);
-
                     if (words.length === 0) {
                         return escapeHTML(text);
                     }
 
-                    // 2. Escape each word to be safely used in the RegExp and join them with '|' (OR).
-                    //    This creates a pattern like: (sustainability|projects)
-                    const pattern = words.map(word => escapeRegExp(word)).join('|');
-                    
-                    // 3. Create a single, case-insensitive, global RegExp to find any of the words.
+                    const pattern = words.map(word => escapeRegExp(word)).join('|');            
                     const regex = new RegExp(`(${pattern})`, 'gi');
 
-                    // 4. First, escape the entire original text to prevent any HTML injection.
-                    //    Then, run the replacement to wrap only the matched keywords in <strong> tags.
                     return escapeHTML(text).replace(regex, '<strong>$1</strong>');
                 }
 
