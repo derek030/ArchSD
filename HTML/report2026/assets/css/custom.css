@@ -454,100 +454,61 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .p2-body-style {
     font-family: "Inter", sans-serif;
-    font-size: 15.8px;
+    font-size: 16px;
     font-weight: 300;
-    line-height: 20px;
-    letter-spacing: -1.17%;
+    line-height: 24px;
+    letter-spacing: -3.13%;
     text-align: left;
     color: #000000;
 }
 
-.p3-caption-style {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    line-height: 1.35;
-    letter-spacing: -0.015em;
-    text-align: left;
-    font-weight: 700;
-}
-
 .p4-table-title {
     font-family: "Monda", sans-serif; 
+    font-size: 20px;
     font-weight: 700;
-    font-size: 20pt;
-    line-height: 25pt;
-    letter-spacing: -0.015em;
-    font-kerning: normal;
+    line-height: 25px;
+    letter-spacing: -3%;
     text-align: left;
-    margin-top: 0.375rem;
-    margin-bottom: 0.5rem;
     color: #ff32cd;
 }
 
 .p5-table-body {
     font-family: "Inter", sans-serif;
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 1.4;
-    letter-spacing: -0.01em;
+    line-height: 17px;
+    letter-spacing: -1.5%;
     text-align: left;
-    margin-bottom: 0.625rem;
     color: #000000;
 }
 
 /* --- Mobile Responsive Typography --- */
-@media (max-width: 767.98px) {
-    .h1 {
-        font-family: "Inter", sans-serif;
-        font-size: 2.3rem;
-        line-height: 1.21rem;
-        letter-spacing: -0.01em;
-        font-kerning: auto;
-        text-align: left;
-        margin-top: 0.1875rem;
-    }
-
-    .h2 {
-        font-size: 1.8rem;
-        line-height: 1.15rem;
-        letter-spacing: -0.01em;
-        font-kerning: auto;
-        text-align: left;
-        margin-top: 1.25rem;
-        margin-bottom: 0.5rem;
-    }
-
+@media (max-width: 575.98px) {
     .p2-body-style {
         font-family: "Inter", sans-serif;
         font-weight: 300;
-        font-size: 14pt;
-        line-height: 20pt;
-        letter-spacing: -0.01em;
-        margin-top: 8pt;
-        margin-bottom: 6pt;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: -2%;
         text-align: left;
     }
 
     .p4-table-title {
         font-family: "Monda", sans-serif; 
         font-weight: 700;
-        font-size: 16pt;
-        line-height: 20pt;
-        letter-spacing: -0.02em;
-        font-kerning: normal;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: -3%;
         text-align: left;
-        margin-top: 6pt;
-        margin-bottom: 8pt;
         color: #ff32cd;
     }
 
     .p5-table-body {
         font-family: "Inter", sans-serif;
         font-weight: 400;
-        font-size: 0.875rem;
-        line-height: 1.4;
-        letter-spacing: -0.01em;
-        margin-bottom: 0.625rem;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: -1.5%;
         text-align: left;
         color: #000000;
     }
@@ -591,12 +552,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .feedback-page #feedbackForm fieldset {
-    margin-bottom: 45px !important;
-    padding-top: 20px !important;
+    padding-top: 15px !important;
+    margin-bottom: 25px !important;
 }
 
 .feedback-page #feedbackForm .fieldset-q1 {
-    margin-bottom: 25px !important;
+    margin-bottom: 5px !important;
 }
 
 .feedback-border-brand-pink,
@@ -609,7 +570,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .feedback-border-brand-pink-q2 {
-    margin-bottom: 20px !important;
+    margin-bottom: 15px !important;
 }
 
 .feedback-border-brand-pink + .row {
@@ -623,16 +584,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
+.feedback-h2-content {
+    margin-bottom: 20px;
+}
+
 /* --- Question & Option Rows --- */
 .feedback-page .col-sm-4 .p4-table-title {
-    margin-bottom: 32px !important;
+    margin-bottom: 20px !important;
 }
 
 .option-row {
     border-bottom: 0.66px solid #000000 !important;
-    padding: 10px 0 !important;
+    padding: 20px 0 !important;
     display: flex;
     align-items: center !important;
+}
+.option-row:first-of-type {
+    padding-top: 10px !important;
 }
 
 .option-row:last-of-type {
@@ -651,9 +619,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ccc !important;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #B8BDC0 !important;
     background-color: #ffffff;
     outline: none;
     cursor: pointer;
@@ -663,6 +631,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .feedback-form-radio {
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .feedback-form-checkbox:hover,
@@ -689,6 +658,62 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Rating Matrix (Question 2) --- */
+.rating-header {
+    margin-left: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.rating-header-label {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: left;
+    color: var(--darkGreyColor);
+    text-align: center;
+    padding: 0 !important;
+}
+
+#clarity-title,
+#visual-title,
+#ease-title {
+    justify-content: start;
+}
+
+.q-content {
+    margin-left: 5px !important;
+}
+
+.q2-option {
+    margin-bottom: 20px !important;
+}
+
+.q2-border {
+    width: 100%;
+    border-bottom: 0.5px solid var(--darkGreyColor);
+    height: 0;
+    margin-bottom: 20px !important;
+}
+
+.rating-options-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.rating-option {
+    text-align: center;
+}
+
+@media (max-width: 991.98px) {
+    .rating-options-wrapper {
+        padding-left: 0.5rem;
+    }
+}
+
 .feedback-page .rating-matrix-row,
 .feedback-page #feedbackForm .row.align-items-center.border-bottom {
     border-bottom: 0.66px solid #000000 !important;
@@ -704,10 +729,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding-right: 1.5rem;
 }
 
-.text-muted .p5-table-body {
-    margin-bottom: 0 !important;
-}
-
 /* --- Textarea & Footer --- */
 .feedback-textarea-fixed {
     background-color: #EDF0F0 !important;
@@ -717,9 +738,13 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     max-height: 300px !important;
     resize: none !important;
     border-radius: 4px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.5;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -1.56%;
+    text-align: left;
     color: #000000;
     transition: all 0.25s ease-in-out;
 }
@@ -761,6 +786,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     height: 100%;
     width: auto;
     display: block;
+}
+
+.feedback-button-divider{
+    width: 0.5px;               
+    height: 34px;             
+    background-color: var(--darkGreyColor);
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Hide the hover image by default on ALL devices */
@@ -826,9 +859,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
     .feedback-h2-content {
-        font-size: 12pt;
+        margin-bottom: 15px;
     }
 
     .feedback-page .option-row input[type="text"] {
@@ -900,17 +933,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         justify-content: center !important;
         gap: 1.5rem !important;
         position: relative;
-    }
-
-    .feedback-page #feedbackForm .d-flex.justify-content-end::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        height: 30px;
-        width: 1px;
-        background-color: #cccccc;
     }
 
     .feedback-btn-reset,
@@ -1165,7 +1187,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Thank You Page Mobile Fixes --- */
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
 
     .thankyou-content-wrapper {
         margin-top: 40px; 
