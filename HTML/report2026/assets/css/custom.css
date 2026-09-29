@@ -832,98 +832,13 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 100%;
 }
 
-
-/* --- MOBILE RESPONSIVE STYLES (FEEDBACK FORM) --- */
 @media (max-width: 991.98px) {
     #feedbackForm {
         margin-top: 45px;
     }
 }
 
-@media (max-width: 575.98px) {
-    .feedback-h2-content {
-        margin-bottom: 15px;
-    }
-
-    .feedback-page .option-row input[type="text"] {
-        margin-top: 10px;
-    }
-
-    /* --- Question Headers --- */
-    .q-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    .q-header>.p4-table-title {
-        flex: 1 1 54%;
-    }
-
-    .q-header>.p2-body-style {
-        flex: 1 1 46%;
-        margin-top: 10px !important;
-        margin-bottom: 0 !important;
-    }
-
-    .feedback-page .col-sm-4 .p4-table-title {
-        margin-bottom: 15px !important;
-    }
-
-    /* --- Rating Matrix (Q2) --- */
-    .feedback-page .col-sm-8 .row.d-sm-none .col {
-        font-family: "Inter", sans-serif;
-        font-size: 10pt;
-        font-weight: 700;
-        padding-left: 2px;
-        padding-right: 2px;
-    }
-
-
-    /* --- Custom Radio/Checkbox Appearance --- */
-    .feedback-form-radio {
-        position: relative;
-    }
-
-    .feedback-form-radio:checked {
-        border-color: var(--mainPinkColor) !important;
-    }
-
-    .feedback-form-radio:checked::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: var(--mainPinkColor);
-    }
-
-    .feedback-form-checkbox:checked {
-        background-image: none;
-    }
-
-    /* --- Action Buttons (Reset/Submit) --- */
-    .feedback-page #feedbackForm .d-flex.justify-content-end {
-        justify-content: center !important;
-        gap: 1.5rem !important;
-        position: relative;
-    }
-
-    .feedback-btn-reset,
-    .feedback-btn-submit {
-        padding: 0 !important;
-    }
-
-    .feedback-btn-reset img,
-    .feedback-btn-submit img {
-        pointer-events: none;
-    }
-}
-
+/* --- MOBILE RESPONSIVE STYLES (FEEDBACK FORM) --- */
 /* --- Feedback: 當屏幕寬度小於 1000px 時強制切換為流動版視圖 --- */
 @media (max-width: 999.98px) {
 
