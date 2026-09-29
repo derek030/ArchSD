@@ -13,9 +13,9 @@ Custom CSS
 	--bs-focus-ring-width: 0.125rem;
 	--bs-focus-ring-opacity: 0.25;
 	--bs-focus-ring-color: #82f000;
-	--darkGreyColor: #565a5f;
+	--darkGreyColor: #555A5F;
 	--lightGreyColor: #edf0f0;
-	--mainPinkColor: #ff32cd;
+	--mainPinkColor: #ff31cd;
 	--mainGreenColor: #82f000;
 
 	@media (max-width: 767.9px) {
@@ -454,13 +454,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .p2-body-style {
     font-family: "Inter", sans-serif;
-    font-size: 1.333rem;
+    font-size: 15.8px;
     font-weight: 300;
-    line-height: 2rem;
-    letter-spacing: -0.01em;
+    line-height: 20px;
+    letter-spacing: -1.17%;
     text-align: left;
-    margin-top: 0;
-    margin-bottom: 1rem;
     color: #000000;
 }
 
@@ -935,11 +933,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .embedded-search-input::placeholder {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.5;
-    letter-spacing: -0.01em;
+    font-family: "Monda", sans-serif;
+    font-size: 16.2px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0%;
     color: var(--darkGreyColor);
     opacity: 1;
 }
@@ -955,8 +953,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding: 10px 50px 10px 20px !important;
     font-size: 1rem;
     color: var(--darkGreyColor);
-    background-color: #ffffff !important;
-    border: 1px solid #b9bec0 !important;
+    background-color: #ECEFEF !important;
+    border: 0px !important;
     outline: none !important;
     box-shadow: none !important;
     transition: border-color 0.25s ease-in-out;
@@ -983,7 +981,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .search-result-item {
-    border-bottom: 1.5px solid var(--darkGreyColor);
+    border-bottom: 0.5px solid var(--darkGreyColor);
 }
 
 .search-result-item:last-child {
@@ -992,26 +990,41 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .result-title a {
-    font-size: 16pt;
+    font-family: "Inter", sans-serif;
+    font-size: 16.3px;
     font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -2.73%;
     color: var(--mainPinkColor); 
     text-decoration: underline !important; 
     transition: color 0.2s ease-in-out;
 }
 
 .result-content {
-    font-size: 1.167rem !important;
+    font-family: "Inter", sans-serif;
+    font-size: 14px !important;
+    font-weight: 300;
+    line-height: 21px;
+    letter-spacing: -1.66%;
+    margin-bottom: 0 !important;
 }
 
 .result-link,
 .result-size {
-    font-size: 1.167rem;
-    color: #7d8282;
+    font-family: "Inter", sans-serif;
+    font-size: 14px !important;
+    font-weight: 300;
+    line-height: 28.99px;
+    letter-spacing: -1.5%;
+    color: #7c8282;
 }
 
 .result-cached-link {
-    font-size: 1.167rem;
-    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    font-size: 14px !important;
+    font-weight: 600;
+    line-height: 28.99px;
+    letter-spacing: -1.5%;
     color: var(--mainPinkColor) !important;
     text-decoration: underline !important;
     transition: opacity 0.2s ease-in-out;
@@ -1026,16 +1039,18 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     user-select: none;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* 靠右對齊 */
+    justify-content: flex-end; 
     gap: 2px;
 }
 
 .custom-pagination-wrapper .page-num {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-family: 'Monda', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
     color: var(--darkGreyColor);
+    line-height: 20px;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 0 5px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -1046,15 +1061,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .custom-pagination-wrapper .page-num.active {
     color: var(--mainPinkColor) !important;
-    font-weight: 700;
+    font-weight: 700 !important;
     text-decoration: underline !important;
+    text-decoration-thickness: 3px !important;
+    text-underline-offset: 3px;
 }
 
 .custom-pagination-wrapper .nav-arrow {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 0 2px;
     transition: opacity 0.2s ease-in-out;
 }
 
@@ -1063,7 +1080,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .custom-pagination-wrapper .page-nav-icon {
-    width: 44px;
+    width: 20px;
     height: auto;
     display: block;
     filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(89%) contrast(90%); 

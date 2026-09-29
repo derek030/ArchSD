@@ -267,24 +267,24 @@
                         <!-- 搜尋結果卡片 -->
                         <div class="search-result-item">
                             <!-- 1. 標題 (title) -->
-                            <h3 class="p2-body-style result-title">
+                            <h3 class="result-title">
                                 <a href="javascript:void(0);">${escapeHTML(item.title)}</a>
                             </h3>
                             
                             <!-- 2. 內容 / 摘要 (content) -->
-                            <p class="p2-body-style result-content">${highlightKeyword(item.snippet, fullResults.keyword)}</p>
+                            <p class="result-content">${highlightKeyword(item.snippet, fullResults.keyword)}</p>
 
                             
                             <!-- 底部資訊列 -->
-                            <p class="small mb-0 d-flex align-items-center gap-2 flex-wrap">
+                            <p class="d-flex align-items-center gap-2 flex-wrap">
                                 <!-- 3. 連結 (link) -->
-                                <span class="p2-body-style result-link">${escapeHTML(item.url)}</span>
+                                <span class="result-link">${escapeHTML(item.url)}</span>
                                 
                                 <!-- 4. 檔案大小 (size) -->
-                                <span class="p2-body-style result-size">- ${item.size}</span>
+                                <span class="result-size">- ${item.size}</span>
                                 
                                 <!-- 5. 暫存連結 (cached link) -->
-                                <a href="javascript:void(0);" class="p2-body-style result-cached-link">Cached</a>
+                                <a href="javascript:void(0);" class="result-cached-link">Cached</a>
                             </p>
                         </div>
                     `;
