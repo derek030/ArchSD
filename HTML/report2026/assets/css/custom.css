@@ -451,7 +451,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 ::-moz-selection {/* Code for Firefox */ color: inherit; background: var(--mainGreenColor);}
 ::selection {color: inherit; background: var(--mainGreenColor);}
 .material-topics-title ::selection {color: inherit; background: var(--mainPinkColor);}
-
 .p2-body-style {
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -463,7 +462,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .p4-table-title {
-    font-family: "Monda", sans-serif; 
+    font-family: "Monda", sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 25px;
@@ -494,7 +493,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 
     .p4-table-title {
-        font-family: "Monda", sans-serif; 
+        font-family: "Monda", sans-serif;
         font-weight: 700;
         font-size: 16px;
         line-height: 21px;
@@ -515,7 +514,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Accessibility Utilities --- */
-
 .skip-to-content {
     position: absolute !important;
     left: -9999px !important;
@@ -573,10 +571,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 15px !important;
 }
 
-.feedback-border-brand-pink + .row {
-    margin-top: 25px !important;
-}
-
 @media (min-width: 992px) {
     .feedback-page #feedbackForm {
         padding-top: 134px;
@@ -599,6 +593,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     display: flex;
     align-items: center !important;
 }
+
 .option-row:first-of-type {
     padding-top: 10px !important;
 }
@@ -654,7 +649,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .feedback-page .q4-other-text {
     background-color: #EDF0F0 !important;
     height: 30px !important;
-    margin-bottom: 0 !important; /* Fix for vertical alignment */
+    margin-bottom: 0 !important;
+    /* Fix for vertical alignment */
 }
 
 /* --- Rating Matrix (Question 2) --- */
@@ -708,19 +704,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     text-align: center;
 }
 
-.feedback-page .rating-matrix-row,
-.feedback-page #feedbackForm .row.align-items-center.border-bottom {
-    border-bottom: 0.66px solid #000000 !important;
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
-}
-
 .feedback-page #feedbackForm .row.align-items-center:last-of-type {
     border-bottom: none !important;
-}
-
-.feedback-page .rating-matrix-label {
-    padding-right: 1.5rem;
 }
 
 /* --- Textarea & Footer --- */
@@ -782,9 +767,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     display: block;
 }
 
-.feedback-button-divider{
-    width: 0.5px;               
-    height: 34px;             
+.feedback-button-divider {
+    width: 0.5px;
+    height: 34px;
     background-color: var(--darkGreyColor);
     margin-left: 10px;
     margin-right: 10px;
@@ -801,6 +786,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .feedback-btn-submit .btn-img-default {
     display: block !important;
 }
+
 /* --- DESKTOP: Hover-Swap for Mouse Devices --- */
 @media (hover: hover) and (pointer: fine) {
 
@@ -894,9 +880,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding-right: 2px;
     }
 
-    .feedback-page .rating-matrix-row .d-sm-none {
-        display: none !important;
-    }
 
     /* --- Custom Radio/Checkbox Appearance --- */
     .feedback-form-radio {
@@ -943,20 +926,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Feedback: 當屏幕寬度小於 1000px 時強制切換為流動版視圖 --- */
 @media (max-width: 999.98px) {
-    
-    /* 1. 將「左側介紹欄」和「右側表單欄」改為上下垂直堆疊 */
+
     .feedback-page .col-md-4,
     .feedback-page .col-md-7 {
         flex: 0 0 auto;
         width: 100%;
     }
 
-    /* 2. 移除右側表單原本在桌面版留出的左邊距（Offset） */
     .feedback-page .offset-md-1 {
         margin-left: 0;
     }
-    
-    /* 3. 將「問題標題」與「選項內容」改為上下堆疊，不再並排 */
+
     .feedback-page .fieldset-q1 .col-sm-4,
     .feedback-page .fieldset-q1 .col-sm-8,
     .feedback-page fieldset .col-sm-4,
@@ -965,32 +945,28 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         width: 100%;
     }
 
-    /* 4. 調整問題內容的對齊，縮減左邊距 */
     .feedback-page .q-content {
         margin-left: 0 !important;
     }
 
-    /* 5. 隱藏桌面版的評分表頭，並強制顯示流動版的評分表頭 */
     .feedback-page .rating-header.d-none.d-sm-flex {
         display: none !important;
     }
+
     .feedback-page .rating-header.d-flex.d-sm-none {
         display: flex !important;
     }
 
-    /* --- 新增：確保 Q2 評分選項在流動版維持單行 --- */
-    /* 即使在流動版，也讓評分標題佔 33% 寬度 */
     .feedback-page .q2-option .col-4 {
         flex: 0 0 auto;
         width: 33.33333333%;
     }
-    /* 讓評分按鈕組佔 66% 寬度 */
+
     .feedback-page .q2-option .col-8 {
         flex: 0 0 auto;
         width: 66.66666667%;
     }
 
-    /* --- 同步您現有的流動版字體樣式 --- */
     .feedback-h2-content {
         margin-bottom: 15px;
     }
@@ -1029,10 +1005,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         font-weight: 700;
         padding-left: 2px;
         padding-right: 2px;
-    }
-
-    .feedback-page .rating-matrix-row .d-sm-none {
-        display: none !important;
     }
 
     /* --- Custom Radio/Checkbox Appearance --- */
@@ -1087,7 +1059,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 
     .feedback-page .p4-table-title {
-        font-family: "Monda", sans-serif; 
+        font-family: "Monda", sans-serif;
         font-weight: 700;
         font-size: 16px;
         line-height: 21px;
@@ -1117,22 +1089,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         display: flex;
         justify-content: space-between;
         width: 100%;
-        padding-left: 0;  /* 移除會造成錯位的 padding */
-        padding-right: 0; /* 移除會造成錯位的 padding */
+        padding-left: 0;
+        padding-right: 0;
     }
 
-    /* 2. 讓標頭文字和選項按鈕在各自的空間內置中 */
     .rating-header-label,
     .rating-option {
-        flex: 1; /* 讓每個項目平均分配寬度 */
-        text-align: center; /* 將內容（文字和按鈕）置中 */
+        flex: 1;
+        text-align: center;
     }
+
 }
 
-
-
 /* --- Search Page Styles --- */
-
 @media (min-width: 992px) {
     .search-page#main-content {
         padding-top: 134px !important;
@@ -1209,8 +1178,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-weight: 600;
     line-height: 20px;
     letter-spacing: -2.73%;
-    color: var(--mainPinkColor); 
-    text-decoration: underline !important; 
+    color: var(--mainPinkColor);
+    text-decoration: underline !important;
     transition: color 0.2s ease-in-out;
 }
 
@@ -1253,7 +1222,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     user-select: none;
     display: flex;
     align-items: center;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     gap: 2px;
 }
 
@@ -1297,16 +1266,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 20px;
     height: auto;
     display: block;
-    filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(89%) contrast(90%); 
+    filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(89%) contrast(90%);
 }
 
-.custom-pagination-wrapper .nav-arrow:first-child + a,
-.custom-pagination-wrapper .nav-arrow:first-child + span {
-    margin-left: 30px !important; 
+.custom-pagination-wrapper .nav-arrow:first-child+a,
+.custom-pagination-wrapper .nav-arrow:first-child+span {
+    margin-left: 30px !important;
 }
 
 .custom-pagination-wrapper .nav-arrow:last-child {
-    margin-left: 30px !important; 
+    margin-left: 30px !important;
 }
 
 @media (min-width: 992px) {
@@ -1316,7 +1285,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Thank You Page Styles --- */
-
 .thankyou-page-container {
     position: relative;
 }
@@ -1350,19 +1318,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .thankyou-text {
-    position: absolute;   
-    top: 48%;  
-    left: 31.5%; 
+    position: absolute;
+    top: 48%;
+    left: 31.5%;
     transform: translate(-50%, -50%);
     width: 80%;
     text-align: start;
     margin: 0;
-    
+
     font-family: "Monda", sans-serif;
     font-size: 2.125rem;
     line-height: 2.25rem;
     letter-spacing: -0.025em;
-    font-kerning: normal; 
+    font-kerning: normal;
     font-weight: 700;
     color: var(--darkGreyColor) !important;
     z-index: 2;
@@ -1375,7 +1343,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 @media (max-width: 575.98px) {
 
     .thankyou-content-wrapper {
-        margin-top: 40px; 
+        margin-top: 40px;
     }
 
     .thankyou-bg-img {
@@ -1385,21 +1353,21 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 
     .thankyou-title-img {
-        top: 31%; 
+        top: 31%;
         left: 1.5%;
         transform: translateX(-50%);
-        bottom: auto; 
-        width: 80%;   
+        bottom: auto;
+        width: 80%;
     }
 
-    .thankyou-text {       
-        top: 54%; 
+    .thankyou-text {
+        top: 54%;
         left: 45%;
         transform: translate(-50%, -50%);
-        text-align: center; 
-        width: 90%; 
-        font-size: 1.5rem; 
-        line-height: 1.15;  
+        text-align: center;
+        width: 90%;
+        font-size: 1.5rem;
+        line-height: 1.15;
         padding-top: 0;
         margin-top: 0;
     }
