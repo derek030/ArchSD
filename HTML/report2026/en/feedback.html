@@ -85,7 +85,6 @@
                         <!-- Question title and description -->
                         <div class="col-12 col-sm-4">
                             <div class="q-header">
-                                <!-- Desktop Version (Visible on sm and up) -->
                                 <legend class="p4-table-title">
                                     Why did you read our Sustainability Report 2026?
                                 </legend>
@@ -129,19 +128,20 @@
                                 <div class="option-row d-flex align-items-center flex-wrap flex-sm-nowrap">
                                     <input type="checkbox" id="q1-other"
                                         class="feedback-form-checkbox q1-checkbox me-3">
-                                    <label for="q1-other" class="p5-table-body m-0 me-2 text-nowrap">Other(s), please
+                                    <label for="q1-other" id="q1-other-label"
+                                        class="p5-table-body m-0 me-2 text-nowrap">Other(s), please
                                         specify</label>
                                     <input type="text" id="q1-other-text"
                                         class="q1-other-text p5-table-body bg-light border-0 outline-none w-100 px-1"
-                                        aria-label="Specify other reason for reading the report">
+                                        aria-labelledby="q1-other-label">
                                 </div>
 
                             </div>
                         </div>
 
-
                     </div>
                 </fieldset>
+
 
                 <!-- Question 2 -->
                 <fieldset>
@@ -199,28 +199,27 @@
                                 <div class="row align-items-center q2-option">
                                     <div class="p5-table-body col-4" id="clarity-title">Content clarity</div>
                                     <div class="col-8">
-                                        <div class="rating-options-wrapper">
+                                        <div class="rating-options-wrapper" role="radiogroup"
+                                            aria-labelledby="clarity-title">
                                             <div class="rating-option">
                                                 <input type="radio" id="clarity-excellent" name="clarity"
-                                                    value="excellent" class="feedback-form-radio"
-                                                    aria-label="Content clarity: Excellent">
+                                                    value="excellent" class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="clarity-good" name="clarity" value="good"
-                                                    class="feedback-form-radio" aria-label="Content clarity: Good">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="clarity-fair" name="clarity" value="fair"
-                                                    class="feedback-form-radio" aria-label="Content clarity: Fair">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="clarity-marginal" name="clarity"
-                                                    value="marginal" class="feedback-form-radio"
-                                                    aria-label="Content clarity: Marginal">
+                                                    value="marginal" class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="clarity-poor" name="clarity" value="poor"
-                                                    class="feedback-form-radio" aria-label="Content clarity: Poor">
+                                                    class="feedback-form-radio">
                                             </div>
                                         </div>
                                     </div>
@@ -232,27 +231,27 @@
                                 <div class="row align-items-center q2-option">
                                     <div class="p5-table-body col-4" id="visual-title">Visual design</div>
                                     <div class="col-8">
-                                        <div class="rating-options-wrapper">
+                                        <div class="rating-options-wrapper" role="radiogroup"
+                                            aria-labelledby="visual-title">
                                             <div class="rating-option">
                                                 <input type="radio" id="visual-excellent" name="visual"
-                                                    value="excellent" class="feedback-form-radio"
-                                                    aria-label="Visual design: Excellent">
+                                                    value="excellent" class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="visual-good" name="visual" value="good"
-                                                    class="feedback-form-radio" aria-label="Visual design: Good">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="visual-fair" name="visual" value="fair"
-                                                    class="feedback-form-radio" aria-label="Visual design: Fair">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="visual-marginal" name="visual" value="marginal"
-                                                    class="feedback-form-radio" aria-label="Visual design: Marginal">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="visual-poor" name="visual" value="poor"
-                                                    class="feedback-form-radio" aria-label="Visual design: Poor">
+                                                    class="feedback-form-radio">
                                             </div>
                                         </div>
                                     </div>
@@ -262,35 +261,29 @@
 
                                 <!-- Rating: Ease of finding information -->
                                 <div class="row align-items-center q2-option">
-                                    <div class="p5-table-body col-4" id="ease-title">Ease of finding information
-                                    </div>
-                                    <!-- The remaining space will be taken by this column -->
-                                    <div class="col">
-                                        <div class="rating-options-wrapper">
+                                    <div class="p5-table-body col-4" id="ease-title">Ease of finding information</div>
+                                    <div class="col-8">
+                                        <div class="rating-options-wrapper" role="radiogroup"
+                                            aria-labelledby="ease-title">
                                             <div class="rating-option">
                                                 <input type="radio" id="ease-excellent" name="ease" value="excellent"
-                                                    class="feedback-form-radio"
-                                                    aria-label="Ease of finding information: Excellent">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="ease-good" name="ease" value="good"
-                                                    class="feedback-form-radio"
-                                                    aria-label="Ease of finding information: Good">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="ease-fair" name="ease" value="fair"
-                                                    class="feedback-form-radio"
-                                                    aria-label="Ease of finding information: Fair">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="ease-marginal" name="ease" value="marginal"
-                                                    class="feedback-form-radio"
-                                                    aria-label="Ease of finding information: Marginal">
+                                                    class="feedback-form-radio">
                                             </div>
                                             <div class="rating-option">
                                                 <input type="radio" id="ease-poor" name="ease" value="poor"
-                                                    class="feedback-form-radio"
-                                                    aria-label="Ease of finding information: Poor">
+                                                    class="feedback-form-radio">
                                             </div>
                                         </div>
                                     </div>
@@ -298,7 +291,6 @@
 
                             </div>
                         </div>
-
                     </div>
                 </fieldset>
 
@@ -427,11 +419,12 @@
                                 <div class="option-row d-flex align-items-center flex-wrap flex-sm-nowrap">
                                     <input type="radio" id="q4-other" name="source" value="other"
                                         class="feedback-form-radio me-3">
-                                    <label for="q4-other" class="p5-table-body me-2 text-nowrap">Other(s), please
+                                    <label for="q4-other" id="q4-other-label"
+                                        class="p5-table-body me-2 text-nowrap">Other(s), please
                                         specify</label>
                                     <input type="text" id="q4-other-text"
                                         class="q4-other-text p5-table-body bg-light border-0 outline-none w-100 px-1"
-                                        aria-label="Specify other source information">
+                                        aria-labelledby="q4-other-label">
                                 </div>
 
                             </div>

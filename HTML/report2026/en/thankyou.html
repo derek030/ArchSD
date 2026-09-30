@@ -182,19 +182,30 @@
         <!-- Animation Script is now included -->
         <script>
             $(function () {
+                // --- ACCESSIBILITY: Check for user's motion preference ---
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+                // Set initial state for all users
                 gsap.set(".thankyou-bg-img, .thankyou-title-img", { autoAlpha: 0 });
 
-                gsap.fromTo(".thankyou-bg-img",
-                    { xPercent: -50, autoAlpha: 0 },
-                    { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.5 }
-                );
-                gsap.fromTo(".thankyou-title-img",
-                    { xPercent: 50, autoAlpha: 0 },
-                    { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.8 }
-                );
+                // Only run animations if the user has NOT requested reduced motion
+                if (!prefersReducedMotion.matches) {
+                    gsap.fromTo(".thankyou-bg-img",
+                        { xPercent: -50, autoAlpha: 0 },
+                        { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.5 }
+                    );
+                    gsap.fromTo(".thankyou-title-img",
+                        { xPercent: 50, autoAlpha: 0 },
+                        { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.8 }
+                    );
+                } else {
+                    // If the user prefers reduced motion, just make the elements visible without animation.
+                    gsap.set(".thankyou-bg-img, .thankyou-title-img", { autoAlpha: 1 });
+                }
 
             });
         </script>
+
 </body>
 
 </html>
