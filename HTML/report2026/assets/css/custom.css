@@ -1524,6 +1524,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-top: 0.25rem solid var(--mainPinkColor);
 }
 
+.unsdg-flex-container {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 3.5rem; /* 56px space between icon and text */
+}
+
+.unsdg-icon {
+    width: 100px !important;
+    height: 100px !important;
+    display: block;
+    flex-shrink: 0;
+}
+
 .uns-content-wrapper {
     margin-top: -0.3125rem !important;
 }
@@ -1613,4 +1626,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding: 1.25rem 0 !important; /* 20px */
     }
 
+    .unsdg-flex-container {
+        display: flex;
+        align-items: flex-start; /* Aligns items to the top */
+        gap: 0.9375rem; /* 15px space between icon and text */
+    }
+
+    .unsdg-icon {
+        width: 60px !important;
+        height: 60px !important;
+    }
 }
