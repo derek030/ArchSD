@@ -1364,23 +1364,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         margin-top: 0;
     }
 }
+
 /* --- Governance - Our Strategy and Approach Page Styles --- */
 .strategy-page .title-block {
     padding-bottom: 0 !important;
 }
 
-.strategy-hero-section .row { /* Use a parent class like .section-1 to be specific */
+.strategy-hero-section .row {
     display: flex;
-    align-items: flex-end; /* This is the key for bottom alignment */
+    align-items: flex-end;
 }
 
-/* Style the image itself */
 .strategy-hero-image {
-    display: block;      /* Removes extra space below the image */
-    margin-left: auto;   /* Pushes the image to the right */
-    width: 22.99375rem;  /* Desktop width: 367.9px */
-    height: 3.75rem;     /* Desktop height: 60px */
-    max-width: 100%;     /* Ensures it shrinks on smaller screens */
+    display: block;
+    margin-left: auto;
+    width: 22.99375rem; /* Desktop width: 367.9px */
+    height: 3.75rem; /* Desktop height: 60px */
+    max-width: 100%;
 }
 
 .strategy-intro-text {
@@ -1462,7 +1462,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     top: 50%;
     /* Center vertically */
     transform: translateY(-50%);
-    width: 8px;
+    width: 0.5rem; /* 8px */
     height: calc(100% - 2.5rem);
     background-color: #82EF00;
 }
@@ -1501,7 +1501,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .hanging-asterisk {
-    flex-shrink: 0; 
+    flex-shrink: 0;
     width: 0.5rem;
 }
 
@@ -1535,11 +1535,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     /* 2. Scale the image down and center it on the next row */
     .strategy-hero-image {
         margin-left: 0;
-        margin-top: 1.5rem;    /* Adds space between the title and the image */
+        margin-top: 1.5rem;
     }
 }
 
-@media (max-width: 767.9px) {
+@media (max-width: 47.99375em) { /* 767.98px */
     .spacing-64 {
         padding-left: 0.75rem !important;
     }
