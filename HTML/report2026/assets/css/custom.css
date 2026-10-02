@@ -1366,7 +1366,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Governance - Our Strategy and Approach Page Styles --- */
-.strategy-page .title-block {
+.governance-page .title-block {
     padding-bottom: 0 !important;
 }
 
@@ -1381,10 +1381,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 22.99375rem; /* Desktop width: 367.9px */
     height: 3.75rem; /* Desktop height: 60px */
     max-width: 100%;
+    margin-bottom: 1.25rem; /* 20px */
 }
 
-.strategy-intro-text {
-    margin-top: 3.125rem !important; /* 50px */
+.governance-intro-text {
+    margin-top: 2.625rem !important; /* 42px */
 }
 
 .section-border-grey {
@@ -1412,6 +1413,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .section-header2-margin {
     margin-bottom: 1.875rem !important;
     /* 30px */
+}
+
+.focus-areas-content a {
+    font-weight: 700;
+    color: var(--mainPinkColor);
+    text-decoration: none;
 }
 
 .s4-table-header {
@@ -1526,8 +1533,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 @media (max-width: 65.625em) { /* 1050px */
-    .strategy-page .col-md-7,
-    .strategy-page .col-md-5 {
+    .governance-page .col-md-7,
+    .governance-page .col-md-5 {
         flex: 0 0 auto;
         width: 100%;
     }
@@ -1546,7 +1553,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 @media (max-width: 35.99875em) { /* 575.98px */   
-    .strategy-page section {
+    .governance-page section {
         padding-bottom: 1.875rem !important; /* 30px */
     }
 
@@ -1557,7 +1564,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         margin-bottom: 1.25rem; /* 20px */
     }
 
-    .strategy-intro-text {
+    .governance-intro-text {
         margin-top: 0 !important;
     }
 
