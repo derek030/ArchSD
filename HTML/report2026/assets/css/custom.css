@@ -514,6 +514,26 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Mobile Responsive Typography --- */
 @media (max-width: 35.99875em) { /* 575.98px */
+    .h1-title-style {
+        font-family: "Monda", sans-serif;
+        font-size: 1.75rem; /* 28px */
+        font-weight: 400;
+        line-height: 2.0625rem; /* 33px */
+        letter-spacing: -2.5%;
+        text-align: left;
+        color: var(--mainPinkColor);
+    }
+
+    .h2-title-style {
+        font-family: "Monda", sans-serif;
+        font-size: 1.5625rem; /* 25px */
+        font-weight: 700;
+        line-height: 1.875rem; /* 30px */
+        letter-spacing: -3%;
+        text-align: left;
+        color: var(--darkGreyColor);
+    }
+
     .p2-body-style {
         font-family: "Inter", sans-serif;
         font-weight: 300;
@@ -1357,14 +1377,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .strategy-hero-image div {
-    margin-top: auto;   /* Pushes the container to the absolute bottom of the column */
-    margin-bottom: 0;   /* Removes any default bottom spacing */
+    margin-top: auto;   
+    margin-bottom: 0;  
     padding-bottom: 0;
 }
 
 .strategy-hero-image div img {
     display: block;
-    margin: 0 auto;     /* Centers it horizontally while keeping it flush vertically */
+    margin: 0 auto;   
 }
 
 .strategy-intro-text {
@@ -1392,7 +1412,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     max-width: none;                   
 }
 
-.section-header-margin {
+.section-header-margin,
+.section-header2-margin {
     margin-bottom: 1.875rem !important;
     /* 30px */
 }
@@ -1405,7 +1426,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: #000000;
 }
 
-/* This outer container is NOW the positioning context for the bar */
 .s4-cell-container {
     display: flex;
     width: 100%;
@@ -1477,7 +1497,99 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .table-remarks {
+    display: flex;
+    align-items: flex-start;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     color: var(--darkGreyColor) !important;
+}
+
+.hanging-asterisk {
+    flex-shrink: 0; 
+    width: 0.5rem;
+}
+
+.hanging-text {
+    flex-grow: 1;
+}
+
+.milestone-item {
+    padding: 1.875rem 0 !important; /* 30px */
+}
+
+.s5-cell-border-pink {
+    border-top: 0.25rem solid var(--mainPinkColor);
+}
+
+.uns-content-wrapper {
+    margin-top: -0.3125rem !important;
+}
+
+.uns-title {
+    margin-bottom: 0.625rem !important; /* 10px */
+}
+
+@media (max-width: 35.99875em) { /* 575.98px */   
+    .strategy-page section {
+        padding-bottom: 1.875rem !important; /* 30px */
+    }
+
+    .strategy-hero-image {
+        margin-top: 0.9375rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .strategy-intro-text {
+        margin-top: 0 !important;
+    }
+
+    .section-header-margin {
+        margin-bottom: 1.25rem !important;
+        /* 20px */
+    }
+
+    .section-header2-margin {
+        margin-bottom: 1.875rem !important; /* 30px */
+    }
+
+    .section-border-grey {
+        padding-top: 1.875rem !important; /* 30px */
+    }
+
+    .spacing-64 {
+        padding-left: 0.75rem !important;
+    }
+
+    .s4-table-header {
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1.125rem;
+        color: #000000;
+    }
+
+    .s4-cell-content {
+        padding: 0.9375rem 0.9375rem 0.9375rem 0;
+        /* T, R, B, L */
+    }
+
+    .s4-target-cell {
+        margin: 0.625rem 0 0.625rem 0.8125rem;
+        /* T, R, B, L */
+    }
+
+    .s4-outcome-wrapper .s4-cell-content {
+        padding-left: 0.9375rem;
+        padding-right: 0.625rem;
+    }
+
+    .table-remarks {
+        margin-top: 0.625rem;
+        margin-bottom: 0;
+    }
+
+    .milestone-item {
+        padding: 1.25rem 0 !important; /* 20px */
+    }
+
 }
