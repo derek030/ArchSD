@@ -1434,10 +1434,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 100%;
     height: 100%;
     position: relative;
-    /* This is the key change */
 }
 
-/* The inner div just handles padding now */
 .s4-cell-content {
     padding: 1.25rem 1.875rem 1.25rem 0;
     /* T, R, B, L */
@@ -1637,3 +1635,26 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         height: 60px !important;
     }
 }
+
+/* --- Governance - Ethics and Integrity Page Styles --- */
+.complaints-content-img-top {
+    margin-bottom: 1rem;    /* Adds 50px of space below the image */
+}
+
+.complaints-content-img {
+    margin-bottom: 3.125rem;    /* Adds 50px of space below the image */
+}
+
+@media (max-width: 47.99375em) { /* 767.98px */
+    .complaints-content-img {
+        margin-bottom: 3.125rem;        /* Adds 50px of space below the image */
+    }
+}
+
+@media (max-width: 35.99875em) { /* 575.98px */
+    .complaints-content-img {
+        margin-bottom: 1.875rem;        /* Adds 30px of space below the image */
+    }
+}
+
+
