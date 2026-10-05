@@ -1515,7 +1515,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .milestone-item {
-    padding: 1.875rem 0 !important; /* 30px */
+    padding: 1.875rem 0 3.75rem 0!important; /* Top 30px Bottom 60px*/
 }
 
 .s5-cell-border-pink {
@@ -1638,7 +1638,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Governance - Ethics and Integrity Page Styles --- */
 .complaints-content-img-top {
-    margin-bottom: 1rem;    /* Adds 50px of space below the image */
+    margin-bottom: 1rem;    /* Adds 16px of space below the image */
 }
 
 .complaints-content-img {
