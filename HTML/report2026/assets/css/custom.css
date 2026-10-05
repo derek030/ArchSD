@@ -1622,7 +1622,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 
     .milestone-item {
-        padding: 1.25rem 0 !important; /* 20px */
+        padding: 1.25rem 0 2.188rem 0!important; /* Top 20px Bottom 35px*/
     }
 
     .unsdg-flex-container {
