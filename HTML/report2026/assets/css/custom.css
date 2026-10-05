@@ -1440,6 +1440,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding: 1.25rem 1.875rem 1.25rem 0;
     /* T, R, B, L */
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .s4-target-cell {
@@ -1450,9 +1453,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .s4-outcome-cell {
     margin: 0.9375rem 0;
     /* T, R, B, L */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 .s4-target-item .s4-cell-content {
