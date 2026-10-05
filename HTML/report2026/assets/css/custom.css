@@ -496,8 +496,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-family: "Inter", sans-serif;
     font-size: 0.875rem; /* 14px */
     font-weight: 400;
-    line-height: 1.0625rem; /* 17px */
-    letter-spacing: -1.5%;
+    line-height: 1.25rem; /* 20px */
+    letter-spacing: -1%;
     text-align: left;
     color: #000000;
 }
@@ -557,8 +557,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         font-family: "Inter", sans-serif;
         font-weight: 400;
         font-size: 0.75rem; /* 12px */
-        line-height: 0.9375rem; /* 15px */
-        letter-spacing: -1.5%;
+        line-height: 1.125rem; /* 18px */
+        letter-spacing: -1%;
         text-align: left;
         color: #000000;
     }
