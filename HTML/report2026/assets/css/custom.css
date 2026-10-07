@@ -1681,11 +1681,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Governance - Ethics and Integrity Page Styles --- */
 .forum-title-style {
-    /* font-family: "Monda", sans-serif;
-    font-size: 1.563rem;
-    font-weight: 700;
-    line-height: 2.563rem;
-    color: var(--mainPinkColor); */
     margin-top: 1.219rem; /* 19.5px */
     margin-bottom: 0.938rem; /* 15px */
 }
@@ -1725,7 +1720,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .person-info {
     display: flex;
     flex-direction: column; /* Stacks name and position vertically */
-    padding-left: 1.875rem; /* 30px */
 }
 
 .person-name {
