@@ -328,7 +328,46 @@
         <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
         <!-- Pure Frontend Search Controller -->
-        <script></script>
+        <script>
+            // GSAP Scroll-Triggered Animations (Dynamic Enter & Exit)
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Set the initial "hidden" state for all question blocks.
+            gsap.set("main > section > .section-border-grey", {
+                autoAlpha: 0,
+                y: 50
+            });
+
+            // Animate each block dynamically based on scroll direction.
+            ScrollTrigger.batch("main > section > .section-border-grey", {
+                start: "top 90%", // Trigger when entering from the bottom
+                end: "bottom 10%", // Trigger when exiting through the top
+
+                // Trigger entrance animation when scrolling down
+                onEnter: batch => gsap.to(batch, {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    stagger: 0.15,
+                    overwrite: "auto"
+                }),
+
+                // TRIGGER EXIT: Dismiss and slide down when scrolling back UP past the trigger point
+                onLeaveBack: batch => gsap.to(batch, {
+                    autoAlpha: 0,
+                    y: 50,
+                    duration: 0.5,
+                    ease: "power2.in",
+                    stagger: 0.1,
+                    overwrite: "auto"
+                }),
+
+                // Keep elements visible when scrolling way past them to the bottom
+                onLeave: () => { },
+                onEnterBack: () => { }
+            });
+        </script>
 </body>
 
 </html>
