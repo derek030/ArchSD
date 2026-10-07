@@ -1894,3 +1894,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 
 }
+
+.person-number {
+    flex-shrink: 0; /* Prevents the number box from shrinking */
+    width: 1.5em;   /* Sets a fixed width relative to the font size */
+    text-align: left; /* Ensures numbers are aligned within their box */
+}
+
+@media (min-width: 65.625em) {
+    .ssf-group-container .ssf-group-paragraph,
+    .ssf-group-container .ssf-people-grid {
+        padding-left: 3.2rem; 
+    }
+}
