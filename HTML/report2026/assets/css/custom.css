@@ -1660,7 +1660,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Governance - Ethics and Integrity Page Styles --- */
 .complaints-content-img-top {
-    margin-bottom: 1rem;    /* Adds 16px of space below the image */
+    margin-bottom: 1.25rem;    /* Adds 20px of space below the image */
 }
 
 .complaints-content-img {
