@@ -1786,6 +1786,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding-left: 3.125rem; /* 50px */
 }
 
+.monitoring-target-cell {
+    padding-right: 1rem; /* 16px */
+}
+
 .monitoring-content {
     padding-top: 0.625rem; /* 10px */
 }
