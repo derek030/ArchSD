@@ -720,38 +720,37 @@
         // GSAP Scroll-Triggered Animations (Dynamic Enter & Exit)
         gsap.registerPlugin(ScrollTrigger);
 
-        // Set the initial "hidden" state for all question blocks.
-        gsap.set("main > section > .section-border-grey", {
+        // Set the initial "hidden" state for all animated blocks.
+        // Increase the starting 'y' to make the slide-in motion more apparent.
+        gsap.set(".section-border-grey, .spacing-64", {
             autoAlpha: 0,
-            y: 50
+            y: 55 // Changed from 50 to 100
         });
 
         // Animate each block dynamically based on scroll direction.
-        ScrollTrigger.batch("main > section > .section-border-grey", {
-            start: "top 90%", // Trigger when entering from the bottom
-            end: "bottom 10%", // Trigger when exiting through the top
+        ScrollTrigger.batch(".section-border-grey, .spacing-64", {
+            start: "top 80%",
+            end: "bottom 20%",
 
             // Trigger entrance animation when scrolling down
             onEnter: batch => gsap.to(batch, {
                 autoAlpha: 1,
                 y: 0,
-                duration: 1.2, // Increased duration for a slower fade
+                duration: 1.5,      // Increased from 1.2 for a slightly slower, smoother effect
                 ease: "power2.out",
-                stagger: 0.3, // Increased stagger for more delay between items
+                stagger: 0.9,       // Reduced stagger for quicker succession
                 overwrite: "auto"
             }),
 
-            // TRIGGER EXIT: Dismiss and slide down when scrolling back UP past the trigger point
+            // TRIGGER EXIT: Dismiss and slide down when scrolling back UP
             onLeaveBack: batch => gsap.to(batch, {
                 autoAlpha: 0,
-                y: 50,
-                duration: 0.6,      // Adjusted exit duration
+                y: 100,             // Changed from 50 to 100
+                duration: 0.6,
                 ease: "power2.in",
-                stagger: 0.15,      // Adjusted exit stagger
+                stagger: 0.1,
                 overwrite: "auto"
             }),
-
-            // Keep elements visible when scrolling way past them to the bottom
             onLeave: () => { },
             onEnterBack: () => { }
         });

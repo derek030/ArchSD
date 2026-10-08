@@ -565,7 +565,48 @@
 	<script src="../assets/js/menu.js" defer></script>
 
     <!-- 6. 動態與互動腳本 -->
-	<script></script>
+	<script>
+		 // GSAP Scroll-Triggered Animations (Dynamic Enter & Exit)
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Define the common selector for the elements to animate
+            const animatedElements = ".grid-container, .section-line, .general-section";
+
+            // Set the initial "hidden" state for all target blocks.
+            gsap.set(animatedElements, {
+                autoAlpha: 0,
+                y: 100
+            });
+
+            // Animate each block dynamically based on scroll direction.
+            ScrollTrigger.batch(animatedElements, {
+                start: "top 70%", // Trigger when entering from the bottom
+                end: "bottom 30%", // Trigger when exiting through the top
+
+                // Trigger entrance animation when scrolling down
+                onEnter: batch => gsap.to(batch, {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 1.5,      // Increased from 1.2 for a slightly slower, smoother effect
+                    ease: "power2.out",
+                    stagger: 0.9,       // Reduced stagger for quicker succession
+                    overwrite: "auto"
+                }),
+                // TRIGGER EXIT: Dismiss and slide down when scrolling back UP past the trigger point
+                onLeaveBack: batch => gsap.to(batch, {
+                    autoAlpha: 0,
+                    y: 100,             // Changed from 50 to 100
+                    duration: 0.6,
+                    ease: "power2.in",
+                    stagger: 0.1,
+                    overwrite: "auto"
+                }),
+
+                // Keep elements visible when scrolling way past them
+                onLeave: () => { },
+                onEnterBack: () => { }
+            });
+	</script>
 <!-- Toast 提示框容器 -->
 <div id="copy-toast" class="copy-toast">The URL has been copied to the clipboard!</div>
 </body>
