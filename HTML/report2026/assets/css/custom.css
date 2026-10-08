@@ -1868,6 +1868,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         margin-bottom: 0.625rem; /* 10px */
     }
 
+    .ssf-people-grid .person {
+        margin-bottom: 0.844rem; /* 13.5px */
+    }
+
     .person-number {
         font-family: "Monda", sans-serif;
         font-weight: 400;
@@ -1878,7 +1882,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 
     .person-info {
-        padding-left: 0.531rem; /* 8.5px */
+        padding-left: 0.031rem; /* 8.5px */
     }
 
     .person-position {
