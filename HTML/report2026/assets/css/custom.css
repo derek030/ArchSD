@@ -18,7 +18,7 @@ Custom CSS
 	--mainPinkColor: #ff31cd;
 	--mainGreenColor: #82EF00;
     --tableGreyColor: #ECEFEF;
-    --darkGreenColor: #82EF00;
+    --darkGreenColor: #27ab03;
 
 	@media (max-width: 767.9px) {
 		--header-height: 100px; /* +26px */
@@ -275,7 +275,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .green-list li::before {content: ""; position: absolute; left: 0; top: 4px; width: 6px; height: 35px; background-color: #82f000;}
 .green-list li:last-child {/*margin-bottom: 0;*/}
 .green-list.special li {color: var(--darkGreyColor);}
-.green-bar-text-group {display: flex; flex-wrap: wrap; padding-top: 1.5rem;}
+.green-bar-text-group {display: flex; flex-wrap: wrap; padding-top: 1.5rem; padding-bottom: 1.5rem;}
 .green-bar-text {display: flex; align-items: center; width: 100%; margin-bottom: 1.5rem;}
 .green-bar-text p {color: var(--darkGreyColor); margin-bottom: 0;}
 .green-bar {width: 6px; height: 35px; margin-right: 14px; background-color: #82f000;}
@@ -293,7 +293,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .esg-table td.icon-cell {text-align: center;vertical-align: middle; padding-top: 7px; padding-bottom: 3px;}
 /* table icons */
 .icon-circle {display: inline-block; width: 22px; min-width: 22px; height: 22px; border: 3px solid var(--mainPinkColor); border-radius: 50%;}
-.icon-check {display: inline-block; width: 20px; min-width: 20px; height: 20px; background-color: var(--mainGreenColor); -webkit-mask: url("../images/icon-check.svg") no-repeat center / contain; mask: url("../images/icon-check.svg") no-repeat center / contain;}
+.icon-check {display: inline-block; width: 20px; min-width: 20px; height: 20px; background-color: var(--darkGreenColor); -webkit-mask: url("../images/icon-check.svg") no-repeat center / contain; mask: url("../images/icon-check.svg") no-repeat center / contain;}
 .icon-dash {display: inline-block; width: 20px; min-width: 20px; height: 4px; background-color: #b4b4b4; border-radius: 0; margin-bottom: 4px;}
 .esg-index {min-width: 75px; height: auto; padding: 12px; background-color: var(--lightGreyColor); margin-top: 3.5rem; margin-right: calc(var(--bs-gutter-x) * .5); position: sticky; top: var(--header-height); display: block; z-index: 10;}
 .esg-index p {font-size: 9px; margin: 0;}
@@ -1930,4 +1930,63 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     .ssf-group-container .ssf-people-grid {
         padding-left: 3.2rem; 
     }
+}
+
+.stakeholder-cell-content {
+    padding-left: 1.313rem; /* 15+6=21px */
+    padding-bottom: 2rem; /* 30px */
+    width: 100%;
+}
+
+.stakeholder-cell-content-last {
+    padding-left: 1.313rem; /* 15+6=21px */
+    padding-bottom: 0; /* 30px */
+    width: 100%;
+}
+
+.MA-cell-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    justify-content: flex-start;
+}
+
+.MA-cell-content {
+    padding-left: 1.313rem; /* 15+6=21px */
+    width: 100%;
+}
+
+.MA-target-item {
+    padding-left: 3.125rem; /* 50px */
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.MA-target-item .MA-cell-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0.375rem; /* 6px */
+    height: 2.813rem; /* 45px */
+    background-color: var(--mainGreenColor);
+
+    
+}
+
+@media (max-width: 65.625em) and (min-width: 35.99875em){
+    .MA-target-item {
+        padding-left: 1.875rem; /* 30px */
+    }
+}
+
+@media (max-width: 35.99875em) {
+    .MA-target-item {
+        padding-left: 1.25rem; /* 20px */
+    }
+    .MA-cell-content {
+        padding-left: 1rem; /* 10+6=16px */
+    }
+
 }
