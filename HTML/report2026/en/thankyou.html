@@ -70,18 +70,8 @@
                 <div class="col-12 col-lg-7 offset-lg-1 ps-lg-0">
                     <!-- The Unified Component Wrapper -->
                     <div class="thankyou-content-wrapper">
-
-                        <!-- Layer 1: Background Image (Bottom) - Decorative, hidden from screen readers -->
-                        <img src="../assets/images/appendix-feedback.png" class="thankyou-bg-img" alt=""
-                            aria-hidden="true">
-
-                        <!-- Layer 2: Text (Middle) - PRESERVED h2 tag for design compliance -->
-                        <h2 class="thankyou-text">We appreciate your feedback</h2>
-
-                        <!-- Layer 3: Accent/Title Image (Top) - Decorative, hidden from screen readers -->
-                        <img src="../assets/images/appendix-feedback-thankyou.png" class="thankyou-title-img" alt=""
-                            aria-hidden="true">
-
+                        <!-- This div is the container for your Lottie animation -->
+                        <div id="lottie-container"></div>
                     </div>
                 </div>
 
@@ -182,27 +172,18 @@
         <!-- Animation Script is now included -->
         <script>
             $(function () {
-                // --- ACCESSIBILITY: Check for user's motion preference ---
                 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-                // Set initial state for all users
-                gsap.set(".thankyou-bg-img, .thankyou-title-img", { autoAlpha: 0 });
 
                 // Only run animations if the user has NOT requested reduced motion
                 if (!prefersReducedMotion.matches) {
-                    gsap.fromTo(".thankyou-bg-img",
-                        { xPercent: -50, autoAlpha: 0 },
-                        { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.5 }
-                    );
-                    gsap.fromTo(".thankyou-title-img",
-                        { xPercent: 50, autoAlpha: 0 },
-                        { xPercent: 0, autoAlpha: 1, duration: 1.2, ease: "power3.out", delay: 0.8 }
-                    );
-                } else {
-                    // If the user prefers reduced motion, just make the elements visible without animation.
-                    gsap.set(".thankyou-bg-img, .thankyou-title-img", { autoAlpha: 1 });
+                    lottie.loadAnimation({
+                        container: document.getElementById('lottie-container'), // the dom element that will contain the animation
+                        renderer: 'svg',
+                        loop: false,
+                        autoplay: true,
+                        path: '../assets/json/Feedback_Thank_you_Motion.json' // the path to the animation json
+                    });
                 }
-
             });
         </script>
 
