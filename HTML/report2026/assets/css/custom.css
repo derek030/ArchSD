@@ -1620,11 +1620,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         width: 2.5rem; /* 40px */
         height: 2.5rem; /* 40px */
         margin-top: 0.4375rem; /* 7px */
-        margin-bottom: 1.25rem; /* 20px */
+        margin-bottom: 0; /* 20px */
     }
 
     .governance-intro-text {
-        margin-top: 0 !important;
+        margin-top: 1.25rem !important;
     }
 
     .section-header-margin {
@@ -1834,6 +1834,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .monitoring-cell-border-pink {
     border-top: 0.25rem solid var(--mainPinkColor);
+}
+
+.roles-responsibilities-content {
+    margin-bottom: 0;
 }
 
 /* Custom 20% column for exactly 5 people per row on Tablet (Medium viewports) */
