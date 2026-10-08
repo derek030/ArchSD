@@ -90,25 +90,30 @@
             <!-- ================================================================= -->
             <section class="col-12">
                 <div class="section-container section-border-grey">
-                    <div class="row">
-                        <!-- Left: Section Title -->
-                        <div class="col-12 col-md-4">
-                            <div class="section-header-image">
-                                <img src="../assets/images/H2 Graphic.svg" alt="" aria-hidden="true" class="img-fluid">
+                    <div id="rolesection">
+                        <div class="row">
+                            <!-- Left: Section Title -->
+                            <div class="col-12 col-md-4">
+                                <div class="section-header-image">
+                                    <img src="../assets/images/H2 Graphic.svg" alt="" aria-hidden="true"
+                                        class="img-fluid">
+                                </div>
+                                <h3 class="h2-title-style section-header-margin">Roles and Responsibilities</h3>
                             </div>
-                            <h3 class="h2-title-style section-header-margin">Roles and Responsibilities</h3>
-                        </div>
-                        <!-- Right: Content Paragraph -->
-                        <div class="col-12 col-md-8 spacing-64">
-                            <p class="p2-body-style roles-responsibilities-content">
-                                Sustainability drives the way we work with our stakeholders in the communities we serve.
-                                The ArchSD has a sound governance system with long-term sustainability objectives and a
-                                mechanism for monitoring progress.</p>
-                            <p class="p2-body-style roles-responsibilities-content">
-                                From driving development to conserving heritage, we are committed to addressing
-                                environmental challenges, providing safe and healthy workplaces, and enriching the
-                                well-being and cultural legacy of our communities.
-                            </p>
+                            <!-- Right: Content Paragraph -->
+                            <div class="col-12 col-md-8 spacing-64">
+                                <p class="p2-body-style roles-responsibilities-content">
+                                    Sustainability drives the way we work with our stakeholders in the communities we
+                                    serve.
+                                    The ArchSD has a sound governance system with long-term sustainability objectives
+                                    and a
+                                    mechanism for monitoring progress.</p>
+                                <p class="p2-body-style roles-responsibilities-content">
+                                    From driving development to conserving heritage, we are committed to addressing
+                                    environmental challenges, providing safe and healthy workplaces, and enriching the
+                                    well-being and cultural legacy of our communities.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -132,14 +137,16 @@
                         </div>
                         <!-- Org chart -->
                         <div class="orgchart-content-img d-none d-lg-block">
-                            <img src="../assets/images/4.1 Governance Structure_OrgChart_Web.svg" alt="" aria-hidden="true" class="img-fluid">
+                            <img src="../assets/images/4.1 Governance Structure_OrgChart_Web.svg" alt=""
+                                aria-hidden="true" class="img-fluid">
                         </div>
                         <div class="orgchart-content-img d-none d-md-block d-lg-none">
-                            <img src="../assets/images/4.1 Governance Structure_OrgChart_Tablet.svg" alt="" aria-hidden="true" class="img-fluid">
+                            <img src="../assets/images/4.1 Governance Structure_OrgChart_Tablet.svg" alt=""
+                                aria-hidden="true" class="img-fluid">
                         </div>
                         <div class="orgchart-content-img d-block d-md-none">
-                            <img src="../assets/images/4.1 Governance Structure_OrgChart_Mobile.svg" alt="" aria-hidden="true"
-                                class="img-fluid">
+                            <img src="../assets/images/4.1 Governance Structure_OrgChart_Mobile.svg" alt=""
+                                aria-hidden="true" class="img-fluid">
                         </div>
                     </div>
 
@@ -148,16 +155,16 @@
                         <h4 class="h3-title-style forum-title-style">Senior Staff Forum</h4>
 
                         <div class="staff-forum-content-img d-none d-lg-block">
-                            <img src="../assets/images/4.1 Governance Structure_group2026.10.svg" alt="" aria-hidden="true"
-                                class="img-fluid">
+                            <img src="../assets/images/4.1 Governance Structure_group2026.10.svg" alt=""
+                                aria-hidden="true" class="img-fluid">
                         </div>
                         <div class="staff-forum-content-img d-none d-md-block d-lg-none">
-                            <img src="../assets/images/4.1 Governance Structure_group2026.10.svg" alt="" aria-hidden="true"
-                                class="img-fluid">
+                            <img src="../assets/images/4.1 Governance Structure_group2026.10.svg" alt=""
+                                aria-hidden="true" class="img-fluid">
                         </div>
                         <div class="staff-forum-content-img d-block d-md-none">
-                            <img src="../assets/images/4.1 Governance Structure_group2026.10.svg" alt="" aria-hidden="true"
-                                class="img-fluid">
+                            <img src="../assets/images/4.1 Governance Structure_group2026.10.svg" alt=""
+                                aria-hidden="true" class="img-fluid">
                         </div>
 
                         <!-- SSF group info -->
@@ -540,7 +547,7 @@
             gsap.registerPlugin(ScrollTrigger);
 
             // Define the common selector for the elements to animate
-            const animatedElements = "#orgchartsection, #forumsection, .monitoring-and-advisory-committee-section";
+            const animatedElements = ".section-border-grey, #forumsection, .monitoring-and-advisory-committee-section";
 
             // Set the initial "hidden" state for all target blocks.
             gsap.set(animatedElements, {
@@ -557,9 +564,9 @@
                 onEnter: batch => gsap.to(batch, {
                     autoAlpha: 1,
                     y: 0,
-                    duration: 0.8,
+                    duration: 1.2, // Increased duration for a slower fade
                     ease: "power2.out",
-                    stagger: 0.15,
+                    stagger: 0.3, // Increased stagger for more delay between items
                     overwrite: "auto"
                 }),
 
@@ -567,9 +574,9 @@
                 onLeaveBack: batch => gsap.to(batch, {
                     autoAlpha: 0,
                     y: 50,
-                    duration: 0.5,
+                    duration: 0.6,      // Adjusted exit duration
                     ease: "power2.in",
-                    stagger: 0.1,
+                    stagger: 0.15,      // Adjusted exit stagger
                     overwrite: "auto"
                 }),
 

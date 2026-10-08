@@ -735,9 +735,9 @@
             onEnter: batch => gsap.to(batch, {
                 autoAlpha: 1,
                 y: 0,
-                duration: 0.8,
+                duration: 1.2, // Increased duration for a slower fade
                 ease: "power2.out",
-                stagger: 0.15,
+                stagger: 0.3, // Increased stagger for more delay between items
                 overwrite: "auto"
             }),
 
@@ -745,9 +745,9 @@
             onLeaveBack: batch => gsap.to(batch, {
                 autoAlpha: 0,
                 y: 50,
-                duration: 0.5,
+                duration: 0.6,      // Adjusted exit duration
                 ease: "power2.in",
-                stagger: 0.1,
+                stagger: 0.15,      // Adjusted exit stagger
                 overwrite: "auto"
             }),
 
