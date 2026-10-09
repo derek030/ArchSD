@@ -285,7 +285,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .esg-table th.col-cat {width: 25%;}
 .esg-table th.col-topic {width: 63%;}
 .esg-table th.col-importance {width: 12%; text-align: center;}
-.esg-table td.cat-title {color: var(--mainPinkColor, #ff2a8d); font-size: 1.25rem; font-weight: 700; line-height: 1.125; padding-right: 20px; border-bottom: none; /* 由 section-start 統一控制 */}
+.esg-table td.cat-title {color: var(--mainPinkColor, #ff32cd); font-size: 1.25rem; font-weight: 700; line-height: 1.5625; letter-spacing: -3%; padding-right: 20px; border-bottom: none; /* 由 section-start 統一控制 */}
 .esg-table td {font-size: 0.75rem; font-weight: 500; padding: 5px 12px 5px 0; vertical-align: top; border-bottom: 1px solid #b9bec0;}
 .esg-table td.topics {color: #565a5f; padding-top: 0.5rem;}
 .esg-table td.topics.last {padding-bottom: 0.5rem;}
@@ -404,7 +404,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 	.grid-container .block .svg-mask-icon {width: calc((100vw * 0.8) / 2);}
 	.block-p p {font-size: 0.5625rem; padding-right: 15px;}
 	.esg-table th {font-size: 0.75rem;}
-	.esg-table td.cat-title {font-size: 1rem;}
+	.esg-table td.cat-title {font-size: 1rem; line-height: 1.3125rem;}
 	.esg-table td {font-size: 0.75rem;}
 	.icon-cell .icon-circle, .icon-cell .icon-check, .icon-cell .icon-dash {transform: scale(0.8);}
 	.stakeholder-header {font-size: 1.35rem;}
