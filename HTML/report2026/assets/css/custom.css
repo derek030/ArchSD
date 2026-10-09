@@ -1940,6 +1940,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
+.stakeholder-darkgreytitle {
+    color: var(--darkGreyColor);
+}
+
 .stakeholder-cell-content {
     padding-left: 1.313rem; /* 15+6=21px */
     padding-bottom: 2rem; /* 30px */
