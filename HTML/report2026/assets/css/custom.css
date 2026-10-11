@@ -2005,6 +2005,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Highlights Projects Page Styles --- */
+.highlights-page .title-block {
+    padding-bottom: 0 !important;
+}
+
 /* --- Left Column: Filter --- */
 .project-filter-wrapper {
     position: sticky;
@@ -2198,8 +2202,20 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: var(--mainGreenColor);
 }
 
-/* --- Mobile Adjustments --- */
+/* --- Tablet View Adjustments (Triggered at 1350px) --- */
+@media (max-width: 1350px) {
+    .project-item {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 404px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* --- Mobile View Adjustments (Triggered below 768px) --- */
 @media (max-width: 767.98px) {
+    /* Drops filter column above projects and removes sticky positioning */
     .project-filter-wrapper {
         position: relative;
         top: 0;
@@ -2210,3 +2226,4 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding-top: 1.5rem;
     }
 }
+
