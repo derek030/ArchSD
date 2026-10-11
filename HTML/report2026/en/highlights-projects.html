@@ -538,141 +538,124 @@
 
     </div>
 
-        <!-- JavaScript libraries -->
-        <script src="../assets/js/gsap.min.js" crossorigin="anonymous"></script>
-        <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-        <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
-        <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
+    <!-- JavaScript libraries -->
+    <script src="../assets/js/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
 
-        <!-- Site utility scripts -->
-        <script src="../assets/js/qrcode.min.js" defer></script>
-        <script src="../assets/js/general.js" defer></script>
-        <script src="../assets/js/menu.js" defer></script>
+    <!-- Site utility scripts -->
+    <script src="../assets/js/qrcode.min.js" defer></script>
+    <script src="../assets/js/general.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
 
-        <!-- jQuery -->
-        <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const filterButtons = document.querySelectorAll('.project-filter-wrapper .filter-btn');
-                const showAllBtn = document.querySelector('.project-filter-wrapper .filter-show-all-btn');
-                const projectItems = document.querySelectorAll('.project-gallery .project-item');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.project-filter-wrapper .filter-btn');
+            const showAllBtn = document.querySelector('.project-filter-wrapper .filter-show-all-btn');
+            const projectItems = document.querySelectorAll('.project-gallery .project-item');
 
-                // Helper: Reset all buttons back to unselected state
-                function resetAllButtons() {
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.setAttribute('aria-pressed', 'false');
-                    });
-                }
+            // Helper: Reset all buttons back to unselected state
+            function resetAllButtons() {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                });
+            }
 
-                // Helper: Run the filtering logic
-                function applyFilter() {
-                    const activeButtons = document.querySelectorAll('.project-filter-wrapper .filter-btn.active');
-                    const selectedCategories = Array.from(activeButtons).map(btn => btn.getAttribute('data-filter'));
+            // Helper: Run the filtering logic
+            function applyFilter() {
+                const activeButtons = document.querySelectorAll('.project-filter-wrapper .filter-btn.active');
+                const selectedCategories = Array.from(activeButtons).map(btn => btn.getAttribute('data-filter'));
 
-                    // RULE: If NO filters are selected -> Show All
-                    if (selectedCategories.length === 0) {
-                        projectItems.forEach(item => {
-                            item.style.display = 'block';
-                        });
-                        return;
-                    }
-
-                    // Apply OR logic across selected categories
+                // RULE: If NO filters are selected -> Show All
+                if (selectedCategories.length === 0) {
                     projectItems.forEach(item => {
-                        const itemCategories = Array.from(item.querySelectorAll('.project-category-icons img'))
-                            .map(img => img.getAttribute('alt').trim());
-
-                        // Check if project contains at least one of the selected filter categories
-                        const isMatch = selectedCategories.some(category => itemCategories.includes(category));
-                        item.style.display = isMatch ? 'block' : 'none';
+                        item.style.display = 'block';
                     });
+                    return;
                 }
 
-                // Toggle individual category filters
-                filterButtons.forEach(button => {
-                    button.addEventListener('click', function () {
-                        // 1. Toggle active state
-                        const isActive = this.classList.toggle('active');
-                        this.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                // Apply OR logic across selected categories
+                projectItems.forEach(item => {
+                    const itemCategories = Array.from(item.querySelectorAll('.project-category-icons img'))
+                        .map(img => img.getAttribute('alt').trim());
 
-                        // 2. Check if ALL category buttons are now selected
-                        const activeButtons = document.querySelectorAll('.project-filter-wrapper .filter-btn.active');
-
-                        if (activeButtons.length === filterButtons.length) {
-                            // If all are selected, treat it as a full reset ("Show All" behavior)
-                            resetAllButtons();
-                        }
-
-                        // 3. Render changes
-                        applyFilter();
-                    });
+                    // Check if project contains at least one of the selected filter categories
+                    const isMatch = selectedCategories.some(category => itemCategories.includes(category));
+                    item.style.display = isMatch ? 'block' : 'none';
                 });
+            }
 
-                // "Show All" acts as a complete reset
-                if (showAllBtn) {
-                    showAllBtn.addEventListener('click', function () {
+            // Toggle individual category filters
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // 1. Toggle active state
+                    const isActive = this.classList.toggle('active');
+                    this.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+
+                    // 2. Check if ALL category buttons are now selected
+                    const activeButtons = document.querySelectorAll('.project-filter-wrapper .filter-btn.active');
+
+                    if (activeButtons.length === filterButtons.length) {
+                        // If all are selected, treat it as a full reset ("Show All" behavior)
                         resetAllButtons();
-                        applyFilter();
-                    });
+                    }
+
+                    // 3. Render changes
+                    applyFilter();
+                });
+            });
+
+            // "Show All" acts as a complete reset
+            if (showAllBtn) {
+                showAllBtn.addEventListener('click', function () {
+                    resetAllButtons();
+                    applyFilter();
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.project-card');
+
+            // 1. Preload all hover images to eliminate network latency/delays
+            document.querySelectorAll('img[data-hover]').forEach(img => {
+                const preloadLink = img.getAttribute('data-hover');
+                if (preloadLink) {
+                    const cacheImage = new Image();
+                    cacheImage.src = preloadLink;
                 }
             });
 
-            document.addEventListener('DOMContentLoaded', () => {
-                // Register GSAP plugins
-                gsap.registerPlugin(ScrollTrigger);
+            // 2. Handle card-level hover states
+            cards.forEach(card => {
+                const hoverImages = card.querySelectorAll('img[data-hover]');
 
-                // Use ScrollTrigger to pin the filter wrapper
-                ScrollTrigger.create({
-                    trigger: "#sticky-filter-wrapper",
-                    start: "top 100px", // Start pinning when the top of the element hits 100px from the viewport top
-                    end: 99999, // A very large number to keep it pinned
-                    pin: true,
-                    pinSpacing: false, // Prevents ScrollTrigger from adding extra space
-                    // Only activate this behavior on screens wider than 767px (desktop)
-                    // On mobile, we will use pure CSS sticky
-                    media: "(min-width: 768px)"
-                });
-            });
-
-            document.addEventListener('DOMContentLoaded', () => {
-                const cards = document.querySelectorAll('.project-card');
-
-                // 1. Preload all hover images to eliminate network latency/delays
-                document.querySelectorAll('img[data-hover]').forEach(img => {
-                    const preloadLink = img.getAttribute('data-hover');
-                    if (preloadLink) {
-                        const cacheImage = new Image();
-                        cacheImage.src = preloadLink;
-                    }
-                });
-
-                // 2. Handle card-level hover states
-                cards.forEach(card => {
-                    const hoverImages = card.querySelectorAll('img[data-hover]');
-
-                    card.addEventListener('mouseenter', () => {
-                        hoverImages.forEach(img => {
-                            const hoverSrc = img.getAttribute('data-hover');
-                            // Store the original source so we can restore it on mouseleave
-                            if (!img.dataset.default) {
-                                img.dataset.default = img.src;
-                            }
-                            img.src = hoverSrc;
-                        });
+                card.addEventListener('mouseenter', () => {
+                    hoverImages.forEach(img => {
+                        const hoverSrc = img.getAttribute('data-hover');
+                        // Store the original source so we can restore it on mouseleave
+                        if (!img.dataset.default) {
+                            img.dataset.default = img.src;
+                        }
+                        img.src = hoverSrc;
                     });
+                });
 
-                    card.addEventListener('mouseleave', () => {
-                        hoverImages.forEach(img => {
-                            if (img.dataset.default) {
-                                img.src = img.dataset.default;
-                            }
-                        });
+                card.addEventListener('mouseleave', () => {
+                    hoverImages.forEach(img => {
+                        if (img.dataset.default) {
+                            img.src = img.dataset.default;
+                        }
                     });
                 });
             });
-        </script>
+        });
+    </script>
 </body>
 
 </html>

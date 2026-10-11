@@ -2230,13 +2230,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
     /* Drops filter column above projects and removes sticky positioning */
     .project-filter-wrapper {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 100px; /* Matches your mobile --header-height */
-        z-index: 99;
-        background-color: #ffffff;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        position: relative;
+        top: 0;        
+        margin-bottom: 1.25rem;
     }
 
     .filter-list {
