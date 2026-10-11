@@ -2277,11 +2277,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     .project-filter-margin {
         margin-top: 1.25rem;
     }
-    /* Drops filter column above projects and removes sticky positioning */
+    
+    .project-showcase-section > .row > .col-12.col-md-4 {
+        display: contents;
+    }
+
     .project-filter-wrapper {
-        position: relative;
-        top: 0;        
-        margin-bottom: 1.25rem;
+        position: -webkit-sticky; /* For Safari compatibility */
+        position: sticky;
+        top: var(--header-height); /* Sticks below the mobile header */
+        z-index: 10;
+        background-color: #ffffff; /* Prevents content from showing through */
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     .filter-list {
