@@ -2113,20 +2113,15 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* --- Right Column: Project Gallery --- */
 .project-gallery {
     --bs-gutter-y: 2.5rem;
+    --bs-gutter-x: 1.875rem; /* 30px */
 }
 
 .project-item {
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.project-card-link {
-    text-decoration: none;
-    display: block;
-    height: 100%;
-}
-
 .project-card {
-    background-color: #fff;
+    background-color: var(--tableGreyColor); /* 1. Background Color */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -2134,7 +2129,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .project-image-container {
     width: 100%;
-    padding-top: 75%; /* 4:3 Aspect Ratio */
+    aspect-ratio: 335 / 240; /* Derived from assumed card size for a consistent image ratio */
     position: relative;
     overflow: hidden;
     background-color: #fff;
@@ -2150,21 +2145,71 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .project-info {
-    padding: 1.25rem; /* 20px */
+    padding: 1.25rem; /* 3. 20px padding */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows the info section to fill remaining card space */
 }
 
 .project-title {
-    margin-bottom: 6.25rem; /* 20+60+20 = 100px */ 
+    margin-bottom: 6.25rem; /* 4. 100px space */
+    color: var(--darkestGreyColor);
 }
 
-.project-category {
-    font-family: "Inter", sans-serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--darkGreyColor);
-    margin-bottom: 0.25rem;
-    display: block;
+.project-card-bottom {
+    margin-top: auto; /* Pushes this block to the bottom of the card */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2.1875rem; /* 6. 35px space */
+}
+
+.project-category-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 53px); /* 5. Two items per row, 53px wide */
+    gap: 15px; /* 5. Space between icons */
+}
+
+.project-category-icons img {
+    width: 53px;
+    height: 53px;
+}
+
+/* 1. This is the container for the two icons.
+      It's a link (a tag) that we turn into a block of a specific size. */
+.project-redirection-arrow {
+    position: relative;     /* This is crucial. It becomes the boundary for the images. */
+    display: block;         /* Treat the link as a block to give it dimensions. */
+    width: 53px;
+    height: 53px;
+    flex-shrink: 0;         /* Prevents the container from shrinking in the flex layout. */
+}
+
+/* 2. Both images are absolutely positioned to stack inside the container. */
+.project-arrow-icon-base,
+.project-arrow-icon-pointer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;            /* 100% of the parent's 53px width. */
+    height: 100%;           /* 100% of the parent's 53px height. */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 3. Hide the pointer icon by default. */
+.project-arrow-icon-pointer {
+    opacity: 0;
+}
+
+/* 4. On hover, fade out the base icon. */
+.project-redirection-arrow:hover .project-arrow-icon-base {
+    opacity: 0;
+}
+
+/* 5. On hover, fade in the pointer icon and flip it correctly. */
+.project-redirection-arrow:hover .project-arrow-icon-pointer {
+    opacity: 1;
+    transform: scaleX(-1); /* Flips the icon horizontally. */
 }
 
 /* --- Mobile Adjustments --- */
