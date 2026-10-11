@@ -2232,5 +2232,30 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     .project-showcase-section {
         padding-top: 1.5rem;
     }
+
+    .filter-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+        grid-auto-rows: 1fr; /* Ensures all rows have the same height */
+        border-bottom: none; /* Remove any previous borders */
+    }
+
+    /* 2. Reset individual item borders and padding */
+    .filter-item {
+        border-bottom: none;
+    }
+
+    /* 3. Add a bottom border ONLY to the first two items (the top row) */
+    .filter-item:nth-child(1),
+    .filter-item:nth-child(2) {
+        border-bottom: 1px solid #D8DCDC;
+    }
+
+    .filter-btn {
+        padding: 1rem;
+        height: 100%;
+        display: flex;
+        align-items: center; /* Vertically center content within the button */
+    }
 }
 
