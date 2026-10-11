@@ -2010,6 +2010,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Left Column: Filter --- */
+.project-filter-margin {
+    margin-top: 3.125rem;
+}
+
 .project-filter-wrapper {
     position: sticky;
     top: calc(var(--header-height) + 2rem);
@@ -2215,6 +2219,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Mobile View Adjustments (Triggered below 768px) --- */
 @media (max-width: 767.98px) {
+    .project-filter-margin {
+        margin-top: 1.25rem;
+    }
     /* Drops filter column above projects and removes sticky positioning */
     .project-filter-wrapper {
         position: relative;
