@@ -2112,7 +2112,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Right Column: Project Gallery --- */
 .project-gallery {
-    --bs-gutter-y: 2.5rem;
+    --bs-gutter-y: 2.188rem;
     --bs-gutter-x: 1.875rem; /* 30px */
 }
 
@@ -2132,7 +2132,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     aspect-ratio: 335 / 240; /* Derived from assumed card size for a consistent image ratio */
     position: relative;
     overflow: hidden;
-    background-color: #fff;
 }
 
 .project-image {
