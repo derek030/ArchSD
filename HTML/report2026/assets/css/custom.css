@@ -2038,9 +2038,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transition: background-color 0.3s ease;
 }
 
-.filter-show-all-btn:hover {
-    color: var(--mainGreenColor);
-    background-color: var(--darkestGreyColor);
+@media (hover: hover) {
+    .filter-show-all-btn:hover {
+        color: var(--mainGreenColor);
+        background-color: var(--darkestGreyColor);
+    }
+}
+
+.filter-show-all-btn:active {
+    color: var(--mainGreenColor) !important;
+    background-color: var(--darkestGreyColor) !important;
+    transform: scale(0.97);
 }
 
 .filter-plus-icon {
