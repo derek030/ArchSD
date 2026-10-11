@@ -2153,7 +2153,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .project-title {
     margin-bottom: 6.25rem; /* 4. 100px space */
-    color: var(--darkestGreyColor);
+    color: #B8BDC5;
 }
 
 .project-card-bottom {
@@ -2166,50 +2166,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .project-category-icons {
     display: grid;
-    grid-template-columns: repeat(2, 53px); /* 5. Two items per row, 53px wide */
-    gap: 15px; /* 5. Space between icons */
+    grid-template-columns: repeat(2, 3.313rem); /* 5. Two items per row, 53px wide */
+    gap: 0.938rem; /* 5. Space between icons */
 }
 
 .project-category-icons img {
-    width: 53px;
-    height: 53px;
+    width: 3.313rem;
+    height: 3.313rem;
 }
 
-/* 1. This is the container for the two icons.
-      It's a link (a tag) that we turn into a block of a specific size. */
 .project-redirection-arrow {
-    position: relative;     /* This is crucial. It becomes the boundary for the images. */
-    display: block;         /* Treat the link as a block to give it dimensions. */
-    width: 53px;
-    height: 53px;
-    flex-shrink: 0;         /* Prevents the container from shrinking in the flex layout. */
+    display: inline-flex;  
+    align-items: center;   
+    gap: 0.5rem;             
 }
 
-/* 2. Both images are absolutely positioned to stack inside the container. */
-.project-arrow-icon-base,
-.project-arrow-icon-pointer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;            /* 100% of the parent's 53px width. */
-    height: 100%;           /* 100% of the parent's 53px height. */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* 3. Hide the pointer icon by default. */
-.project-arrow-icon-pointer {
-    opacity: 0;
-}
-
-/* 4. On hover, fade out the base icon. */
-.project-redirection-arrow:hover .project-arrow-icon-base {
-    opacity: 0;
-}
-
-/* 5. On hover, fade in the pointer icon and flip it correctly. */
-.project-redirection-arrow:hover .project-arrow-icon-pointer {
-    opacity: 1;
-    transform: scaleX(-1); /* Flips the icon horizontally. */
+.project-arrow-icon-base {
+    height: 3.125rem;
 }
 
 /* --- Mobile Adjustments --- */
