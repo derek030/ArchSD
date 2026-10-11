@@ -2166,7 +2166,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .project-category-icons {
     display: grid;
-    grid-template-columns: repeat(2, 3.313rem); /* 5. Two items per row, 53px wide */
+    grid-template-rows: repeat(2, 3.313rem); /* 5. Two items per row, 53px wide */
+    grid-auto-flow: column; 
     gap: 0.938rem; /* 5. Space between icons */
 }
 
@@ -2183,6 +2184,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .project-arrow-icon-base {
     height: 3.125rem;
+}
+
+.project-card, 
+.project-title {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover {
+    background-color: var(--darkGreyColor);
+}
+
+.project-card:hover .project-title {
+    color: var(--mainGreenColor);
 }
 
 /* --- Mobile Adjustments --- */
