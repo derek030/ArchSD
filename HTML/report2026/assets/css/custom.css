@@ -14,6 +14,7 @@ Custom CSS
 	--bs-focus-ring-opacity: 0.25;
 	--bs-focus-ring-color: #82f000;
 	--darkGreyColor: #565A5F;
+	--darkestGreyColor: #414646;
 	--lightGreyColor: #edf0f0;
 	--mainPinkColor: #ff31cd;
 	--mainGreenColor: #82EF00;
@@ -2001,4 +2002,180 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding-left: 1rem; /* 10+6=16px */
     }
 
+}
+
+/* --- Highlights Projects Page Styles --- */
+/* --- Left Column: Filter --- */
+.project-filter-wrapper {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+}
+
+.project-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--mainPinkColor);
+}
+
+.filter-show-all-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--tableGreyColor);
+    padding: 0.25rem 0.75rem;
+    
+    color: var(--darkestGreyColor);
+    transition: background-color 0.3s ease;
+}
+
+.filter-show-all-btn:hover {
+    color: var(--mainGreenColor);
+    background-color: var(--darkestGreyColor);
+}
+
+.filter-plus-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-item {
+    border-bottom: 1px solid #D8DCDC;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1.25rem; /* 20px */
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* 1. Hover State */
+.filter-btn:hover {
+    background-color: var(--tableGreyColor); /* #ECEFEF */
+}
+
+/* 2. Active (Selected) State */
+.filter-btn.active {
+    background-color: var(--darkestGreyColor); /* #414646 */
+}
+
+.filter-icon {
+    width: 60px;
+    height: 45px;
+    margin-right: 1rem;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.filter-icon img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.filter-icon .filter-icon-active {
+    display: none;
+}
+
+/* Icon change on hover or active */
+.filter-btn.active .filter-icon-default {
+    display: none;
+}
+
+.filter-btn.active .filter-icon-active {
+    display: block;
+}
+
+.filter-text {
+    color: var(--darkGreyColor);
+    transition: color 0.2s ease-in-out;
+}
+
+/* Text color change on active */
+.filter-btn.active .filter-text {
+    color: var(--mainGreenColor); /* #82EF00 */
+}
+
+/* --- Right Column: Project Gallery --- */
+.project-gallery {
+    --bs-gutter-y: 2.5rem;
+}
+
+.project-item {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.project-card-link {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.project-card {
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-image-container {
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 1.25rem; /* 20px */
+}
+
+.project-title {
+    margin-bottom: 6.25rem; /* 20+60+20 = 100px */ 
+}
+
+.project-category {
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--darkGreyColor);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 767.98px) {
+    .project-filter-wrapper {
+        position: relative;
+        top: 0;
+        margin-bottom: 3rem;
+    }
+
+    .project-showcase-section {
+        padding-top: 1.5rem;
+    }
 }
