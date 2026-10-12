@@ -2318,8 +2318,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         border-bottom: 1px solid var(--darkGreyColor);
     }
 
-    .filter-btn {
-        padding: 1rem;
+    .filter-btn {        
+        padding: 0.625rem;
         height: 100%;
         display: flex;
         align-items: center;
