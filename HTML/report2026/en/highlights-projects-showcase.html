@@ -189,17 +189,90 @@
                         </div>
 
                         <!-- Key Feature Slider -->
-                        <div class="key-features-section">
-                            <h3 class="key-features-title">Key Engineering Features</h3>
-                            <div class="slider-viewport">
-                                <div class="slider-slide">
-                                    <h4 class="h5 fw-bold" style="color: var(--accent-color);">Automated Ventilation
-                                        Louvers</h4>
-                                    <p class="mb-0 text-muted">Intelligent louvers connected to internal environment
-                                        sensors dynamically pivot to guide sea breezes throughout the main central
-                                        corridor.</p>
+                        <div class="key-features-section" aria-roledescription="carousel"
+                            aria-label="Key Engineering Features">
+                            <div class="key-features-section-header">
+                                <img src="../assets/images/2.3.1 Projects_KeyFeatures_icon.png" alt=""
+                                    class="key-features-section-header-icon">
+                                <h3 class="key-features-title h2-title-style">Key Features</h3>
+                            </div>
+
+                            <div class="kfs-slider-container">
+                                <!-- Main Image Slides -->
+                                <div class="kfs-slider-viewport">
+                                    <div class="kfs-slider-track">
+                                        <!-- Slide 1 -->
+                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
+                                            aria-label="1 of 5" data-title="Standardized Low-Carbon Steel MiC Assembly"
+                                            data-content="Deploying 125 highly standardized steel MiC modules increased spatial efficiency by 5% and reduced transportation carbon emissions by 25%, drastically lowering embodied carbon and site disturbance.">
+                                            <img src="../assets/images/slide-image-1.png" alt="">
+                                        </div>
+                                        <!-- Slide 2 -->
+                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
+                                            aria-label="2 of 5" data-title="Smart Energy & Resource Management Systems"
+                                            data-content="Targeting BEAM Plus Platinum, the campus incorporates roof-mounted photovoltaic (PV) arrays for renewable energy harvesting, energy-saving smart IoT sensors, and a greywater recycling system for landscape irrigation.">
+                                            <img src="../assets/images/slide-image-2.png"
+                                                alt="Modern building with automated ventilation louvers">
+                                        </div>
+                                        <!-- Slide 3 -->
+                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
+                                            aria-label="3 of 5" data-title="Hoisting-Optimized Circular Eco-Geometry"
+                                            data-content="The circular building plan was engineered to maximize crane lifting efficiency during MiC installation, while naturally optimizing cross-ventilation and daylight penetration through a central courtyard.">
+                                            <img src="../assets/images/slide-image-3.png" alt="">
+                                        </div>
+                                        <!-- Slide 4 -->
+                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
+                                            aria-label="4 of 5"
+                                            data-title="Acoustic Buffer Massing & Passive Energy Reduction"
+                                            data-content="Positioning larger active volumes along the external roadway forms a built acoustic barrier against traffic noise. Combined with deep podium voids and green roofs, the passive layout reduces reliance on artificial lighting and HVAC cooling.">
+                                            <img src="../assets/images/slide-image-4.png" alt="">
+                                        </div>
+                                        <!-- Slide 5 -->
+                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
+                                            aria-label="5 of 5"
+                                            data-title="Land-Efficient Multi-Tier Spatial Integration"
+                                            data-content="Elevating the basketball court above ground-level parking optimizes land use, transforming infrastructure into a multi-level recreational space seamlessly connected to primary circulation routes.">
+                                            <img src="../assets/images/slide-image-5.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Navigation Arrows -->
+                                <button type="button" class="kfs-nav kfs-prev" aria-label="Previous Slide">
+                                    <img src="../assets/images/page-nav-icon.svg" alt="">
+                                </button>
+                                <button type="button" class="kfs-nav kfs-next" aria-label="Next Slide">
+                                    <img src="../assets/images/page-nav-icon.svg" alt="">
+                                </button>
+                            </div>
+
+                            <!-- Indicators -->
+                            <div class="kfs-indicator-container">
+                                <div class="kfs-indicators" role="tablist" aria-label="Feature Pagination">
+                                    <button role="tab" aria-selected="true" class="kfs-indicator"></button>
+                                    <button role="tab" aria-selected="false" class="kfs-indicator"></button>
+                                    <button role="tab" aria-selected="false" class="kfs-indicator"></button>
+                                    <button role="tab" aria-selected="false" class="kfs-indicator"></button>
+                                    <button role="tab" aria-selected="false" class="kfs-indicator"></button>
                                 </div>
                             </div>
+
+                            <!-- Slide Content -->
+                            <div class="kfs-content-container">
+                                <!-- 1. Add the logo image -->
+                                <img src="../assets/images/ArchSD_3A_RGB_a_1_en.png" alt="Amplify" class="kfs-content-logo">
+
+                                <!-- 2. Wrap title and text in a new grid container -->
+                                <div class="kfs-text-grid">
+                                    <div class="kfs-content-title h3-title-style">
+                                        <!-- Title will be dynamically inserted here -->
+                                    </div>
+                                    <div class="p2-body-style kfs-content-text">
+                                        <!-- Content will be dynamically inserted here -->
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                     </section>
@@ -337,6 +410,8 @@
 
     <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+
+    <script src="../assets/js/slider.js" defer></script>
 
 </body>
 
