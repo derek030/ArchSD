@@ -2381,14 +2381,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 #showcase-content-container {
     position: relative;
-    padding: 60px 65px 50px 32px;
+    padding: 3.75rem 4.063rem 3.125rem 2rem;
     background-color: var(--tableGreyColor);
 }
 
 #showcase-content-title {
-    border-left: 4px solid var(--mainGreenColor) !important;
-    padding-left: 25px;
-    margin-bottom: 65px;
+    border-left: 0.25rem solid var(--mainGreenColor) !important;
+    padding-left: 1.563rem;
+    margin-bottom: 4.063rem;
 }
 
 /* This is the new box style for each column */
@@ -2397,15 +2397,15 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     align-items: flex-start;
     gap: 1.563rem;
     height: 100%; /* Ensures both boxes are the same height */
-    border-top: 0.5px solid var(--darkGreyColor);
-    padding-top: 20px;
+    border-top: 0.031rem solid var(--darkGreyColor);
+    padding-top: 1.25rem;
 }
 
 .meta-label {
     font-family: "Monda", sans-serif;
     font-weight: 700;
     font-size: 1rem;
-    line-height: 20px;
+    line-height: 1.25rem;
     letter-spacing: -2%;
     color: var(--darkestGreyColor);
     flex-shrink: 0;
@@ -2414,7 +2414,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .category-items-group {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between the two category items */
+    gap: 0.938rem; /* Space between the two category items */
     width: 100%;
 }
 
@@ -2427,8 +2427,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .category-icon-wrapper {
     position: relative;
-    width: 48px;
-    height: 48px;
+    width: 3rem;
+    height: 3rem;
     flex-shrink: 0;
 }
 
@@ -2439,14 +2439,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .category-badge {
     position: absolute;
-    top: -4px;
-    right: -4px;
+    top: -0.25rem;
+    right: -0.25rem;
     background-color: var(--mainPinkColor);
     color: white;
     font-size: 0.75rem;
     font-weight: 700;
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2461,7 +2461,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-family: "Monda", sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    line-height: 20px;
+    line-height: 1.25rem;
     letter-spacing: 0.78%;
     color: black;
 }
@@ -2474,20 +2474,128 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .location-arrow img {
-    width: 15px;
-    height: 15px;
+    width: 0.938rem;
+    height: 0.938rem;
 }
 
 .showcase-divider-wrapper {
     position: absolute;
-    right: -31px; /* Half of the icon's width (62px) to position it halfway out */
+    right: -1.938rem; /* Half of the icon's width (62px) to position it halfway out */
 }
 
 .showcase-divider-icon {
-    width: 62px;
-    height: 62px;
+    width: 3.875rem;
+    height: 3.875rem;
 }
 
 .showcase-description {
-    padding-top: 70px;
+    padding-top: 4.375rem;
+}
+
+/* --- Showcase Page Sidebar --- */
+.sidebar-widget {
+    padding-left: 1rem;
+    margin-bottom: 3.125rem; /* 50px */
+}
+
+.sidebar-title {
+    padding-bottom: 1.25rem; /* 20px */
+    margin-bottom: 1.25rem; /* 20px */
+    border-bottom: 0.125rem solid var(--mainPinkColor);
+}
+
+/* --- Project Highlights Section --- */
+.sidebar-highlight-item {
+    padding: 1.25rem 0; /* 20px 0 */
+    border-bottom: 0.063rem solid var(--darkGreyColor);
+}
+
+.sidebar-highlight-item:first-of-type {
+    padding-top: 0;
+}
+
+.sidebar-highlight-label,
+.sidebar-highlight-desc {
+    font-family: "Monda", sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    line-height: 1.125rem;
+    letter-spacing: -2%;
+    color: #7C8282;
+}
+
+.sidebar-highlight-value {
+    font-family: "Monda", sans-serif;
+    font-size: 2.5rem; /* 40px */
+    font-weight: 500;
+    line-height: 2.5rem; /* 40px */
+    letter-spacing: -8%;
+    color: var(--darkestGreyColor);
+}
+
+.sidebar-highlight-value2 {
+    font-family: "Monda", sans-serif;
+    font-size: 1.875rem; /* 30px */
+    font-weight: 600;
+    line-height: 1.875rem; /* 30px */
+    letter-spacing: -6%;
+    color: var(--darkestGreyColor);
+}
+
+.sidebar-highlight-unit {
+    font-family: "Monda", sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    line-height: 1.125rem;
+    letter-spacing: -2%;
+    color: var(--darkGreyColor);
+    margin-left: 0.313rem;
+    vertical-align: baseline;
+}
+
+/* --- All Cases Section --- */
+.sidebar-case-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-case-list li:first-child {
+    margin-top: -1.25rem;
+}
+
+.sidebar-case-list li {
+    border-bottom: 0.031rem solid var(--darkestGreyColor);
+}
+
+.sidebar-case-list a {
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem; /* 12px */
+    font-weight: 400;
+    line-height: 1rem;
+    letter-spacing: -2%;
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 0.938rem 0; /* 15px 0 */
+    transition: color 0.2s ease-in-out;
+}
+
+.sidebar-case-list a:hover {
+    color: var(--mainPinkColor);
+}
+
+.sidebar-case-list .active a {
+    color: var(--mainPinkColor);
+    font-weight: 700;
+}
+
+/* --- Responsive Adjustments for Sidebar --- */
+@media (max-width: 991.98px) {
+    .sidebar-highlight-value {
+        font-size: 2.5rem; /* 40px */
+    }
+    .sidebar-highlight-unit {
+        font-size: 1.25rem; /* 20px */
+    }
 }
