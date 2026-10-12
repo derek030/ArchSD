@@ -2593,19 +2593,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* --- Key Feature Slider --- */
 .key-features-section {
     background-color: var(--darkestGreyColor);
-    padding-left: 60px;
+    padding-left: 3.75rem;
 }
 
 .key-features-section-header {
-    display: flex;          /* Use flexbox for easy alignment */
-    align-items: center;    /* This is the key: it vertically centers the icon and text */
-    gap: 0.75rem;           /* Adjusts the space between the icon and the text (e.g., 12px) */
-    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2.188rem 0;
 }
 
 .key-features-section-header-icon {
-    width: 40px; 
-    height: 58px;
+    width: 2.5rem; 
+    height: 3.625rem;
     flex-shrink: 0;
 }
 
@@ -2647,7 +2647,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 30px;
+    width: 1.875rem;
     background-color: rgba(0, 0, 0, 0.2);
     border: none;
     padding: 0;
@@ -2663,9 +2663,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .kfs-nav img {
-    width: 24px;
-    height: 24px;
-    filter: invert(100%);
+    width: 1.875rem;
+    height: 1.875rem;
 }
 
 .kfs-prev {
@@ -2689,12 +2688,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    gap: 15px;
+    gap: 0.938rem;
 }
 
 .kfs-indicator {
-    width: 4px;
-    height: 13.5px;
+    width: 0.25rem;
+    height: 0.844rem;
     padding: 0;
     border: none;
     background-color: var(--mainPinkColor);
@@ -2703,7 +2702,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .kfs-indicator.active {
-    height: 30px;
+    height: 1.875rem;
     background-color: var(--mainGreenColor);
 }
 
@@ -2712,12 +2711,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     display: flex;
     flex-direction: column; /* Stacks the logo on top of the text grid */
     gap: 1rem;              /* Space between the logo and the text grid */
-    padding-top: 1rem;
-    padding-bottom: 150px;
+    padding-top: 1rem;    
+    min-height: 18.75rem;
 }
 
 .kfs-content-logo {
-    width: 97px; 
+    width: 6.063rem; 
     height: auto;
 }
 
