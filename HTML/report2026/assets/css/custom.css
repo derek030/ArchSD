@@ -2380,6 +2380,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 
 #showcase-content-container {
+    position: relative;
     padding: 60px 65px 50px 32px;
     background-color: var(--tableGreyColor);
 }
@@ -2398,7 +2399,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     height: 100%; /* Ensures both boxes are the same height */
     border-top: 0.5px solid var(--darkGreyColor);
     padding-top: 20px;
-    margin-bottom: 70px;
 }
 
 .meta-label {
@@ -2473,12 +2473,21 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 100%;
 }
 
-.location-arrow {
-    color: var(--mainPinkColor);
-    flex-shrink: 0;
+.location-arrow img {
+    width: 15px;
+    height: 15px;
 }
 
-.location-arrow svg {
-    width: 24px;
-    height: 24px;
+.showcase-divider-wrapper {
+    position: absolute;
+    right: -31px; /* Half of the icon's width (62px) to position it halfway out */
+}
+
+.showcase-divider-icon {
+    width: 62px;
+    height: 62px;
+}
+
+.showcase-description {
+    padding-top: 70px;
 }
