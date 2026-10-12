@@ -53,76 +53,248 @@
         <!-- menu -->
         <div id="nav-placeholder"></div>
 
-        <main id="main-content" class="row governance-page" tabindex="-1">
+        <main id="main-content" tabindex="-1">
 
-            <h1 class="accessibility">2025 Key Project Showcase</h1>
-            <div class="page-title d-none" aria-hidden="true">2025 Key Project Showcase</div>
-
-            <!-- ================================================================= -->
-            <!-- 1st SECTION: Hero Title, Image and Ethics Intro                 -->
-            <!-- ================================================================= -->
-            <section class="col-12 governance-hero-section">
-                <!-- Upper Row: Title & Illustration -->
-                <div class="row">
-                    <!-- Left: Title Block -->
-                    <div class="col-12 col-md-7">
-                        <div class="title-block">
-                            <h2 class="section-title">Our Highlights</h2>
-                            <h2>Key Project Showcase</h2>
+            <!-- ==========================================
+           1. SHOWCASE HERO HEADER SECTION
+           ========================================== -->
+            <header class="showcase-hero-header" aria-label="Project Hero Header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <!-- Small Category & Breadcrumb context -->
+                            <div class="showcase-hero-breadcrumb">
+                                Case Study
+                            </div>
+                            <!-- Large Uppercase Project Name Visual Representation -->
+                            <h1 class="showcase-hero-title-giant">ERUDITE</h1>
+                            <!-- Sub-headline Project Title -->
+                            <div class="showcase-hero-subtitle">Government Primary School</div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </header>
 
+            <!-- ==========================================
+                    2. TWO-COLUMN MAIN CONTENT SECTION
+                    ========================================== -->
+            <div class="showcase-main-content">
+                <div class="row mx-0">
 
+                    <!-- LEFT COLUMN: Main Showcase Detail (col-8) -->
+                    <section class="col-12 col-md-9" aria-label="Showcase Content">
 
+                        <!-- Main Landscape Architectural Visual -->
+                        <div class="landscape-media-container">
+                            <img src="../assets/images/showcase-template-image.png"
+                                alt="Architectural design elevation view of Erudite School building" />
+                        </div>
 
+                        <div id="showcase-content-container">
+                            <!-- Showcase Information -->
+                            <div id="showcase-content-title">
+                                <h3 class="p1-call-out">First Steel MiC 30-classroom Primary School
+                                    cum
+                                    Kindergarten in Hong Kong, combining construction innovation, efficiency and
+                                    sustainability.
+                                </h3>
+                            </div>
 
-            <!-- Previous and next page navigation -->
-            <div class="prev-next" id="prev-next">
-                <nav class="w-100 p-0" aria-label="Page navigation">
-                    <div class="row mx-0 g-0">
+                            <!-- Category Icons and Locations Bar -->
+                            <div class="showcase-meta-bar row">
 
-                        <!-- Previous Page Link -->
-                        <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-start">
-                            <a href="governance-our-strategy.html" class="page-nav-link text-decoration-none"
-                                aria-label="Previous page">
-                                <div class="page-nav d-flex align-items-center">
-                                    <div class="page-nav-back d-flex align-items-center" aria-hidden="true">
-                                        <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="">
+                                <!-- Left Box: Categories -->
+                                <div class="col-md-7">
+                                    <div class="meta-box">
+                                        <span class="meta-label">Category</span>
+                                        <div class="category-items-group">
+                                            <div class="category-item">
+                                                <div class="category-icon-wrapper">
+                                                    <img src="../assets/images/2.3 Projects_CateIconSmall01_Hover.svg"
+                                                        alt="" class="category-icon">
+                                                </div>
+                                                <span class="p6-caption-style category-text">Sustainable
+                                                    Construction</span>
+                                            </div>
+                                            <div class="category-item">
+                                                <div class="category-icon-wrapper">
+                                                    <img src="../assets/images/2.3 Projects_CateIconSmall02_Hover.svg"
+                                                        alt="" class="category-icon">
+                                                </div>
+                                                <span class="p6-caption-style category-text">Sustainable Design
+                                                    Approaches</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="page-nav-title ms-2 mb-0">
-                                        <span class="visually-hidden">Previous page: </span><strong>Governance</strong>
-                                        | Our Strategy and Approach
-                                    </p>
                                 </div>
-                            </a>
-                        </div>
 
-                        <!-- Mobile Divider Line -->
-                        <div class="col-12 d-block d-sm-none p-0">
-                            <div class="page-nav-line"></div>
-                        </div>
+                                <div class="col-md-1"></div>
 
-                        <!-- Next Page Link -->
-                        <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-end">
-                            <a href="stakeholder-engagement-and-materiality.html"
-                                class="page-nav-link text-decoration-none" aria-label="Next page">
-                                <div class="page-nav d-flex align-items-center justify-content-sm-end">
-                                    <p class="page-nav-title page-nav-title-next me-2 mb-0">
-                                        <span class="visually-hidden">Next page: </span><strong>Governance</strong> |
-                                        Stakeholder Engagement and Materiality
-                                    </p>
-                                    <div class="page-nav-next d-flex align-items-center" aria-hidden="true">
-                                        <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon"
-                                            style="transform: scaleX(-1);" alt="">
+                                <!-- Right Box: Location -->
+                                <div class="col-md-4">
+                                    <div class="meta-box">
+                                        <span class="meta-label">Location</span>
+                                        <div class="location-content">
+                                            <span class="location-text">8 On Hei Street, Sai Kung District, NT</span>
+                                            <a href="#" class="location-arrow" aria-label="View location details">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M8.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L14.293 8 8.646 2.354a.5.5 0 0 1 0-.708z" />
+                                                </svg>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </a>
+
+                            </div>
+
+                            <!-- Body Text Details -->
+                            <article class="showcase-description">
+                                <p class="p2-body-style">Erudite Government Primary School is a primary school
+                                    development targeting BEAM Plus
+                                    Platinum certification, establishing a bold rethink of low-carbon, smart
+                                    construction
+                                    and sustainable educational infrastructure. Grounded in human-centric design, the
+                                    project transitions traditional school layouts into an ultra-low-carbon,
+                                    nature-integrated learning landscape.</p>
+                                <p class="p2-body-style">To maximize construction safety, quality control, and carbon
+                                    reduction, the project
+                                    extensively deployed Modular Integrated Construction (MiC) technology. Using just
+                                    125
+                                    standardized steel MiC modules anchored by in-situ concrete slabs, high off-site
+                                    prefabrication improved overall spatial efficiency by 5% and cut transportation
+                                    carbon
+                                    emissions by 25%. The circular footprint was engineered specifically to optimize
+                                    tower
+                                    crane hoisting radii, streamlining assembly while minimizing on-site waste, noise,
+                                    and
+                                    environmental disturbance.</p>
+                                <p class="p2-body-style">The campus integrates active green technologies and smart
+                                    operational systems.
+                                    High-efficiency roof-mounted photovoltaic (PV) arrays harvest renewable energy,
+                                    smart
+                                    IoT sensors optimize energy usage across facilities, and a comprehensive greywater
+                                    recycling system irrigates the surrounding vegetated landscapes.</p>
+                                <p class="p2-body-style">The building’s passive design leverages active-passive
+                                    environmental zoning. Larger
+                                    volumes like the elevated ball court act as a built acoustic shield against traffic
+                                    noise, protecting quiet teaching zones. A central circular courtyard combined with
+                                    podium-landscaped voids drives natural cross-ventilation and daylighting throughout,
+                                    significantly reducing HVAC operational energy demand.</p>
+
+                            </article>
                         </div>
 
-                    </div>
-                </nav>
+                        <!-- Key Feature Slider -->
+                        <div class="key-features-section">
+                            <h3 class="key-features-title">Key Engineering Features</h3>
+                            <div class="slider-viewport">
+                                <div class="slider-slide">
+                                    <h4 class="h5 fw-bold" style="color: var(--accent-color);">Automated Ventilation
+                                        Louvers</h4>
+                                    <p class="mb-0 text-muted">Intelligent louvers connected to internal environment
+                                        sensors dynamically pivot to guide sea breezes throughout the main central
+                                        corridor.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- RIGHT COLUMN: Project Highlights and Showcase List Sidebar (col-4) -->
+                    <aside class="col-12 col-md-3" aria-label="Showcase Highlights and Resources">
+
+                        <!-- Sidebar: Highlights Grid -->
+                        <div class="sidebar-widget">
+                            <h3 class="sidebar-title">Project Highlights</h3>
+                            <div class="highlight-item">
+                                <span class="highlight-label">Completion Year</span>
+                                <span class="highlight-value">2025</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">BEAM Plus Rating</span>
+                                <span class="highlight-value">Platinum (v1.2)</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">Energy Saving</span>
+                                <span class="highlight-value">34.5% / Annually</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-label">PV Generation</span>
+                                <span class="highlight-value">12,000 kWh/Yr</span>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar: All Showcases Navigation List -->
+                        <div class="sidebar-widget">
+                            <h3 class="sidebar-title">All Showcases</h3>
+                            <ul class="showcase-nav-list">
+                                <li class="showcase-nav-item">
+                                    <a href="#" class="showcase-nav-link">
+                                        <img class="showcase-nav-thumb"
+                                            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=150&q=80"
+                                            alt="">
+                                        <div class="showcase-nav-info">
+                                            <span class="showcase-nav-name">Sino Horizon Tower</span>
+                                            <span class="showcase-nav-cat">Carbon Neutral Buildings</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="showcase-nav-item">
+                                    <a href="#" class="showcase-nav-link">
+                                        <img class="showcase-nav-thumb"
+                                            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=150&q=80"
+                                            alt="">
+                                        <div class="showcase-nav-info">
+                                            <span class="showcase-nav-name">Ma On Shan Wetland</span>
+                                            <span class="showcase-nav-cat">Ecosystem Restoration</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </aside>
+
+                </div>
+                <!-- Previous and next page navigation (from your template) -->
+                <div class="prev-next" id="prev-next">
+                    <nav class="w-100 p-0" aria-label="Page navigation">
+                        <div class="row mx-0 g-0">
+                            <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-start">
+                                <a href="#" class="page-nav-link text-decoration-none" aria-label="Previous page">
+                                    <div class="page-nav d-flex align-items-center">
+                                        <div class="page-nav-back d-flex align-items-center" aria-hidden="true">
+                                            <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="">
+                                        </div>
+                                        <p class="page-nav-title ms-2 mb-0"><strong>Our Highlights</strong> | 2025 Key
+                                            Project Showcase
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 d-block d-sm-none p-0">
+                                <div class="page-nav-line"></div>
+                            </div>
+                            <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-end">
+                                <a href="#" class="page-nav-link text-decoration-none" aria-label="Next page">
+                                    <div class="page-nav d-flex align-items-center justify-content-sm-end">
+                                        <p class="page-nav-title page-nav-title-next me-2 mb-0">
+                                            <strong>Case Study</strong> | Erudite Government Primary School
+                                        </p>
+                                        <div class="page-nav-next d-flex align-items-center" aria-hidden="true">
+                                            <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon"
+                                                style="transform: scaleX(-1);" alt="">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
             </div>
 
         </main>

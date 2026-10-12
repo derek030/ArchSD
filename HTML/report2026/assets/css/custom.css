@@ -486,6 +486,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: var(--mainPinkColor);
 }
 
+.p1-call-out {
+    font-family: "Monda", sans-serif;
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    line-height: 3.125rem; /* 50px */
+    letter-spacing: -2%;
+    text-align: left;
+    color: var(--mainPinkColor);
+}
+
 .p2-body-style {
     font-family: "Inter", sans-serif;
     font-size: 1rem; /* 16px */
@@ -554,6 +564,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         font-weight: 700;
         line-height: 1.563rem; /* 25px */
         letter-spacing: -3%;
+        text-align: left;
+        color: var(--mainPinkColor);
+    }
+
+    .p1-call-out {
+        font-family: "Monda", sans-serif;
+        font-size: 1.75rem; /* 28px */
+        font-weight: 700;
+        line-height: 2.25rem; /* 36px */
+        letter-spacing: -2%;
         text-align: left;
         color: var(--mainPinkColor);
     }
@@ -2356,4 +2376,109 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         width: 5.625rem;  /* 90px */
         height: 2.813rem; /* 45px */
     }
+}
+
+
+#showcase-content-container {
+    padding: 60px 65px 50px 32px;
+    background-color: var(--tableGreyColor);
+}
+
+#showcase-content-title {
+    border-left: 4px solid var(--mainGreenColor) !important;
+    padding-left: 25px;
+    margin-bottom: 65px;
+}
+
+/* This is the new box style for each column */
+.meta-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.563rem;
+    height: 100%; /* Ensures both boxes are the same height */
+    border-top: 0.5px solid var(--darkGreyColor);
+    padding-top: 20px;
+    margin-bottom: 70px;
+}
+
+.meta-label {
+    font-family: "Monda", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 20px;
+    letter-spacing: -2%;
+    color: var(--darkestGreyColor);
+    flex-shrink: 0;
+}
+
+.category-items-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between the two category items */
+    width: 100%;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Space between icon and text */
+    flex: 1;
+}
+
+.category-icon-wrapper {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.category-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.category-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: var(--mainPinkColor);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.category-text {
+    font-weight: 300 !important;
+}
+
+.location-text {
+    font-family: "Monda", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 20px;
+    letter-spacing: 0.78%;
+    color: black;
+}
+
+.location-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes arrow to the end */
+    width: 100%;
+}
+
+.location-arrow {
+    color: var(--mainPinkColor);
+    flex-shrink: 0;
+}
+
+.location-arrow svg {
+    width: 24px;
+    height: 24px;
 }
