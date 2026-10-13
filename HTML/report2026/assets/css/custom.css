@@ -2378,10 +2378,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
+.showcase-container {
+    max-width: 1380px; 
+    --bs-gutter-x: var(--gutter-x);
+}
 
 #showcase-content-container {
     position: relative;
-    padding: 3.75rem 4.063rem 3.125rem 2rem;
+    padding: 3.75rem 4.063rem 3.125rem 3.75rem;
     background-color: var(--tableGreyColor);
 }
 
@@ -2392,7 +2396,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .showcase-main-content section {
-    padding-left: 0;
+    padding-left: 0 ;
 }
 
 /* This is the new box style for each column */
@@ -2745,6 +2749,28 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: white;
     padding-right: 4.125rem;
     box-sizing: border-box;
+}
+
+.hero-meta-link {
+    text-decoration: none; /* Removes the default underline */
+    color: var(--darkGreyColor); /* Ensures the text color matches the other text */
+    transition: color 0.2s ease-in-out; /* Smooth color transition on hover */
+}
+
+/* Add a hover effect for better user experience */
+.hero-meta-link:hover {
+    color: var(--mainPinkColor); /* Changes color to pink on hover */
+    text-decoration: underline;  /* Adds an underline on hover */
+}
+
+@media (min-width: 768px) {
+  .sticky-sidebar {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: calc(var(--header-height) + 2rem); /* Position below the fixed header with some spacing */
+    height: fit-content; /* Ensures the sticky container doesn't exceed its content's height */
+    align-self: start; /* Aligns the item to the start of the flex container */
+  }
 }
 
 @media (max-width: 767.98px) {
