@@ -2391,6 +2391,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 4.063rem;
 }
 
+.showcase-main-content section {
+    padding-left: 0;
+}
+
 /* This is the new box style for each column */
 .meta-box {
     display: flex;
@@ -2748,6 +2752,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+
+    .meta-box {
+        padding-bottom: 1.25rem;
+    }
+        
 }
 
 /* --- Responsive Adjustments for Sidebar --- */
