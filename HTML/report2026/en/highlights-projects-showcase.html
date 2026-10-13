@@ -93,9 +93,19 @@
                     <section class="col-12 col-md-9" aria-label="Showcase Content">
 
                         <!-- Main Landscape Architectural Visual -->
-                        <div class="landscape-media-container">
+                        <!-- <div class="landscape-media-container">
                             <img src="../assets/images/showcase-template-image.png"
                                 alt="Architectural design elevation view of Erudite School building" />
+                        </div> -->
+
+                        <div class="landscape-media-container">
+                            <video id="hero-video" autoplay loop muted playsinline>
+                                <source
+                                    src="https://www.format.com.hk/-project/26035%E2%80%93ASD/ArchSD2026-phase2/sample-video.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <button id="video-control-btn" class="is-playing" aria-label="Pause video"></button>
                         </div>
 
                         <div id="showcase-content-container">
@@ -421,6 +431,28 @@
     <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
     <script src="../assets/js/slider.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('hero-video');
+            const controlBtn = document.getElementById('video-control-btn');
+
+            if (video && controlBtn) {
+                controlBtn.addEventListener('click', function () {
+                    if (video.paused) {
+                        video.play();
+                        controlBtn.classList.add('is-playing');
+                        controlBtn.setAttribute('aria-label', 'Pause video');
+                    } else {
+                        video.pause();
+                        controlBtn.classList.remove('is-playing');
+                        controlBtn.setAttribute('aria-label', 'Play video');
+                    }
+                });
+            }
+        });
+
+    </script>
 
 </body>
 

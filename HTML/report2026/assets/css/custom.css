@@ -2763,6 +2763,54 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     text-decoration: underline;  /* Adds an underline on hover */
 }
 
+.landscape-media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Video Control Button --- */
+.landscape-media-container {
+    position: relative; /* Establishes a positioning context for the button */
+}
+
+#video-control-btn {
+    position: absolute;
+    /* Centering technique */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* A slightly larger size for a central button */
+    width: 60px;
+    height: 60px;
+    
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 55%;
+}
+
+#video-control-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Style for the 'Pause' state (when video is playing) */
+#video-control-btn.is-playing {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='6' y='4' width='4' height='16'%3E%3C/rect%3E%3Crect x='14' y='4' width='4' height='16'%3E%3C/rect%3E%3C/svg%3E");
+}
+
+/* Style for the 'Play' state (when video is paused) */
+#video-control-btn:not(.is-playing) {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='5 3 19 12 5 21 5 3'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+
 @media (min-width: 768px) {
   .sticky-sidebar {
     position: -webkit-sticky; /* For Safari */
