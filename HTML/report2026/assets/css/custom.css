@@ -2502,6 +2502,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     line-height: 1.25rem;
     letter-spacing: 0.78%;
     color: black;
+    padding-right: 8px;
 }
 
 .location-content {
@@ -2881,6 +2882,27 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
   }
 }
 
+@media (max-width: 1249.98px) {
+    .showcase-meta-bar .col-md-7,
+    .showcase-meta-bar .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .showcase-meta-bar .col-md-1 {
+        display: none;
+    }
+
+    .showcase-meta-bar .col-md-7 {
+        padding-bottom: 40px;
+    }
+
+    .sidebar-highlight-unit {
+        display: block;
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 767.98px) {
     .kfs-content-container {
         grid-template-columns: 1fr;
@@ -2891,14 +2913,4 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding-bottom: 1.25rem;
     }
         
-}
-
-/* --- Responsive Adjustments for Sidebar --- */
-@media (max-width: 991.98px) {
-    .sidebar-highlight-value {
-        font-size: 2.5rem; /* 40px */
-    }
-    .sidebar-highlight-unit {
-        font-size: 1.25rem; /* 20px */
-    }
 }
