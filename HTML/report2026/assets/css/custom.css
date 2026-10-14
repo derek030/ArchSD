@@ -2781,7 +2781,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     flex-direction: column; /* Stacks the logo on top of the text grid */
     gap: 1rem;              /* Space between the logo and the text grid */
     padding-top: 1rem;    
-    min-height: 18.75rem;
+    min-height: 25rem;
 }
 
 .kfs-content-logo {
@@ -2900,6 +2900,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     .sidebar-highlight-unit {
         display: block;
         margin-left: 0;
+    }
+
+    .kfs-content-container {
+        min-height: 31.25rem;
+    }
+
+    .kfs-content-title {
+        overflow-wrap: break-word;
     }
 }
 
