@@ -2165,13 +2165,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     flex-direction: column;
 }
 
-.project-image-container {
-    width: 100%;
-    aspect-ratio: 335 / 240; /* Derived from assumed card size for a consistent image ratio */
-    position: relative;
-    overflow: hidden;
-}
-
 .project-image {
     position: absolute;
     top: 0;
@@ -2220,11 +2213,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: var(--mainGreenColor);
 }
 
-
 /* --- Main Project Image --- */
 .project-image-container {
+    width: 100%;
+    aspect-ratio: 335 / 240; /* Derived from assumed card size for a consistent image ratio */
     position: relative;
+    overflow: hidden;
+    border-top: 5px solid #B8BDC5;
 }
+
+.project-image-container:hover {
+    border-top: 5px solid var(--mainGreenColor);
+}
+
 .project-image-container .project-image {
     position: absolute;
     top: 0;
@@ -2285,6 +2286,15 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     opacity: 1;
 }
 
+.img-desktop {
+    display: block; /* Or 'inline', depending on your layout */
+}
+
+/* Hide the tablet/mobile image by default */
+.img-tablet-mobile {
+    display: none;
+}
+
 /* --- Tablet View Adjustments (Triggered at 1350px) --- */
 @media (max-width: 1350px) {
     .project-item {
@@ -2293,6 +2303,15 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         max-width: 404px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .img-desktop {
+        display: none;
+    }
+
+    /* Show the tablet/mobile image on smaller screens */
+    .img-tablet-mobile {
+        display: block; /* Or 'inline' */
     }
 }
 
@@ -2345,11 +2364,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         align-items: center;
     }
 
+    .project-image-container {
+        border-top: 5px solid var(--mainGreenColor);
+    }
+
     .project-card {
         background-color: color-mix(in srgb, var(--mainGreenColor) 20%, transparent);
     }
 
     .project-card .project-title {
+        color: var(--darkGreyColor);
+    }
+
+    .project-card:hover {
+        background-color: color-mix(in srgb, var(--mainGreenColor) 20%, transparent);
+    }
+
+    .project-card:hover .project-title {
         color: var(--darkGreyColor);
     }
 
