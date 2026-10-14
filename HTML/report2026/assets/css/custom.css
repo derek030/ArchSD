@@ -2982,7 +2982,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     .key-features-section-header {
         padding: 1.563rem 0;
     }
-    
+
     .sidebar-widget {
         padding-left: 0;
     }
@@ -3012,5 +3012,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     .mobile-highlights-grid .sidebar-highlight-value2,
     .mobile-highlights-grid .sidebar-highlight-desc {
         text-align: left;
+    }
+
+    .mobile-sidebar-padding {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
