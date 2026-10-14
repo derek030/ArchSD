@@ -2607,6 +2607,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-bottom: 0.031rem solid var(--darkestGreyColor);
 }
 
+/* --- All Cases Sidebar Navigation: Hover & Active States --- */
 .sidebar-case-list a {
     font-family: "Inter", sans-serif;
     font-size: 0.75rem; /* 12px */
@@ -2616,17 +2617,57 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: black;
     text-decoration: none;
     display: block;
-    padding: 0.938rem 0; /* 15px 0 */
-    transition: color 0.2s ease-in-out;
+    padding: 0.938rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.25s ease, color 0.25s ease;
 }
 
+/* Set the initial state of the arrow (hidden and collapsed) */
+.sidebar-case-list .hover-arrow-icon {
+    opacity: 0;
+    width: 0;
+    height: 16px;
+    margin-right: 0;
+    color: var(--mainPinkColor);
+    /* Default to pink, will be overridden */
+    transition: opacity 0.25s ease, width 0.25s ease, margin-right 0.25s ease;
+}
+
+/* Hover effects (Link Background and sliding Arrow) */
 .sidebar-case-list a:hover {
-    color: var(--mainPinkColor);
+    background-color: var(--tableGreyColor, #ECEFEF);
+    color: black;
+    /* Text remains black on hover */
 }
 
-.sidebar-case-list .active a {
+.sidebar-case-list a:hover .hover-arrow-icon {
+    opacity: 1;
+    width: 16px;
+    margin-right: 8px;
     color: var(--mainPinkColor);
+    /* Icon becomes pink on hover */
+}
+
+/* Active item state (Always remains highlighted and open) */
+.sidebar-case-list li.active a {
+    background-color: transparent;
+    /* No background for active item */
     font-weight: 700;
+    /* Text is bold */
+}
+
+.sidebar-case-list li.active a .hover-arrow-icon {
+    opacity: 1;
+    width: 16px;
+    margin-right: 8px;
+    filter: invert(79%) sepia(95%) saturate(1478%) hue-rotate(44deg) brightness(101%) contrast(107%);
+    /* Icon is green for active item */
+}
+
+/* Ensure hover on active item doesn't change the green icon to pink */
+.sidebar-case-list li.active a:hover .hover-arrow-icon {
+    filter: invert(79%) sepia(95%) saturate(1478%) hue-rotate(44deg) brightness(101%) contrast(107%);
 }
 
 /* --- Key Feature Slider --- */
