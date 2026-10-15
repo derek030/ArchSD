@@ -2534,7 +2534,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* --- Showcase Page Sidebar --- */
 .sidebar-widget {
     padding-left: 1rem;
-    margin-bottom: 3.125rem; /* 50px */
+    padding-top: 1.563rem; /* 25px */
+    margin-bottom: 1.563rem; /* 25px */
 }
 
 .sidebar-title {
@@ -2888,6 +2889,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     height: auto;
     display: block; /* Removes any extra space below the image */
     margin-top: -8%;
+    margin-left: 4rem;
 }
 
 /* The text block that sits on top of the image */
