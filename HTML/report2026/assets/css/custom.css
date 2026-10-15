@@ -2951,7 +2951,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
   .sticky-sidebar {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
-    top: calc(var(--header-height) + 2rem); /* Position below the fixed header with some spacing */
+    top: calc(var(--header-height)); /* Position below the fixed header with some spacing */
     height: fit-content; /* Ensures the sticky container doesn't exceed its content's height */
     align-self: start; /* Aligns the item to the start of the flex container */
   }
