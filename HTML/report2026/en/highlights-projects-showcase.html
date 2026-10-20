@@ -265,8 +265,7 @@
                                                 alt="Modern building with automated ventilation louvers">
                                         </li>
                                         <!-- Slide 3 -->
-                                        <li class="splide__slide"
-                                            data-title="Hoisting-Optimized Circular Eco-Geometry"
+                                        <li class="splide__slide" data-title="Hoisting-Optimized Circular Eco-Geometry"
                                             data-content="The circular building plan was engineered to maximize crane lifting efficiency during MiC installation, while naturally optimizing cross-ventilation and daylight penetration through a central courtyard.">
                                             <img src="../assets/images/slide-image-3.png" alt="">
                                         </li>
@@ -287,10 +286,12 @@
 
                                 <!-- Custom Navigation Arrows -->
                                 <div class="splide__arrows">
-                                    <button class="splide__arrow splide__arrow--prev kfs-nav kfs-prev" aria-label="Previous Slide">
+                                    <button class="splide__arrow splide__arrow--prev kfs-nav kfs-prev"
+                                        aria-label="Previous Slide">
                                         <img src="../assets/images/page-nav-icon.svg" alt="">
                                     </button>
-                                    <button class="splide__arrow splide__arrow--next kfs-nav kfs-next" aria-label="Next Slide">
+                                    <button class="splide__arrow splide__arrow--next kfs-nav kfs-next"
+                                        aria-label="Next Slide">
                                         <img src="../assets/images/page-nav-icon.svg" alt="">
                                     </button>
                                 </div>
@@ -623,14 +624,22 @@
 
                 // Function to update content based on the active slide
                 function updateContent(slideIndex) {
-                    const currentSlide = slides[slideIndex];
+                    // For loop sliders, the index needs to be mapped correctly
+                    const realIndex = slideIndex % slides.length;
+                    const currentSlide = slides[realIndex];
                     if (currentSlide && titleEl && textEl) {
                         titleEl.textContent = currentSlide.dataset.title || '';
                         textEl.textContent = currentSlide.dataset.content || '';
                     }
                 }
 
-                splide.on('mounted move', function (newIndex) {
+                // Update content when the slider is first mounted (for the initial slide)
+                splide.on('mounted', function () {
+                    updateContent(splide.index);
+                });
+
+                // Update content on every slide change
+                splide.on('move', function (newIndex) {
                     updateContent(newIndex);
                 });
 
