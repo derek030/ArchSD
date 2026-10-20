@@ -16,6 +16,9 @@
     <!-- Bootstrap CSS -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
+    <!-- Splide Core CSS -->
+    <link rel="stylesheet" href="../assets/css/splide-core.min.css">
+
     <!-- Site favicon and custom styles -->
     <link rel="shortcut icon" href="../assets/images/cover.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/custom.css" type="text/css">
@@ -236,7 +239,7 @@
                         </div>
 
                         <!-- Key Feature Slider -->
-                        <div class="key-features-section" aria-roledescription="carousel"
+                        <section id="kfs-slider" class="key-features-section splide" aria-roledescription="carousel"
                             aria-label="Key Engineering Features">
                             <div class="key-features-section-header">
                                 <img src="../assets/images/2.3.1 Projects_KeyFeatures_icon.png" alt=""
@@ -246,62 +249,56 @@
 
                             <div class="kfs-slider-container">
                                 <!-- Main Image Slides -->
-                                <div class="kfs-slider-viewport">
-                                    <div class="kfs-slider-track">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
                                         <!-- Slide 1 -->
-                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
-                                            aria-label="1 of 5" data-title="Standardized Low-Carbon Steel MiC Assembly"
+                                        <li class="splide__slide"
+                                            data-title="Standardized Low-Carbon Steel MiC Assembly"
                                             data-content="Deploying 125 highly standardized steel MiC modules increased spatial efficiency by 5% and reduced transportation carbon emissions by 25%, drastically lowering embodied carbon and site disturbance.">
                                             <img src="../assets/images/slide-image-1.png" alt="">
-                                        </div>
+                                        </li>
                                         <!-- Slide 2 -->
-                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
-                                            aria-label="2 of 5" data-title="Smart Energy & Resource Management Systems"
+                                        <li class="splide__slide"
+                                            data-title="Smart Energy & Resource Management Systems"
                                             data-content="Targeting BEAM Plus Platinum, the campus incorporates roof-mounted photovoltaic (PV) arrays for renewable energy harvesting, energy-saving smart IoT sensors, and a greywater recycling system for landscape irrigation.">
                                             <img src="../assets/images/slide-image-2.png"
                                                 alt="Modern building with automated ventilation louvers">
-                                        </div>
+                                        </li>
                                         <!-- Slide 3 -->
-                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
-                                            aria-label="3 of 5" data-title="Hoisting-Optimized Circular Eco-Geometry"
+                                        <li class="splide__slide"
+                                            data-title="Hoisting-Optimized Circular Eco-Geometry"
                                             data-content="The circular building plan was engineered to maximize crane lifting efficiency during MiC installation, while naturally optimizing cross-ventilation and daylight penetration through a central courtyard.">
                                             <img src="../assets/images/slide-image-3.png" alt="">
-                                        </div>
+                                        </li>
                                         <!-- Slide 4 -->
-                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
-                                            aria-label="4 of 5"
+                                        <li class="splide__slide"
                                             data-title="Acoustic Buffer Massing & Passive Energy Reduction"
                                             data-content="Positioning larger active volumes along the external roadway forms a built acoustic barrier against traffic noise. Combined with deep podium voids and green roofs, the passive layout reduces reliance on artificial lighting and HVAC cooling.">
                                             <img src="../assets/images/slide-image-4.png" alt="">
-                                        </div>
+                                        </li>
                                         <!-- Slide 5 -->
-                                        <div class="kfs-slide" role="group" aria-roledescription="slide"
-                                            aria-label="5 of 5"
+                                        <li class="splide__slide"
                                             data-title="Land-Efficient Multi-Tier Spatial Integration"
                                             data-content="Elevating the basketball court above ground-level parking optimizes land use, transforming infrastructure into a multi-level recreational space seamlessly connected to primary circulation routes.">
                                             <img src="../assets/images/slide-image-5.png" alt="">
-                                        </div>
-                                    </div>
+                                        </li>
+                                    </ul>
                                 </div>
 
-                                <!-- Navigation Arrows -->
-                                <button type="button" class="kfs-nav kfs-prev" aria-label="Previous Slide">
-                                    <img src="../assets/images/page-nav-icon.svg" alt="">
-                                </button>
-                                <button type="button" class="kfs-nav kfs-next" aria-label="Next Slide">
-                                    <img src="../assets/images/page-nav-icon.svg" alt="">
-                                </button>
+                                <!-- Custom Navigation Arrows -->
+                                <div class="splide__arrows">
+                                    <button class="splide__arrow splide__arrow--prev kfs-nav kfs-prev" aria-label="Previous Slide">
+                                        <img src="../assets/images/page-nav-icon.svg" alt="">
+                                    </button>
+                                    <button class="splide__arrow splide__arrow--next kfs-nav kfs-next" aria-label="Next Slide">
+                                        <img src="../assets/images/page-nav-icon.svg" alt="">
+                                    </button>
+                                </div>
                             </div>
 
-                            <!-- Indicators -->
-                            <div class="kfs-indicator-container">
-                                <div class="kfs-indicators" role="tablist" aria-label="Feature Pagination">
-                                    <button role="tab" aria-selected="true" class="kfs-indicator"></button>
-                                    <button role="tab" aria-selected="false" class="kfs-indicator"></button>
-                                    <button role="tab" aria-selected="false" class="kfs-indicator"></button>
-                                    <button role="tab" aria-selected="false" class="kfs-indicator"></button>
-                                    <button role="tab" aria-selected="false" class="kfs-indicator"></button>
-                                </div>
+                            <!-- Custom Indicators -->
+                            <div class="splide__pagination kfs-indicator-container">
+                                <!-- The pagination items will be generated here by Splide -->
                             </div>
 
                             <!-- Slide Content -->
@@ -321,7 +318,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </section>
 
                     </section>
 
@@ -577,6 +574,7 @@
     <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
     <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
     <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/splide.min.js"></script>
 
     <!-- Site utility scripts -->
     <script src="../assets/js/qrcode.min.js" defer></script>
@@ -586,10 +584,9 @@
     <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
-    <script src="../assets/js/slider.js" defer></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Video player control
             const video = document.getElementById('hero-video');
             const controlBtn = document.getElementById('video-control-btn');
 
@@ -606,8 +603,40 @@
                     }
                 });
             }
-        });
 
+            // Splide Slider Initialization
+            const splideElement = document.getElementById('kfs-slider');
+            if (splideElement) {
+                const splide = new Splide(splideElement, {
+                    type: 'loop',
+                    perPage: 1,
+                    autoplay: true,
+                    interval: 5000,
+                    pauseOnHover: true,
+                    arrows: true, // Enable default arrows
+                    pagination: true, // Enable default pagination
+                });
+
+                const slides = splideElement.querySelectorAll('.splide__slide');
+                const titleEl = splideElement.querySelector('.kfs-content-title');
+                const textEl = splideElement.querySelector('.kfs-content-text');
+
+                // Function to update content based on the active slide
+                function updateContent(slideIndex) {
+                    const currentSlide = slides[slideIndex];
+                    if (currentSlide && titleEl && textEl) {
+                        titleEl.textContent = currentSlide.dataset.title || '';
+                        textEl.textContent = currentSlide.dataset.content || '';
+                    }
+                }
+
+                splide.on('mounted move', function (newIndex) {
+                    updateContent(newIndex);
+                });
+
+                splide.mount();
+            }
+        });
     </script>
 
 </body>
