@@ -2259,6 +2259,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
     gap: 2.1875rem;
 }
 
@@ -2313,15 +2314,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .project-category-icons {
     display: grid;
     grid-template-rows: repeat(2, 3.313rem);
+    grid-template-columns: repeat(2, 3.313rem);
     grid-auto-flow: column;
     gap: 0.938rem;
-    grid-template-columns: repeat(2, 3.313rem);
 }
+
 .icon-pair {
     position: relative;
     width: 3.313rem;
     height: 3.313rem;
 }
+
 .icon-pair .category-icon {
     position: absolute;
     top: 0;
@@ -2369,11 +2372,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Tablet View Adjustments (Triggered at 1350px) --- */
-@media (max-width: 1350px) {
+@media (max-width: 997px) {
     .project-item {
         flex: 0 0 auto;
         width: 100%;
-        max-width: 404px;
         margin-left: auto;
         margin-right: auto;
     }
