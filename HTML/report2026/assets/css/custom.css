@@ -2837,6 +2837,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     cursor: pointer;
 }
 
+#kfs-slider .splide__pagination__page::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.5rem;
+    height: 0.844rem;
+    background: transparent;
+}
+
 #kfs-slider .splide__pagination__page.is-active {
     height: 1.875rem;
     background-color: var(--mainGreenColor);
