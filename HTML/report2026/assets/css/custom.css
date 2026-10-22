@@ -3278,3 +3278,90 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-top: 1.219rem; /* 19.5px */
     margin-bottom: 0.938rem; /* 15px */
 }
+
+/* --- Core Section Container --- */
+.vision-mission-section {
+    display: grid;
+    grid-template-columns: 100%;
+    padding: 4rem 0;
+    position: relative;
+}
+
+.html-bg-graphic,
+.vision-mission-section .section-container {
+    grid-area: 1 / 1 / 2 / 2; /* Occupy row 1, column 1 */
+}
+
+.html-bg-graphic {
+    width: 63%;   /* Your exact width */
+    height: auto;
+    
+    margin-top: 30%;   /* Replaces top: 30% */
+    margin-left: 6%;   /* Replaces left: 6% */
+    
+    z-index: 1;        /* Lower layer */
+    pointer-events: none;
+    align-self: start; /* Prevents the image from stretching vertically */
+}
+
+.vision-mission-section .section-container {
+    z-index: 2;        /* Higher layer - sits above the image */
+    position: relative;
+    pointer-events: auto; /* Keeps your links and cards fully clickable */
+}
+
+.section-main-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 3rem;
+}
+
+/* --- Columns Headers Layout --- */
+.vmv-title {
+    font-family: "Monda", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #B8BDC5;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.vmv-title .pink-letter {
+    color: var(--mainPinkColor);
+}
+
+/* --- Green Vertical Indicator Lists --- */
+.vmv-list {
+    list-style: none; /* Disables standard dots */
+    padding-left: 0;
+    margin: 0;
+}
+
+.vmv-list li {
+    position: relative;
+    padding-left: 1.25rem; /* Room for the absolute custom indicator bar */
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    color: var(--darkestGreyColor);
+    padding-top: 0.5rem;
+    overflow-wrap: break-word;  /* Modern standard: breaks words if they exceed container */
+    word-wrap: break-word;      /* Legacy fallback for older browsers */
+    word-break: break-word; 
+}
+
+/* Generates the custom green vertical accents */
+.vmv-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2rem;      /* Centers indicator vertically along the line string */
+    width: 0.375rem; /* 6px */
+    height: 1.875rem; /* 30px */
+    background-color: var(--mainGreenColor); /* Clean light green match */
+}
+
+.vmv-card-2 {
+    margin-top: 10rem;
+}
