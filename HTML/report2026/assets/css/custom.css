@@ -2974,7 +2974,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* ==========================================================================
-   2. MOBILE & TABLET LAYOUT (Stacked Mode - Screens up to 991px)
+   MOBILE & TABLET LAYOUT (Stacked Mode - Screens up to 991px)
    ========================================================================== */
 .hero-image-container {
     display: flex;
@@ -3039,7 +3039,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* ==========================================================================
-   2. Desktop Layout Override (Screens wider than 992px)
+   Desktop Layout Override (Screens wider than 992px)
    ========================================================================== */
 @media (min-width: 992px) {
     .hero-image-container {
@@ -3238,4 +3238,43 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding-left: 2rem;
         padding-right: 2rem;
     }
+}
+
+/* --- ArchSD at a Glance Page Styles --- */
+.images-flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows the third image to drop to the next line */
+    gap: 1.5rem;     /* Adds a clean gap between all elements */
+}
+
+/* Force the first two images to always share the row equally */
+.services-spending-img,
+.services-value-img {
+    flex: 1 1 calc(50% - 0.75rem); /* Takes exactly half width minus half the gap */
+    min-width: 0;                  /* Prevents images from breaking layout bounds */
+}
+
+.services-spending-img img,
+.services-value-img img {
+    width: 100%;
+    height: auto;
+    max-width: 326px;
+    max-height: 523px;
+}
+
+/* Force the third image to break onto a new row and fill 100% width */
+.services-area-img {
+    flex: 1 1 100%;
+    width: 100%;
+}
+
+.services-area-img img {
+    width: 100%;
+    height: auto;
+}
+
+.core-function-title-style {
+    color: var(--darkestGreyColor);
+    margin-top: 1.219rem; /* 19.5px */
+    margin-bottom: 0.938rem; /* 15px */
 }
