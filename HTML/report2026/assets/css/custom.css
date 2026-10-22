@@ -3281,33 +3281,46 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Core Section Container --- */
 .vision-mission-section {
-    display: grid;
-    grid-template-columns: 100%;
-    padding: 4rem 0;
     position: relative;
+    padding: 4rem 0;
+    z-index: 1;
+    padding-bottom: 24rem; 
 }
 
-.html-bg-graphic,
-.vision-mission-section .section-container {
-    grid-area: 1 / 1 / 2 / 2; /* Occupy row 1, column 1 */
+.position-relative-column {
+    position: relative;
+    z-index: 1; 
 }
 
 .html-bg-graphic {
-    width: 63%;   /* Your exact width */
+    position: absolute;
+      
+    top: 25px; 
+    left: -75%;
+    
+    width: 180%; 
     height: auto;
     
-    margin-top: 30%;   /* Replaces top: 30% */
-    margin-left: 6%;   /* Replaces left: 6% */
-    
-    z-index: 1;        /* Lower layer */
+    z-index: -1; 
     pointer-events: none;
-    align-self: start; /* Prevents the image from stretching vertically */
 }
 
 .vision-mission-section .section-container {
-    z-index: 2;        /* Higher layer - sits above the image */
+    z-index: 2;        
     position: relative;
-    pointer-events: auto; /* Keeps your links and cards fully clickable */
+    pointer-events: auto; 
+}
+
+.vmv-card,
+.vmv-card-2 {
+    padding-right: 2.25rem;
+}
+
+.vmv-card-2 {
+    margin-top: 10rem; 
+    position: relative;
+    z-index: 2;
+    background: transparent;
 }
 
 .section-main-heading {
@@ -3360,8 +3373,4 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 0.375rem; /* 6px */
     height: 1.875rem; /* 30px */
     background-color: var(--mainGreenColor); /* Clean light green match */
-}
-
-.vmv-card-2 {
-    margin-top: 10rem;
 }
