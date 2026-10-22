@@ -603,6 +603,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: #000000;
 }
 
+.p6-caption-light-style {
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem; /* 12px */
+    font-weight: 300;
+    line-height: 1rem; /* 16px */
+    letter-spacing: -2%;
+    text-align: left;
+    color: #000000;
+}
+
 /* --- Mobile Responsive Typography --- */
 @media (max-width: 35.99875em) { /* 575.98px */
     .h1-title-style {
