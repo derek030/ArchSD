@@ -2969,63 +2969,62 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .new-showcase-hero {
-    padding-bottom: 0;
+    width: 100%;
+    overflow: hidden;
 }
 
-/* This container holds both the image and the text overlay */
+/* ==========================================================================
+   2. MOBILE & TABLET LAYOUT (Stacked Mode - Screens up to 991px)
+   ========================================================================== */
 .hero-image-container {
     display: flex;
-    flex-direction: column; /* Forces vertical stacking: overlay on top, image below */
+    flex-direction: column;
     width: 100%;
 }
 
-/* The text overlay becomes the natural UPPER layer */
 .hero-text-overlay {
-    position: relative; /* Removes absolute positioning context */
+    position: relative;
     width: 100%;
     height: auto;
     box-sizing: border-box;
-    order: 1; /* Explicitly forces overlay to be the first/top item */
+    order: 1; /* Moves text block above image */
+    padding-top: 4rem;
 }
 
-/* The background image becomes the natural LOWER layer */
+/* Graphic background acts as the LOWER block layer */
 .hero-background-image {
     width: 100%;
     height: auto;
     display: block;
-    order: 2; /* Explicitly forces image below the text block */
-    margin-top: 0; /* Reset desktop offsets */
-    margin-left: 0;
+    order: 2; /* Moves image below text block */
+    margin-top: -6%;
+    margin-left: 4rem;
 }
 
-/* --- Typography & Assets for Tablet/Mobile (Fluid Scaling) --- */
+/* --- Typography & Elements for Mobile/Tablet --- */
 .hero-meta-line {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    line-height: 1.4;
+    margin-bottom: 0.25rem;
 }
 
 .hero-breadcrumb {
-    font-weight: 300;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
 }
 
 .hero-title-erudite {
-    width: 60%; /* Let the graphic title fill more width on smaller screens */
+    width: 50%; /* Fills half the viewport width on narrow layouts */
     max-width: 371px;
     height: auto;
     margin-bottom: 0.75rem;
 }
-
 .hero-title-erudite img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .hero-subtitle-school {
     font-family: 'Monda', sans-serif;
-    font-size: clamp(1.8rem, 5vw, 2.8rem); /* Responsive sizing for tablets */
+    font-size: clamp(1.8rem, 5.5vw, 2.8rem); /* Fluid scaling suited for tablet bounds */
     line-height: 1.2;
     font-weight: 700;
     color: var(--darkGreyColor);
@@ -3034,10 +3033,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .hero-greencross {
-    width: 9.5vw;
+    width: 4.5rem; /* Compact cross asset for mobile fingers */
     height: auto;
+    display: block;
 }
-
 
 /* ==========================================================================
    2. Desktop Layout Override (Screens wider than 992px)
@@ -3054,30 +3053,44 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
         height: 100%;
-        width: 45%;
+        z-index: 2;
+        box-sizing: border-box;
     }
 
-    /* Restores desktop positioning offsets for the background graphic */
-    .hero-background-image {
-        margin-top: -6%;
-        margin-left: 4rem;
-    }
-
-    /* Scales assets back up to standard desktop proportions */
     .hero-title-erudite {
-        width: 30vw;
+        width: 32%;         
+        max-width: 371px;   
+        height: auto;
+        margin-bottom: 1%;  
     }
-    
+
+    .hero-title-erudite img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
     .hero-subtitle-school {
-        font-size: 3.375rem;
-        line-height: 3.75rem;
+        font-family: 'Monda', sans-serif;
+        font-size: clamp(1.5rem, 4.35vw, 3.375rem); 
+        line-height: 1.1; 
+        
+        font-weight: 700;
+        color: var(--darkGreyColor);
+        letter-spacing: -0.025em;
+        margin-bottom: 2%;
+        width: 45%;        
     }
 
     .hero-greencross {
-        width: 9.5vw;
-        height: auto;
+        width: 10.5%;        
+        max-width: 120px;   
+        height: auto;       
+        display: block;
     }
+
 }
 
 @media (min-width: 768px) {
