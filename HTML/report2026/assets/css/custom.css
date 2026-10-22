@@ -3389,3 +3389,37 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .glossary-header {
     color: var(--mainPinkColor);
 }
+
+/* ==========================================================================
+   ArchSD Sustainability Report 2026: Funding Section Styles
+   ========================================================================== */
+
+.funding-intro {
+    margin-bottom: 2rem;
+}
+
+.fund-title {
+    color: var(--mainPinkColor); /* ArchSD Brand Magenta Pink */
+    padding-right: 30px;
+}
+
+.fund-details-block {
+    border-left: 4px solid var(--mainPinkColor) !important; /* Replaces inline style for the pink vertical line */
+    min-height: 150px;
+}
+
+.fund-icon {
+    max-height: 80px;
+    width: auto;
+    padding-left: 24px;
+}
+
+.fund-description {
+    padding-left: 24px;
+}
+
+.funding-divider {
+    margin-top: 1.5625rem;
+    margin-bottom: 1.5625rem;
+    border-top: 0.03125rem solid #555A5F;
+}
