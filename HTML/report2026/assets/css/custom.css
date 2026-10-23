@@ -3707,7 +3707,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
     .mobile-labels-list .pct {
         font-weight: 700;
-        color: #e62188;
+        color: var(--mainPinkColor);
     }
 }
 
