@@ -3425,107 +3425,164 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* ==========================================================================
-   Expenditure Interactive Chart Styling
+   ArchSD Expenditure Design Layout
    ========================================================================== */
 
 .budget-graphics-container {
     font-family: 'Inter', sans-serif;
+    color: #333333;
+    border-left: 4px solid var(--mainPinkColor);
+    padding-left: 0;
 }
 
 .actual-expenditure-header {
-    color: #e62188;
-    font-weight: 700;
-    font-size: 1.4rem;
+    color: var(--mainPinkColor);
     margin-bottom: 0.5rem;
 }
 
 .total-count-wrapper {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 800;
     color: #333333;
     line-height: 1;
 }
 
-.total-count-wrapper .currency-symbol {
-    font-size: 2.5rem;
-    vertical-align: super;
-    font-weight: 600;
-}
-
+.total-count-wrapper .currency-symbol,
 .total-count-wrapper .unit-symbol {
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-family: 'Monda',  sans-serif;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 74px;
+    letter-spacing: -4.3%;
 }
 
-.expenditure-caption {
-    font-size: 1rem;
-    color: #666666;
-    margin-top: 0.5rem;
+.budget-graphics-container .row{
+    padding-left: 0;
+    margin-left: 21px;
 }
 
 .chart-group-title {
-    color: #e62188;
-    font-weight: 700;
-    font-size: 1.35rem;
-    margin-bottom: 1.5rem;
+    color: var(--mainPinkColor);
+    margin-bottom: 2rem;
+    margin-left: 21px;
 }
 
-/* Custom progress wrapper */
+/* Horizontal Stacked Bar */
 .custom-progress-stacked {
     display: flex;
-    height: 45px; /* Perfect depth like design */
+    height: 48px;
+    border-radius: 0; /* Keep it clean and flat as shown in the design */
     overflow: hidden;
-    background-color: #f0f0f0;
-    border-radius: 4px;
+    position: relative;
 }
 
-/* Color palettes matching exactly with design segmentations */
 .progress-segment {
     height: 100%;
-    transition: width 0.1s ease-out; /* Controlled cleanly by GSAP */
 }
 
-.segment-pink { background-color: #e62188; }
-.segment-dark-grey { background-color: #8c8c8c; }
-.segment-medium-grey { background-color: #b0b0b0; }
-.segment-light-grey { background-color: #cccccc; }
-.segment-lime { background-color: #8be01d; }
+.segment-pink { background-color: var(--mainPinkColor); }
+.segment-dark-grey { background-color: #9F9F9F; }
+.segment-medium-grey { background-color: #B8BDC0; }
+.segment-light-grey { background-color: #E2E6E6; }
+.segment-lime { background-color: var(--mainGreenColor); }
 
-/* Grid label styles */
-.chart-labels-grid {
-    margin-top: 1.5rem;
+/* Design Label Rows */
+.chart-top-labels-row,
+.chart-bottom-labels-row {
+    display: flex;
+    position: relative;
+    width: 100%;
 }
 
-.label-item {
-    border-left: 1px solid #ddd;
-    padding-left: 15px;
+.chart-top-labels-row {
+    margin-bottom: 12px;
 }
 
-.label-header {
+.chart-bottom-labels-row {
+    margin-top: 12px;
+}
+
+.design-label-box {
+    position: relative;
+    padding: 0 5px;
+}
+
+/* Text Formatting */
+.design-label-box .label-head {
     font-size: 0.95rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 0.25rem;
+    line-height: 1.2;
+    margin-bottom: 2px;
 }
 
-.label-text {
-    font-weight: 400;
+.design-label-box .pct {
+    font-weight: 700;
+    color: #333333;
+}
+
+.design-label-box .lbl-txt {
+    color: var(--mainPinkColor);
+    font-weight: 500;
     font-size: 0.85rem;
-    display: block;
 }
 
-.pink-highlight { color: #e62188; }
-.grey-highlight { color: #888888; }
-.lime-highlight { color: #8be01d; }
-
-.label-value {
-    font-size: 1.8rem;
+.design-label-box .label-val {
+    font-size: 2.1rem;
     font-weight: 700;
-    color: #333;
+    color: #333333;
+    line-height: 1;
+}
+
+/* Pointer Line Styling */
+.label-line-down::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    width: 1px;
+    height: 12px;
+    background-color: #999999;
+}
+
+.label-line-up::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -12px;
+    width: 1px;
+    height: 12px;
+    background-color: #999999;
+}
+
+/* Ensure edges have pointer lines correct */
+.text-end.label-line-down::after,
+.text-end.label-line-up::before {
+    left: auto;
+    right: 15px;
 }
 
 .chart-section-divider {
-    border-top: 1px solid #e0e0e0;
-    opacity: 0.7;
-    margin: 3rem 0;
+    border-top: 1px solid #e2e8f0;
+    opacity: 0.8;
+    margin: 4rem 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .chart-top-labels-row,
+    .chart-bottom-labels-row {
+        flex-direction: column;
+    }
+    
+    .design-label-box {
+        flex-basis: auto !important;
+        text-align: left !important;
+        margin-bottom: 1.5rem;
+        padding-left: 15px;
+        border-left: 2px solid var(--mainPinkColor);
+    }
+    
+    .label-line-down::after,
+    .label-line-up::before {
+        display: none; /* Turn off lines on vertical layout */
+    }
 }

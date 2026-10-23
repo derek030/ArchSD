@@ -87,8 +87,10 @@
                             <h3 class="h2-title-style">Funding</h3>
                         </div>
 
+                        <div class="col-12 col-md-1"></div>
+
                         <!-- Right Column: Funding Details Side -->
-                        <div class="col-12 col-md-8">
+                        <div class="col-12 col-md-7">
 
                             <!-- Section Introduction Text -->
                             <p class="p2-body-style funding-intro">Our departmental operation is funded by</p>
@@ -170,19 +172,19 @@
                                 of the Government of the HKSAR, which is available at www.budget.gov.hk.
                             </p>
                         </div>
+                        <div class="col-12 col-md-1"></div>
                         <!-- Right: Content Paragraph -->
-                        <!-- Right Column: Interactive Expenditure Breakdown with Scroll-Triggered Animations -->
-                        <div class="col-12 col-md-8 ps-md-5 budget-graphics-container">
+                        <div class="col-12 col-md-7 budget-graphics-container">
 
-                            <!-- Top Row: Actual Department Expenditure & Total Counter -->
+                            <!-- Title and Overall Counter -->
                             <div class="row align-items-center mb-5">
-                                <div class="col-12 col-sm-8">
+                                <div class="col-12 px-0">
                                     <h4 class="actual-expenditure-header">Actual Department Expenditure</h4>
                                     <div class="total-count-wrapper">
                                         <span class="currency-symbol">$</span><span class="animated-counter"
-                                            data-target="2829.29">0.00</span><span class="unit-symbol">M</span>
+                                            data-target="2804.36">0.00</span><span class="unit-symbol">M</span>
                                     </div>
-                                    <p class="expenditure-caption">(4.51% increase as compared with last financial year)
+                                    <p class="expenditure-caption">(0.88% decrease as compared with last financial year)
                                     </p>
                                 </div>
                             </div>
@@ -191,119 +193,139 @@
                             <div class="category-chart-wrapper mb-5 py-4">
                                 <h5 class="chart-group-title">By Category</h5>
 
-                                <!-- Stacked Bar Container -->
-                                <div class="custom-progress-stacked mb-4">
-                                    <!-- Salaries and allowances (54.03%) -->
-                                    <div class="progress-segment segment-pink" style="width: 0%" data-width="54.03%"
-                                        data-bs-toggle="tooltip" title="Salaries and allowances: 54.03%"></div>
-                                    <!-- Other charges (30.03%) -->
-                                    <div class="progress-segment segment-dark-grey" style="width: 0%"
-                                        data-width="30.03%" data-bs-toggle="tooltip" title="Other charges: 30.03%">
-                                    </div>
-                                    <!-- Departmental expenses (10.27%) -->
-                                    <div class="progress-segment segment-medium-grey" style="width: 0%"
-                                        data-width="10.27%" data-bs-toggle="tooltip"
-                                        title="Departmental expenses: 10.27%"></div>
-                                    <!-- Personnel related expenses (5.54%) -->
-                                    <div class="progress-segment segment-light-grey" style="style: 0%"
-                                        data-width="5.54%" data-bs-toggle="tooltip"
-                                        title="Personnel related expenses: 5.54%"></div>
-                                    <!-- Capital account (0.13%) -->
-                                    <div class="progress-segment segment-lime" style="width: 0%" data-width="0.13%"
-                                        data-bs-toggle="tooltip" title="Capital account: 0.13%"></div>
-                                </div>
+                                <div class="position-relative chart-block-inner">
 
-                                <!-- Labels Grid: Matches the style in the design -->
-                                <div class="row g-4 chart-labels-grid">
-                                    <!-- Salaries and allowances -->
-                                    <div class="col-6 col-md-4 label-item">
-                                        <div class="label-header">54.03% <span
-                                                class="label-text pink-highlight">Salaries and allowances</span></div>
-                                        <div class="label-value">$<span class="animated-counter"
-                                                data-target="1528.60">0.00</span>M</div>
-                                    </div>
-                                    <!-- Other charges -->
-                                    <div class="col-6 col-md-4 label-item">
-                                        <div class="label-header">30.03% <span class="label-text grey-highlight">Other
-                                                charges</span></div>
-                                        <div class="label-value">$<span class="animated-counter"
-                                                data-target="849.76">0.00</span>M</div>
-                                    </div>
-                                    <!-- Departmental expenses -->
-                                    <div class="col-6 col-md-4 label-item">
-                                        <div class="label-header">10.27% <span
-                                                class="label-text grey-highlight">Departmental expenses</span></div>
-                                        <div class="label-value">$<span class="animated-counter"
-                                                data-target="290.60">0.00</span>M</div>
-                                    </div>
-                                    <!-- Personnel related expenses -->
-                                    <div class="col-6 col-md-4 label-item">
-                                        <div class="label-header">5.54% <span
-                                                class="label-text grey-highlight">Personnel related expenses</span>
+                                    <!-- TOP LABELS GRID (Aligned above the bar) -->
+                                    <div class="chart-top-labels-row">
+                                        <!-- Spacing block matching Salaries and allowances width (54.59%) -->
+                                        <div style="flex-basis: 54.59%;"></div>
+
+                                        <!-- Label for Other charges (28.96%) -->
+                                        <div style="flex-basis: 28.96%;"
+                                            class="design-label-box text-center label-line-down">
+                                            <div class="label-head"><span class="pct">28.96%</span> <span
+                                                    class="lbl-txt">Other charges</span></div>
+                                            <div class="label-val">$<span class="animated-counter"
+                                                    data-target="812.07">0.00</span>M</div>
                                         </div>
-                                        <div class="label-value">$<span class="animated-counter"
-                                                data-target="156.73">0.00</span>M</div>
+
+                                        <!-- Label for Personnel related expenses (6.04%) -->
+                                        <div style="flex-basis: 16.45%;"
+                                            class="design-label-box text-end label-line-down">
+                                            <!-- Combined basis for Personnel + Capital account to prevent label overflow -->
+                                            <div class="label-head"><span class="pct">6.04%</span> <span
+                                                    class="lbl-txt">Personnel expenses</span></div>
+                                            <div class="label-val">$<span class="animated-counter"
+                                                    data-target="169.31">0.00</span>M</div>
+                                        </div>
                                     </div>
-                                    <!-- Capital account -->
-                                    <div class="col-6 col-md-4 label-item">
-                                        <div class="label-header">0.13% <span class="label-text lime-highlight">Capital
-                                                account</span></div>
-                                        <div class="label-value">$<span class="animated-counter"
-                                                data-target="3.60">0.00</span>M</div>
+
+                                    <!-- THE STACKED BAR CHART (Ordered from Largest to Smallest) -->
+                                    <div class="custom-progress-stacked my-2">
+                                        <!-- 1. Salaries and allowances (54.59%) -->
+                                        <div class="progress-segment segment-pink animate-width" data-width="54.59%">
+                                        </div>
+                                        <!-- 2. Other charges (28.96%) -->
+                                        <div class="progress-segment segment-dark-grey animate-width"
+                                            data-width="28.96%"></div>
+                                        <!-- 3. Departmental expenses (10.26%) -->
+                                        <div class="progress-segment segment-medium-grey animate-width"
+                                            data-width="10.26%"></div>
+                                        <!-- 4. Personnel related expenses (6.04%) -->
+                                        <div class="progress-segment segment-light-grey animate-width"
+                                            data-width="6.04%"></div>
+                                        <!-- 5. Capital account (0.15%) -->
+                                        <div class="progress-segment segment-lime animate-width" data-width="0.15%">
+                                        </div>
+                                    </div>
+
+                                    <!-- BOTTOM LABELS GRID (Aligned below the bar) -->
+                                    <div class="chart-bottom-labels-row">
+                                        <!-- Label for Salaries and allowances (54.59%) -->
+                                        <div style="flex-basis: 54.59%;" class="design-label-box label-line-up">
+                                            <div class="label-head"><span class="pct">54.59%</span> <span
+                                                    class="lbl-txt">Salaries and allowances</span></div>
+                                            <div class="label-val">$<span class="animated-counter"
+                                                    data-target="1530.95">0.00</span>M</div>
+                                        </div>
+
+                                        <!-- Spacing block matching Other charges width (28.96%) -->
+                                        <div style="flex-basis: 28.96%;"></div>
+
+                                        <!-- Label for Departmental expenses (10.26%) -->
+                                        <div style="flex-basis: 10.26%;"
+                                            class="design-label-box text-center label-line-up">
+                                            <div class="label-head"><span class="pct">10.26%</span> <span
+                                                    class="lbl-txt">Departmental expenses</span></div>
+                                            <div class="label-val">$<span class="animated-counter"
+                                                    data-target="287.83">0.00</span>M</div>
+                                        </div>
+
+                                        <!-- Label for Capital account (0.15%) -->
+                                        <div style="flex-basis: 6.19%;" class="design-label-box text-end label-line-up">
+                                            <div class="label-head"><span class="pct">0.15%</span> <span
+                                                    class="lbl-txt">Capital account</span></div>
+                                            <div class="label-val">$<span class="animated-counter"
+                                                    data-target="4.20">0.00</span>M</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Horizontal Divider Line -->
+                            <!-- Horizontal Divider -->
                             <hr class="chart-section-divider">
 
                             <!-- 2. BY PROGRAMME STACKED BAR CHART -->
                             <div class="programme-chart-wrapper mb-4 py-4">
                                 <h5 class="chart-group-title">By Programme</h5>
 
-                                <!-- Stacked Bar Container -->
-                                <div class="custom-progress-stacked mb-4">
-                                    <!-- Facilities upkeep (49.73%) -->
-                                    <div class="progress-segment segment-pink" style="width: 0%" data-width="49.73%"
-                                        data-bs-toggle="tooltip" title="Facilities upkeep: 49.73%"></div>
-                                    <!-- Facilities development (35.87%) -->
-                                    <div class="progress-segment segment-dark-grey" style="width: 0%"
-                                        data-width="35.87%" data-bs-toggle="tooltip"
-                                        title="Facilities development: 35.87%"></div>
-                                    <!-- Monitoring and advisory services (14.40%) -->
-                                    <div class="progress-segment segment-light-grey" style="width: 0%"
-                                        data-width="14.40%" data-bs-toggle="tooltip"
-                                        title="Monitoring and advisory services: 14.40%"></div>
-                                </div>
+                                <div class="position-relative chart-block-inner">
 
-                                <!-- Labels Grid -->
-                                <div class="row g-4 chart-labels-grid">
-                                    <!-- Facilities upkeep -->
-                                    <div class="col-12 col-md-4 label-item">
-                                        <div class="label-header">49.73% <span
-                                                class="label-text pink-highlight">Facilities upkeep</span></div>
-                                        <div class="label-value">$<span class="animated-counter"
-                                                data-target="1407.20">0.00</span>M</div>
-                                    </div>
-                                    <!-- Facilities development -->
-                                    <div class="col-12 col-md-4 label-item">
-                                        <div class="label-header">35.87% <span
-                                                class="label-text grey-highlight">Facilities development</span></div>
-                                        <div class="label-value">$<span class="animated-counter"
-                                                data-target="1014.92">0.00</span>M</div>
-                                    </div>
-                                    <!-- Monitoring & advisory services -->
-                                    <div class="col-12 col-md-4 label-item">
-                                        <div class="label-header">14.40% <span
-                                                class="label-text pink-highlight">Monitoring & advisory services</span>
+                                    <!-- STACKED BAR CHART (Ordered from Largest to Smallest) -->
+                                    <div class="custom-progress-stacked my-2">
+                                        <!-- 1. Facilities upkeep (50.10%) -->
+                                        <div class="progress-segment segment-pink animate-width" data-width="50.10%">
                                         </div>
-                                        <div class="label-value">$<span class="animated-counter"
-                                                data-target="407.17">0.00</span>M</div>
+                                        <!-- 2. Facilities development (35.42%) -->
+                                        <div class="progress-segment segment-dark-grey animate-width"
+                                            data-width="35.42%"></div>
+                                        <!-- 3. Monitoring and advisory services (14.49%) -->
+                                        <div class="progress-segment segment-light-grey animate-width"
+                                            data-width="14.49%"></div>
                                     </div>
+
+                                    <!-- BOTTOM LABELS -->
+                                    <div class="chart-bottom-labels-row">
+                                        <!-- Facilities upkeep (50.10%) -->
+                                        <div style="flex-basis: 50.10%;" class="design-label-box label-line-up">
+                                            <div class="label-head"><span class="pct">50.10%</span> <span
+                                                    class="lbl-txt">Facilities upkeep</span></div>
+                                            <div class="label-val">$<span class="animated-counter"
+                                                    data-target="1404.86">0.00</span>M</div>
+                                        </div>
+                                        <!-- Facilities development (35.42%) -->
+                                        <div style="flex-basis: 35.42%;"
+                                            class="design-label-box text-center label-line-up">
+                                            <div class="label-head"><span class="pct">35.42%</span> <span
+                                                    class="lbl-txt">Facilities development</span></div>
+                                            <div class="label-val">$<span class="animated-counter"
+                                                    data-target="993.21">0.00</span>M</div>
+                                        </div>
+                                        <!-- Monitoring and advisory services (14.49%) -->
+                                        <div style="flex-basis: 14.49%;"
+                                            class="design-label-box text-end label-line-up">
+                                            <div class="label-head"><span class="pct">14.49%</span> <span
+                                                    class="lbl-txt">Monitoring & advisory</span></div>
+                                            <div class="label-val">$<span class="animated-counter"
+                                                    data-target="406.29">0.00</span>M</div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
                         </div>
+
 
                     </div>
                 </div>
@@ -406,49 +428,76 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                // 1. Setup ScrollTrigger animation for Stacked Bars (Sequential grids)
+                // Register ScrollTrigger with GSAP
                 gsap.registerPlugin(ScrollTrigger);
 
-                const chartTimeline = gsap.timeline({
+                // Create a master timeline that triggers when the expenditure section is in view
+                const masterTimeline = gsap.timeline({
                     scrollTrigger: {
                         trigger: ".budget-graphics-container",
-                        start: "top 75%", // Triggers when the top of the container hits 75% of viewport
+                        start: "top 75%",
                         toggleActions: "play none none none"
                     }
                 });
 
-                // Animate every bar segment sequentially (appearing segment by segment)
-                document.querySelectorAll(".progress-segment").forEach((segment) => {
+                // ==========================================================================
+                // 1. ANIMATE PROGRESS SEGMENTS (Parallel Timelines, Segment-by-Segment)
+                // ==========================================================================
+
+                // --- Chart 1: By Category ---
+                document.querySelectorAll(".category-chart-wrapper .progress-segment").forEach((segment, index) => {
                     const targetWidth = segment.getAttribute("data-width");
-                    chartTimeline.to(segment, {
+
+                    // ADJUST SPEED HERE: 
+                    // - Increase '0.8' (e.g., to 1.2) to make each bar segment slide slower.
+                    const segmentDuration = 1.4;
+                    // - Increase '0.7' (e.g., to 0.9) to add more delay between segments.
+                    const delayOffset = index * 0.7;
+
+                    masterTimeline.to(segment, {
                         width: targetWidth,
-                        duration: 0.8,
+                        duration: segmentDuration,
                         ease: "power2.out"
-                    }, "-=0.4"); // Overlay consecutive segment transitions smoothly
+                    }, `runBars+=${delayOffset}`);
                 });
 
-                // 2. Setup ScrollTrigger counter updates (Number Counting Animation)
+                // --- Chart 2: By Programme ---
+                document.querySelectorAll(".programme-chart-wrapper .progress-segment").forEach((segment, index) => {
+                    const targetWidth = segment.getAttribute("data-width");
+
+                    // ADJUST SPEED HERE: (Keep these identical to Chart 1 for perfect parallel sync)
+                    const segmentDuration = 1.4;
+                    const delayOffset = index * 0.7;
+
+                    masterTimeline.to(segment, {
+                        width: targetWidth,
+                        duration: segmentDuration,
+                        ease: "power2.out"
+                    }, `runBars+=${delayOffset}`);
+                });
+
+                // ==========================================================================
+                // 2. RUNNING COUNTER ANIMATIONS (Synchronized with the Bar Growth)
+                // ==========================================================================
+
                 document.querySelectorAll(".animated-counter").forEach((counter) => {
                     const targetVal = parseFloat(counter.getAttribute("data-target"));
 
-                    gsap.to(counter, {
-                        scrollTrigger: {
-                            trigger: counter,
-                            start: "top 85%"
-                        },
+                    masterTimeline.to(counter, {
                         innerText: targetVal,
-                        duration: 1.5,
-                        snap: { innerText: 0.01 }, // Keep decimals tidy (2 decimal precision)
+                        // ADJUST SPEED HERE:
+                        // - Increase '2.8' (e.g., to 3.5) to make the numbers tick up slower.
+                        duration: 2.8,
+                        snap: { innerText: 0.01 },
                         ease: "power1.out",
                         onUpdate: function () {
-                            // Ensure number remains formatted properly during animation loop
                             const currentVal = parseFloat(counter.innerText);
                             counter.innerText = currentVal.toLocaleString('en-US', {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2
                             });
                         }
-                    });
+                    }, "runBars");
                 });
             });
         </script>
