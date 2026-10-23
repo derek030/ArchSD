@@ -179,59 +179,63 @@
                             <!-- Title and Overall Counter -->
                             <div class="row align-items-center mb-5">
                                 <div class="col-12 px-0">
-                                    <h4 class="actual-expenditure-header">Actual Department Expenditure</h4>
+                                    <h4 class="h3-title-style actual-expenditure-header">Actual Department Expenditure
+                                    </h4>
                                     <div class="total-count-wrapper">
                                         <span class="currency-symbol">$</span><span class="animated-counter"
                                             data-target="2804.36">0.00</span><span class="unit-symbol">M</span>
                                     </div>
-                                    <p class="expenditure-caption">(0.88% decrease as compared with last financial year)
+                                    <p class="p2-body-style">(0.88% decrease as compared with last financial year)
                                     </p>
                                 </div>
                             </div>
 
                             <!-- 1. BY CATEGORY STACKED BAR CHART -->
                             <div class="category-chart-wrapper mb-5 py-4">
-                                <h5 class="chart-group-title">By Category</h5>
+                                <h5 class="p4-table-title chart-group-title">By Category</h5>
 
-                                <div class="position-relative chart-block-inner">
+                                <!-- Parent container holding the entire group -->
+                                <div class="position-relative category-container-group d-none d-md-block"
+                                    style="height: 250px;">
 
-                                    <!-- TOP LABELS GRID (Aligned above the bar) -->
-                                    <div class="chart-top-labels-row">
-                                        <!-- Spacing block matching Salaries and allowances width (54.59%) -->
-                                        <div style="flex-basis: 54.59%;"></div>
-
-                                        <!-- Label for Other charges (28.96%) -->
-                                        <div style="flex-basis: 28.96%;"
-                                            class="design-label-box text-center label-line-down">
-                                            <div class="label-head"><span class="pct">28.96%</span> <span
-                                                    class="lbl-txt">Other charges</span></div>
-                                            <div class="label-val">$<span class="animated-counter"
-                                                    data-target="812.07">0.00</span>M</div>
-                                        </div>
-
-                                        <!-- Label for Personnel related expenses (6.04%) -->
-                                        <div style="flex-basis: 16.45%;"
-                                            class="design-label-box text-end label-line-down">
-                                            <!-- Combined basis for Personnel + Capital account to prevent label overflow -->
-                                            <div class="label-head"><span class="pct">6.04%</span> <span
-                                                    class="lbl-txt">Personnel expenses</span></div>
-                                            <div class="label-val">$<span class="animated-counter"
-                                                    data-target="169.31">0.00</span>M</div>
-                                        </div>
+                                    <!-- TOP ROW LABELS & LINES -->
+                                    <!-- 2. Other charges (Center is at 69.07%) -->
+                                    <div class="abs-label-box text-center"
+                                        style="left: 69.07%; transform: translateX(-50%); bottom: 165px; width: 160px;">
+                                        <div class="label-head"><span class="pct">28.96%</span> <span
+                                                class="lbl-txt">Other charges</span></div>
+                                        <div class="label-val">$<span class="animated-counter"
+                                                data-target="812.07">0.00</span>M</div>
+                                        <div class="abs-straight-line" style="height: 22px; bottom: -22px;"></div>
                                     </div>
 
-                                    <!-- THE STACKED BAR CHART (Ordered from Largest to Smallest) -->
-                                    <div class="custom-progress-stacked my-2">
-                                        <!-- 1. Salaries and allowances (54.59%) -->
+                                    <!-- 4. Personnel expenses (Center is at 96.83% - shifted right with angled line) -->
+                                    <div class="abs-label-box text-start"
+                                        style="left: 84.53%; bottom: 165px; width: 180px;">
+                                        <!-- Shifted the content box right so the rising line meets the beginning of the text -->
+                                        <div class="label-head"><span class="pct">6.04%</span> <span
+                                                class="lbl-txt">Personnel related expenses</span></div>
+                                        <div class="label-val">$<span class="animated-counter"
+                                                data-target="169.31">0.00</span>M</div>
+
+                                        <!-- Angled leader line starting at 0 (center of segment) and dog-legging right to meet the text -->
+                                        <div class="abs-straight-line" style="height: 22px; bottom: -22px;"></div>
+                                    </div>
+
+
+                                    <!-- THE STACKED BAR CHART (Positioned in the middle of the group) -->
+                                    <div class="custom-progress-stacked position-absolute w-100"
+                                        style="top: 100px; height: 48px;">
+                                        <!-- 1. Salaries (54.59%) -->
                                         <div class="progress-segment segment-pink animate-width" data-width="54.59%">
                                         </div>
                                         <!-- 2. Other charges (28.96%) -->
                                         <div class="progress-segment segment-dark-grey animate-width"
                                             data-width="28.96%"></div>
-                                        <!-- 3. Departmental expenses (10.26%) -->
+                                        <!-- 3. Departmental (10.26%) -->
                                         <div class="progress-segment segment-medium-grey animate-width"
                                             data-width="10.26%"></div>
-                                        <!-- 4. Personnel related expenses (6.04%) -->
+                                        <!-- 4. Personnel (6.04%) -->
                                         <div class="progress-segment segment-light-grey animate-width"
                                             data-width="6.04%"></div>
                                         <!-- 5. Capital account (0.15%) -->
@@ -239,37 +243,75 @@
                                         </div>
                                     </div>
 
-                                    <!-- BOTTOM LABELS GRID (Aligned below the bar) -->
-                                    <div class="chart-bottom-labels-row">
-                                        <!-- Label for Salaries and allowances (54.59%) -->
-                                        <div style="flex-basis: 54.59%;" class="design-label-box label-line-up">
-                                            <div class="label-head"><span class="pct">54.59%</span> <span
-                                                    class="lbl-txt">Salaries and allowances</span></div>
-                                            <div class="label-val">$<span class="animated-counter"
-                                                    data-target="1530.95">0.00</span>M</div>
-                                        </div>
 
-                                        <!-- Spacing block matching Other charges width (28.96%) -->
-                                        <div style="flex-basis: 28.96%;"></div>
+                                    <!-- BOTTOM ROW LABELS & LINES -->
+                                    <!-- 1. Salaries and allowances (Center is at 27.30%) -->
+                                    <div class="abs-label-box text-center"
+                                        style="left: 27.30%; transform: translateX(-50%); top: 165px; width: 220px;">
+                                        <div class="abs-straight-line-up" style="height: 22px; top: -22px;"></div>
+                                        <div class="label-head"><span class="pct">54.59%</span> <span
+                                                class="lbl-txt">Salaries and allowances</span></div>
+                                        <div class="label-val">$<span class="animated-counter"
+                                                data-target="1530.95">0.00</span>M</div>
+                                    </div>
 
-                                        <!-- Label for Departmental expenses (10.26%) -->
-                                        <div style="flex-basis: 10.26%;"
-                                            class="design-label-box text-center label-line-up">
-                                            <div class="label-head"><span class="pct">10.26%</span> <span
-                                                    class="lbl-txt">Departmental expenses</span></div>
-                                            <div class="label-val">$<span class="animated-counter"
-                                                    data-target="287.83">0.00</span>M</div>
-                                        </div>
+                                    <!-- 3. Departmental expenses (Center is at 88.68%) -->
+                                    <div class="abs-label-box text-center"
+                                        style="left: 88.68%; transform: translateX(-50%); top: 165px; width: 160px;">
+                                        <div class="abs-straight-line-up" style="height: 22px; top: -22px;"></div>
+                                        <div class="label-head"><span class="pct">10.26%</span> <span
+                                                class="lbl-txt">Departmental expenses</span></div>
+                                        <div class="label-val">$<span class="animated-counter"
+                                                data-target="287.83">0.00</span>M</div>
+                                    </div>
 
-                                        <!-- Label for Capital account (0.15%) -->
-                                        <div style="flex-basis: 6.19%;" class="design-label-box text-end label-line-up">
+                                    <!-- 5. Capital account (Center is at 99.92% - shifted right with angled line) -->
+                                    <div class="abs-label-box text-start"
+                                        style="left: 90.25%; top: 165px; width: 140px;">
+                                        <div class="abs-straight-line-up" style="height: 108px; top: -22px;"></div>
+                                        <!-- Shifted the content box right so the rising line meets the beginning of the text -->
+                                        <div class="label-content-shifted-bottom">
                                             <div class="label-head"><span class="pct">0.15%</span> <span
                                                     class="lbl-txt">Capital account</span></div>
                                             <div class="label-val">$<span class="animated-counter"
                                                     data-target="4.20">0.00</span>M</div>
                                         </div>
                                     </div>
+
                                 </div>
+
+                                <!-- MOBILE FALLBACK -->
+                                <div class="d-block d-md-none mobile-chart-fallback">
+                                    <div class="custom-progress-stacked my-3" style="height: 30px;">
+                                        <div class="progress-segment segment-pink animate-width" data-width="54.59%">
+                                        </div>
+                                        <div class="progress-segment segment-dark-grey animate-width"
+                                            data-width="28.96%"></div>
+                                        <div class="progress-segment segment-medium-grey animate-width"
+                                            data-width="10.26%"></div>
+                                        <div class="progress-segment segment-light-grey animate-width"
+                                            data-width="6.04%"></div>
+                                        <div class="progress-segment segment-lime" style="width: 0.15%"></div>
+                                    </div>
+                                    <div class="mobile-labels-list">
+                                        <div class="m-label-item"><span class="pct">54.59%</span> Salaries:
+                                            <strong>$1,530.95M</strong>
+                                        </div>
+                                        <div class="m-label-item"><span class="pct">28.96%</span> Other charges:
+                                            <strong>$812.07M</strong>
+                                        </div>
+                                        <div class="m-label-item"><span class="pct">10.26%</span> Departmental:
+                                            <strong>$287.83M</strong>
+                                        </div>
+                                        <div class="m-label-item"><span class="pct">6.04%</span> Personnel:
+                                            <strong>$169.31M</strong>
+                                        </div>
+                                        <div class="m-label-item"><span class="pct">0.15%</span> Capital account:
+                                            <strong>$4.20M</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <!-- Horizontal Divider -->
@@ -277,12 +319,27 @@
 
                             <!-- 2. BY PROGRAMME STACKED BAR CHART -->
                             <div class="programme-chart-wrapper mb-4 py-4">
-                                <h5 class="chart-group-title">By Programme</h5>
+                                <h5 class="p4-table-title chart-group-title">By Programme</h5>
 
-                                <div class="position-relative chart-block-inner">
+                                <!-- Parent Container Group (staggered layout) -->
+                                <div class="position-relative programme-container-group d-none d-md-block"
+                                    style="height: 250px;">
 
-                                    <!-- STACKED BAR CHART (Ordered from Largest to Smallest) -->
-                                    <div class="custom-progress-stacked my-2">
+                                    <!-- TOP ROW LABELS & LINES -->
+                                    <!-- 2. Facilities development (Center is at 67.81%) -->
+                                    <div class="abs-label-box text-center"
+                                        style="left: 67.81%; transform: translateX(-50%); bottom: 165px; width: 220px;">
+                                        <div class="label-head"><span class="pct">35.42%</span> <span
+                                                class="lbl-txt">Facilities development</span></div>
+                                        <div class="label-val">$<span class="animated-counter"
+                                                data-target="993.21">0.00</span>M</div>
+                                        <div class="abs-straight-line" style="height: 22px; bottom: -22px;"></div>
+                                    </div>
+
+
+                                    <!-- THE STACKED BAR CHART -->
+                                    <div class="custom-progress-stacked position-absolute w-100"
+                                        style="top: 100px; height: 48px;">
                                         <!-- 1. Facilities upkeep (50.10%) -->
                                         <div class="progress-segment segment-pink animate-width" data-width="50.10%">
                                         </div>
@@ -294,37 +351,57 @@
                                             data-width="14.49%"></div>
                                     </div>
 
-                                    <!-- BOTTOM LABELS -->
-                                    <div class="chart-bottom-labels-row">
-                                        <!-- Facilities upkeep (50.10%) -->
-                                        <div style="flex-basis: 50.10%;" class="design-label-box label-line-up">
-                                            <div class="label-head"><span class="pct">50.10%</span> <span
-                                                    class="lbl-txt">Facilities upkeep</span></div>
-                                            <div class="label-val">$<span class="animated-counter"
-                                                    data-target="1404.86">0.00</span>M</div>
-                                        </div>
-                                        <!-- Facilities development (35.42%) -->
-                                        <div style="flex-basis: 35.42%;"
-                                            class="design-label-box text-center label-line-up">
-                                            <div class="label-head"><span class="pct">35.42%</span> <span
-                                                    class="lbl-txt">Facilities development</span></div>
-                                            <div class="label-val">$<span class="animated-counter"
-                                                    data-target="993.21">0.00</span>M</div>
-                                        </div>
-                                        <!-- Monitoring and advisory services (14.49%) -->
-                                        <div style="flex-basis: 14.49%;"
-                                            class="design-label-box text-end label-line-up">
-                                            <div class="label-head"><span class="pct">14.49%</span> <span
-                                                    class="lbl-txt">Monitoring & advisory</span></div>
-                                            <div class="label-val">$<span class="animated-counter"
-                                                    data-target="406.29">0.00</span>M</div>
-                                        </div>
+
+                                    <!-- BOTTOM ROW LABELS & LINES -->
+                                    <!-- 1. Facilities upkeep (Center is at 25.05%) -->
+                                    <div class="abs-label-box text-center"
+                                        style="left: 25.05%; transform: translateX(-50%); top: 165px; width: 220px;">
+                                        <div class="abs-straight-line-up" style="height: 22px; top: -22px;"></div>
+                                        <div class="label-head"><span class="pct">50.10%</span> <span
+                                                class="lbl-txt">Facilities upkeep</span></div>
+                                        <div class="label-val">$<span class="animated-counter"
+                                                data-target="1404.86">0.00</span>M</div>
+                                    </div>
+
+                                    <!-- 3. Monitoring & advisory services (Center is at 92.76%) -->
+                                    <div class="abs-label-box text-center"
+                                        style="left: 92.76%; transform: translateX(-50%); top: 165px; width: 220px;">
+                                        <div class="abs-straight-line-up" style="height: 22px; top: -22px;"></div>
+                                        <div class="label-head"><span class="pct">14.49%</span> <span
+                                                class="lbl-txt">Monitoring & advisory services</span></div>
+                                        <div class="label-val">$<span class="animated-counter"
+                                                data-target="406.29">0.00</span>M</div>
                                     </div>
 
                                 </div>
+
+                                <!-- MOBILE FALLBACK FOR PROGRAMME CHART -->
+                                <div class="d-block d-md-none mobile-chart-fallback">
+                                    <div class="custom-progress-stacked my-3" style="height: 30px;">
+                                        <div class="progress-segment segment-pink animate-width" data-width="50.10%">
+                                        </div>
+                                        <div class="progress-segment segment-dark-grey animate-width"
+                                            data-width="35.42%"></div>
+                                        <div class="progress-segment segment-light-grey animate-width"
+                                            data-width="14.49%"></div>
+                                    </div>
+                                    <div class="mobile-labels-list">
+                                        <div class="m-label-item"><span class="pct">50.10%</span> Facilities upkeep:
+                                            <strong>$1,404.86M</strong>
+                                        </div>
+                                        <div class="m-label-item"><span class="pct">35.42%</span> Facilities
+                                            development: <strong>$993.21M</strong></div>
+                                        <div class="m-label-item"><span class="pct">14.49%</span> Monitoring & advisory:
+                                            <strong>$406.29M</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
+
                         </div>
+
 
 
                     </div>
