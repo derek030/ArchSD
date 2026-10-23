@@ -3512,33 +3512,76 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Label Text Formatting (Desktop) --- */
+/* Parent Label Box */
+/* ==========================================================================
+   ArchSD Expenditure Label Styling & Alignment Fixes
+   ========================================================================== */
+
+/* Parent Label Box (Default) */
 .abs-label-box {
     position: absolute;
     color: var(--darkestGreyColor);
+    display: flex;
+    flex-direction: column;
+    width: min-content !important; /* Forces standard width to match numerical value */
 }
 
-.abs-label-box .label-head {
+/* Restore width for Capital Account parent box so its vertical line doesn't shift */
+.abs-label-box:has(.label-content-shifted-bottom) {
+    display: block; 
+    width: 140px !important; /* Restores the standard 140px horizontal track width */
+}
+
+/* Apply standard-width flex layout directly to the shifted Capital Account box */
+.label-content-shifted-bottom {
+    position: absolute;
+    top: 85px;
+    display: flex;
+    flex-direction: column;
+    width: min-content !important; /* Keeps it constrained to the value standard */
+}
+
+/* Label Head Flex Wrapper */
+.abs-label-box .label-head,
+.label-content-shifted-bottom .label-head {
     font-size: 0.95rem;
     line-height: 1.2;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    width: 100%;
 }
 
-.abs-label-box .pct {
+/* Percentage (Start-aligned on Left) */
+.abs-label-box .pct,
+.label-content-shifted-bottom .pct {
     font-weight: 700;
     color: var(--darkestGreyColor);
+    white-space: nowrap;
 }
 
-.abs-label-box .lbl-txt {
+/* Label Text (End-aligned on Right, wrapping internally if space is tight) */
+.abs-label-box .lbl-txt,
+.label-content-shifted-bottom .lbl-txt {
     color: var(--mainPinkColor);
     font-weight: 500;
     font-size: 0.85rem;
+    text-align: right; 
+    flex: 1;
+    padding-left: 8px; /* Safe gutter space */
 }
 
-.abs-label-box .label-val {
+/* Numerical Value (The Width Standard) */
+.abs-label-box .label-val,
+.label-content-shifted-bottom .label-val {
     font-size: 2.1rem;
     font-weight: 700;
     color: var(--darkestGreyColor);
     line-height: 1;
+    white-space: nowrap; 
+    width: 100%;
+    text-align: center;
 }
 
 /* --- Straight Pointer Lines (Desktop) --- */
