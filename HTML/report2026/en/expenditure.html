@@ -171,13 +171,140 @@
                             </p>
                         </div>
                         <!-- Right: Content Paragraph -->
-                        <div class="col-12 col-md-8 spacing-64 images-flex-container">
+                        <!-- Right Column: Interactive Expenditure Breakdown with Scroll-Triggered Animations -->
+                        <div class="col-12 col-md-8 ps-md-5 budget-graphics-container">
 
-                            <div class="services-area-img">
-                                <img src="../assets/images/3.1 At A Glance_contributions03.png" alt=""
-                                    aria-hidden="true" class="img-fluid">
+                            <!-- Top Row: Actual Department Expenditure & Total Counter -->
+                            <div class="row align-items-center mb-5">
+                                <div class="col-12 col-sm-8">
+                                    <h4 class="actual-expenditure-header">Actual Department Expenditure</h4>
+                                    <div class="total-count-wrapper">
+                                        <span class="currency-symbol">$</span><span class="animated-counter"
+                                            data-target="2829.29">0.00</span><span class="unit-symbol">M</span>
+                                    </div>
+                                    <p class="expenditure-caption">(4.51% increase as compared with last financial year)
+                                    </p>
+                                </div>
                             </div>
+
+                            <!-- 1. BY CATEGORY STACKED BAR CHART -->
+                            <div class="category-chart-wrapper mb-5 py-4">
+                                <h5 class="chart-group-title">By Category</h5>
+
+                                <!-- Stacked Bar Container -->
+                                <div class="custom-progress-stacked mb-4">
+                                    <!-- Salaries and allowances (54.03%) -->
+                                    <div class="progress-segment segment-pink" style="width: 0%" data-width="54.03%"
+                                        data-bs-toggle="tooltip" title="Salaries and allowances: 54.03%"></div>
+                                    <!-- Other charges (30.03%) -->
+                                    <div class="progress-segment segment-dark-grey" style="width: 0%"
+                                        data-width="30.03%" data-bs-toggle="tooltip" title="Other charges: 30.03%">
+                                    </div>
+                                    <!-- Departmental expenses (10.27%) -->
+                                    <div class="progress-segment segment-medium-grey" style="width: 0%"
+                                        data-width="10.27%" data-bs-toggle="tooltip"
+                                        title="Departmental expenses: 10.27%"></div>
+                                    <!-- Personnel related expenses (5.54%) -->
+                                    <div class="progress-segment segment-light-grey" style="style: 0%"
+                                        data-width="5.54%" data-bs-toggle="tooltip"
+                                        title="Personnel related expenses: 5.54%"></div>
+                                    <!-- Capital account (0.13%) -->
+                                    <div class="progress-segment segment-lime" style="width: 0%" data-width="0.13%"
+                                        data-bs-toggle="tooltip" title="Capital account: 0.13%"></div>
+                                </div>
+
+                                <!-- Labels Grid: Matches the style in the design -->
+                                <div class="row g-4 chart-labels-grid">
+                                    <!-- Salaries and allowances -->
+                                    <div class="col-6 col-md-4 label-item">
+                                        <div class="label-header">54.03% <span
+                                                class="label-text pink-highlight">Salaries and allowances</span></div>
+                                        <div class="label-value">$<span class="animated-counter"
+                                                data-target="1528.60">0.00</span>M</div>
+                                    </div>
+                                    <!-- Other charges -->
+                                    <div class="col-6 col-md-4 label-item">
+                                        <div class="label-header">30.03% <span class="label-text grey-highlight">Other
+                                                charges</span></div>
+                                        <div class="label-value">$<span class="animated-counter"
+                                                data-target="849.76">0.00</span>M</div>
+                                    </div>
+                                    <!-- Departmental expenses -->
+                                    <div class="col-6 col-md-4 label-item">
+                                        <div class="label-header">10.27% <span
+                                                class="label-text grey-highlight">Departmental expenses</span></div>
+                                        <div class="label-value">$<span class="animated-counter"
+                                                data-target="290.60">0.00</span>M</div>
+                                    </div>
+                                    <!-- Personnel related expenses -->
+                                    <div class="col-6 col-md-4 label-item">
+                                        <div class="label-header">5.54% <span
+                                                class="label-text grey-highlight">Personnel related expenses</span>
+                                        </div>
+                                        <div class="label-value">$<span class="animated-counter"
+                                                data-target="156.73">0.00</span>M</div>
+                                    </div>
+                                    <!-- Capital account -->
+                                    <div class="col-6 col-md-4 label-item">
+                                        <div class="label-header">0.13% <span class="label-text lime-highlight">Capital
+                                                account</span></div>
+                                        <div class="label-value">$<span class="animated-counter"
+                                                data-target="3.60">0.00</span>M</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Horizontal Divider Line -->
+                            <hr class="chart-section-divider">
+
+                            <!-- 2. BY PROGRAMME STACKED BAR CHART -->
+                            <div class="programme-chart-wrapper mb-4 py-4">
+                                <h5 class="chart-group-title">By Programme</h5>
+
+                                <!-- Stacked Bar Container -->
+                                <div class="custom-progress-stacked mb-4">
+                                    <!-- Facilities upkeep (49.73%) -->
+                                    <div class="progress-segment segment-pink" style="width: 0%" data-width="49.73%"
+                                        data-bs-toggle="tooltip" title="Facilities upkeep: 49.73%"></div>
+                                    <!-- Facilities development (35.87%) -->
+                                    <div class="progress-segment segment-dark-grey" style="width: 0%"
+                                        data-width="35.87%" data-bs-toggle="tooltip"
+                                        title="Facilities development: 35.87%"></div>
+                                    <!-- Monitoring and advisory services (14.40%) -->
+                                    <div class="progress-segment segment-light-grey" style="width: 0%"
+                                        data-width="14.40%" data-bs-toggle="tooltip"
+                                        title="Monitoring and advisory services: 14.40%"></div>
+                                </div>
+
+                                <!-- Labels Grid -->
+                                <div class="row g-4 chart-labels-grid">
+                                    <!-- Facilities upkeep -->
+                                    <div class="col-12 col-md-4 label-item">
+                                        <div class="label-header">49.73% <span
+                                                class="label-text pink-highlight">Facilities upkeep</span></div>
+                                        <div class="label-value">$<span class="animated-counter"
+                                                data-target="1407.20">0.00</span>M</div>
+                                    </div>
+                                    <!-- Facilities development -->
+                                    <div class="col-12 col-md-4 label-item">
+                                        <div class="label-header">35.87% <span
+                                                class="label-text grey-highlight">Facilities development</span></div>
+                                        <div class="label-value">$<span class="animated-counter"
+                                                data-target="1014.92">0.00</span>M</div>
+                                    </div>
+                                    <!-- Monitoring & advisory services -->
+                                    <div class="col-12 col-md-4 label-item">
+                                        <div class="label-header">14.40% <span
+                                                class="label-text pink-highlight">Monitoring & advisory services</span>
+                                        </div>
+                                        <div class="label-value">$<span class="animated-counter"
+                                                data-target="407.17">0.00</span>M</div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -277,10 +404,55 @@
         <!-- jQuery -->
         <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
-        <!-- Pure Frontend Search Controller -->
         <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // 1. Setup ScrollTrigger animation for Stacked Bars (Sequential grids)
+                gsap.registerPlugin(ScrollTrigger);
 
+                const chartTimeline = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".budget-graphics-container",
+                        start: "top 75%", // Triggers when the top of the container hits 75% of viewport
+                        toggleActions: "play none none none"
+                    }
+                });
+
+                // Animate every bar segment sequentially (appearing segment by segment)
+                document.querySelectorAll(".progress-segment").forEach((segment) => {
+                    const targetWidth = segment.getAttribute("data-width");
+                    chartTimeline.to(segment, {
+                        width: targetWidth,
+                        duration: 0.8,
+                        ease: "power2.out"
+                    }, "-=0.4"); // Overlay consecutive segment transitions smoothly
+                });
+
+                // 2. Setup ScrollTrigger counter updates (Number Counting Animation)
+                document.querySelectorAll(".animated-counter").forEach((counter) => {
+                    const targetVal = parseFloat(counter.getAttribute("data-target"));
+
+                    gsap.to(counter, {
+                        scrollTrigger: {
+                            trigger: counter,
+                            start: "top 85%"
+                        },
+                        innerText: targetVal,
+                        duration: 1.5,
+                        snap: { innerText: 0.01 }, // Keep decimals tidy (2 decimal precision)
+                        ease: "power1.out",
+                        onUpdate: function () {
+                            // Ensure number remains formatted properly during animation loop
+                            const currentVal = parseFloat(counter.innerText);
+                            counter.innerText = currentVal.toLocaleString('en-US', {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            });
+                        }
+                    });
+                });
+            });
         </script>
+
 </body>
 
 </html>

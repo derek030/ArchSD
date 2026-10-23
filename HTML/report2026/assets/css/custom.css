@@ -3423,3 +3423,109 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 1.5625rem;
     border-top: 0.03125rem solid #555A5F;
 }
+
+/* ==========================================================================
+   Expenditure Interactive Chart Styling
+   ========================================================================== */
+
+.budget-graphics-container {
+    font-family: 'Inter', sans-serif;
+}
+
+.actual-expenditure-header {
+    color: #e62188;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.total-count-wrapper {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #333333;
+    line-height: 1;
+}
+
+.total-count-wrapper .currency-symbol {
+    font-size: 2.5rem;
+    vertical-align: super;
+    font-weight: 600;
+}
+
+.total-count-wrapper .unit-symbol {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.expenditure-caption {
+    font-size: 1rem;
+    color: #666666;
+    margin-top: 0.5rem;
+}
+
+.chart-group-title {
+    color: #e62188;
+    font-weight: 700;
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Custom progress wrapper */
+.custom-progress-stacked {
+    display: flex;
+    height: 45px; /* Perfect depth like design */
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+/* Color palettes matching exactly with design segmentations */
+.progress-segment {
+    height: 100%;
+    transition: width 0.1s ease-out; /* Controlled cleanly by GSAP */
+}
+
+.segment-pink { background-color: #e62188; }
+.segment-dark-grey { background-color: #8c8c8c; }
+.segment-medium-grey { background-color: #b0b0b0; }
+.segment-light-grey { background-color: #cccccc; }
+.segment-lime { background-color: #8be01d; }
+
+/* Grid label styles */
+.chart-labels-grid {
+    margin-top: 1.5rem;
+}
+
+.label-item {
+    border-left: 1px solid #ddd;
+    padding-left: 15px;
+}
+
+.label-header {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.label-text {
+    font-weight: 400;
+    font-size: 0.85rem;
+    display: block;
+}
+
+.pink-highlight { color: #e62188; }
+.grey-highlight { color: #888888; }
+.lime-highlight { color: #8be01d; }
+
+.label-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.chart-section-divider {
+    border-top: 1px solid #e0e0e0;
+    opacity: 0.7;
+    margin: 3rem 0;
+}
