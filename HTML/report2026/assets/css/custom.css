@@ -3817,3 +3817,35 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .signature-detail {
     padding: 20px 0;
 }
+
+
+/* Policy List Layout */
+.policy-list {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.policy-item {
+    position: relative;
+    padding-left: 1rem; /* Creates space for the green bar */
+    margin-bottom: 50px; /* Adds spacing between items */
+}
+
+/* Fixed-size custom vertical indicator */
+.policy-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px; /* Vertically aligns the indicator with the first line of text */
+    width: 6px;
+    height: 35px;
+    background-color: var(--mainGreenColor);
+}
+
+.policy-text {
+    margin-bottom: 0;
+    color: #000000;
+}
+
+
+
