@@ -3711,4 +3711,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
+.section-header-logo {
+    max-width: 267px;
+    width: 100%;
+    height: auto;
+}
 
