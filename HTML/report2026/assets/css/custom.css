@@ -3717,3 +3717,103 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     height: auto;
 }
 
+.rv-title {
+    margin-bottom: 15px;
+}
+
+.rv-content {
+    margin-bottom: 35px;
+}
+
+.rv-content-1 {
+    margin-bottom: 1rem;
+}
+
+.rv-content-2 {
+    margin-bottom: 20px;
+}
+
+/* Core Card Container */
+.assurance-card {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ECEFEF;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+/* Table Styling */
+.assurance-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* Headers */
+.assurance-table th {
+  padding: 20px;
+  box-sizing: border-box;
+  color: #000000;
+  font-weight: 700;
+  vertical-align: top; /* Top aligns header text */
+}
+
+/* Column Alignments & Widths */
+.col-standard {
+  width: 70%;
+}
+
+.col-level {
+  width: 30%;
+}
+
+/* Decorative Pink Divider */
+.assurance-table .table-divider td {
+  height: 4px;
+  padding: 0;
+  background-color: var(--mainPinkColor);       /* Vibrantly matched magenta/pink */
+  border: none;
+}
+
+/* Data Cells */
+.assurance-table td {
+  padding: 20px;
+  box-sizing: border-box;
+  vertical-align: top; /* <--- KEY FIX: Force both cells to align from the very top */
+}
+
+/* Standard Column Text (Pink Highlight) */
+.assurance-table .cell-standard {
+  color: var(--mainPinkColor);
+}
+
+/* Assurance Level Column Text */
+.assurance-table .cell-level {
+  color: #000000;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 600px) {
+  .assurance-table th, 
+  .assurance-table td {
+    padding: 16px;
+    font-size: 16px;
+  }
+}
+
+.signature-text {
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.signature-image {
+    max-width: 254px;
+    width: 100%;
+    height: auto;
+}
+
+.signature-detail {
+    padding: 20px 0;
+}
