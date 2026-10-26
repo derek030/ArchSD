@@ -3847,5 +3847,125 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: #000000;
 }
 
+/* ==========================================================================
+   ArchSD Key Facts: Our Profile Custom Assets & Typography
+   ========================================================================== */
+
+/* Left vertical borders for rows */
+.profile-row {
+    border-left: 4px solid var(--mainPinkColor);
+    padding-left: 0;
+    margin-bottom: 2.5rem;
+    min-height: 120px;
+    display: flex;
+}
+
+/* Align and constrain custom PNG icons */
+.widget-icon-wrapper {
+    width: 60%; /* Aligns both icons to a consistent layout grid */
+    display: flex;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.widget-icon {
+    max-height: 150px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Shared Widget Structure */
+.profile-widget {
+    display: flex;
+    height: 100%;
+}
+
+.widget-text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Big numbers (e.g., 11th, 1 989) */
+.widget-number {
+    font-family: 'Monda', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--mainPinkColor);
+    line-height: 1;
+}
+
+/* Ordinal suffix "th" positioning */
+.widget-suffix {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--mainPinkColor);
+    vertical-align: super;
+    margin-left: 2px;
+}
+
+/* Sub-text styles */
+.widget-date-sub {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--mainPinkColor);
+    margin-top: 4px;
+}
+
+.widget-label {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--mainPinkColor);
+    line-height: 1;
+}
+
+.staff-date-caption {
+    font-weight: 300;
+}
+
+/* --- Mobile Responsive Adaptation --- */
+@media (max-width: 767.98px) {
+    .profile-row {
+        margin-bottom: 1.75rem;
+        min-height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .widget-icon-wrapper {
+        width: 50px;
+        margin-right: 1rem;
+    }
+    
+    .widget-icon {
+        max-height: 50px;
+    }
+
+    .widget-number {
+        font-size: 2.8rem;
+    }
+    
+    .widget-suffix {
+        font-size: 1.3rem;
+    }
+    
+    .widget-date-sub {
+        font-size: 1.2rem;
+    }
+}
+
+.offices-row {
+    border-left: 4px solid var(--mainPinkColor);
+    padding-left: 0;
+    margin-bottom: 2.5rem;
+    display: flex;
+}
+
+.headquarters-text {
+    color: var(--darkestGreyColor);
+}
 
 
