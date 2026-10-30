@@ -4023,7 +4023,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-table-row {
-    border-bottom: 1px solid #D8DCDC;
+    border-bottom: 0.5px solid var(--darkGreyColor);
 }
 
 .gri-table-row:last-of-type {
@@ -4053,11 +4053,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-location-col {
-    width: 25%;
+    width: 20%;
 }
 
 .gri-remarks-col {
-    width: 12%;
+    width: 19%;
 }
 
 .gri-assurance-col {
@@ -4113,12 +4113,26 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-table td.border-bottom-custom {
-    border-bottom: 1px solid #D8DCDC;
+    border-bottom: 0.5px solid var(--darkGreyColor);
 }
 
 .gri-table td a.remuneration-link {
     color: var(--mainPinkColor);
     font-weight: 700;
     text-decoration: underline;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+
+/* --- GRI Table Material Topic / Section Styles --- */
+.gri-material-topic-row td {
+    color: var(--mainPinkColor) !important;
+    padding: 15px 10px;
+    border-top: 4px solid var(--mainPinkColor) !important;
+    border-bottom: 0.5px solid var(--darkGreyColor) !important;
+}
+.gri-pink-text {
+    color: var(--mainPinkColor) !important;
 }
 
