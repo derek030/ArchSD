@@ -3988,38 +3988,139 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-top: 2.625rem !important; /* 42px */
 }
 
-/* --- GRI Intro Table Styles --- */
-.gri-intro-table-wrapper {
-    background-color: var(--tableGreyColor, #ECEFEF);
-    padding: 20px 30px;
-    margin-top: 2.625rem;
-    height: calc(100% - 2.625rem);
-    display: flex;
-    align-items: center;
+/* --- GRI Index Table --- */
+.gri-index-table-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
-.gri-intro-table {
+.gri-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed; /* Enforces columns to strictly follow defined width percentages */
 }
 
-.gri-intro-table tr.bordered-row {
-    border-top: 1px solid #565A5F;
-    border-bottom: 1px solid #565A5F;
+.gri-table-head {
+    border-bottom: 5px solid var(--mainPinkColor);
 }
 
-.gri-intro-table td {
-    vertical-align: top;
-    border: none !important;
-    color: #000000;
-}
-
-.gri-intro-table td.table-label {
+.gri-table-head th {
+    font-family: 'Monda', sans-serif;
     font-weight: 700;
-    width: 35%;
-    padding: 20px 10px 20px 0;
+    font-size: 0.875rem;
+    color: #000000;
+    padding: 15px 10px;
+    text-align: left;
+    vertical-align: bottom;
 }
 
-.gri-intro-table td.table-value {
-    padding: 20px 0 20px 10px;
+.gri-table-row {
+    border-bottom: 1px solid #D8DCDC;
 }
+
+.gri-table-row td {
+    padding: 20px 10px;
+    vertical-align: top;
+    font-size: 0.875rem;
+    color: #565A5F;
+}
+
+.gri-standard-col {
+    width: 12%;
+    font-weight: 700;
+    font-family: 'Monda', sans-serif;
+    color: #000000 !important;
+}
+
+.gri-disclosure-col {
+    width: 25%;
+}
+
+.gri-hkex-col {
+    width: 8%;
+}
+
+.gri-sasb-col {
+    width: 8%;
+}
+
+.gri-location-col {
+    width: 25%;
+    font-weight: 700;
+    color: #000000 !important;
+}
+
+.gri-remarks-col {
+    width: 12%;
+    font-size: 0.8125rem !important;
+}
+
+.gri-assurance-col {
+    width: 8%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.disclosure-id {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    color: var(--mainGreenColor, #82EF00);
+    border-left: 4px solid var(--mainGreenColor, #82EF00);
+    padding-left: 8px;
+    margin-right: 8px;
+    line-height: 1;
+}
+
+.disclosure-title {
+    display: inline;
+    color: #000000;
+    font-weight: 300;
+}
+
+.gri-subcategory-row td {
+    background-color: #ffffff;
+    font-weight: 700;
+    color: #000000;
+    padding: 15px 10px;
+    font-family: 'Monda', sans-serif;
+    border-top: 2px solid #565A5F;
+    border-bottom: 2px solid #565A5F;
+}
+
+.icon-circle-green {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--darkGreenColor);
+    border-radius: 50%;
+}
+
+/* --- GRI Table Specific Clean Helper Classes --- */
+.gri-table td.valign-top {
+    vertical-align: top;
+}
+
+.gri-table td.valign-middle {
+    vertical-align: middle;
+}
+
+.gri-table td.align-center {
+    text-align: center;
+}
+
+.gri-table td.pt-20 {
+    padding-top: 20px;
+}
+
+.gri-table td.border-bottom-custom {
+    border-bottom: 1px solid #D8DCDC;
+}
+
+.gri-table td a.remuneration-link {
+    color: var(--mainPinkColor);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
