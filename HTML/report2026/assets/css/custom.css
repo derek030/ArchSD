@@ -553,6 +553,15 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: var(--mainPinkColor);
 }
 
+.h4-title-style {
+    font-family: "Monda", sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    line-height: 1.3125rem; /* 21px */
+    letter-spacing: -1.5%;
+    text-align: left;
+}
+
 .p1-call-out {
     font-family: "Monda", sans-serif;
     font-size: 2.5rem; /* 40px */
@@ -4006,9 +4015,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-table-head th {
-    font-family: 'Monda', sans-serif;
-    font-weight: 700;
-    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
     color: #000000;
     padding: 15px 10px;
     text-align: left;
@@ -4019,18 +4026,18 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-bottom: 1px solid #D8DCDC;
 }
 
+.gri-table-row:last-of-type {
+    border-bottom: 0px;
+}
+
 .gri-table-row td {
     padding: 20px 10px;
     vertical-align: top;
-    font-size: 0.875rem;
-    color: #565A5F;
 }
 
 .gri-standard-col {
     width: 12%;
-    font-weight: 700;
-    font-family: 'Monda', sans-serif;
-    color: #000000 !important;
+    color: #000000;
 }
 
 .gri-disclosure-col {
@@ -4047,13 +4054,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .gri-location-col {
     width: 25%;
-    font-weight: 700;
-    color: #000000 !important;
 }
 
 .gri-remarks-col {
     width: 12%;
-    font-size: 0.8125rem !important;
 }
 
 .gri-assurance-col {
@@ -4065,12 +4069,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .disclosure-id {
     display: inline-flex;
     align-items: center;
-    font-weight: 700;
-    color: var(--mainGreenColor, #82EF00);
-    border-left: 4px solid var(--mainGreenColor, #82EF00);
+    border-left: 4px solid var(--mainGreenColor);
     padding-left: 8px;
     margin-right: 8px;
-    line-height: 1;
 }
 
 .disclosure-title {
@@ -4080,11 +4081,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-subcategory-row td {
-    background-color: #ffffff;
-    font-weight: 700;
     color: #000000;
     padding: 15px 10px;
-    font-family: 'Monda', sans-serif;
     border-top: 2px solid #565A5F;
     border-bottom: 2px solid #565A5F;
 }
