@@ -4172,3 +4172,46 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: var(--mainPinkColor) !important;
 }
 
+/* ==========================================================================
+   Responsive Mobile Layout for GRI Tables (Sections 1 & 2)
+   ========================================================================== */
+@media (max-width: 767.9px) {
+    /* Section 2 Table: Standard Scrollable Container to prevent squashing */
+    .gri-index-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 15px;
+    }
+    
+    .gri-table {
+        min-width: 1000px; /* Maintains full width and legibility on narrow viewports */
+    }
+}
+
+@media (max-width: 575.9px) {
+    /* Section 1 Intro Table: Stacks columns vertically on mobile screens */
+    .gri-intro-table tr {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .gri-intro-table td {
+        display: block;
+        width: 100% !important;
+    }
+    
+    .gri-intro-table td.table-label {
+        padding: 15px 20px 5px 20px !important;
+        font-weight: 700;
+    }
+    
+    .gri-intro-table td.table-value {
+        padding: 5px 20px 15px 20px !important;
+    }
+    
+    .gri-intro-table-wrapper {
+        margin-top: 20px;
+        padding: 10px 0;
+    }
+}
+
