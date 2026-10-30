@@ -4067,15 +4067,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .disclosure-id {
-    display: inline-flex;
-    align-items: center;
+    display: block;
+    float: left;
     border-left: 4px solid var(--mainGreenColor);
     padding-left: 8px;
     margin-right: 8px;
 }
 
 .disclosure-title {
-    display: inline;
+    display: block;
+    overflow: hidden;
     color: #000000;
     font-weight: 300;
 }
