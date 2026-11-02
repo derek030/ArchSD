@@ -242,7 +242,8 @@
                                 </div>
                                 <!-- Splitting into two internal sub-columns for the side-by-side values list -->
                                 <div class="row g-0">
-                                    <div class="col-5">
+                                    <!-- First column: Full width on mobile/tablet, 5-grid width on desktop -->
+                                    <div class="col-12 col-lg-5">
                                         <ul class="vmv-list">
                                             <li class="p2-body-style">Professionalism</li>
                                             <li class="p2-body-style">Commitment</li>
@@ -250,8 +251,12 @@
                                             <li class="p2-body-style">Integrity</li>
                                         </ul>
                                     </div>
-                                    <div class="col-1"></div>
-                                    <div class="col-6">
+
+                                    <!-- Spacer column: Hidden on mobile/tablet, visible on desktop -->
+                                    <div class="d-none d-lg-block col-lg-1"></div>
+
+                                    <!-- Second column: Full width on mobile/tablet, 6-grid width on desktop -->
+                                    <div class="col-12 col-lg-6">
                                         <ul class="vmv-list">
                                             <li class="p2-body-style">Versatility</li>
                                             <li class="p2-body-style">Continuous Improvement</li>
@@ -294,7 +299,8 @@
 
                         <!-- Next Page Link -->
                         <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-end">
-                            <a href="governance-our-structure.html" class="page-nav-link text-decoration-none" aria-label="Next page">
+                            <a href="governance-our-structure.html" class="page-nav-link text-decoration-none"
+                                aria-label="Next page">
                                 <div class="page-nav d-flex align-items-center justify-content-sm-end">
                                     <p class="page-nav-title page-nav-title-next me-2 mb-0">
                                         <span class="visually-hidden">Next page: </span><strong>Governance</strong> |
