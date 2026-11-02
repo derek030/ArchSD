@@ -3351,18 +3351,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Columns Headers Layout --- */
-.vmv-title {
-    font-family: "Monda", sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #B8BDC5;
-    letter-spacing: 0.1em;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-}
-
-.vmv-title .pink-letter {
-    color: var(--mainPinkColor);
+.vmv-title-wrapper {
+    width: 100%;
+    max-width: 176px;
+    max-height: 40px;
+    margin-bottom: 2rem;    
 }
 
 /* --- Green Vertical Indicator Lists --- */
