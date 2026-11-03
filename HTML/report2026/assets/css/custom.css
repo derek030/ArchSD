@@ -4275,3 +4275,47 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-top: 20px;
     text-align: center;
 }
+
+/* ==========================================================================
+   Other Key Awards Section Styling
+   ========================================================================== */
+.award-item {
+    border-top: 4px solid #B8BDC5; /* Matches the grey border in design */
+    padding-top: 10px;
+    height: 100%;
+}
+
+.award-title {
+    color: #000000;
+    margin-bottom: 1.25rem;
+}
+
+.award-point {
+    margin-bottom: 1.25rem;
+}
+
+.award-name-line {
+    position: relative;
+    padding-left: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+    line-height: 1.25rem; /* 20px */
+    letter-spacing: -1%;
+    color: #000000;
+    margin-bottom: 0.25rem;
+}
+
+.award-name-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 4px;
+    height: 1rem;
+    background-color: var(--mainGreenColor); /* Using site variable for brand lime green */
+}
+
+.award-details {
+    padding-left: 14px;
+}
