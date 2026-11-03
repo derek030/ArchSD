@@ -2474,6 +2474,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 
     .project-card {
+        border-top: none;
         background-color: color-mix(in srgb, var(--mainGreenColor) 20%, transparent);
     }
 
