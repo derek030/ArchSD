@@ -4417,3 +4417,65 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 0;
 }
 
+/* Considerate Contractors Site Award Scheme Section Styling */
+.scheme-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+}
+.scheme-table th, .scheme-table td {
+    padding: 14px 10px;
+    vertical-align: top;
+}
+.scheme-table thead tr.scheme-header-row {
+    border-bottom: 4px solid var(--mainPinkColor);
+}
+.scheme-table thead th {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000000;
+    padding-bottom: 12px;
+}
+.scheme-table .scheme-subheader-row td {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #7C8282;
+    padding-top: 1.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--darkGreyColor);
+}
+.scheme-table .scheme-data-row {
+    border-bottom: 1px solid var(--darkGreyColor);
+}
+.scheme-table .cat-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -2%;
+    color: var(--darkGreyColor);
+}
+.scheme-table .rating-val, 
+.scheme-table .contractor-val, 
+.scheme-table .contracts-val {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 20px;
+}
+.scheme-th-cat {
+    width: 20%;
+}
+.scheme-th-award {
+    width: 24%;
+}
+.scheme-th-contractor {
+    width: 23%;
+}
+.scheme-th-contracts {
+    width: 33%;
+}
+
