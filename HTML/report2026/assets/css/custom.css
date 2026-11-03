@@ -3431,10 +3431,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
    ArchSD Expenditure Design Layout
    ========================================================================== */
 
-/* ==========================================================================
-   ArchSD Sustainability Report 2026: Expenditure Section Styles
-   ========================================================================== */
-
 /* --- Parent Graphics Containers --- */
 .budget-graphics-container {
     font-family: 'Inter', sans-serif;
@@ -3682,6 +3678,34 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-top: 1px solid var(--lightGreyColor);
     opacity: 0.8;
     margin: 4rem 0;
+}
+
+/* Parent Container using Flexbox to align elements side-by-side */
+.table-remarks {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    color: var(--darkGreyColor) !important; /* #565A5F Gray tint */
+}
+
+/* Bracketed numbered prefix column */
+.hanging-asterisk {
+    flex-shrink: 0;
+    width: 0.5rem; /* Sets a tight fixed width so the bracketed numbers don't shrink */
+}
+
+/* Footnote body column */
+.hanging-text {
+    flex-grow: 1; /* Instructs the body column to fill all remaining horizontal width */
+}
+
+/* Responsive Overrides (For viewports below 576px / mobile) */
+@media (max-width: 35.99875em) { /* 575.98px */
+    .table-remarks {
+        margin-top: 0.625rem;
+        margin-bottom: 0;
+    }
 }
 
 /* ==========================================================================
