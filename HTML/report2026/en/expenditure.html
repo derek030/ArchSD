@@ -201,7 +201,7 @@
                                     <!-- TOP ROW LABELS & LINES -->
                                     <!-- 2. Other charges (Center is at 69.07%) -->
                                     <div class="abs-label-box text-center"
-                                        style="left: 69.07%; transform: translateX(-50%); bottom: 165px; width: 160px;">
+                                        style="left: 69.07%; transform: translateX(-80%); bottom: 165px; width: 160px;">
                                         <div class="label-head"><span class="pct">28.96%</span> <span
                                                 class="lbl-txt">Other charges</span></div>
                                         <div class="label-val">$<span class="animated-counter"
@@ -209,18 +209,23 @@
                                         <div class="abs-straight-line" style="height: 22px; bottom: -22px;"></div>
                                     </div>
 
-                                    <!-- 4. Personnel expenses (Center is at 96.83% - shifted right with angled line) -->
-                                    <div class="abs-label-box text-start"
-                                        style="left: 84.53%; bottom: 165px; width: 180px;">
-                                        <!-- Shifted the content box right so the rising line meets the beginning of the text -->
-                                        <div class="label-head"><span class="pct">6.04%</span> <span
-                                                class="lbl-txt">Personnel related expenses</span></div>
-                                        <div class="label-val">$<span class="animated-counter"
-                                                data-target="169.31">0.00</span>M</div>
+                                    <!-- 4. Personnel expenses (Aligned to the right to prevent overflow) -->
+                                    <div class="abs-label-box text-end"
+                                        style="right: 2.5%; bottom: 165px; width: 180px;">
+                                        <div class="label-head" style="justify-content: flex-end;">
+                                            <span class="pct">6.04%</span>
+                                            <span class="lbl-txt"
+                                                style="text-align: right; padding-left: 8px;">Personnel related
+                                                expenses</span>
+                                        </div>
+                                        <div class="label-val" style="text-align: right;">$<span
+                                                class="animated-counter" data-target="169.31">169.31</span>M</div>
 
-                                        <!-- Angled leader line starting at 0 (center of segment) and dog-legging right to meet the text -->
-                                        <div class="abs-straight-line" style="height: 22px; bottom: -22px;"></div>
+                                        <!-- Pointer line positioned exactly at the segment's horizontal center (96.83% width = 3.17% from the right) -->
+                                        <div class="abs-straight-line"
+                                            style="height: 22px; bottom: -22px; right: 3.17%; left: auto;"></div>
                                     </div>
+
 
 
                                     <!-- THE STACKED BAR CHART (Positioned in the middle of the group) -->
@@ -257,7 +262,7 @@
 
                                     <!-- 3. Departmental expenses (Center is at 88.68%) -->
                                     <div class="abs-label-box text-center"
-                                        style="left: 88.68%; transform: translateX(-50%); top: 165px; width: 160px;">
+                                        style="left: 88.68%; transform: translateX(-60%); top: 165px; width: 160px;">
                                         <div class="abs-straight-line-up" style="height: 22px; top: -22px;"></div>
                                         <div class="label-head"><span class="pct">10.26%</span> <span
                                                 class="lbl-txt">Departmental expenses</span></div>
@@ -265,18 +270,21 @@
                                                 data-target="287.83">0.00</span>M</div>
                                     </div>
 
-                                    <!-- 5. Capital account (Center is at 99.92% - shifted right with angled line) -->
-                                    <div class="abs-label-box text-start"
-                                        style="left: 90.25%; top: 165px; width: 140px;">
-                                        <div class="abs-straight-line-up" style="height: 108px; top: -22px;"></div>
-                                        <!-- Shifted the content box right so the rising line meets the beginning of the text -->
-                                        <div class="label-content-shifted-bottom">
-                                            <div class="label-head"><span class="pct">0.15%</span> <span
-                                                    class="lbl-txt">Capital account</span></div>
-                                            <div class="label-val">$<span class="animated-counter"
-                                                    data-target="4.20">0.00</span>M</div>
+                                    <!-- 5. Capital account (Aligned to the right to prevent overflow) -->
+                                    <div class="abs-label-box text-end" style="right: 0%; top: 165px; width: 140px;">
+                                        <div class="abs-straight-line-up"
+                                            style="height: 108px; top: -22px; right: 0.08%; left: auto;"></div>
+                                        <div class="label-content-shifted-bottom" style="right: 0; left: auto;">
+                                            <div class="label-head" style="justify-content: flex-end;">
+                                                <span class="pct">0.15%</span>
+                                                <span class="lbl-txt"
+                                                    style="text-align: right; padding-left: 8px;">Capital account</span>
+                                            </div>
+                                            <div class="label-val" style="text-align: right;">$<span
+                                                    class="animated-counter" data-target="4.20">4.20</span>M</div>
                                         </div>
                                     </div>
+
 
                                 </div>
 
@@ -360,15 +368,21 @@
                                                 data-target="1404.86">0.00</span>M</div>
                                     </div>
 
-                                    <!-- 3. Monitoring & advisory services (Center is at 92.76%) -->
-                                    <div class="abs-label-box text-center"
-                                        style="left: 92.76%; transform: translateX(-50%); top: 165px; width: 220px;">
-                                        <div class="abs-straight-line-up" style="height: 22px; top: -22px;"></div>
-                                        <div class="label-head"><span class="pct">14.49%</span> <span
-                                                class="lbl-txt">Monitoring & advisory services</span></div>
-                                        <div class="label-val">$<span class="animated-counter"
-                                                data-target="406.29">0.00</span>M</div>
+                                    <!-- 3. Monitoring & advisory services (Aligned to the right to prevent overflow) -->
+                                    <div class="abs-label-box text-end" style="right: 0%; top: 165px; width: 220px;">
+                                        <!-- Pointer line positioned exactly at the segment's horizontal center (92.76% width = 7.24% from the right) -->
+                                        <div class="abs-straight-line-up"
+                                            style="height: 22px; top: -22px; right: 30.24%; left: auto;"></div>
+                                        <div class="label-head" style="justify-content: flex-end;">
+                                            <span class="pct">14.49%</span>
+                                            <span class="lbl-txt"
+                                                style="text-align: right; padding-left: 8px;">Monitoring & advisory
+                                                services</span>
+                                        </div>
+                                        <div class="label-val" style="text-align: right;">$<span
+                                                class="animated-counter" data-target="406.29">406.29</span>M</div>
                                     </div>
+
 
                                 </div>
 
