@@ -4319,3 +4319,101 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .award-details {
     padding-left: 14px;
 }
+
+/* ==========================================================================
+   BEAM Plus-Certified Buildings Section Styling
+   ========================================================================== */
+.beam-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+}
+.beam-table th, .beam-table td {
+    padding: 14px 10px;
+    vertical-align: middle;
+}
+.beam-table thead tr.beam-header-row {
+    border-bottom: 4px solid var(--mainPinkColor);
+}
+.beam-table thead th {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.25rem;
+    letter-spacing: -1.5%;
+    padding-bottom: 12px;
+}
+/* Aligns the main 'Rating' header over both columns */
+.beam-table thead th.beam-th-rating {
+    text-align: left;
+    padding-right: 4.5rem; /* Centering helper for the Rating header label above columns */
+}
+.beam-table .beam-subheader-row td {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    line-height: 1.25rem;
+    letter-spacing: -1.5%;
+    border-bottom: 2px solid var(--darkGreyColor); /* Thin grey line separating subheader from data rows */
+}
+
+.beam-table .beam-data-row {
+    border-bottom: 1px solid var(--darkGreyColor); /* Thin grey line separating subheader from data rows */
+}
+
+.beam-table .beam-sub-label {
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--darkGreyColor)
+}
+
+.beam-table .cert-name {
+    padding-left: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -2%;
+    color: var(--darkGreyColor)
+}
+
+.beam-table .rating-val {
+    letter-spacing: -1%;
+    color: #000000;
+}
+
+.beam-table .subtotal-val {
+    letter-spacing: -1%;
+    color: #000000;
+}
+
+/* BEAM Plus-Certified Buildings up to 2025 table styling */
+.beam-table th.beam-th-cert {
+    width: 55%;
+}
+.beam-table th.beam-th-rating,
+.beam-table th.beam-th-rating-spacer,
+.beam-table th.beam-th-subtotal {
+    width: 15%;
+}
+
+.beam-remarks {
+    display: flex; 
+    align-items: flex-start;
+}
+
+.beam-remarks .remarks-asterisk {
+    margin-right: 6px;
+}
+
+.remarks-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #000000;
+    line-height: 21px;
+    letter-spacing: -2%;
+    margin-bottom: 0;
+}
+
