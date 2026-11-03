@@ -412,7 +412,8 @@
 
                         <!-- Previous Page Link -->
                         <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-start">
-                            <a href="key-facts.html" class="page-nav-link text-decoration-none" aria-label="Previous page">
+                            <a href="key-facts.html" class="page-nav-link text-decoration-none"
+                                aria-label="Previous page">
                                 <div class="page-nav d-flex align-items-center">
                                     <div class="page-nav-back d-flex align-items-center" aria-hidden="true">
                                         <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="">
@@ -432,7 +433,8 @@
 
                         <!-- Next Page Link -->
                         <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-end">
-                            <a href="quality-policy.html" class="page-nav-link text-decoration-none" aria-label="Next page">
+                            <a href="quality-policy.html" class="page-nav-link text-decoration-none"
+                                aria-label="Next page">
                                 <div class="page-nav d-flex align-items-center justify-content-sm-end">
                                     <p class="page-nav-title page-nav-title-next me-2 mb-0">
                                         <span class="visually-hidden">Next page: </span><strong>Appendix</strong> |
@@ -500,78 +502,106 @@
         <!-- jQuery -->
         <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
+        <!-- ========================================================================== -->
+        <!-- JAVASCRIPT ANIMATIONS & INTERACTION (FIXED RESPONSIVE LAYOUT)              -->
+        <!-- ========================================================================== -->
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 // Register ScrollTrigger with GSAP
                 gsap.registerPlugin(ScrollTrigger);
 
-                // Create a master timeline that triggers when the expenditure section is in view
-                const masterTimeline = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: ".budget-graphics-container",
-                        start: "top 75%",
-                        toggleActions: "play none none none"
-                    }
-                });
+                // Initialize GSAP MatchMedia to handle desktop vs. mobile swapping seamlessly
+                const mm = gsap.matchMedia();
 
-                // ==========================================================================
-                // 1. ANIMATE PROGRESS SEGMENTS (Parallel Timelines, Segment-by-Segment)
-                // ==========================================================================
+                // Define media queries matching Bootstrap 5 breakpoints
+                mm.add({
+                    isDesktop: "(min-width: 768px)",
+                    isMobile: "(max-width: 767.98px)"
+                }, (context) => {
+                    const { isDesktop } = context.conditions;
 
-                // --- Chart 1: By Category ---
-                document.querySelectorAll(".category-chart-wrapper .progress-segment").forEach((segment, index) => {
-                    const targetWidth = segment.getAttribute("data-width");
-
-                    // ADJUST SPEED HERE: 
-                    // - Increase '0.8' (e.g., to 1.2) to make each bar segment slide slower.
-                    const segmentDuration = 1.4;
-                    // - Increase '0.7' (e.g., to 0.9) to add more delay between segments.
-                    const delayOffset = index * 0.7;
-
-                    masterTimeline.to(segment, {
-                        width: targetWidth,
-                        duration: segmentDuration,
-                        ease: "power2.out"
-                    }, `runBars+=${delayOffset}`);
-                });
-
-                // --- Chart 2: By Programme ---
-                document.querySelectorAll(".programme-chart-wrapper .progress-segment").forEach((segment, index) => {
-                    const targetWidth = segment.getAttribute("data-width");
-
-                    // ADJUST SPEED HERE: (Keep these identical to Chart 1 for perfect parallel sync)
-                    const segmentDuration = 1.4;
-                    const delayOffset = index * 0.7;
-
-                    masterTimeline.to(segment, {
-                        width: targetWidth,
-                        duration: segmentDuration,
-                        ease: "power2.out"
-                    }, `runBars+=${delayOffset}`);
-                });
-
-                // ==========================================================================
-                // 2. RUNNING COUNTER ANIMATIONS (Synchronized with the Bar Growth)
-                // ==========================================================================
-
-                document.querySelectorAll(".animated-counter").forEach((counter) => {
-                    const targetVal = parseFloat(counter.getAttribute("data-target"));
-
-                    masterTimeline.to(counter, {
-                        innerText: targetVal,
-                        // ADJUST SPEED HERE:
-                        // - Increase '2.8' (e.g., to 3.5) to make the numbers tick up slower.
-                        duration: 2.8,
-                        snap: { innerText: 0.01 },
-                        ease: "power1.out",
-                        onUpdate: function () {
-                            const currentVal = parseFloat(counter.innerText);
-                            counter.innerText = currentVal.toLocaleString('en-US', {
-                                minimumFractionDigits: 2,
-                                maximumFractionDigits: 2
-                            });
+                    // 1. Create a fresh timeline for the active viewport state
+                    const masterTimeline = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: ".budget-graphics-container",
+                            start: "top 75%",
+                            toggleActions: "play none none none"
                         }
-                    }, "runBars");
+                    });
+
+                    // 2. Query only the visible segments based on the current viewport
+                    const categorySegments = isDesktop
+                        ? document.querySelectorAll(".category-chart-wrapper .category-container-group .progress-segment")
+                        : document.querySelectorAll(".category-chart-wrapper .mobile-chart-fallback .progress-segment");
+
+                    const programmeSegments = isDesktop
+                        ? document.querySelectorAll(".programme-chart-wrapper .programme-container-group .progress-segment")
+                        : document.querySelectorAll(".programme-chart-wrapper .mobile-chart-fallback .progress-segment");
+
+                    // 3. Query only the visible counters (all on desktop, but only the main total on mobile)
+                    const counters = isDesktop
+                        ? document.querySelectorAll(".animated-counter")
+                        : document.querySelectorAll(".total-count-wrapper .animated-counter");
+
+                    // ==========================================================================
+                    // 1. ANIMATE PROGRESS SEGMENTS
+                    // ==========================================================================
+
+                    // --- Chart 1: By Category ---
+                    categorySegments.forEach((segment, index) => {
+                        const targetWidth = segment.getAttribute("data-width") || "0.15%";
+                        const segmentDuration = 1.4;
+                        const delayOffset = index * 0.7;
+
+                        masterTimeline.to(segment, {
+                            width: targetWidth,
+                            duration: segmentDuration,
+                            ease: "power2.out"
+                        }, `runBars+=${delayOffset}`);
+                    });
+
+                    // --- Chart 2: By Programme ---
+                    programmeSegments.forEach((segment, index) => {
+                        const targetWidth = segment.getAttribute("data-width");
+                        const segmentDuration = 1.4;
+                        const delayOffset = index * 0.7;
+
+                        masterTimeline.to(segment, {
+                            width: targetWidth,
+                            duration: segmentDuration,
+                            ease: "power2.out"
+                        }, `runBars+=${delayOffset}`);
+                    });
+
+                    // ==========================================================================
+                    // 2. ANIMATE COUNTERS
+                    // ==========================================================================
+                    counters.forEach((counter) => {
+                        const targetVal = parseFloat(counter.getAttribute("data-target"));
+
+                        // Reset counter starting text to zero before animation starts
+                        counter.innerText = "0.00";
+
+                        masterTimeline.to(counter, {
+                            innerText: targetVal,
+                            duration: 2.8,
+                            snap: { innerText: 0.01 },
+                            ease: "power1.out",
+                            onUpdate: function () {
+                                const currentVal = parseFloat(counter.innerText);
+                                counter.innerText = currentVal.toLocaleString('en-US', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2
+                                });
+                            }
+                        }, "runBars");
+                    });
+
+                    // Return clean-up function so GSAP clears out old timelines/triggers on viewport change
+                    return () => {
+                        // Resets progress segment widths back to 0% so they can re-animate beautifully
+                        gsap.set(".progress-segment", { clearProps: "width" });
+                    };
                 });
             });
         </script>
