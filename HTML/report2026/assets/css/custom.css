@@ -4261,3 +4261,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
+.text-decoration-underline {
+    text-decoration: underline;
+    color: var(--mainPinkColor);
+    font-weight: 700;
+}
+
+.feature-icon-img {
+    max-height: 60px;
+}
+
+.feature-label {
+    margin-top: 20px;
+    text-align: center;
+}
