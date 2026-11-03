@@ -503,7 +503,7 @@
         <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
         <!-- ========================================================================== -->
-        <!-- JAVASCRIPT ANIMATIONS & INTERACTION (FIXED RESPONSIVE LAYOUT)              -->
+        <!-- JAVASCRIPT ANIMATIONS & INTERACTION                                        -->
         <!-- ========================================================================== -->
         <script>
             document.addEventListener("DOMContentLoaded", () => {
@@ -513,6 +513,20 @@
                 // Initialize GSAP MatchMedia to handle desktop vs. mobile swapping seamlessly
                 const mm = gsap.matchMedia();
 
+                // 1. Immediately display the final values for all other sub-counters without animating
+                const totalCounter = document.querySelector(".total-count-wrapper .animated-counter");
+                document.querySelectorAll(".animated-counter").forEach((counter) => {
+                    if (counter !== totalCounter) {
+                        const targetVal = parseFloat(counter.getAttribute("data-target"));
+                        if (!isNaN(targetVal)) {
+                            counter.innerText = targetVal.toLocaleString('en-US', {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            });
+                        }
+                    }
+                });
+
                 // Define media queries matching Bootstrap 5 breakpoints
                 mm.add({
                     isDesktop: "(min-width: 768px)",
@@ -520,7 +534,7 @@
                 }, (context) => {
                     const { isDesktop } = context.conditions;
 
-                    // 1. Create a fresh timeline for the active viewport state
+                    // 2. Create a fresh timeline for the active viewport state
                     const masterTimeline = gsap.timeline({
                         scrollTrigger: {
                             trigger: ".budget-graphics-container",
@@ -529,7 +543,7 @@
                         }
                     });
 
-                    // 2. Query only the visible segments based on the current viewport
+                    // 3. Query only the visible segments based on the current viewport
                     const categorySegments = isDesktop
                         ? document.querySelectorAll(".category-chart-wrapper .category-container-group .progress-segment")
                         : document.querySelectorAll(".category-chart-wrapper .mobile-chart-fallback .progress-segment");
@@ -538,13 +552,8 @@
                         ? document.querySelectorAll(".programme-chart-wrapper .programme-container-group .progress-segment")
                         : document.querySelectorAll(".programme-chart-wrapper .mobile-chart-fallback .progress-segment");
 
-                    // 3. Query only the visible counters (all on desktop, but only the main total on mobile)
-                    const counters = isDesktop
-                        ? document.querySelectorAll(".animated-counter")
-                        : document.querySelectorAll(".total-count-wrapper .animated-counter");
-
                     // ==========================================================================
-                    // 1. ANIMATE PROGRESS SEGMENTS
+                    // ANIMATE PROGRESS SEGMENTS
                     // ==========================================================================
 
                     // --- Chart 1: By Category ---
@@ -574,28 +583,28 @@
                     });
 
                     // ==========================================================================
-                    // 2. ANIMATE COUNTERS
+                    // ANIMATE ONLY THE MAIN ACTUAL DEPARTMENT EXPENDITURE TOTAL COUNTER
                     // ==========================================================================
-                    counters.forEach((counter) => {
-                        const targetVal = parseFloat(counter.getAttribute("data-target"));
+                    if (totalCounter) {
+                        const targetVal = parseFloat(totalCounter.getAttribute("data-target"));
 
-                        // Reset counter starting text to zero before animation starts
-                        counter.innerText = "0.00";
+                        // Set starting total value to 0.00 before animation triggers
+                        totalCounter.innerText = "0.00";
 
-                        masterTimeline.to(counter, {
+                        masterTimeline.to(totalCounter, {
                             innerText: targetVal,
                             duration: 2.8,
                             snap: { innerText: 0.01 },
                             ease: "power1.out",
                             onUpdate: function () {
-                                const currentVal = parseFloat(counter.innerText);
-                                counter.innerText = currentVal.toLocaleString('en-US', {
+                                const currentVal = parseFloat(totalCounter.innerText);
+                                totalCounter.innerText = currentVal.toLocaleString('en-US', {
                                     minimumFractionDigits: 2,
                                     maximumFractionDigits: 2
                                 });
                             }
                         }, "runBars");
-                    });
+                    }
 
                     // Return clean-up function so GSAP clears out old timelines/triggers on viewport change
                     return () => {
