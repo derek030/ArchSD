@@ -4479,3 +4479,64 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 33%;
 }
 
+/* ==========================================================================
+   Key Awards Grid Gallery Styles
+   ========================================================================== */
+.key-award-img-container {
+    background-color: #D3F3B3; /* Branding light-green color as background/placeholder */
+    aspect-ratio: 16 / 9;      /* Locks modern responsive horizontal frame ratio */
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.key-award-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Crops the image to cleanly fill the 16:9 container */
+}
+.key-award-title {
+    font-family: "Monda", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+    color: var(--mainPinkColor);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.key-award-title strong {
+    font-weight: 700;
+}
+.key-award-point {
+    margin-bottom: 1.25rem;
+}
+.key-award-name-line {
+    position: relative;
+    padding-left: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    color: #000000;
+    margin-bottom: 0.25rem;
+}
+/* Vertical green bar next to award scheme title */
+.key-award-name-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 4px;
+    height: 1rem;
+    background-color: var(--mainGreenColor);
+}
+.key-award-details {
+    padding-left: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: #565A5F;
+}
+
