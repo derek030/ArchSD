@@ -4540,3 +4540,32 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: #565A5F;
 }
 
+/* ==========================================================================
+   Key Awards Grid Gallery Styles
+   ========================================================================== */
+.key-award-img-container {
+    position: relative;
+    background-color: #D3F3B3; /* Branding light-green color as background/placeholder */
+    aspect-ratio: 16 / 9;      /* Locks modern responsive horizontal frame ratio */
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+.key-award-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Crops the image to cleanly fill the 16:9 container */
+    transition: opacity 0.3s ease-in-out;
+}
+.key-award-img.img-hover {
+    opacity: 0;
+}
+.key-award-item:hover .key-award-img.img-default {
+    opacity: 0;
+}
+.key-award-item:hover .key-award-img.img-hover {
+    opacity: 1;
+}
+
