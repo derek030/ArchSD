@@ -4671,3 +4671,197 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: auto;
     display: block;
 }
+
+
+/* ==========================================================================
+   Data Summary Accordion & Table Styles
+   ========================================================================== */
+
+/* Accordion Container */
+.data-summary-accordion {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 2rem;
+    background: transparent;
+}
+
+/* Accordion Header - Collapse State */
+.accordion-header-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--tableGreyColor);
+    border: none;
+    border-top: 4px solid var(--mainGreenColor);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    outline: none;
+}
+
+/* Accordion Header - Hover State */
+.accordion-header-btn:hover,
+.accordion-header-btn:focus-visible {
+    border-top: 4px solid #B8BDC5; 
+    background-color: color-mix(in srgb, var(--mainGreenColor) 30%, transparent);
+    outline: none;
+}
+
+/* Accordion Icon (+ / -) */
+.accordion-icon {
+    font-family: 'Monda', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--mainPinkColor, #ff32cd);
+    margin-right: 1.5rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+/* Accordion Title */
+.accordion-title {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.875rem; /* ~30px */
+    font-weight: 700;
+    color: var(--darkGreyColor, #565A5F);
+    line-height: 1.2;
+}
+/* When active/expanded */
+.accordion-item.active .accordion-header-btn {
+    background-color: transparent; /* No header background when expanded, as seen in mockup */
+    border-top: 5px solid var(--mainGreenColor, #82EF00);
+}
+/* Accordion Content */
+.accordion-content {
+    background-color: #ffffff;
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+}
+.accordion-content-inner {
+    padding: 2rem 0;
+}
+/* Table styles */
+.summary-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+.summary-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+/* Header styles */
+.summary-data-table thead th {
+    font-family: 'Monda', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000000;
+    text-align: right;
+    padding: 12px 15px;
+    border-bottom: none;
+}
+.summary-data-table thead th.unit-header {
+    text-align: left;
+}
+.summary-data-table thead tr {
+    border-bottom: 4px solid var(--mainPinkColor, #ff32cd);
+}
+/* Category column (rowspan) */
+.summary-data-table td.category-cell {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--mainPinkColor, #ff32cd);
+    vertical-align: top;
+    padding: 20px 24px 20px 0;
+    text-align: left;
+    width: 20%;
+    border: none;
+}
+/* Sub-headers inside table */
+.summary-data-table tr.sub-header-row td {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #000000;
+    padding: 15px 15px 15px 0;
+    border-bottom: 1.5px solid #414646;
+    text-align: left;
+}
+.summary-data-table tr.sub-header-row td.sub-header-title {
+    font-weight: 700;
+}
+/* Data rows */
+.summary-data-table tr.data-row td {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #565a5f;
+    padding: 12px 15px 12px 0;
+    border-bottom: 1px solid #edf0f0;
+    text-align: left;
+}
+.summary-data-table tr.data-row td.metric-col {
+    text-align: left;
+}
+.summary-data-table tr.data-row td.unit-col {
+    text-align: left;
+}
+.summary-data-table tr.data-row td.val-col {
+    text-align: right;
+}
+/* Ends of sub-sections have black borders */
+.summary-data-table tr.section-end-row td {
+    border-bottom: 1.5px solid #414646;
+}
+/* Highlighted Column (2025) */
+.summary-data-table .col-highlight {
+    background-color: #f4f6f6;
+    font-weight: 500;
+}
+/* Footnotes */
+.table-footnotes {
+    margin-top: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #565a5f;
+    line-height: 1.5;
+}
+.table-footnotes p {
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    color: #565a5f;
+}
+/* Responsive Accordion and Table */
+@media (max-width: 767.98px) {
+    .accordion-header-btn {
+        padding: 1rem;
+    }
+    .accordion-title {
+        font-size: 1.25rem;
+    }
+    .accordion-icon {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+    .summary-data-table td.category-cell {
+        display: block;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    .summary-data-table tr.sub-header-row td,
+    .summary-data-table tr.data-row td {
+        padding: 8px 10px 8px 0;
+    }
+}
