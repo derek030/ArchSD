@@ -4736,13 +4736,13 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-family: 'Monda', sans-serif;
     font-size: 1.875rem; /* ~30px */
     font-weight: 700;
-    color: var(--darkGreyColor, #565A5F);
+    color: var(--darkGreyColor);
     line-height: 1.2;
 }
 /* When active/expanded */
 .accordion-item.active .accordion-header-btn {
     background-color: transparent; /* No header background when expanded, as seen in mockup */
-    border-top: 5px solid var(--mainGreenColor, #82EF00);
+    border-top: 5px solid var(--mainGreenColor);
 }
 /* Accordion Content */
 .accordion-content {
@@ -4752,7 +4752,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     opacity: 0;
 }
 .accordion-content-inner {
-    padding: 2rem 0;
+    padding-bottom: 2rem;
     padding-left: 78px;
 }
 /* Table styles */
@@ -4765,6 +4765,20 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 100%;
     border-collapse: collapse;
     font-family: 'Inter', sans-serif;
+}
+.summary-data-table td.category-cell {
+    width: 16% !important;
+}
+.summary-data-table td.metric-col {
+    width: 50% !important;
+}
+.summary-data-table th.unit-header,
+.summary-data-table td.unit-col {
+    width: 8% !important;
+}
+.summary-data-table th.year-header,
+.summary-data-table td.val-col {
+    width: 8% !important;
 }
 /* Header styles */
 .summary-data-table thead th {
@@ -4863,6 +4877,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 .summary-data-table td.table-footnotes-cell p {
     margin-bottom: 4px !important;
+    color: var(--darkGreyColor);
 }
 /* Responsive Accordion and Table */
 @media (max-width: 767.98px) {
