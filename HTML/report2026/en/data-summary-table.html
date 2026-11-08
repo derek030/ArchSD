@@ -82,7 +82,11 @@
                     <!-- Environmental Performance Item -->
                     <div class="accordion-item" id="env-item">
                         <button class="accordion-header-btn" aria-expanded="false" aria-controls="env-content">
-                            <span class="accordion-icon">+</span>
+                            <span class="accordion-icon">
+                                <img class="plus-icon" src="../assets/images/menu-plus-on-pink.svg" alt="">
+                                <img class="minus-icon" src="../assets/images/menu-plus-open-pink.svg" alt=""
+                                    style="display: none;">
+                            </span>
                             <span class="accordion-title">Environmental Performance</span>
                         </button>
                         <div id="env-content" class="accordion-content">
@@ -203,7 +207,11 @@
                     <!-- Social Performance Item -->
                     <div class="accordion-item" id="social-item">
                         <button class="accordion-header-btn" aria-expanded="false" aria-controls="social-content">
-                            <span class="accordion-icon">+</span>
+                            <span class="accordion-icon">
+                                <img class="plus-icon" src="../assets/images/menu-plus-on-pink.svg" alt="">
+                                <img class="minus-icon" src="../assets/images/menu-plus-open-pink.svg" alt=""
+                                    style="display: none;">
+                            </span>
                             <span class="accordion-title">Social Performance</span>
                         </button>
                         <div id="social-content" class="accordion-content">
@@ -324,13 +332,16 @@
                 $(".accordion-header-btn").click(function () {
                     var $item = $(this).closest(".accordion-item");
                     var $content = $item.find(".accordion-content");
-                    var $icon = $item.find(".accordion-icon");
+                    var $plusIcon = $item.find(".plus-icon");
+                    var $minusIcon = $item.find(".minus-icon");
                     var isExpanded = $item.hasClass("active");
 
                     if (isExpanded) {
                         // Close the item
                         $item.removeClass("active");
                         $(this).attr("aria-expanded", "false");
+                        $plusIcon.show();
+                        $minusIcon.hide();
                         gsap.to($content, {
                             height: 0,
                             duration: 0.4,
@@ -344,18 +355,18 @@
                             duration: 0.2,
                             ease: "power2.out"
                         });
-                        $icon.text("+");
                     } else {
                         // Open the item
                         $item.addClass("active");
                         $(this).attr("aria-expanded", "true");
+                        $plusIcon.hide();
+                        $minusIcon.show();
                         $content.show();
                         gsap.killTweensOf($content);
                         gsap.fromTo($content,
                             { height: 0, opacity: 0 },
                             { height: "auto", opacity: 1, duration: 0.5, ease: "power2.out" }
                         );
-                        $icon.text("-");
                     }
                 });
             });
