@@ -4574,3 +4574,100 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     opacity: 1;
 }
 
+/* ==========================================================================
+   Environmental Performance Custom Images Max-Sizing Stylesheet
+   ========================================================================== */
+
+/* --- Energy Usage --- */
+.img-direct-energy-1 {
+    max-width: 100%;
+    max-height: 141px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+.img-direct-energy-2 {
+    max-width: 100%;
+    max-height: 119px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+.img-indirect-energy-1 {
+    max-width: 100%;
+    max-height: 315px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+.img-indirect-energy-2 {
+    max-width: 100%;
+    max-height: 130px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+.img-energy-saved-1 {
+    max-width: 100%;
+    max-height: 125px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+.img-energy-saved-2 {
+    max-width: 100%;
+    max-height: 196px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+    margin-top: -60px;
+}
+
+/* --- Green Building Commitments --- */
+.img-green-building-1 {
+    max-width: 100%;
+    max-height: 316px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+.img-green-building-2 {
+    max-width: 100%;
+    max-height: 216px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+/* --- Carbon Emissions --- */
+.img-carbon-emissions {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+/* --- Air Emissions --- */
+.img-air-emissions {
+    max-width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
+
+/* --- Water Usage --- */
+.img-water-usage {
+    max-width: 100%;
+    max-height: 210px;
+    object-fit: contain;
+    width: auto;
+    display: block;
+}
