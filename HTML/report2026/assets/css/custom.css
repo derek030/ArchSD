@@ -3891,7 +3891,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     content: "";
     position: absolute;
     left: 0;
-    top: 2px; /* Vertically aligns the indicator with the first line of text */
     width: 6px;
     height: 35px;
     background-color: var(--mainGreenColor);
