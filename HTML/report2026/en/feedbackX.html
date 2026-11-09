@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD | Feedback Form</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monda:wght@400..700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Site favicon and custom styles -->
+    <link rel="shortcut icon" href="../assets/images/cover.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/custom.css" type="text/css">
+</head>
+
+<body class="white-header">
+
+    <!-- Accessibility: Skip Link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Page header and site logos -->
+    <header class="fixed-header d-flex align-items-center">
+        <div class="container h-100">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-8 asd-logo d-none d-sm-block"><a href="https://www.archsd.gov.hk/en/"
+                        class="nav-link d-flex align-items-end" target="_blank"><img src="../assets/images/asd-logo.svg"
+                            alt="Architectural Services Department (ArchSD) Logo"
+                            title="Sustainability Report 2026"></a></div>
+                <div class="col-8 asd-logo d-block d-sm-none"><a href="https://www.archsd.gov.hk/en/"
+                        class="nav-link d-flex align-items-end" target="_blank"><img
+                            src="../assets/images/asd-logoM.svg" alt="Architectural Services Department (ArchSD) Logo"
+                            title="Sustainability Report 2026"></a>
+                </div>
+                <div class="col-4 SD2026 site-title"><a href="index.html" class="nav-link "><img
+                            src="../assets/images/SD2026.svg" alt="Sustainability Report 2026 Home"
+                            title="Sustainability Report 2026"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main page container -->
+    <div class="container">
+
+        <!-- menu -->
+        <div id="nav-placeholder"></div>
+
+        <main id="main-content" class="row feedback-page" tabindex="-1">
+
+            <h1 class="accessibility">Feedback</h1>
+            <div class="page-title d-none" aria-hidden="true">Feedback</div>
+
+            <!-- Introduction panel (Takes up 4 columns) -->
+            <div class="col-12 col-md-4" role="region" aria-labelledby="feedback-title">
+                <div class="title-block">
+                    <h2 id="feedback-title" class="section-title">Feedback</h2>
+                </div>
+
+                <div class="text-muted">
+                    <div class="p2-body-style feedback-h2-content">
+                        Thank you for reading our report, we would like to hear your feedback.
+                    </div>
+                    <div class="p2-body-style feedback-h2-content">
+                        Your comments and suggestions to this short survey will help us improve our report - and it only
+                        takes a couple of minutes.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback questionnaire (Takes up 7 columns, offset by 1 column) -->
+            <form id="feedbackForm" class="col-12 col-md-7 offset-md-1 ps-lg-0">
+
+                <!-- Question 1 -->
+                <fieldset class="feedback-border-brand-pink fieldset-q1">
+                    <div class="row">
+
+                        <!-- Question title and description -->
+                        <div class="col-12 col-sm-4">
+                            <div class="q-header">
+                                <legend class="p4-table-title">
+                                    Why did you read our Sustainability Report 2026?
+                                </legend>
+                                <p class="p2-body-style ">
+                                    You may choose more than one
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Question options -->
+                        <div class="col-12 col-sm-8">
+                            <div class="q-content d-flex flex-column">
+
+                                <!-- Option 1 -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="checkbox" id="q1-opt1" class="feedback-form-checkbox q1-checkbox me-3">
+                                    <label for="q1-opt1" class="p5-table-body m-0">General Interest</label>
+                                </div>
+
+                                <!-- Option 2 -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="checkbox" id="q1-opt2" class="feedback-form-checkbox q1-checkbox me-3">
+                                    <label for="q1-opt2" class="p5-table-body m-0">Our Sustainability Performance
+                                        Benchmarking</label>
+                                </div>
+
+                                <!-- Option 3 -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="checkbox" id="q1-opt3" class="feedback-form-checkbox q1-checkbox me-3">
+                                    <label for="q1-opt3" class="p5-table-body m-0">Research and Educational
+                                        Purposes</label>
+                                </div>
+
+                                <!-- Option 4 -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="checkbox" id="q1-opt4" class="feedback-form-checkbox q1-checkbox me-3">
+                                    <label for="q1-opt4" class="p5-table-body m-0">Investment Purposes</label>
+                                </div>
+
+                                <!-- Other option with inline layout -->
+                                <div class="option-row d-flex align-items-center flex-wrap flex-sm-nowrap">
+                                    <input type="checkbox" id="q1-other"
+                                        class="feedback-form-checkbox q1-checkbox me-3">
+                                    <label for="q1-other" id="q1-other-label"
+                                        class="p5-table-body m-0 me-2 text-nowrap">Other(s), please
+                                        specify</label>
+                                    <input type="text" id="q1-other-text"
+                                        class="q1-other-text p5-table-body bg-light border-0 outline-none w-100 px-1"
+                                        aria-labelledby="q1-other-label">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+
+                <!-- Question 2 -->
+                <fieldset>
+                    <!-- Rating scale header (Unaltered, for reference) -->
+                    <div class="row rating-header d-none d-sm-flex" aria-hidden="true">
+                        <div class="col-sm-5"></div>
+                        <div class="col-sm-7">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col rating-header-label">Excellent</div>
+                                <div class="col rating-header-label">Good</div>
+                                <div class="col rating-header-label">Fair</div>
+                                <div class="col rating-header-label">Marginal</div>
+                                <div class="col rating-header-label">Poor</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section separator -->
+                    <div class="feedback-border-brand-pink-q2"></div>
+
+                    <!-- The Row containing the titles and the entire rating matrix -->
+                    <div class="row">
+
+                        <!-- Rating section title -->
+                        <div class="col-12 col-sm-4">
+                            <div class="q-header">
+                                <legend class="p4-table-title">
+                                    Please rate the quality of our Sustainability Report 2026
+                                </legend>
+                                <div class="p2-body-style">
+                                    based on the following criteria
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-8">
+                            <div class="q-content d-flex flex-column">
+
+                                <!-- Mobile-Only Rating Header (d-flex will show it, d-sm-none will hide on desktop) -->
+                                <div class="row rating-header d-flex d-sm-none">
+                                    <div class="col-4"></div>
+                                    <div class="col-8 rating-container">
+                                        <div class="rating-labels-wrapper">
+                                            <div class="rating-header-label">Excellent</div>
+                                            <div class="rating-header-label">Good</div>
+                                            <div class="rating-header-label">Fair</div>
+                                            <div class="rating-header-label">Marginal</div>
+                                            <div class="rating-header-label">Poor</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Rating: Content clarity -->
+                                <div class="row align-items-center q2-option">
+                                    <div class="p5-table-body col-4" id="clarity-title">Content clarity</div>
+                                    <div class="col-8">
+                                        <div class="rating-options-wrapper" role="radiogroup"
+                                            aria-labelledby="clarity-title">
+                                            <div class="rating-option">
+                                                <input type="radio" id="clarity-excellent" name="clarity"
+                                                    value="excellent" class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="clarity-good" name="clarity" value="good"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="clarity-fair" name="clarity" value="fair"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="clarity-marginal" name="clarity"
+                                                    value="marginal" class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="clarity-poor" name="clarity" value="poor"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="q2-border" aria-hidden="true"></div>
+
+                                <!-- Rating: Visual design -->
+                                <div class="row align-items-center q2-option">
+                                    <div class="p5-table-body col-4" id="visual-title">Visual design</div>
+                                    <div class="col-8">
+                                        <div class="rating-options-wrapper" role="radiogroup"
+                                            aria-labelledby="visual-title">
+                                            <div class="rating-option">
+                                                <input type="radio" id="visual-excellent" name="visual"
+                                                    value="excellent" class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="visual-good" name="visual" value="good"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="visual-fair" name="visual" value="fair"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="visual-marginal" name="visual" value="marginal"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="visual-poor" name="visual" value="poor"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="q2-border" aria-hidden="true"></div>
+
+                                <!-- Rating: Ease of finding information -->
+                                <div class="row align-items-center q2-option">
+                                    <div class="p5-table-body col-4" id="ease-title">Ease of finding information</div>
+                                    <div class="col-8">
+                                        <div class="rating-options-wrapper" role="radiogroup"
+                                            aria-labelledby="ease-title">
+                                            <div class="rating-option">
+                                                <input type="radio" id="ease-excellent" name="ease" value="excellent"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="ease-good" name="ease" value="good"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="ease-fair" name="ease" value="fair"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="ease-marginal" name="ease" value="marginal"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                            <div class="rating-option">
+                                                <input type="radio" id="ease-poor" name="ease" value="poor"
+                                                    class="feedback-form-radio">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Question 3 -->
+                <fieldset class="feedback-border-brand-pink">
+                    <div class="row">
+                        <!-- Question title -->
+                        <div class="col-12 col-sm-4">
+                            <div class="q-header">
+                                <legend class="p4-table-title">
+                                    Which of the following best describes you?
+                                </legend>
+                            </div>
+                        </div>
+
+                        <!-- Respondent type options -->
+                        <div class="col-12 col-sm-8">
+                            <div class="q-content d-flex flex-column">
+
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="user-type-academic" name="user_type"
+                                        class="feedback-form-radio me-3">
+                                    <label for="user-type-academic" class="p5-table-body">Academic / Professional
+                                        Body</label>
+                                </div>
+
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="user-type-staff" name="user_type"
+                                        class="feedback-form-radio me-3">
+                                    <label for="user-type-staff" class="p5-table-body">ArchSD's Staff</label>
+                                </div>
+
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="user-type-industry" name="user_type"
+                                        class="feedback-form-radio me-3">
+                                    <label for="user-type-industry" class="p5-table-body">
+                                        Construction industry / Consultant / Contractor / Supplier
+                                    </label>
+                                </div>
+
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="user-type-public" name="user_type"
+                                        class="feedback-form-radio me-3">
+                                    <label for="user-type-public" class="p5-table-body">General Public</label>
+                                </div>
+
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="user-type-ngo" name="user_type"
+                                        class="feedback-form-radio me-3">
+                                    <label for="user-type-ngo" class="p5-table-body">Non-governmental
+                                        Organisation</label>
+                                </div>
+
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="user-type-gov" name="user_type"
+                                        class="feedback-form-radio me-3">
+                                    <label for="user-type-gov" class="p5-table-body">Other Government Department</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <!-- Question 4 -->
+                <fieldset class="feedback-border-brand-pink">
+                    <div class="row">
+                        <!-- Question title -->
+                        <div class="col-12 col-sm-4">
+                            <div class="q-header">
+                                <legend class="p4-table-title">
+                                    Where did you learn about the ArchSD Sustainability Report?
+                                </legend>
+                            </div>
+                        </div>
+
+                        <!-- Corrected Information source options -->
+                        <div class="col-12 col-sm-8">
+                            <div class="q-content d-flex flex-column">
+
+                                <!-- Option: Mass Media -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="source-massmedia" name="source" value="massmedia"
+                                        class="feedback-form-radio me-3">
+                                    <label for="source-massmedia" class="p5-table-body">
+                                        Mass media (e.g. TV, newspaper, magazine, radio)
+                                    </label>
+                                </div>
+
+                                <!-- Option: Internet -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="source-internet" name="source" value="internet"
+                                        class="feedback-form-radio me-3">
+                                    <label for="source-internet" class="p5-table-body">
+                                        Internet (e.g. ArchSD Website and search engine)
+                                    </label>
+                                </div>
+
+                                <!-- Option: Exhibition -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="source-exhibition" name="source" value="exhibition"
+                                        class="feedback-form-radio me-3">
+                                    <label for="source-exhibition" class="p5-table-body">Exhibition</label>
+                                </div>
+
+                                <!-- Option: Social Media -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="source-socialmedia" name="source" value="socialmedia"
+                                        class="feedback-form-radio me-3">
+                                    <label for="source-socialmedia" class="p5-table-body">
+                                        Social Media <br> (e.g. Archi Tour@Facebook / architourhk@Instagram /
+                                        ARCHSDGOVHK@YouTube)
+                                    </label>
+                                </div>
+
+                                <!-- Option: Meeting -->
+                                <div class="option-row d-flex align-items-center">
+                                    <input type="radio" id="source-meeting" name="source" value="meeting"
+                                        class="feedback-form-radio me-3">
+                                    <label for="source-meeting" class="p5-table-body">Meeting / Seminar /
+                                        Workshop</label>
+                                </div>
+
+                                <!-- Option: Other (Corrected Inline Layout) -->
+                                <div class="option-row d-flex align-items-center flex-wrap flex-sm-nowrap">
+                                    <input type="radio" id="q4-other" name="source" value="other"
+                                        class="feedback-form-radio me-3">
+                                    <label for="q4-other" id="q4-other-label"
+                                        class="p5-table-body me-2 text-nowrap">Other(s), please
+                                        specify</label>
+                                    <input type="text" id="q4-other-text"
+                                        class="q4-other-text p5-table-body bg-light border-0 outline-none w-100 px-1"
+                                        aria-labelledby="q4-other-label">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+
+                <!-- Question 5 -->
+                <fieldset class="feedback-border-brand-pink">
+                    <div class="row">
+                        <!-- Question title -->
+                        <div class="col-12 col-sm-4">
+                            <div class="q-header">
+                                <label for="comments-textarea" class="p4-table-title">
+                                    Additional Comments
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Free-text feedback -->
+                        <div class="col-12 col-sm-8">
+                            <textarea id="comments-textarea"
+                                class="p5-table-body feedback-textarea-fixed p-3 border border-light bg-light"
+                                placeholder="Which section(s) of the report did you find most informative or useful? What would you suggest to help us improve the report quality? Do you have any comment or suggestion on our sustainability performance or future reports?"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="form-footer-notice">
+                    <p class="p2-body-style">
+                        You can also send an email to <a href="mailto:imu@archsd.gov.hk">imu@archsd.gov.hk</a>. The
+                        information will be used in strict confidence and for statistical purposes only.
+                    </p>
+                </div>
+
+                <!-- Form action buttons -->
+                <div class="d-flex justify-content-end align-items-center">
+
+                    <!-- Reset form -->
+                    <button type="reset" class="feedback-btn-reset" aria-label="Reset all form answers">
+                        <img src="../assets/images/appendix-feedback-reset-button.png" class="btn-img-default"
+                            alt="Reset">
+                        <img src="../assets/images/appendix-feedback-reset-button-hov.png" class="btn-img-hover"
+                            alt="Reset">
+                    </button>
+
+                    <div class="feedback-button-divider" aria-hidden="true"></div>
+
+                    <!-- Submit form -->
+                    <button type="submit" class="feedback-btn-submit" aria-label="Submit feedback form">
+                        <img src="../assets/images/appendix-feedback-submit-button.png" class="btn-img-default"
+                            alt="Submit">
+                        <img src="../assets/images/appendix-feedback-submit-button-hov.png" class="btn-img-hover"
+                            alt="Submit">
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- Previous and next page navigation -->
+            <div class="prev-next" id="prev-next">
+                <nav class="w-100 p-0" aria-label="Page navigation">
+                    <div class="row mx-0 g-0">
+
+                        <!-- Previous Page Link -->
+                        <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-start">
+                            <a href="report-verification.html" class="page-nav-link text-decoration-none"
+                                aria-label="Previous page">
+                                <div class="page-nav d-flex align-items-center">
+                                    <div class="page-nav-back d-flex align-items-center" aria-hidden="true">
+                                        <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="">
+                                    </div>
+                                    <p class="page-nav-title ms-2 mb-0">
+                                        <span class="visually-hidden">Previous page: </span><strong>Appendix</strong>
+                                        | Report Verification 
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Mobile Divider Line -->
+                        <div class="col-12 d-block d-sm-none p-0">
+                            <div class="page-nav-line"></div>
+                        </div>
+
+                        <!-- Next Page Link -->
+                        <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-end">
+                            <a href="glossary.html" class="page-nav-link text-decoration-none" aria-label="Next page">
+                                <div class="page-nav d-flex align-items-center justify-content-sm-end">
+                                    <p class="page-nav-title page-nav-title-next me-2 mb-0">
+                                        <span class="visually-hidden">Next page: </span><strong>Appendix</strong> |
+                                        Glossary
+                                    </p>
+                                    <div class="page-nav-next d-flex align-items-center" aria-hidden="true">
+                                        <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon"
+                                            style="transform: scaleX(-1);" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+        </main>
+
+        <!-- Site footer -->
+        <footer class="site-footer " role="contentinfo">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Footer accent line -->
+                    <div class="footer-green-bar"></div>
+
+                    <!-- Footer links -->
+                    <p class="mb-0 text-white-5">
+                        2026 &copy; |
+                        <a target="_blank" aria-label="Important notices (opens in a new window)"
+                            href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
+                            Important notices
+                        </a>
+                        |
+                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)"
+                            href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
+                            Privacy
+                        </a>
+                        |
+                        <a aria-label="Go to Sitemap" href="sitemap.html">
+                            Sitemap
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back-to-top button -->
+        <button type="button" id="back-to-top" tabindex="0" aria-label="Back to Top">
+            <img src="../assets/images/back-to-top.svg" alt="Back to Top" title="Back to Top">
+        </button>
+
+    </div>
+
+    <!-- JavaScript libraries -->
+    <script src="../assets/js/gsap.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
+
+    <!-- Site utility scripts -->
+    <script src="../assets/js/qrcode.min.js" defer></script>
+    <script src="../assets/js/general.js" defer></script>
+    <script src="../assets/js/menu.js" defer></script>
+
+    <!-- jQuery -->
+    <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+
+    <!-- Feedback form validation and interaction logic -->
+    <script>
+        $(function () {
+            // Form submission validation
+            $('#feedbackForm').on('submit', function (e) {
+                e.preventDefault();
+
+                // Q1: At least one reason must be selected.
+                var q1Checked = $('.q1-checkbox:checked').length;
+
+                if (q1Checked === 0) {
+                    alert('Please select at least one reason for reading the report (Question 1).');
+                    return false;
+                }
+
+                // Q1: Validate the "Other" text when the option is selected.
+                if ($('#q1-other').is(':checked') && $.trim($('.q1-other-text').val()) === '') {
+                    alert('Please specify your other reason for reading the report.');
+                    $('.q1-other-text').focus();
+                    return false;
+                }
+
+                // Q2: All three rating criteria must be answered.
+                if (!$('[name=clarity]:checked', this).val()) {
+                    alert('Please rate the "Content clarity" (Question 2).');
+                    return false;
+                } else if (!$('[name=visual]:checked', this).val()) {
+                    alert('Please rate the "Visual Design" (Question 2).');
+                    return false;
+                } else if (!$('[name=ease]:checked', this).val()) {
+                    alert('Please rate the "Ease of finding information" (Question 2).');
+                    return false;
+                }
+
+                // Q3: One respondent type must be selected.
+                if (!$('[name=user_type]:checked', this).val()) {
+                    alert('Please select which description best describes you (Question 3).');
+                    return false;
+                }
+
+                // Q4: One information source must be selected.
+                if (!$('[name=source]:checked', this).val()) {
+                    alert('Please select where you learned about our Sustainability Report (Question 4).');
+                    return false;
+                }
+
+                // Q4: Validate the "Other" text when the option is selected.
+                if ($('#q4-other').is(':checked') && $.trim($('.q4-other-text').val()) === '') {
+                    alert('Please specify where you learned about our report.');
+                    $('.q4-other-text').focus();
+                    return false;
+                }
+
+                // Validation passed. Redirect to the thank-you page.
+                window.location.href = "thankyou.html";
+            });
+
+            // Form reset handling
+            $('#feedbackForm').on('reset', function () {
+                // Clear the additional text fields after the form is reset.
+                setTimeout(function () {
+                    $('.q1-other-text').val('');
+                    $('.q4-other-text').val('');
+                    $('.q1-other-text, .q4-other-text').blur();
+                    console.log("Form reset successfully.");
+                }, 10);
+            });
+
+        });
+
+        // GSAP Scroll-Triggered Animations (Dynamic Enter & Exit)
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Set the initial "hidden" state for all question blocks.
+        gsap.set("#feedbackForm > fieldset, #feedbackForm > div.feedback-border-brand-pink", {
+            autoAlpha: 0,
+            y: 50
+        });
+
+        // Animate each block dynamically based on scroll direction.
+        ScrollTrigger.batch("#feedbackForm > fieldset, #feedbackForm > div.feedback-border-brand-pink", {
+            start: "top 90%", // Trigger when entering from the bottom
+            end: "bottom 10%", // Trigger when exiting through the top
+
+            // Trigger entrance animation when scrolling down
+            onEnter: batch => gsap.to(batch, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                stagger: 0.15,
+                overwrite: "auto"
+            }),
+
+            // TRIGGER EXIT: Dismiss and slide down when scrolling back UP past the trigger point
+            onLeaveBack: batch => gsap.to(batch, {
+                autoAlpha: 0,
+                y: 50,
+                duration: 0.5,
+                ease: "power2.in",
+                stagger: 0.1,
+                overwrite: "auto"
+            }),
+
+            // Keep elements visible when scrolling way past them to the bottom
+            onLeave: () => { },
+            onEnterBack: () => { }
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

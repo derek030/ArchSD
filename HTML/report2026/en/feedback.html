@@ -493,15 +493,14 @@
 
                         <!-- Previous Page Link -->
                         <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-start">
-                            <a href="report-verification.html" class="page-nav-link text-decoration-none"
+                            <a href="javascript:void(0);" class="page-nav-link text-decoration-none"
                                 aria-label="Previous page">
                                 <div class="page-nav d-flex align-items-center">
                                     <div class="page-nav-back d-flex align-items-center" aria-hidden="true">
                                         <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="">
                                     </div>
                                     <p class="page-nav-title ms-2 mb-0">
-                                        <span class="visually-hidden">Previous page: </span><strong>Appendix</strong>
-                                        | Report Verification 
+                                        <span class="visually-hidden">Previous page: </span>Report Verification
                                     </p>
                                 </div>
                             </a>
@@ -514,11 +513,11 @@
 
                         <!-- Next Page Link -->
                         <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-end">
-                            <a href="glossary.html" class="page-nav-link text-decoration-none" aria-label="Next page">
+                            <a href="javascript:void(0);" class="page-nav-link text-decoration-none"
+                                aria-label="Next page">
                                 <div class="page-nav d-flex align-items-center justify-content-sm-end">
-                                    <p class="page-nav-title page-nav-title-next me-2 mb-0">
-                                        <span class="visually-hidden">Next page: </span><strong>Appendix</strong> |
-                                        Glossary
+                                    <p class="page-nav-title me-2 mb-0">
+                                        <span class="visually-hidden">Next page: </span>Glossary
                                     </p>
                                     <div class="page-nav-next d-flex align-items-center" aria-hidden="true">
                                         <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon"
@@ -580,6 +579,7 @@
     <script src="../assets/js/qrcode.min.js" defer></script>
     <script src="../assets/js/general.js" defer></script>
     <script src="../assets/js/menu.js" defer></script>
+    <script src="../assets/js/recaptcha.js" defer></script>
 
     <!-- jQuery -->
     <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
@@ -587,6 +587,177 @@
     <!-- Feedback form validation and interaction logic -->
     <script>
         $(function () {
+            /* ==========================================================
+               Strapi feedback endpoint
+               本機開發（localhost / 127.0.0.1 / file:）→ http://localhost:1337
+               其他（含 https://archsd.wcr.hk）      → https://admin.archsd.wcr.hk
+               ========================================================== */
+            var IS_LOCAL_DEV = (location.protocol === 'file:') ||
+                               (location.hostname === 'localhost') ||
+                               (location.hostname === '127.0.0.1');
+            var STRAPI_BASE = IS_LOCAL_DEV ? 'http://localhost:1337' : 'https://admin.archsd.wcr.hk';
+            var STRAPI_ENDPOINT = STRAPI_BASE + '/api/feedback-forms?status=published';
+
+            // debug 完成後改 false 即可關閉 payload popup
+            var DEBUG_SHOW_PAYLOAD_POPUP = false;
+
+            // 載入時印出，方便確認瀏覽器係咪載入到最新版（而唔係 cache）
+            console.log('[feedback] feedback.html loaded. endpoint =', STRAPI_ENDPOINT,
+                '| popup =', DEBUG_SHOW_PAYLOAD_POPUP);
+
+            // Q1 checkbox id → Strapi 值
+            var Q1_VALUE_MAP = {
+                'q1-opt1': 'general_interest',
+                'q1-opt2': 'performance_benchmarking',
+                'q1-opt3': 'research_education',
+                'q1-opt4': 'investment',
+                'q1-other': 'other'
+            };
+
+            // Q3 radio 冇 value attribute，只有 id，所以用 id 做對照
+            var Q3_VALUE_MAP = {
+                'user-type-academic': 'academic_professional_body',
+                'user-type-staff': 'archsd_staff',
+                'user-type-industry': 'construction_industry',
+                'user-type-public': 'general_public',
+                'user-type-ngo': 'ngo',
+                'user-type-gov': 'other_gov_department'
+            };
+
+            // 依表單內容組成要 POST 去 Strapi 的 payload
+            function buildFeedbackPayload() {
+                var payload = {
+                    // Strapi text 型別：多選值用逗號分隔儲存（後台列表可直接看到）
+                    q1_reasons: $('.q1-checkbox:checked').map(function () {
+                        return Q1_VALUE_MAP[this.id] || this.id;
+                    }).get().join(','),
+                    q1_other: $.trim($('#q1-other-text').val()),
+                    q2_clarity: $('[name=clarity]:checked').val() || '',
+                    q2_visual: $('[name=visual]:checked').val() || '',
+                    q2_ease: $('[name=ease]:checked').val() || '',
+                    q3_user_type: Q3_VALUE_MAP[$('[name=user_type]:checked').attr('id')] || '',
+                    q4_source: $('[name=source]:checked').val() || '',
+                    q4_other: $.trim($('#q4-other-text').val()),
+                    comments: $.trim($('#comments-textarea').val()),
+                    language: 'en',
+                    submitted_at: new Date().toISOString()
+                };
+
+                // Strapi 用 z.enum() 驗證 enumeration，空字串會回 400，所以要剔走空值
+                ['q2_clarity', 'q2_visual', 'q2_ease', 'q3_user_type', 'q4_source'].forEach(function (key) {
+                    if (!payload[key]) { delete payload[key]; }
+                });
+
+                return payload;
+            }
+
+            // 只作 debug 用：顯示將要 POST 的資料
+            function showPayloadDebugPopup(payload, onProceed) {
+                var $modal = $(
+                    '<div class="feedback-debug-overlay" role="dialog" aria-modal="true" aria-labelledby="feedback-debug-title">' +
+                        '<div class="feedback-debug-dialog">' +
+                            '<h2 id="feedback-debug-title" class="feedback-debug-title">POST payload (debug)</h2>' +
+                            '<p class="feedback-debug-endpoint"></p>' +
+                            '<pre class="feedback-debug-json"></pre>' +
+                            '<div class="feedback-debug-actions">' +
+                                '<button type="button" class="feedback-debug-btn feedback-debug-cancel">Cancel</button>' +
+                                '<button type="button" class="feedback-debug-btn feedback-debug-send">Send &amp; Continue</button>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>'
+                );
+
+                $modal.find('.feedback-debug-endpoint').text('POST ' + STRAPI_ENDPOINT);
+                // 用 .text() 而唔用 .html()：comments 可能含 < >，避免 XSS
+                $modal.find('.feedback-debug-json').text(JSON.stringify(payload, null, 2));
+
+                function close() {
+                    $(document).off('keydown.feedbackDebug');
+                    $modal.remove();
+                }
+
+                $modal.on('click', function (e) { if (e.target === this) { close(); } });
+                $modal.find('.feedback-debug-cancel').on('click', close);
+                $modal.find('.feedback-debug-send').on('click', function () { close(); onProceed(); });
+                $(document).on('keydown.feedbackDebug', function (e) { if (e.key === 'Escape') { close(); } });
+
+                $('body').append($modal);
+                $modal.find('.feedback-debug-send').trigger('focus');
+            }
+
+            // 提交失敗時提示使用者（同時在 Console 印出詳細錯誤，方便 debug）
+            function showSubmitError(message) {
+                console.error('[feedback] Strapi 提交失敗:', message);
+                alert('Sorry, we could not submit your feedback.\n\n' + message +
+                    '\n\nPlease try again, or email your comments to imu@archsd.gov.hk.');
+            }
+
+            // POST 去 Strapi：只有成功才 redirect 去 thank you page；失敗會提示並保留表單內容
+            // recaptchaToken：提交前由 Recaptcha.getToken() 取得的 v3 token（未啟用時為空字串）
+            function sendFeedbackToStrapi(payload, recaptchaToken) {
+                var $submitBtn = $('.feedback-btn-submit');
+                $submitBtn.prop('disabled', true); // 防止重複提交
+
+                // 避免網絡／伺服器無回應時無限等待
+                var controller = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+                var timeoutId = controller ? setTimeout(function () { controller.abort(); }, 20000) : null;
+
+                fetch(STRAPI_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // reCAPTCHA v3 token 交後端 (Strapi) 向 Google 驗證。
+                        // 注意：Strapi 嘅 CORS 必須允許 'x-recaptcha-token' header
+                        // （見 config/middlewares.ts），否則瀏覽器會封鎖呢個請求。
+                        'x-recaptcha-token': recaptchaToken || ''
+                    },
+                    body: JSON.stringify({ data: payload }),     // Strapi 5 REST 格式
+                    signal: controller ? controller.signal : undefined
+                })
+                    .then(function (response) {
+                        return response.text().then(function (text) {
+                            var json = null;
+                            try { json = text ? JSON.parse(text) : null; } catch (e) { /* 非 JSON 回應 */ }
+                            if (!response.ok) {
+                                var serverMsg = json && json.error && json.error.message;
+                                throw new Error('Strapi responded ' + response.status +
+                                    (serverMsg ? ' (' + serverMsg + ')' : ''));
+                            }
+                            console.log('[feedback] Strapi 已建立文件:', json);
+                            return json;
+                        });
+                    })
+                    .then(function () {
+                        // 只有成功才去 thank you
+                        window.location.href = 'thankyou.html';
+                    })
+                    .catch(function (error) {
+                        console.error('[feedback] Strapi 提交失敗:', error, payload);
+                        var message;
+                        if (error && error.name === 'AbortError') {
+                            message = 'The request timed out. Please check your connection and try again.';
+                        } else if (error && error.message) {
+                            message = error.message;
+                        } else {
+                            message = 'Network error (the server may be unreachable, or the request was blocked).';
+                        }
+                        showSubmitError(message);
+                        // 保留表單內容，容許使用者重試；v3 token 一次性，下次提交會重新取得
+                        $submitBtn.prop('disabled', false);
+                    })
+                    .finally(function () {
+                        if (timeoutId) { clearTimeout(timeoutId); }
+                    });
+            }
+
+            // debug 用：可在 Console 直接呼叫（例：FeedbackDebug.buildFeedbackPayload()）
+            window.FeedbackDebug = {
+                endpoint: STRAPI_ENDPOINT,
+                buildFeedbackPayload: buildFeedbackPayload,
+                showPayloadDebugPopup: showPayloadDebugPopup,
+                sendFeedbackToStrapi: sendFeedbackToStrapi
+            };
+
             // Form submission validation
             $('#feedbackForm').on('submit', function (e) {
                 e.preventDefault();
@@ -637,8 +808,36 @@
                     return false;
                 }
 
-                // Validation passed. Redirect to the thank-you page.
-                window.location.href = "thankyou.html";
+                // Validation passed. 先組 payload、debug 檢查、POST 去 Strapi，之後才 redirect。
+                var payload = buildFeedbackPayload();
+
+                function send() {
+                    var $submitBtn = $('.feedback-btn-submit');
+                    $submitBtn.prop('disabled', true); // 防止重複提交（等待 token 期間）
+
+                    // reCAPTCHA v3：提交時即時取得 token（2 分鐘內有效、一次性）。
+                    if (window.Recaptcha && Recaptcha.isEnabled()) {
+                        Recaptcha.getToken('feedback_submit')
+                            .then(function (token) {
+                                sendFeedbackToStrapi(payload, token);
+                            })
+                            .catch(function (err) {
+                                console.error('[feedback] 取得 reCAPTCHA token 失敗:', err);
+                                showSubmitError('Could not verify reCAPTCHA. Please try again.');
+                                $submitBtn.prop('disabled', false);
+                            });
+                    } else {
+                        sendFeedbackToStrapi(payload, '');
+                    }
+                }
+
+                if (DEBUG_SHOW_PAYLOAD_POPUP) {
+                    showPayloadDebugPopup(payload, send);
+                } else {
+                    send();
+                }
+
+                return false;
             });
 
             // Form reset handling

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD | Search</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monda:wght@400..700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Site favicon and custom styles -->
+    <link rel="shortcut icon" href="../assets/images/cover.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/custom.css" type="text/css">
+</head>
+
+<body class="white-header">
+
+    <!-- Accessibility: Skip Link -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Page header and site logos -->
+    <header class="fixed-header d-flex align-items-center">
+        <div class="container h-100">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-8 asd-logo d-none d-sm-block"><a href="https://www.archsd.gov.hk/en/"
+                        class="nav-link d-flex align-items-end" target="_blank"><img src="../assets/images/asd-logo.svg"
+                            alt="Architectural Services Department (ArchSD) Logo"
+                            title="Sustainability Report 2026"></a></div>
+                <div class="col-8 asd-logo d-block d-sm-none"><a href="https://www.archsd.gov.hk/en/"
+                        class="nav-link d-flex align-items-end" target="_blank"><img
+                            src="../assets/images/asd-logoM.svg" alt="Architectural Services Department (ArchSD) Logo"
+                            title="Sustainability Report 2026"></a>
+                </div>
+                <div class="col-4 SD2026 site-title"><a href="index.html" class="nav-link "><img
+                            src="../assets/images/SD2026.svg" alt="Sustainability Report 2026 Home"
+                            title="Sustainability Report 2026"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main page container -->
+    <div class="container">
+
+        <!-- menu -->
+        <div id="nav-placeholder"></div>
+
+        <main id="main-content" class="row feedback-page" tabindex="-1">
+
+            <h1 class="accessibility">Search</h1>
+            <div class="page-title d-none" aria-hidden="true">Search</div>
+
+            <!-- Left Column: Search Input Area (1/3 Width) -->
+            <div class="col-12 col-lg-4">
+                <div class="title-block">
+                    <h2 class="section-title">Search</h2>
+                </div>
+
+                <!-- Search Form -->
+                <form id="searchForm" role="search" class="mb-4">
+                    <label for="searchInput" class="visually-hidden">Search Keyword</label>
+                    <div class="embedded-search-wrapper">
+                        <input type="text" id="searchInput" name="query" placeholder="Search for..."
+                            class="embedded-search-input" required>
+
+                        <!-- Embedded Search Button inside the input -->
+                        <button type="submit" class="embedded-search-btn" aria-label="Submit search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16" aria-hidden="true">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+
+
+                <!-- Search Meta Info (Dynamic Frontend Render) -->
+                <div id="searchMeta" class="small text-body-secondary" role="status" aria-live="polite">
+                    <!-- This will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Right Column: Search Results Area (2/3 Width) -->
+            <div class="col-12 col-lg-7 offset-lg-1 content-align-spacer" role="region"
+                aria-labelledby="search-results-heading">
+                <!-- Visually hidden heading for screen readers -->
+                <h2 id="search-results-heading" class="visually-hidden">Search Results</h2>
+
+                <!-- Spacer to vertically align first result with the search input field -->
+                <div class="search-results-align-spacer"></div>
+
+                <!-- Dynamic Results Wrapper -->
+                <div id="searchResults" class="d-flex flex-column">
+                    <!-- This will be populated by JavaScript -->
+                </div>
+                
+                <!-- NEW: Pagination container -->
+                <nav id="pagination-container" aria-label="Search results navigation"></nav>
+            </div>
+
+        </main>
+
+        <!-- Site footer -->
+        <footer class="site-footer mt-5" role="contentinfo">
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- Footer accent line -->
+                    <div class="footer-green-bar"></div>
+
+                    <!-- Footer links -->
+                    <p class="mb-0 text-white-5">
+                        2026 &copy; |
+                        <a target="_blank" aria-label="Important notices (opens in a new window)"
+                            href="https://www.archsd.gov.hk/en/important-notices.html" rel="noopener noreferrer">
+                            Important notices
+                        </a>
+                        |
+                        <a target="_blank" aria-label="Privacy Policy (opens in a new window)"
+                            href="https://www.archsd.gov.hk/en/privacy-policy.html" rel="noopener noreferrer">
+                            Privacy
+                        </a>
+                        |
+                        <a aria-label="Go to Sitemap" href="sitemap.html">
+                            Sitemap
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- Back-to-top button -->
+        <button type="button" id="back-to-top" tabindex="0" aria-label="Back to Top">
+            <img src="../assets/images/back-to-top.svg" alt="Back to Top" title="Back to Top">
+        </button>
+
+        <!-- JavaScript libraries -->
+        <script src="../assets/js/gsap.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/ScrollToPlugin.min.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/lottie.min.js" crossorigin="anonymous"></script>
+
+        <!-- Site utility scripts -->
+        <script src="../assets/js/qrcode.min.js" defer></script>
+        <script src="../assets/js/general.js" defer></script>
+        <script src="../assets/js/menu.js" defer></script>
+
+        <!-- jQuery -->
+        <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+
+        <!-- Pure Frontend Search Controller -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // --- CONFIGURATION ---
+                const ITEMS_PER_PAGE = 10;
+
+                // --- DOM ELEMENTS ---
+                const searchForm = document.getElementById('searchForm');
+                const searchInput = document.getElementById('searchInput');
+                const resultsContainer = document.getElementById('searchResults');
+                const searchMeta = document.getElementById('searchMeta');
+                const paginationContainer = document.getElementById('pagination-container');
+                
+                // --- STATE ---
+                let fullResults = [];
+                let currentPage = 1;
+                let currentKeyword = "sustainability project";
+
+                // --- INITIAL LOAD ---
+                performMockSearch(currentKeyword);
+
+                // --- EVENT LISTENERS ---
+                searchForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        currentKeyword = query;
+                        currentPage = 1; // Reset to first page on new search
+                        performMockSearch(currentKeyword);
+                    }
+                });
+
+                // --- CORE FUNCTIONS ---
+
+                /**
+                 * Simulates a search by generating a large set of placeholder data.
+                 */
+                function performMockSearch(keyword) {
+                    resultsContainer.innerHTML = '<p class="text-muted">Searching results...</p>';
+                    paginationContainer.innerHTML = ''; // Clear old pagination
+
+                    setTimeout(() => {
+                        const totalMockResults = 100; // Total items to generate
+                        const generatedItems = [];
+                        for (let i = 1; i <= totalMockResults; i++) {
+                            generatedItems.push({
+                                title: `Result ${i} for ${keyword}`,
+                                snippet: `...繁 简 SUSTAINABILITY REPORT 2021 search A A A ...Project Director/1 Mr. Michael Li Project...`,
+                                url: `www.archsd.gov.hk/report2026/en/item-${i}.html`,
+                                size: `${(15 + Math.random() * 20).toFixed(1)}K`
+                            });
+                        }
+
+                        fullResults = {
+                            keyword: keyword,
+                            totalResults: totalMockResults,
+                            searchTime: (Math.random() * 0.1).toFixed(3),
+                            items: generatedItems
+                        };
+                        
+                        // Display the first page of the new results
+                        displayPage(currentPage);
+
+                    }, 300); // 300ms simulated network delay
+                }
+
+                /**
+                 * Renders a specific page of results and the pagination controls.
+                 */
+                function displayPage(page) {
+                    currentPage = page;
+                    
+                    const start = (page - 1) * ITEMS_PER_PAGE;
+                    const end = start + ITEMS_PER_PAGE;
+                    const paginatedItems = fullResults.items.slice(start, end);
+                    
+                    renderSearchResults(paginatedItems, start);
+                    renderPaginationControls();
+                    
+                    // Scroll to top of results for better UX
+                    document.getElementById('search-results-heading').scrollIntoView({ behavior: 'smooth' });
+                }
+
+                /**
+                 * Renders the search result items and updates the metadata.
+                 */
+                function renderSearchResults(items, startOffset) {
+                    // Update Meta Info
+                    const startResult = startOffset + 1;
+                    const endResult = startOffset + items.length;
+
+                    searchMeta.innerHTML = `
+                        <p class="p2-body-style">Searched Keyword: <strong class="text-dark">${escapeHTML(fullResults.keyword)}</strong></p>
+                        <p class="p2-body-style">Results ${startResult} - ${endResult} of about <strong class="text-dark">${fullResults.totalResults}</strong>. Search took ${fullResults.searchTime} seconds.</p>
+                    `;
+
+                    // Render Results
+                    resultsContainer.innerHTML = '';
+                    if (items.length === 0) {
+                        resultsContainer.innerHTML = '<p>No results found.</p>';
+                        return;
+                    }
+
+                                        items.forEach(item => {
+                        const resultHtml = `
+                        <!-- 搜尋結果卡片 -->
+                        <div class="search-result-item">
+                            <!-- 1. 標題 (title) -->
+                            <div class="result-title">
+                                <a href="javascript:void(0);">${escapeHTML(item.title)}</a>
+                            </div>
+                            
+                            <!-- 2. 內容 / 摘要 (content) -->
+                            <div class="result-content">${highlightKeyword(item.snippet, fullResults.keyword)}</div>
+
+                            
+                            <!-- 底部資訊列 -->
+                            <div class="d-flex align-items-center gap-2 flex-wrap">
+                                <!-- 3. 連結 (link) -->
+                                <span class="result-link">${escapeHTML(item.url)}</span>
+                                
+                                <!-- 4. 檔案大小 (size) -->
+                                <span class="result-size">- ${item.size}</span>
+                                
+                                <!-- 5. 暫存連結 (cached link) -->
+                                <a href="javascript:void(0);" class="result-cached-link">Cached</a>
+                            </div>
+                        </div>
+                    `;
+                        resultsContainer.innerHTML += resultHtml;
+                    });
+
+                }
+                
+                /**
+                 * Generates and renders pagination controls.
+                 */
+                function renderPaginationControls() {
+                    const totalPages = Math.ceil(fullResults.totalResults / ITEMS_PER_PAGE);
+                    paginationContainer.innerHTML = '';
+
+                    if (totalPages <= 1) return; // 單頁則不顯示分頁
+
+                    let paginationHTML = '<div class="custom-pagination-wrapper d-flex align-items-center">';
+
+                    // --- 1. 上一頁按鈕 ---
+                    if (currentPage === 1) {
+                        paginationHTML += `
+                            <span class="nav-arrow disabled" aria-hidden="true" style="opacity: 0.2; cursor: not-allowed;">
+                                <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="Previous Page">
+                            </span>
+                        `;
+                    } else {
+                        paginationHTML += `
+                            <a class="nav-arrow" href="#" data-page="${currentPage - 1}" aria-label="Previous Page">
+                                <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="Previous Page">
+                            </a>
+                        `;
+                    }
+
+                    // --- 2. 智慧頁碼範圍計算（最多核心 5 頁） ---
+                    const maxPageNumbers = 5;
+                    let startPage, endPage;
+
+                    if (totalPages <= maxPageNumbers) {
+                        startPage = 1;
+                        endPage = totalPages;
+                    } else {
+                        const maxPagesBeforeCurrentPage = Math.floor(maxPageNumbers / 2); // 2
+                        const maxPagesAfterCurrentPage = Math.ceil(maxPageNumbers / 2) - 1; // 2
+
+                        if (currentPage <= maxPagesBeforeCurrentPage) {
+                            startPage = 1;
+                            endPage = maxPageNumbers;
+                        } else if (currentPage + maxPagesAfterCurrentPage >= totalPages) {
+                            startPage = totalPages - maxPageNumbers + 1;
+                            endPage = totalPages;
+                        } else {
+                            startPage = currentPage - maxPagesBeforeCurrentPage;
+                            endPage = currentPage + maxPagesAfterCurrentPage;
+                        }
+                    }
+
+                    // --- 3. 渲染開頭省略號 (換成您的 img icon) ---
+                    // if (startPage > 1) {
+                    //     paginationHTML += `
+                    //         <span class="pagination-ellipsis">...</span>
+                    //     `;
+                    // }
+
+                    // --- 4. 渲染核心頁碼 ---
+                    for (let i = startPage; i <= endPage; i++) {
+                        if (i === currentPage) {
+                            paginationHTML += `<a class="page-num active" href="#" data-page="${i}">${i}</a>`;
+                        } else {
+                            paginationHTML += `<a class="page-num" href="#" data-page="${i}">${i}</a>`;
+                        }
+                    }
+
+                    // --- 5. 渲染結尾省略號 (換成您的 img icon) ---
+                    // if (endPage < totalPages) {
+                    //     paginationHTML += `
+                    //         <span class="pagination-ellipsis">...</span>
+                    //     `;
+                    // }
+
+                    // --- 6. 下一頁按鈕 ---
+                    if (currentPage === totalPages) {
+                        paginationHTML += `
+                            <span class="nav-arrow disabled" aria-hidden="true" style="opacity: 0.2; cursor: not-allowed;">
+                                <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" style="transform: scaleX(-1);" alt="Next Page">
+                            </span>
+                        `;
+                    } else {
+                        paginationHTML += `
+                            <a class="nav-arrow" href="#" data-page="${currentPage + 1}" aria-label="Next Page">
+                                <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" style="transform: scaleX(-1);" alt="Next Page">
+                            </a>
+                        `;
+                    }
+
+                    paginationHTML += '</div>';
+                    paginationContainer.innerHTML = paginationHTML;
+
+                    // 重新綁定分頁點擊事件
+                    paginationContainer.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            const page = parseInt(event.currentTarget.dataset.page);
+                            if (page && page !== currentPage) {
+                                displayPage(page);
+                            }
+                        });
+                    });
+                }
+
+                /**
+                 * Helper function to escape HTML special characters.
+                 */
+                function escapeHTML(str) {
+                    return str.replace(/[&<>'"]/g,
+                        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+                    );
+                }
+
+                function highlightKeyword(text, keyword) {
+                    if (!keyword || !text) {
+                        return escapeHTML(text || '');
+                    }
+
+                    const words = keyword.split(' ').filter(word => word.length > 0);
+                    if (words.length === 0) {
+                        return escapeHTML(text);
+                    }
+
+                    const pattern = words.map(word => escapeRegExp(word)).join('|');            
+                    const regex = new RegExp(`(${pattern})`, 'gi');
+
+                    return escapeHTML(text).replace(regex, '<strong>$1</strong>');
+                }
+
+                function escapeRegExp(string) {
+                    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                }
+            });
+        </script>
+</body>
+
+</html>
