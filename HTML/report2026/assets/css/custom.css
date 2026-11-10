@@ -4196,11 +4196,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-hkex-col {
-    width: 8%;
+    width: 10%;
 }
 
 .gri-sasb-col {
-    width: 8%;
+    width: 10%;
 }
 
 .gri-location-col {
@@ -4208,11 +4208,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-remarks-col {
-    width: 19%;
+    width: 20%;
 }
 
 .gri-assurance-col {
-    width: 8%;
+    width: 10%;
     text-align: center;
     vertical-align: middle;
 }
