@@ -4108,6 +4108,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-top: 2.625rem !important; /* 42px */
 }
 
+@media (max-width: 576px) {
+	.gri-index-page .title-block {
+		padding-bottom: 2.625rem !important; /* 42px, same rhythm as .gri-intro-text */
+	}
+}
+
 /* --- GRI Intro Section 1 Grey Table Styles --- */
 .gri-intro-table-wrapper {
     background-color: var(--tableGreyColor);
@@ -4632,137 +4638,574 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .key-award-item:hover .key-award-img.img-hover {
     opacity: 1;
 }
-
-.grecaptcha-badge {bottom: 86px !important;}
+.grecaptcha-badge {
+    bottom: 86px !important;
+}
 
 /* --- Data Summary Highlight Page (designer SVG charts) --- */
-.margin-top-100 {margin-top: 100px;}
-.margin-top-120 {margin-top: 120px;}
-.margin-top-150 {margin-top: 150px;}
-.ds-img {width: 100%; height: auto; display: block;}
-.ds-img-auto {width: auto; max-width: 100%; height: auto;}
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.margin-top-120 {
+    margin-top: 120px;
+}
+
+.margin-top-150 {
+    margin-top: 150px;
+}
+
+.ds-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ds-img-auto {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
 /* Vertical stack of chart banners */
-.ds-stack {display: flex; flex-direction: column; gap: 2.5rem;}
+.ds-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
 /* Layered composite (front + back SVG on the same canvas) */
-.ds-overlay {display: grid;}
-.ds-overlay img {grid-area: 1 / 1; width: 100%; height: auto;}
+.ds-overlay {
+    display: grid;
+}
+
+.ds-overlay img {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: auto;
+}
+
 /* Horizontal proportional row - flush edge to edge (e.g. employees male/female halves, age groups) */
-.ds-row-flush {display: flex; align-items: flex-start; gap: 0;}
-.ds-row-flush img {height: auto;}
+.ds-row-flush {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.ds-row-flush img {
+    height: auto;
+}
+
 /* Resource Usage - Office Materials: ONE 700x407 composite canvas -
    Paper Back + Front + Envelope03 are full-canvas layers;
    Title SVGs (75.5x298 / 107.5x298) absolutely positioned on the canvas */
-.ds-office-canvas {position: relative;}
-.ds-overlay .ds-office-layer {position: absolute; width: auto; height: auto;}
-.ds-overlay .ds-office-layer-paper {left: 0; top: 14.7%; width: 10.8%;}
-.ds-overlay .ds-office-layer-envelope {left: 65%; top: 14.7%; width: 15.4%;}
+.ds-office-canvas {
+    position: relative;
+}
+
+.ds-overlay .ds-office-layer {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+.ds-overlay .ds-office-layer-paper {
+    left: 0;
+    top: 14.7%;
+    width: 10.8%;
+}
+
+.ds-overlay .ds-office-layer-envelope {
+    left: 65%;
+    top: 14.7%;
+    width: 15.4%;
+}
 
 /* Social Performance: Total number of employees */
-.ds-total-row {display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-bottom: 2rem;}
-.ds-total-number {font-family: 'Monda', sans-serif; font-size: 80px; font-weight: 400; color: #FF32CD; letter-spacing: -10%; line-height: 65px;}
+.ds-total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.ds-total-number {
+    font-family: 'Monda', sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    color: #FF32CD;
+    letter-spacing: -10%;
+    line-height: 65px;
+}
+
 /* Two-column split with vertical divider (male | female) */
-.ds-split-row {display: flex; align-items: flex-start; margin-bottom: 2.5rem;}
-.ds-split-row:last-child {margin-bottom: 0;}
-.ds-split-col-main {flex: 0 0 60%;}
-.ds-split-col-side {flex: 1 1 auto; border-left: 1px solid #c9cdcd; padding-left: 2rem;}
-.ds-stat-row {display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.25rem;}
-.ds-stat-num {font-family: 'Monda', sans-serif; font-size: 45px; font-weight: 400; color: #565A5F; letter-spacing: -8%; line-height: 40px;}
-.ds-stat-num-pink {color: #FF32CD;}
-.ds-stat-pct {font-size: 25px; color: #86868B; letter-spacing: -10%; line-height: 32px;}
-.ds-stat-pct-pink {color: #FF32CD;}
+.ds-split-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+}
+
+.ds-split-row:last-child {
+    margin-bottom: 0;
+}
+
+.ds-split-col-main {
+    flex: 0 0 60%;
+}
+
+.ds-split-col-side {
+    flex: 1 1 auto;
+    border-left: 1px solid #c9cdcd;
+    padding-left: 2rem;
+}
+
+.ds-stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.ds-stat-num {
+    font-family: 'Monda', sans-serif;
+    font-size: 45px;
+    font-weight: 400;
+    color: #565A5F;
+    letter-spacing: -8%;
+    line-height: 40px;
+}
+
+.ds-stat-num-pink {
+    color: #FF32CD;
+}
+
+.ds-stat-pct {
+    font-size: 25px;
+    color: #86868B;
+    letter-spacing: -10%;
+    line-height: 32px;
+}
+
+.ds-stat-pct-pink {
+    color: #FF32CD;
+}
+
 /* Civil / Non-Civil rows: number columns + full-width layered strip, divider spans both */
-.ds-civil-block {position: relative; margin-bottom: 2.25rem;}
-.ds-civil-block::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
-.ds-civil-block::after {content: ''; position: absolute; left: 60.5%; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
-.ds-civil-block .ds-split-col-side {border-left: none; padding-left: 13px;}
-.ds-civil-block .ds-split-col-main {padding-left: 10px;}
+.ds-civil-block {
+    position: relative;
+    margin-bottom: 2.25rem;
+}
+
+.ds-civil-block::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c9cdcd;
+}
+
+.ds-civil-block::after {
+    content: '';
+    position: absolute;
+    left: 60.5%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c9cdcd;
+}
+
+.ds-civil-block .ds-split-col-side {
+    border-left: none;
+    padding-left: 13px;
+}
+
+.ds-civil-block .ds-split-col-main {
+    padding-left: 10px;
+}
+
 /* Employees split row: number aligns start, percentage aligns end (near the divider) */
-.ds-split-row:not(.ds-split-row-tight) .ds-stat-row {justify-content: space-between;}
-.ds-split-row:not(.ds-split-row-tight) .ds-split-col-main {padding-right: 29px;}
-.ds-split-row:not(.ds-split-row-tight) .ds-split-col-side {padding-left: 21px;}
-.ds-split-row-tight {margin-bottom: 0.75rem;}
+.ds-split-row:not(.ds-split-row-tight) .ds-stat-row {
+    justify-content: space-between;
+}
+
+.ds-split-row:not(.ds-split-row-tight) .ds-split-col-main {
+    padding-right: 29px;
+}
+
+.ds-split-row:not(.ds-split-row-tight) .ds-split-col-side {
+    padding-left: 21px;
+}
+
+.ds-split-row-tight {
+    margin-bottom: 0.75rem;
+}
 
 /* Employees by age: legend right + three columns with dividers */
-.ds-age-legend-row {display: flex; justify-content: flex-end; margin-bottom: 1.5rem;}
-.ds-age-row {display: flex; align-items: flex-start;}
-.ds-age-col {display: flex; flex-direction: column; min-width: 0;}
-.ds-age-col-1 {flex: 0 0 17%; padding-right: 10px;}
-.ds-age-col-2 {flex: 1 1 auto; border-left: 1px solid #c9cdcd; padding-left: 10px; padding-right: 10px;}
-.ds-age-col-3 {flex: 0 0 23%; border-left: 1px solid #c9cdcd; padding-left: 10px;}
-.ds-age-row .ds-stat-num {font-size: 34px; line-height: 34px;}
-.ds-age-row .ds-stat-pct {font-size: 16px; line-height: 20px;}
+.ds-age-legend-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.ds-age-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ds-age-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.ds-age-col-1 {
+    flex: 0 0 17%;
+    padding-right: 10px;
+}
+
+.ds-age-col-2 {
+    flex: 1 1 auto;
+    border-left: 1px solid #c9cdcd;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ds-age-col-3 {
+    flex: 0 0 23%;
+    border-left: 1px solid #c9cdcd;
+    padding-left: 10px;
+}
+
+.ds-age-row .ds-stat-num {
+    font-size: 34px;
+    line-height: 34px;
+}
+
+.ds-age-row .ds-stat-pct {
+    font-size: 16px;
+    line-height: 20px;
+}
+
 /* Staff Turnover */
-.ds-inline-stat {display: flex; align-items: baseline; gap: 0.75rem;}
-.ds-to-row {display: flex; align-items: flex-start;}
-.ds-to-col-main {flex: 1 1 50%; padding-right: 21px;}
-.ds-to-col-side {flex: 1 1 50%; border-left: 1px solid #c9cdcd; padding-left: 21px;}
+.ds-inline-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.ds-to-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ds-to-col-main {
+    flex: 1 1 50%;
+    padding-right: 21px;
+}
+
+.ds-to-col-side {
+    flex: 1 1 50%;
+    border-left: 1px solid #c9cdcd;
+    padding-left: 21px;
+}
+
 /* Staff Training Hour Received */
-.ds-train-row {display: flex; align-items: flex-start; position: relative;}
-.ds-train-row::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
-.ds-train-col {flex: 1 1 50%; padding-left: 10px;}
-.ds-train-col-side {border-left: 1px solid #c9cdcd; padding-left: 10px;}
-.ds-train-label {font-family: 'Monda', sans-serif; font-size: 15px; font-weight: 700; color: #414646; margin-bottom: 10px;}
-.ds-train-unit {font-family: 'Monda', sans-serif; font-size: 20px; font-weight: 700; color: #FF32CD;}
-.ds-train-substats {display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 14px;}
-.ds-train-substat {display: flex; align-items: flex-end; gap: 7px;}
-.ds-gender-ico {height: 36px; width: auto;}
-.ds-train-sub {font-family: 'Monda', sans-serif; font-size: 16px; font-weight: 700; color: #565A5F;}
-.ds-train-sub-pink {color: #FF32CD;}
+.ds-train-row {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.ds-train-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c9cdcd;
+}
+
+.ds-train-col {
+    flex: 1 1 50%;
+    padding-left: 10px;
+}
+
+.ds-train-col-side {
+    border-left: 1px solid #c9cdcd;
+    padding-left: 10px;
+}
+
+.ds-train-label {
+    font-family: 'Monda', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #414646;
+    margin-bottom: 10px;
+}
+
+.ds-train-unit {
+    font-family: 'Monda', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF32CD;
+}
+
+.ds-train-substats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin-top: 14px;
+}
+
+.ds-train-substat {
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+.ds-gender-ico {
+    height: 36px;
+    width: auto;
+}
+
+.ds-train-sub {
+    font-family: 'Monda', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #565A5F;
+}
+
+.ds-train-sub-pink {
+    color: #FF32CD;
+}
+
 /* Anti-corruption pictogram grids built from single icons */
-.ds-pict-grid {display: flex; flex-wrap: wrap; gap: 10px 9px; align-items: flex-start;}
-.ds-pict-ico {height: 30px; width: auto; display: block;}
-.ds-pict-partial {display: inline-block; overflow: hidden; height: 30px;}
-.ds-pict-partial .ds-pict-ico {height: 30px;}
+.ds-pict-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 9px;
+    align-items: flex-start;
+}
+
+.ds-pict-ico {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+
+.ds-pict-partial {
+    display: inline-block;
+    overflow: hidden;
+    height: 30px;
+}
+
+.ds-pict-partial .ds-pict-ico {
+    height: 30px;
+}
+
 /* Health and Safety */
-.ds-hs-row {display: flex; align-items: flex-start; position: relative;}
-.ds-hs-row::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
-.ds-hs-col {flex: 1 1 50%; padding-left: 10px;}
-.ds-hs-col-side {border-left: 1px solid #c9cdcd; padding-left: 10px;}
-.ds-hs-label {font-family: 'Monda', sans-serif; font-size: 15px; font-weight: 700; color: #414646; margin-bottom: 12px;}
-.ds-stat-num-sm {font-size: 26px; line-height: 26px;}
-.ds-hs-unit-sm {font-family: 'Monda', sans-serif; font-size: 14px; font-weight: 700; color: #FF32CD;}
+.ds-hs-row {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.ds-hs-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c9cdcd;
+}
+
+.ds-hs-col {
+    flex: 1 1 50%;
+    padding-left: 10px;
+}
+
+.ds-hs-col-side {
+    border-left: 1px solid #c9cdcd;
+    padding-left: 10px;
+}
+
+.ds-hs-label {
+    font-family: 'Monda', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #414646;
+    margin-bottom: 12px;
+}
+
+.ds-stat-num-sm {
+    font-size: 26px;
+    line-height: 26px;
+}
+
+.ds-hs-unit-sm {
+    font-family: 'Monda', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FF32CD;
+}
 
 /* Environmental Convictions of Contractors */
-.ds-conviction-block {margin-bottom: 0.5rem;}
-.ds-conviction-upper-caption {font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: #FF32CD; line-height: 20px; letter-spacing: -1%; margin-bottom: 0 !important;}
-.ds-conviction-number {font-family: 'Monda', sans-serif; font-size: 45px; font-weight: 400; color: #FF32CD; line-height: 40px; letter-spacing: -8%; margin-bottom: 0 !important;}
-.ds-conviction-lower-caption {font-family: 'Monda', sans-serif; font-size: 18px; font-weight: 700; color: #FF32CD; line-height: 21px; letter-spacing: -1.5%; margin-bottom: 0 !important;}
+.ds-conviction-block {
+    margin-bottom: 0.5rem;
+}
+
+.ds-conviction-upper-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FF32CD;
+    line-height: 20px;
+    letter-spacing: -1%;
+    margin-bottom: 0 !important;
+}
+
+.ds-conviction-number {
+    font-family: 'Monda', sans-serif;
+    font-size: 45px;
+    font-weight: 400;
+    color: #FF32CD;
+    line-height: 40px;
+    letter-spacing: -8%;
+    margin-bottom: 0 !important;
+}
+
+.ds-conviction-lower-caption {
+    font-family: 'Monda', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #FF32CD;
+    line-height: 21px;
+    letter-spacing: -1.5%;
+    margin-bottom: 0 !important;
+}
 
 /* Air Emissions & Water Usage: horizontal gap so the two sections read as separate boxes in one row */
 @media (min-width: 576px) {
-	.ds-air-water-row > .col-sm-6 {width: calc(50% - 1.25rem);}
-	.ds-air-water-row > .col-sm-6 + .col-sm-6 {margin-left: 2.5rem;}
+    .ds-air-water-row>.col-sm-6 {
+        width: calc(50% - 1.25rem);
+    }
+
+    .ds-air-water-row>.col-sm-6+.col-sm-6 {
+        margin-left: 2.5rem;
+    }
 }
 
 @media (max-width: 575.98px) {
-	.ds-stack {gap: 1.5rem;}
-	.ds-row-flush {flex-wrap: wrap;}
-	.ds-row-flush img {width: 100% !important;}
-	.ds-split-row {flex-direction: column; gap: 1.5rem;}
-	.ds-split-col-side {border-left: none; padding-left: 0;}
-	.ds-total-number {font-size: 2.75rem;}
-	.ds-civil-block::before {content: none;}
-	.ds-civil-block::after {content: none;}
-	.ds-age-row {flex-direction: column; gap: 1.5rem;}
-	.ds-age-col-2, .ds-age-col-3 {border-left: none; padding-left: 0;}
-	.ds-to-row {flex-direction: column; gap: 1.5rem;}
-	.ds-to-col-side {border-left: none; padding-left: 0;}
-	.ds-train-row {flex-direction: column; gap: 1.5rem;}
-	.ds-train-row::before {content: none;}
-	.ds-train-col {padding-left: 0;}
-	.ds-train-col-side {border-left: none; padding-left: 0;}
-	.ds-hs-row {flex-direction: column; gap: 1.5rem;}
-	.ds-hs-row::before {content: none;}
-	.ds-hs-col {padding-left: 0;}
-	.ds-hs-col-side {border-left: none; padding-left: 0;}
+    .ds-stack {
+        gap: 1.5rem;
+    }
+
+    .ds-row-flush {
+        flex-wrap: wrap;
+    }
+
+    .ds-row-flush img {
+        width: 100% !important;
+    }
+
+    .ds-split-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-split-col-side {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .ds-total-number {
+        font-size: 2.75rem;
+    }
+
+    .ds-civil-block::before {
+        content: none;
+    }
+
+    .ds-civil-block::after {
+        content: none;
+    }
+
+    .ds-age-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-age-col-2,
+    .ds-age-col-3 {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .ds-to-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-to-col-side {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .ds-train-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-train-row::before {
+        content: none;
+    }
+
+    .ds-train-col {
+        padding-left: 0;
+    }
+
+    .ds-train-col-side {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .ds-hs-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-hs-row::before {
+        content: none;
+    }
+
+    .ds-hs-col {
+        padding-left: 0;
+    }
+
+    .ds-hs-col-side {
+        border-left: none;
+        padding-left: 0;
+    }
 }
 
 /* Sticky section header columns (Environmental / Social Performance) */
-.ds-sticky-col {position: sticky; top: 113px; align-self: flex-start; z-index: 10;}
-@media (max-width: 767.98px) {
-	.ds-sticky-col {position: static;}
+.ds-sticky-col {
+    position: sticky;
+    top: 113px;
+    align-self: flex-start;
+    z-index: 10;
 }
 
+@media (max-width: 767.98px) {
+    .ds-sticky-col {
+        position: static;
+    }
+}
 /* ==========================================================================
    Data Summary Accordion & Table Styles
    ========================================================================== */
