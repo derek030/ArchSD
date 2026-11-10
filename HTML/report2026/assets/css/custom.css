@@ -4856,7 +4856,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .summary-table-container {
     width: 100%;
     overflow-x: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 60px !important;
 }
 .summary-data-table {
     width: 100%;
