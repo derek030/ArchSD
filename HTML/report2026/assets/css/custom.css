@@ -4641,3 +4641,28 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .grecaptcha-badge {bottom: 86px !important;}
+
+/* --- Data Summary Highlight Page (designer SVG charts) --- */
+.ds-img {width: 100%; height: auto; display: block;}
+.ds-img-auto {width: auto; max-width: 100%; height: auto;}
+/* Vertical stack of chart banners */
+.ds-stack {display: flex; flex-direction: column; gap: 2.5rem;}
+/* Layered composite (front + back SVG on the same canvas) */
+.ds-overlay {display: grid;}
+.ds-overlay img {grid-area: 1 / 1; width: 100%; height: auto;}
+/* Horizontal proportional row - flush edge to edge (e.g. employees male/female halves, age groups) */
+.ds-row-flush {display: flex; align-items: flex-start; gap: 0;}
+.ds-row-flush img {height: auto;}
+/* Resource Usage - Office Materials: ONE 700x407 composite canvas -
+   Paper Back + Front + Envelope03 are full-canvas layers;
+   Title SVGs (75.5x298 / 107.5x298) absolutely positioned on the canvas */
+.ds-office-canvas {position: relative;}
+.ds-overlay .ds-office-layer {position: absolute; width: auto; height: auto;}
+.ds-overlay .ds-office-layer-paper {left: 0; top: 14.7%; width: 10.8%;}
+.ds-overlay .ds-office-layer-envelope {left: 65%; top: 14.7%; width: 15.4%;}
+
+@media (max-width: 575.98px) {
+	.ds-stack {gap: 1.5rem;}
+	.ds-row-flush {flex-wrap: wrap;}
+	.ds-row-flush img {width: 100% !important;}
+}
