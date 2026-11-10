@@ -99,7 +99,7 @@
 
                                 <div class="green-bar-text">
                                     <div class="green-bar"></div>
-                                    <h4 class="h4-title-style">Direct Energy Consumption</h4>
+                                    <h4 class="p4-table-title" style="color: #000000;">Direct Energy Consumption</h4>
                                 </div>
                                 <!-- Designer SVG charts: Direct Energy (01 + 02 layered on same canvas) -->
                                 <div class="ds-overlay mb-5" role="img"
@@ -112,7 +112,7 @@
 
                                 <div class="green-bar-text">
                                     <div class="green-bar"></div>
-                                    <h4 class="h4-title-style">Indirect Energy Consumption</h4>
+                                    <h4 class="p4-table-title" style="color: #000000;">Indirect Energy Consumption</h4>
                                 </div>
                                 <!-- Designer SVG charts: Indirect Energy (back + front + 02 layered) -->
                                 <div class="ds-overlay mb-5" role="img"
@@ -127,7 +127,7 @@
 
                                 <div class="green-bar-text">
                                     <div class="green-bar"></div>
-                                    <h4 class="h4-title-style">Energy saved by projects</h4>
+                                    <h4 class="p4-table-title" style="color: #000000;">Energy saved by projects</h4>
                                 </div>
                                 <!-- Designer SVG charts: Energy saved by projects (01 + 02 layered) -->
                                 <div class="ds-overlay" role="img" aria-label="Energy saved by projects">
@@ -139,7 +139,7 @@
                             </div>
 
                             <!-- Green Building Commitments -->
-                            <div class="section-border-pink">
+                            <div class="section-border-pink margin-top-150">
                                 <h3 class="h3-title-style">Green Building Commitments</h3>
                                 <!-- Designer SVG charts: Green Building (01 + 02 layered) -->
                                 <div class="ds-overlay" role="img" aria-label="Green Building Commitments">
@@ -151,7 +151,7 @@
                             </div>
 
                             <!-- Carbon Emissions -->
-                            <div class="section-border-pink">
+                            <div class="section-border-pink margin-top-150">
                                 <h3 class="h3-title-style">Carbon Emissions</h3>
                                 <!-- Designer SVG charts: Carbon Emissions (01 + 02 + 03 layered) -->
                                 <div class="ds-overlay" role="img" aria-label="Carbon Emissions">
@@ -163,8 +163,8 @@
                                         alt="" aria-hidden="true" class="img-fluid ds-img">
                                 </div>
                             </div>
-                            <!-- Air Emissions & Water Usage Side-by-Side -->
-                            <div class="row">
+                            <!-- Air Emissions & Water Usage Side-by-Side (with gap to show two separate sections) -->
+                            <div class="row margin-top-150 ds-air-water-row">
                                 <div class="col-12 col-sm-6 section-border-pink">
                                     <h3 class="h3-title-style">Air Emissions</h3>
                                     <!-- Designer SVG charts: Air Emissions (01 + 02 + 03 layered) -->
@@ -190,7 +190,7 @@
                             </div>
 
                             <!-- Resource Usage - Office Materials -->
-                            <div class="section-border-pink">
+                            <div class="section-border-pink margin-top-150">
                                 <h3 class="h3-title-style">Resource Usage &ndash; Office Materials</h3>
                                 <!-- Office Materials: single 700x407 composite canvas -
                                      Paper01_Back + Paper02_Front + Envelope03 layered full-canvas,
@@ -203,19 +203,19 @@
                                         alt="" aria-hidden="true" class="img-fluid ds-img">
                                     <img src="../assets/images/data-summary/Data_08Resources_Envelope03.svg"
                                         alt="" aria-hidden="true" class="img-fluid ds-img">
-                                    <img src="../assets/images/data-summary/Title_Resources_Usage_Paper.svg"
+                                    <img src="../assets/images/data-summary/Title_Resources Usage_Paper.svg"
                                         alt="Paper" class="ds-office-layer ds-office-layer-paper">
-                                    <img src="../assets/images/data-summary/Title_Resources_Usage_Envelope.svg"
+                                    <img src="../assets/images/data-summary/Title_Resources Usage_Envelope.svg"
                                         alt="Envelope" class="ds-office-layer ds-office-layer-envelope">
                                 </div>
                             </div>
 
                             <!-- Waste Management -->
-                            <div class="section-border-pink">
+                            <div class="section-border-pink margin-top-100">
                                 <h3 class="h3-title-style">Waste Management</h3>
                                 <div class="green-bar-text">
                                     <div class="green-bar"></div>
-                                    <h4 class="h4-title-style">Construction Waste</h4>
+                                    <h4 class="p4-table-title" style="color: #000000;">Construction & demolition (C&D) materials</h4>
                                 </div>
                                 <div class="ds-overlay mb-5" role="img" aria-label="Construction Waste">
                                     <img src="../assets/images/data-summary/Data_09Waste_ConstructionWaste01.svg"
@@ -225,7 +225,7 @@
                                 </div>
                                 <div class="green-bar-text">
                                     <div class="green-bar"></div>
-                                    <h4 class="h4-title-style">Waste Recycled</h4>
+                                    <h4 class="p4-table-title" style="color: #000000;">Recyclable waste collected at the APB Centre</h4>
                                 </div>
                                 <div class="ds-overlay" role="img" aria-label="Waste recycled">
                                     <img src="../assets/images/data-summary/Data_10Waste_Recycle01_Paper.svg"
@@ -236,8 +236,17 @@
                                         alt="" aria-hidden="true" class="img-fluid ds-img">
                                 </div>
                             </div>
-                        </div>
 
+                            <!-- Environmental Convictions of Contractors -->
+                            <div class="section-border-pink margin-top-150">
+                                <h3 class="h3-title-style">Environmental Convictions of Contractors</h3>
+                                <div class="ds-conviction-block">
+                                    <p class="ds-conviction-upper-caption">Convictions per 100&nbsp;000<br>man-hours</p>
+                                    <div class="ds-conviction-number">0.000</div>
+                                    <p class="ds-conviction-lower-caption">ArchSD sites</p>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -263,41 +272,98 @@
                         <!-- Right: Content -->
                         <div class="col-12 col-md-8 spacing-64">
 
-                            <!-- Gender legends -->
-                            <div class="mb-4">
-                                <img src="../assets/images/data-summary/Data_Social_Gender_Legends.svg"
-                                    alt="Legend for male and female staff figures"
-                                    class="ds-img-auto">
-                            </div>
+                            <!-- Total number of employees -->
+                            <div class="section-border-pink">
+                                <h3 class="h3-title-style">Total number of employees</h3>
+                                <!-- Big total + gender legend -->
+                                <div class="ds-total-row">
+                                    <div class="ds-total-number">2145</div>
+                                    <img src="../assets/images/data-summary/Data_Social_Gender_Legends.svg"
+                                        alt="Legend: Male and Female" class="ds-img-auto">
+                                </div>
+                                <!-- Male / Female split with divider -->
+                                <div class="ds-split-row">
+                                    <div class="ds-split-col-main">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num">1 402</span>
+                                            <span class="ds-stat-pct">65.4%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_01emplyees_male.svg"
+                                            alt="Pictogram grid of male employees" class="img-fluid ds-img">
+                                    </div>
+                                    <div class="ds-split-col-side">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num ds-stat-num-pink">743</span>
+                                            <span class="ds-stat-pct ds-stat-pct-pink">34.6%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_01emplyees_female.svg"
+                                            alt="Pictogram grid of female employees" class="img-fluid ds-img">
+                                    </div>
+                                </div>
 
-                            <!-- Number of full-time staff (male + female side by side, flush) -->
-                            <div class="green-bar-text">
-                                <div class="green-bar"></div>
-                                <h4 class="h4-title-style">Number of full-time staff</h4>
-                            </div>
-                            <div class="ds-row-flush mb-5" role="img" aria-label="Number of full-time staff">
-                                <img src="../assets/images/data-summary/Data_Social_01emplyees_male.svg"
-                                    alt="" aria-hidden="true" style="width: 65.4%;">
-                                <img src="../assets/images/data-summary/Data_Social_01emplyees_female.svg"
-                                    alt="" aria-hidden="true" style="width: 34.6%;">
-                            </div>
+                                <!-- Civil Service Staff -->
+                                <div class="green-bar-text">
+                                    <div class="green-bar"></div>
+                                    <h4 class="p4-table-title" style="color: #000000;">Civil Service Staff</h4>
+                                </div>
+                                <div class="ds-civil-block">
+                                    <div class="ds-split-row ds-split-row-tight">
+                                        <div class="ds-split-col-main">
+                                            <div class="ds-stat-row">
+                                                <span class="ds-stat-num">1 236</span>
+                                                <span class="ds-stat-pct">65.3%</span>
+                                            </div>
+                                        </div>
+                                        <div class="ds-split-col-side">
+                                            <div class="ds-stat-row">
+                                                <span class="ds-stat-num ds-stat-num-pink">657</span>
+                                                <span class="ds-stat-pct ds-stat-pct-pink">34.7%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Male + female bar strips layered on the same 700x40 canvas -->
+                                    <div class="ds-overlay" role="img" aria-label="Civil Service Staff by gender">
+                                        <img src="../assets/images/data-summary/Data_Social_02civil_male.svg"
+                                            alt="" aria-hidden="true" class="img-fluid ds-img">
+                                        <img src="../assets/images/data-summary/Data_Social_02civil_female.svg"
+                                            alt="" aria-hidden="true" class="img-fluid ds-img">
+                                    </div>
+                                </div>
 
-                            <!-- Civil servants (male + female layered on same canvas) -->
-                            <div class="green-bar-text">
-                                <div class="green-bar"></div>
-                                <h4 class="h4-title-style">Civil servants</h4>
-                            </div>
-                            <div class="ds-overlay mb-5" role="img" aria-label="Civil servants">
-                                <img src="../assets/images/data-summary/Data_Social_02civil_male.svg"
-                                    alt="" aria-hidden="true" class="img-fluid ds-img">
-                                <img src="../assets/images/data-summary/Data_Social_02civil_female.svg"
-                                    alt="" aria-hidden="true" class="img-fluid ds-img">
+                                <!-- Non-Civil Service Contract Staff -->
+                                <div class="green-bar-text">
+                                    <div class="green-bar"></div>
+                                    <h4 class="p4-table-title" style="color: #000000;">Non-Civil Service Contract Staff</h4>
+                                </div>
+                                <div class="ds-civil-block">
+                                    <div class="ds-split-row ds-split-row-tight">
+                                        <div class="ds-split-col-main">
+                                            <div class="ds-stat-row">
+                                                <span class="ds-stat-num">166</span>
+                                                <span class="ds-stat-pct">65.9%</span>
+                                            </div>
+                                        </div>
+                                        <div class="ds-split-col-side">
+                                            <div class="ds-stat-row">
+                                                <span class="ds-stat-num ds-stat-num-pink">86</span>
+                                                <span class="ds-stat-pct ds-stat-pct-pink">34.1%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Male + female bar strips layered on the same 700x40 canvas -->
+                                    <div class="ds-overlay" role="img" aria-label="Non-Civil Service Contract Staff by gender">
+                                        <img src="../assets/images/data-summary/Data_Social_02civil_male.svg"
+                                            alt="" aria-hidden="true" class="img-fluid ds-img">
+                                        <img src="../assets/images/data-summary/Data_Social_02civil_female.svg"
+                                            alt="" aria-hidden="true" class="img-fluid ds-img">
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Age distribution (legend + three age groups flush side by side) -->
                             <div class="green-bar-text">
                                 <div class="green-bar"></div>
-                                <h4 class="h4-title-style">Age distribution</h4>
+                                <h4 class="p4-table-title" style="color: #000000;">Age distribution</h4>
                             </div>
                             <div class="mb-3">
                                 <img src="../assets/images/data-summary/Data_Social_EmployeesAgeLegends.svg"
@@ -315,7 +381,7 @@
                             <!-- Staff turnover (male + female side by side, flush) -->
                             <div class="green-bar-text">
                                 <div class="green-bar"></div>
-                                <h4 class="h4-title-style">Staff turnover rate</h4>
+                                <h4 class="p4-table-title" style="color: #000000;">Staff turnover rate</h4>
                             </div>
                             <div class="ds-row-flush mb-5" role="img" aria-label="Staff turnover rate">
                                 <img src="../assets/images/data-summary/Data_Social_04StaffTurnover_a_male.svg"
@@ -327,7 +393,7 @@
                             <!-- New employees (male + female side by side, flush) -->
                             <div class="green-bar-text">
                                 <div class="green-bar"></div>
-                                <h4 class="h4-title-style">Number of new employees</h4>
+                                <h4 class="p4-table-title" style="color: #000000;">Number of new employees</h4>
                             </div>
                             <div class="ds-row-flush mb-5" role="img" aria-label="Number of new employees">
                                 <img src="../assets/images/data-summary/Data_Social_05NewEmployees_a_male.svg"
@@ -339,7 +405,7 @@
                             <!-- Staff training (male + female side by side, flush) -->
                             <div class="green-bar-text">
                                 <div class="green-bar"></div>
-                                <h4 class="h4-title-style">Staff training</h4>
+                                <h4 class="p4-table-title" style="color: #000000;">Staff training</h4>
                             </div>
                             <div class="ds-row-flush" role="img" aria-label="Staff training">
                                 <img src="../assets/images/data-summary/Data_Social_06StaffTraining_a_male.svg"

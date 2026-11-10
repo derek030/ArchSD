@@ -4643,6 +4643,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .grecaptcha-badge {bottom: 86px !important;}
 
 /* --- Data Summary Highlight Page (designer SVG charts) --- */
+.margin-top-100 {margin-top: 100px;}
+.margin-top-150 {margin-top: 150px;}
 .ds-img {width: 100%; height: auto; display: block;}
 .ds-img-auto {width: auto; max-width: 100%; height: auto;}
 /* Vertical stack of chart banners */
@@ -4661,8 +4663,43 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .ds-overlay .ds-office-layer-paper {left: 0; top: 14.7%; width: 10.8%;}
 .ds-overlay .ds-office-layer-envelope {left: 65%; top: 14.7%; width: 15.4%;}
 
+/* Social Performance: Total number of employees */
+.ds-total-row {display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-bottom: 2rem;}
+.ds-total-number {font-family: 'Monda', sans-serif; font-size: 80px; font-weight: 400; color: #FF32CD; letter-spacing: -10%; line-height: 65px;}
+/* Two-column split with vertical divider (male | female) */
+.ds-split-row {display: flex; align-items: flex-start; margin-bottom: 2.5rem;}
+.ds-split-row:last-child {margin-bottom: 0;}
+.ds-split-col-main {flex: 0 0 60%;}
+.ds-split-col-side {flex: 1 1 auto; border-left: 1px solid #c9cdcd; padding-left: 2rem;}
+.ds-stat-row {display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.25rem;}
+.ds-stat-num {font-family: 'Monda', sans-serif; font-size: 45px; font-weight: 400; color: #565A5F; letter-spacing: -8%; line-height: 40px;}
+.ds-stat-num-pink {color: #FF32CD;}
+.ds-stat-pct {font-size: 25px; color: #86868B; letter-spacing: -10%; line-height: 32px;}
+.ds-stat-pct-pink {color: #FF32CD;}
+/* Civil / Non-Civil rows: number columns + full-width layered strip, divider spans both */
+.ds-civil-block {position: relative; margin-bottom: 2.25rem;}
+.ds-civil-block::before {content: ''; position: absolute; left: 60.5%; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
+.ds-civil-block .ds-split-col-side {border-left: none;}
+.ds-split-row-tight {margin-bottom: 0.75rem;}
+
+/* Environmental Convictions of Contractors */
+.ds-conviction-block {margin-bottom: 0.5rem;}
+.ds-conviction-upper-caption {font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: #FF32CD; line-height: 20px; letter-spacing: -1%; margin-bottom: 0 !important;}
+.ds-conviction-number {font-family: 'Monda', sans-serif; font-size: 45px; font-weight: 400; color: #FF32CD; line-height: 40px; letter-spacing: -8%; margin-bottom: 0 !important;}
+.ds-conviction-lower-caption {font-family: 'Monda', sans-serif; font-size: 18px; font-weight: 700; color: #FF32CD; line-height: 21px; letter-spacing: -1.5%; margin-bottom: 0 !important;}
+
+/* Air Emissions & Water Usage: horizontal gap so the two sections read as separate boxes in one row */
+@media (min-width: 576px) {
+	.ds-air-water-row > .col-sm-6 {width: calc(50% - 1.25rem);}
+	.ds-air-water-row > .col-sm-6 + .col-sm-6 {margin-left: 2.5rem;}
+}
+
 @media (max-width: 575.98px) {
 	.ds-stack {gap: 1.5rem;}
 	.ds-row-flush {flex-wrap: wrap;}
 	.ds-row-flush img {width: 100% !important;}
+	.ds-split-row {flex-direction: column; gap: 1.5rem;}
+	.ds-split-col-side {border-left: none; padding-left: 0;}
+	.ds-total-number {font-size: 2.75rem;}
+	.ds-civil-block::before {content: none;}
 }
