@@ -4148,12 +4148,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-top: 50px;
     margin-bottom: 50px;
     width: 100%;
+    /* Horizontal scroll whenever the table needs more room than the viewport;
+       on desktop the table fits and no scrollbar appears */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .gri-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed; /* Enforces columns to strictly follow defined width percentages */
+    min-width: 1000px; /* Below this the container scrolls horizontally instead of squashing */
 }
 
 .gri-table-head {
@@ -4285,20 +4290,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* ==========================================================================
    Responsive Mobile Layout for GRI Tables (Sections 1 & 2)
+   Note: the main GRI table scrolls horizontally at any viewport width when
+   space is tight (see .gri-index-table-container / .gri-table min-width).
    ========================================================================== */
-@media (max-width: 767.9px) {
-    /* Section 2 Table: Standard Scrollable Container to prevent squashing */
-    .gri-index-table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 15px;
-    }
-    
-    .gri-table {
-        min-width: 1000px; /* Maintains full width and legibility on narrow viewports */
-    }
-}
-
 @media (max-width: 575.9px) {
     /* Section 1 Intro Table: Stacks columns vertically on mobile screens */
     .gri-intro-table tr {
