@@ -3482,7 +3482,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 @media (max-width: 767.98px) {
     .glossary-green-dash::before {
-        left: 0.5rem;
+        left: 0.75rem; /* 12px inside the column (col starts at 8px) => aligns with the pink heading text at 20px */
         width: 4px;
     }
 }
