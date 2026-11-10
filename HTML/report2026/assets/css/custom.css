@@ -4678,8 +4678,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .ds-stat-pct-pink {color: #FF32CD;}
 /* Civil / Non-Civil rows: number columns + full-width layered strip, divider spans both */
 .ds-civil-block {position: relative; margin-bottom: 2.25rem;}
-.ds-civil-block::before {content: ''; position: absolute; left: 60.5%; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
-.ds-civil-block .ds-split-col-side {border-left: none;}
+.ds-civil-block::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
+.ds-civil-block::after {content: ''; position: absolute; left: 60.5%; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
+.ds-civil-block .ds-split-col-side {border-left: none; padding-left: 13px;}
+.ds-civil-block .ds-split-col-main {padding-left: 10px;}
+/* Employees split row: number aligns start, percentage aligns end (near the divider) */
+.ds-split-row:not(.ds-split-row-tight) .ds-stat-row {justify-content: space-between;}
+.ds-split-row:not(.ds-split-row-tight) .ds-split-col-main {padding-right: 29px;}
+.ds-split-row:not(.ds-split-row-tight) .ds-split-col-side {padding-left: 21px;}
 .ds-split-row-tight {margin-bottom: 0.75rem;}
 
 /* Environmental Convictions of Contractors */
