@@ -4769,3 +4769,241 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 @media (max-width: 767.98px) {
 	.ds-sticky-col {position: static;}
 }
+
+/* ==========================================================================
+   Data Summary Accordion & Table Styles
+   ========================================================================== */
+
+/* Accordion Container */
+.data-summary-accordion {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 2rem;
+    background: transparent;
+}
+
+/* Accordion Header - Collapse State */
+.accordion-header-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--tableGreyColor);
+    border: none;
+    border-top: 4px solid var(--mainGreenColor);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    outline: none;
+}
+
+/* Accordion Header - Hover State */
+.accordion-header-btn:hover,
+.accordion-header-btn:focus-visible {
+    border-top: 4px solid #B8BDC5; 
+    background-color: color-mix(in srgb, var(--mainGreenColor) 30%, transparent);
+    outline: none;
+}
+
+/* Accordion Icon Container */
+.accordion-icon {
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.accordion-icon img {
+    width: 100%;
+    height: auto;
+    max-width: 30px;
+    max-height: 30px;
+    display: block;
+}
+/* Accordion Title */
+.accordion-title {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.875rem; /* ~30px */
+    font-weight: 700;
+    color: var(--darkGreyColor);
+    line-height: 1.2;
+}
+/* When active/expanded */
+.accordion-item.active .accordion-header-btn {
+    background-color: transparent; /* No header background when expanded, as seen in mockup */
+    border-top: 5px solid var(--mainGreenColor);
+}
+/* Accordion Content */
+.accordion-content {
+    background-color: #ffffff;
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+}
+.accordion-content-inner {
+    padding-bottom: 2rem;
+    padding-left: 78px;
+}
+/* Table styles */
+.summary-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+.summary-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+.summary-data-table td.category-cell {
+    width: 16% !important;
+}
+.summary-data-table td.metric-col {
+    width: 50% !important;
+}
+.summary-data-table th.unit-header,
+.summary-data-table td.unit-col {
+    width: 8% !important;
+}
+.summary-data-table th.year-header,
+.summary-data-table td.val-col {
+    width: 8% !important;
+}
+/* Header styles */
+.summary-data-table thead th {
+    font-family: 'Monda', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    padding: 12px 15px;
+    border-bottom: none;
+}
+.summary-data-table thead th.unit-header {
+    text-align: center !important;
+    padding-left: 15px !important; /* Balanced left padding for centering */
+}
+/* Center align Year column headers (2023, 2024, 2025) */
+.summary-data-table thead th.year-header {
+    text-align: center !important;
+}
+.summary-data-table thead tr {
+    border-bottom: 4px solid var(--mainPinkColor);
+}
+/* Category column (rowspan) */
+.summary-data-table td.category-cell {
+    font-family: "Monda", sans-serif !important;
+    font-size: 1.25rem !important; /* 20px */
+    font-weight: 700 !important;
+    line-height: 1.5625rem !important; /* 25px */
+    letter-spacing: -3% !important;
+    color: var(--mainPinkColor) !important;
+    text-align: left !important;
+    vertical-align: top;
+    padding: 20px 24px 20px 0;
+    width: 20%;
+    border: none;
+}
+
+/* Sub-headers inside table */
+.summary-data-table tr.sub-header-row td {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--darkGreyColor);
+    letter-spacing: -2%;
+    line-height: 12px;
+    padding: 15px 15px 15px 0;
+    text-align: left;
+}
+.summary-data-table tr.sub-header-row td.sub-header-title {
+    font-weight: 700;
+    border-bottom: 2px solid var(--darkGreyColor);
+}
+/* Data rows */
+.summary-data-table tr.data-row td {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--darkGreyColor);
+    letter-spacing: -1.56%;
+    line-height: 1rem;
+    padding: 12px 15px 12px 0;
+    border-bottom: 0.5px solid var(--darkGreyColor);
+    text-align: left;
+}
+.summary-data-table tr.data-row td.metric-col {
+    text-align: left;
+}
+.summary-data-table tr.data-row td.unit-col {
+    text-align: center !important;
+    padding-left: 15px !important; /* Balanced left padding for perfect centering */
+}
+.summary-data-table tr.data-row td.val-col {
+    text-align: center !important;
+    padding-left: 15px !important; /* Balanced left padding for perfect centering */
+}
+/* Ends of sub-sections have black borders */
+.summary-data-table tr.section-end-row td {
+    border-bottom: 0.5px solid var(--darkGreyColor);
+}
+/* Highlighted Column (2025) */
+.summary-data-table .col-highlight {
+    background-color: var(--tableGreyColor);
+    font-weight: 700;
+    border-bottom: 2px solid var(--darkGreyColor);
+}
+/* Footnotes Row alignment rule */
+.summary-data-table tr.footnote-row td {
+    border: none !important;
+    padding: 0 !important;
+    padding-top: 1rem !important;
+}
+.summary-data-table td.table-footnotes-cell {
+    padding: 0 !important;
+    border: none !important;
+    text-align: left;
+}
+.summary-data-table td.table-footnotes-cell p {
+    margin-bottom: 4px !important;
+    color: var(--darkGreyColor);
+}
+/* Responsive Accordion and Table */
+@media (max-width: 767.98px) {
+    .accordion-header-btn {
+        padding: 1rem;
+    }
+    .accordion-title {
+        font-size: 1.25rem;
+    }
+    .accordion-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 1rem;
+    }
+    .accordion-content-inner {
+        padding: 1.5rem 0;
+        padding-left: 0; /* Remove offset on mobile to provide full screen width for the table */
+    }
+    .summary-data-table {
+        min-width: 650px; /* Forces table to have a comfortable scrolling width on mobile instead of squishing columns */
+    }
+    .summary-data-table td.category-cell {
+        /* Maintain table cell display on mobile so rowspan is not corrupted */
+        display: table-cell;
+        width: 15%;
+        padding-right: 15px;
+    }
+    .summary-data-table tr.sub-header-row td,
+    .summary-data-table tr.data-row td {
+        padding: 8px 10px 8px 0;
+    }
+}
