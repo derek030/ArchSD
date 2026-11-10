@@ -360,58 +360,204 @@
                                 </div>
                             </div>
 
-                            <!-- Age distribution (legend + three age groups flush side by side) -->
-                            <div class="green-bar-text">
-                                <div class="green-bar"></div>
-                                <h4 class="p4-table-title" style="color: #000000;">Age distribution</h4>
-                            </div>
-                            <div class="mb-3">
-                                <img src="../assets/images/data-summary/Data_Social_EmployeesAgeLegends.svg"
-                                    alt="Legend for employee age groups" class="ds-img-auto">
-                            </div>
-                            <div class="ds-row-flush mb-5" role="img" aria-label="Age distribution of employees">
-                                <img src="../assets/images/data-summary/Data_Social_03age_a_under30.svg"
-                                    alt="" aria-hidden="true" style="width: 16.3%;">
-                                <img src="../assets/images/data-summary/Data_Social_03age_b_30-49.svg"
-                                    alt="" aria-hidden="true" style="width: 60.9%;">
-                                <img src="../assets/images/data-summary/Data_Social_03age_c_50up.svg"
-                                    alt="" aria-hidden="true" style="width: 22.8%;">
-                            </div>
-
-                            <!-- Staff turnover (male + female side by side, flush) -->
-                            <div class="green-bar-text">
-                                <div class="green-bar"></div>
-                                <h4 class="p4-table-title" style="color: #000000;">Staff turnover rate</h4>
-                            </div>
-                            <div class="ds-row-flush mb-5" role="img" aria-label="Staff turnover rate">
-                                <img src="../assets/images/data-summary/Data_Social_04StaffTurnover_a_male.svg"
-                                    alt="" aria-hidden="true" style="width: 50%;">
-                                <img src="../assets/images/data-summary/Data_Social_04StaffTurnover_b_female.svg"
-                                    alt="" aria-hidden="true" style="width: 50%;">
-                            </div>
-
-                            <!-- New employees (male + female side by side, flush) -->
-                            <div class="green-bar-text">
-                                <div class="green-bar"></div>
-                                <h4 class="p4-table-title" style="color: #000000;">Number of new employees</h4>
-                            </div>
-                            <div class="ds-row-flush mb-5" role="img" aria-label="Number of new employees">
-                                <img src="../assets/images/data-summary/Data_Social_05NewEmployees_a_male.svg"
-                                    alt="" aria-hidden="true" style="width: 50%;">
-                                <img src="../assets/images/data-summary/Data_Social_05NewEmployees_b_female.svg"
-                                    alt="" aria-hidden="true" style="width: 50%;">
+                            <!-- Employees by age -->
+                            <div class="section-border-pink margin-top-120">
+                                <h3 class="h3-title-style">Employees by age</h3>
+                                <div class="ds-age-legend-row">
+                                    <img src="../assets/images/data-summary/Data_Social_EmployeesAgeLegends.svg"
+                                        alt="Legend: Under 30, 30-49, 50 or above" class="ds-img-auto">
+                                </div>
+                                <div class="ds-age-row">
+                                    <div class="ds-age-col ds-age-col-1">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num">132</span>
+                                            <span class="ds-stat-pct">65.9%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_03age_a_under30.svg"
+                                            alt="Pictogram of employees aged under 30" class="img-fluid ds-img">
+                                    </div>
+                                    <div class="ds-age-col ds-age-col-2">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num ds-stat-num-pink">1 298</span>
+                                            <span class="ds-stat-pct ds-stat-pct-pink">68.7%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_03age_b_30-49.svg"
+                                            alt="Pictogram of employees aged 30 to 49" class="img-fluid ds-img">
+                                    </div>
+                                    <div class="ds-age-col ds-age-col-3">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num">460</span>
+                                            <span class="ds-stat-pct">24.3%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_03age_c_50up.svg"
+                                            alt="Pictogram of employees aged 50 or above" class="img-fluid ds-img">
+                                    </div>
+                                </div>
                             </div>
 
-                            <!-- Staff training (male + female side by side, flush) -->
-                            <div class="green-bar-text">
-                                <div class="green-bar"></div>
-                                <h4 class="p4-table-title" style="color: #000000;">Staff training</h4>
+                            <!-- Staff Turnover -->
+                            <div class="section-border-pink margin-top-120">
+                                <h3 class="h3-title-style">Staff Turnover</h3>
+                                <div class="ds-total-row">
+                                    <div class="ds-inline-stat">
+                                        <span class="ds-stat-num ds-stat-num-pink">39</span>
+                                        <span class="ds-stat-pct">2.1%</span>
+                                    </div>
+                                    <img src="../assets/images/data-summary/Data_Social_Gender_Legends.svg"
+                                        alt="Legend: Male and Female" class="ds-img-auto">
+                                </div>
+                                <div class="ds-to-row">
+                                    <div class="ds-to-col-main">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num">28</span>
+                                            <span class="ds-stat-pct">1.5%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_04StaffTurnover_a_male.svg"
+                                            alt="Pictogram of male staff turnover" class="img-fluid ds-img">
+                                    </div>
+                                    <div class="ds-to-col-side">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num ds-stat-num-pink">11</span>
+                                            <span class="ds-stat-pct ds-stat-pct-pink">0.6%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_04StaffTurnover_b_female.svg"
+                                            alt="Pictogram of female staff turnover" class="img-fluid ds-img">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="ds-row-flush" role="img" aria-label="Staff training">
-                                <img src="../assets/images/data-summary/Data_Social_06StaffTraining_a_male.svg"
-                                    alt="" aria-hidden="true" style="width: 50%;">
-                                <img src="../assets/images/data-summary/Data_Social_06StaffTraining_b_female.svg"
-                                    alt="" aria-hidden="true" style="width: 50%;">
+
+                            <!-- New Employees -->
+                            <div class="section-border-pink margin-top-120">
+                                <h3 class="h3-title-style">New Employees</h3>
+                                <div class="ds-total-row">
+                                    <div class="ds-inline-stat">
+                                        <span class="ds-stat-num ds-stat-num-pink">41</span>
+                                        <span class="ds-stat-pct">2.2%</span>
+                                    </div>
+                                    <img src="../assets/images/data-summary/Data_Social_Gender_Legends.svg"
+                                        alt="Legend: Male and Female" class="ds-img-auto">
+                                </div>
+                                <div class="ds-to-row">
+                                    <div class="ds-to-col-main">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num">28</span>
+                                            <span class="ds-stat-pct">1.5%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_05NewEmployees_a_male.svg"
+                                            alt="Pictogram of male new employees" class="img-fluid ds-img">
+                                    </div>
+                                    <div class="ds-to-col-side">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num ds-stat-num-pink">13</span>
+                                            <span class="ds-stat-pct ds-stat-pct-pink">0.7%</span>
+                                        </div>
+                                        <img src="../assets/images/data-summary/Data_Social_05NewEmployees_b_female.svg"
+                                            alt="Pictogram of female new employees" class="img-fluid ds-img">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Staff Training Hour Received -->
+                            <div class="section-border-pink margin-top-120">
+                                <h3 class="h3-title-style">Staff Training Hour Received</h3>
+                                <div class="ds-train-row">
+                                    <div class="ds-train-col">
+                                        <p class="ds-train-label">Total</p>
+                                        <div class="ds-inline-stat">
+                                            <span class="ds-stat-num ds-stat-num-pink">59 809</span>
+                                            <span class="ds-train-unit">Hours</span>
+                                        </div>
+                                        <div class="ds-train-substats">
+                                            <div class="ds-train-substat">
+                                                <img src="../assets/images/data-summary/male_icon.svg" alt="" aria-hidden="true" class="ds-gender-ico">
+                                                <span class="ds-train-sub">42 498 Hours</span>
+                                            </div>
+                                            <div class="ds-train-substat">
+                                                <img src="../assets/images/data-summary/female_icon.svg" alt="" aria-hidden="true" class="ds-gender-ico">
+                                                <span class="ds-train-sub ds-train-sub-pink">17 392 Hours</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ds-train-col ds-train-col-side">
+                                        <p class="ds-train-label">Per Staff</p>
+                                        <div class="ds-inline-stat">
+                                            <span class="ds-stat-num ds-stat-num-pink">31.6</span>
+                                            <span class="ds-train-unit">Hours</span>
+                                        </div>
+                                        <div class="ds-train-substats">
+                                            <div class="ds-train-substat">
+                                                <img src="../assets/images/data-summary/male_icon.svg" alt="" aria-hidden="true" class="ds-gender-ico">
+                                                <span class="ds-train-sub">34.4 Hours</span>
+                                            </div>
+                                            <div class="ds-train-substat">
+                                                <img src="../assets/images/data-summary/female_icon.svg" alt="" aria-hidden="true" class="ds-gender-ico">
+                                                <span class="ds-train-sub ds-train-sub-pink">26.5 Hours</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Staff Participating in Anti-Corruption Training -->
+                            <div class="section-border-pink margin-top-120">
+                                <h3 class="h3-title-style">Staff Participating in Anti-Corruption Training</h3>
+                                <div class="ds-total-row">
+                                    <div class="ds-inline-stat">
+                                        <span class="ds-stat-num ds-stat-num-pink">233</span>
+                                        <span class="ds-stat-pct">12.3%</span>
+                                    </div>
+                                    <img src="../assets/images/data-summary/Data_Social_Gender_Legends.svg"
+                                        alt="Legend: Male and Female" class="ds-img-auto">
+                                </div>
+                                <div class="ds-to-row">
+                                    <div class="ds-to-col-main">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num">173</span>
+                                            <span class="ds-stat-pct">14.0%</span>
+                                        </div>
+                                        <div class="ds-pict-grid" role="img" aria-label="Pictogram of male staff participating in anti-corruption training">
+                                            <img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"><span class="ds-pict-partial" style="width: 12px;"><img src="../assets/images/data-summary/male_icon.svg" alt="" class="ds-pict-ico"></span>
+                                        </div>
+                                    </div>
+                                    <div class="ds-to-col-side">
+                                        <div class="ds-stat-row">
+                                            <span class="ds-stat-num ds-stat-num-pink">60</span>
+                                            <span class="ds-stat-pct ds-stat-pct-pink">9.1%</span>
+                                        </div>
+                                        <div class="ds-pict-grid" role="img" aria-label="Pictogram of female staff participating in anti-corruption training">
+                                            <img src="../assets/images/data-summary/female_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/female_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/female_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/female_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/female_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/female_icon.svg" alt="" class="ds-pict-ico"><img src="../assets/images/data-summary/female_icon.svg" alt="" class="ds-pict-ico"><span class="ds-pict-partial" style="width: 10px;"><img src="../assets/images/data-summary/female_icon.svg" alt="" class="ds-pict-ico"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Health and Safety -->
+                            <div class="section-border-pink margin-top-120">
+                                <h3 class="h3-title-style">Health and Safety</h3>
+                                <div class="ds-hs-row">
+                                    <div class="ds-hs-col">
+                                        <p class="ds-hs-label">Staff get overed by the system</p>
+                                        <div class="ds-inline-stat">
+                                            <span class="ds-stat-num ds-stat-num-pink">100</span>
+                                            <span class="ds-train-unit">%</span>
+                                        </div>
+                                        <div class="ds-inline-stat">
+                                            <span class="ds-stat-num-sm ds-stat-num-pink">1 996</span>
+                                            <span class="ds-hs-unit-sm">Staffs</span>
+                                        </div>
+                                    </div>
+                                    <div class="ds-hs-col ds-hs-col-side">
+                                        <p class="ds-hs-label">Staff fatality Rate</p>
+                                        <div class="ds-inline-stat">
+                                            <span class="ds-stat-num ds-stat-num-pink">0</span>
+                                            <span class="ds-train-unit">%</span>
+                                        </div>
+                                        <div class="ds-inline-stat">
+                                            <span class="ds-stat-num-sm ds-stat-num-pink">0</span>
+                                            <span class="ds-hs-unit-sm">Staffs</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>

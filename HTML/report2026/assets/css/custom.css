@@ -4644,6 +4644,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* --- Data Summary Highlight Page (designer SVG charts) --- */
 .margin-top-100 {margin-top: 100px;}
+.margin-top-120 {margin-top: 120px;}
 .margin-top-150 {margin-top: 150px;}
 .ds-img {width: 100%; height: auto; display: block;}
 .ds-img-auto {width: auto; max-width: 100%; height: auto;}
@@ -4688,6 +4689,46 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .ds-split-row:not(.ds-split-row-tight) .ds-split-col-side {padding-left: 21px;}
 .ds-split-row-tight {margin-bottom: 0.75rem;}
 
+/* Employees by age: legend right + three columns with dividers */
+.ds-age-legend-row {display: flex; justify-content: flex-end; margin-bottom: 1.5rem;}
+.ds-age-row {display: flex; align-items: flex-start;}
+.ds-age-col {display: flex; flex-direction: column; min-width: 0;}
+.ds-age-col-1 {flex: 0 0 17%; padding-right: 10px;}
+.ds-age-col-2 {flex: 1 1 auto; border-left: 1px solid #c9cdcd; padding-left: 10px; padding-right: 10px;}
+.ds-age-col-3 {flex: 0 0 23%; border-left: 1px solid #c9cdcd; padding-left: 10px;}
+.ds-age-row .ds-stat-num {font-size: 34px; line-height: 34px;}
+.ds-age-row .ds-stat-pct {font-size: 16px; line-height: 20px;}
+/* Staff Turnover */
+.ds-inline-stat {display: flex; align-items: baseline; gap: 0.75rem;}
+.ds-to-row {display: flex; align-items: flex-start;}
+.ds-to-col-main {flex: 1 1 50%; padding-right: 21px;}
+.ds-to-col-side {flex: 1 1 50%; border-left: 1px solid #c9cdcd; padding-left: 21px;}
+/* Staff Training Hour Received */
+.ds-train-row {display: flex; align-items: flex-start; position: relative;}
+.ds-train-row::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
+.ds-train-col {flex: 1 1 50%; padding-left: 10px;}
+.ds-train-col-side {border-left: 1px solid #c9cdcd; padding-left: 10px;}
+.ds-train-label {font-family: 'Monda', sans-serif; font-size: 15px; font-weight: 700; color: #414646; margin-bottom: 10px;}
+.ds-train-unit {font-family: 'Monda', sans-serif; font-size: 20px; font-weight: 700; color: #FF32CD;}
+.ds-train-substats {display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 14px;}
+.ds-train-substat {display: flex; align-items: flex-end; gap: 7px;}
+.ds-gender-ico {height: 36px; width: auto;}
+.ds-train-sub {font-family: 'Monda', sans-serif; font-size: 16px; font-weight: 700; color: #565A5F;}
+.ds-train-sub-pink {color: #FF32CD;}
+/* Anti-corruption pictogram grids built from single icons */
+.ds-pict-grid {display: flex; flex-wrap: wrap; gap: 10px 9px; align-items: flex-start;}
+.ds-pict-ico {height: 30px; width: auto; display: block;}
+.ds-pict-partial {display: inline-block; overflow: hidden; height: 30px;}
+.ds-pict-partial .ds-pict-ico {height: 30px;}
+/* Health and Safety */
+.ds-hs-row {display: flex; align-items: flex-start; position: relative;}
+.ds-hs-row::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #c9cdcd;}
+.ds-hs-col {flex: 1 1 50%; padding-left: 10px;}
+.ds-hs-col-side {border-left: 1px solid #c9cdcd; padding-left: 10px;}
+.ds-hs-label {font-family: 'Monda', sans-serif; font-size: 15px; font-weight: 700; color: #414646; margin-bottom: 12px;}
+.ds-stat-num-sm {font-size: 26px; line-height: 26px;}
+.ds-hs-unit-sm {font-family: 'Monda', sans-serif; font-size: 14px; font-weight: 700; color: #FF32CD;}
+
 /* Environmental Convictions of Contractors */
 .ds-conviction-block {margin-bottom: 0.5rem;}
 .ds-conviction-upper-caption {font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: #FF32CD; line-height: 20px; letter-spacing: -1%; margin-bottom: 0 !important;}
@@ -4708,4 +4749,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 	.ds-split-col-side {border-left: none; padding-left: 0;}
 	.ds-total-number {font-size: 2.75rem;}
 	.ds-civil-block::before {content: none;}
+	.ds-civil-block::after {content: none;}
+	.ds-age-row {flex-direction: column; gap: 1.5rem;}
+	.ds-age-col-2, .ds-age-col-3 {border-left: none; padding-left: 0;}
+	.ds-to-row {flex-direction: column; gap: 1.5rem;}
+	.ds-to-col-side {border-left: none; padding-left: 0;}
+	.ds-train-row {flex-direction: column; gap: 1.5rem;}
+	.ds-train-row::before {content: none;}
+	.ds-train-col {padding-left: 0;}
+	.ds-train-col-side {border-left: none; padding-left: 0;}
+	.ds-hs-row {flex-direction: column; gap: 1.5rem;}
+	.ds-hs-row::before {content: none;}
+	.ds-hs-col {padding-left: 0;}
+	.ds-hs-col-side {border-left: none; padding-left: 0;}
 }
