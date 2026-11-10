@@ -5007,3 +5007,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding: 8px 10px 8px 0;
     }
 }
+/* By grade based on Civil Service Staff: 5 overlapping grade SVGs.
+   Each SVG's left edge aligns with its bar segment start (cumulative bar
+   widths 0 / 14 / 196 / 394 / 536 of 669 total SVG units); all bottom-aligned
+   so the proportional bar strips join into one continuous bar. */
+.ds-grade-chart {position: relative; width: 100%; aspect-ratio: 669 / 200;}
+.ds-grade-img {position: absolute; bottom: 0; height: auto;}
+.ds-grade-img-1 {left: 0; width: 25.71%;}      /* Directorate  172 @ 0   */
+.ds-grade-img-2 {left: 2.09%; width: 27.35%;}  /* Professional 183 @ 14  */
+.ds-grade-img-3 {left: 29.30%; width: 29.75%;} /* Site supervisory 199 @ 196 */
+.ds-grade-img-4 {left: 58.89%; width: 21.38%;} /* Technical 143 @ 394 */
+.ds-grade-img-5 {left: 80.12%; width: 19.88%;} /* Admin & Support 133 @ 536 */
