@@ -4092,6 +4092,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         margin-top: 1rem;
     }
 
+    /* Breathing room so the pink titles never touch the graphics/text */
+    .profile-row > .col-md-5,
+    .offices-row > .col-md-5 {
+        padding-right: 2.5rem;
+    }
+
+    .profile-row > .col-md-7,
+    .offices-row > .col-md-7 {
+        padding-left: 2.5rem !important;
+    }
 }
 
 .offices-row {
