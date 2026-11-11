@@ -278,8 +278,19 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .grid-container .block.interactive:focus-visible .svg-mask-icon {transform: scale(1.1); background-color: var(--hover-icon);}
 
 .green-list {list-style: none; padding: 0; margin: 0;}
-.green-list li {position: relative; padding-left: 20px; margin-bottom: 1rem; line-height: 1.5;}
-.green-list li::before {content: ""; position: absolute; left: 0; top: 4px; width: 6px; height: 35px; background-color: #82f000;}
+.green-list li {position: relative; padding-left: 0; margin-bottom: 1rem; line-height: 1.5;}
+/* Green line now comes from the .green-bar inside each item (same pattern as green-bar-text headers) */
+.green-list .green-bar-text-item {padding-top: 0; padding-bottom: 0;}
+/* Design: green bar is 6x35 (Figma spec), top-aligned; text indented 20px after it.
+   The text sits ~8px lower than the bar top (bar is vertically centred on the name line). */
+.green-list .green-bar-text-item .green-bar {
+    width: 6px;
+    height: 35px;
+    margin-right: 20px;
+}
+.green-list .green-bar-text-item > div:last-child {
+    margin-top: 8px;
+}
 .green-list li:last-child {/*margin-bottom: 0;*/}
 .green-list.special li {color: var(--darkGreyColor);}
 .green-bar-text-group {display: flex; flex-wrap: wrap; padding-top: 1.5rem; padding-bottom: 1.5rem;}
