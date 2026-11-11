@@ -283,13 +283,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .green-list .green-bar-text-item {padding-top: 0; padding-bottom: 0;}
 /* Design: green bar is 6x35 (Figma spec), top-aligned; text indented 20px after it.
    The text sits ~8px lower than the bar top (bar is vertically centred on the name line). */
+.green-list .green-bar-text-item {
+    align-items: flex-start; /* .green-bar-text base is center — that fights the text offset */
+}
 .green-list .green-bar-text-item .green-bar {
     width: 6px;
     height: 35px;
     margin-right: 20px;
 }
 .green-list .green-bar-text-item > div:last-child {
-    margin-top: 8px;
+    padding-top: 3px;
 }
 .green-list li:last-child {/*margin-bottom: 0;*/}
 .green-list.special li {color: var(--darkGreyColor);}
