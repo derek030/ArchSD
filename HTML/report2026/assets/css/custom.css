@@ -4638,6 +4638,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .key-award-item:hover .key-award-img.img-hover {
     opacity: 1;
 }
+
+/* Mobile/touch: no hover effect available, always show the hover.svg artwork.
+   display:none (not opacity) so there is no flash of img-default on viewport switch. */
+@media (max-width: 767.98px) {
+    .key-award-img.img-default {
+        display: none;
+    }
+    .key-award-img.img-hover {
+        opacity: 1;
+    }
+}
 .grecaptcha-badge {
     bottom: 86px !important;
 }
