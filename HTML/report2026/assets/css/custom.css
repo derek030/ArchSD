@@ -4544,6 +4544,15 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 33%;
 }
 
+/* Mobile: keep the tables at their tablet column widths instead of squishing;
+   the surrounding Bootstrap .table-responsive provides the horizontal scroll */
+@media (max-width: 767.98px) {
+    .beam-table,
+    .scheme-table {
+        min-width: 696px; /* = tablet (768px viewport) container content width */
+    }
+}
+
 /* ==========================================================================
    Key Awards Grid Gallery Styles
    ========================================================================== */
