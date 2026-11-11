@@ -4077,6 +4077,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
+/* --- Tablet: stack the "(As at 31 March 2026)" caption below the graphic --- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .profile-widget {
+        flex-direction: column;
+    }
+
+    .widget-icon-wrapper {
+        width: 70%;
+    }
+
+    .widget-text-block {
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+
+}
+
 .offices-row {
     border-left: 4px solid var(--mainPinkColor);
     padding-left: 0;
