@@ -4056,12 +4056,25 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
     
     .widget-icon-wrapper {
-        width: 50px;
+        width: auto; /* was 50px, which squeezed the icons tiny */
+        margin-left: 0.75rem; /* 12px gutter, aligns icons with the pink titles */
         margin-right: 1rem;
     }
-    
+
     .widget-icon {
-        max-height: 50px;
+        max-height: 110px;
+    }
+
+    /* Cancel the Bootstrap row -12px gutter so the pink left border
+       aligns with the "Our Profile" / "Our Offices" section titles */
+    .profile-row,
+    .offices-row {
+        margin-left: 0;
+    }
+
+    /* Align HQ address text and the office green lines with the row titles */
+    .offices-row > .col-md-7 {
+        padding-left: 0.75rem !important; /* overrides Bootstrap .ps-0 */
     }
 
     .widget-number {
