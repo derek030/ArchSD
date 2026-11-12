@@ -5163,14 +5163,23 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 0 !important;
 }
 
-/* Air Emissions & Water Usage: horizontal gap so the two sections read as separate boxes in one row */
-@media (min-width: 576px) {
-    .ds-air-water-row>.col-sm-6 {
-        width: calc(50% - 1.25rem);
+/* Air Emissions & Water Usage: horizontal gap so the two sections read as separate boxes in one row
+   (side-by-side at ALL widths incl. mobile, per designer) */
+.ds-air-water-row>.col-6 {
+    width: calc(50% - 1.25rem);
+}
+
+.ds-air-water-row>.col-6+.col-6 {
+    margin-left: 2.5rem;
+}
+
+@media (max-width: 575.98px) {
+    .ds-air-water-row>.col-6 {
+        width: calc(50% - 0.5rem);
     }
 
-    .ds-air-water-row>.col-sm-6+.col-sm-6 {
-        margin-left: 2.5rem;
+    .ds-air-water-row>.col-6+.col-6 {
+        margin-left: 1rem;
     }
 }
 
