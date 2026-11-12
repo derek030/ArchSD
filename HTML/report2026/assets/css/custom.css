@@ -5430,7 +5430,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-weight: 700;
     color: var(--darkGreyColor);
     letter-spacing: -2%;
-    line-height: 12px;
+    line-height: 0.75rem; /* 12px at default; rem so it scales with font-size setting */
     padding: 15px 15px 15px 0;
     text-align: left;
 }
@@ -5441,7 +5441,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* Data rows */
 .summary-data-table tr.data-row td {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem; /* 12px at default; rem so it scales with font-size setting (like GRI table) */
     font-weight: 500;
     color: var(--darkGreyColor);
     letter-spacing: -1.56%;
