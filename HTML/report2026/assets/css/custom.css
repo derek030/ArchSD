@@ -5270,14 +5270,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* Sticky section header columns (Environmental / Social Performance) */
 .ds-sticky-col {
     position: sticky;
-    top: 113px;
+    top: 120px; /* = fixed header height (desktop/tablet); no gap for content to peek through */
     align-self: flex-start;
     z-index: 10;
+    background-color: #ffffff; /* opaque so scrolling content hides behind the sticky block */
+    padding-bottom: 1rem;
 }
 
 @media (max-width: 767.98px) {
     .ds-sticky-col {
-        position: static;
+        top: 100px; /* mobile fixed header is shorter (100px) */
     }
 }
 /* ==========================================================================
@@ -5567,4 +5569,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .ds-sub-divider {
     border-top: 0.5px solid var(--darkGreyColor);
     margin: 1.875rem 0; /* 30px */
+}
+
+/* Governance pages wrap .col-md-7 to full width below the title col at <=1090px.
+   Sticky stays enabled at all widths per design; the white bg on .ds-sticky-col
+   keeps scrolling content hidden behind it. */
+
+/* At <=1090px the governance layout stacks (content col full width below).
+   Make the sticky title col a full-width white bar so charts slide cleanly
+   underneath instead of being sliced by a 33%-wide block. */
+@media (max-width: 68.125em) { /* 1090px */
+    .data-summary-page .ds-sticky-col {
+        width: 100%;
+    }
 }
