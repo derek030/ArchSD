@@ -5639,9 +5639,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     outline: 2px solid var(--mainGreenColor, #82EF00);
     outline-offset: 2px;
 }
-/* While the profile layer is open, hide all green frames —
-   the layer is closed ONLY via its X button */
+/* While the profile layer is open, the green frames are hidden AND
+   not clickable — the layer is closed ONLY via its X button */
 .group-photo-wrapper.gp-open .gp-hotspot {
+    pointer-events: none;
     border-color: transparent !important;
     background-color: transparent !important;
     box-shadow: none !important;
