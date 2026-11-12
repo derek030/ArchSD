@@ -3561,9 +3561,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .total-count-wrapper {
     font-family: 'Monda',  sans-serif;
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 400;
-    line-height: 74px;
+    line-height: 4.625rem;
     letter-spacing: -4.3%;
     color: var(--darkestGreyColor);
 }
@@ -3571,9 +3571,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .total-count-wrapper .currency-symbol,
 .total-count-wrapper .unit-symbol {
     font-family: 'Monda',  sans-serif;
-    font-size: 45px;
+    font-size: 2.8125rem;
     font-weight: 400;
-    line-height: 74px;
+    line-height: 4.625rem;
     letter-spacing: -4.3%;
     color: var(--darkestGreyColor);
 }
@@ -3934,7 +3934,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
   .assurance-table th, 
   .assurance-table td {
     padding: 16px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -4483,7 +4483,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .beam-table .beam-sub-label {
     font-weight: 700;
-    line-height: 21px;
+    line-height: 1.3125rem;
     color: var(--darkGreyColor)
 }
 
@@ -4492,7 +4492,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-family: 'Inter', sans-serif;
     font-size: 1rem; /* 16px */
     font-weight: 700;
-    line-height: 24px;
+    line-height: 1.5rem;
     letter-spacing: -2%;
     color: var(--darkGreyColor)
 }
@@ -4528,10 +4528,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .remarks-content {
     font-family: 'Inter', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 300;
     color: #000000;
-    line-height: 21px;
+    line-height: 1.3125rem;
     letter-spacing: -2%;
     margin-bottom: 0;
 }
@@ -4572,7 +4572,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    line-height: 24px;
+    line-height: 1.5rem;
     letter-spacing: -2%;
     color: var(--darkGreyColor);
 }
@@ -4583,7 +4583,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-size: 0.875rem;
     font-weight: 400;
     color: #000000;
-    line-height: 20px;
+    line-height: 1.25rem;
 }
 .scheme-th-cat {
     width: 20%;
@@ -4806,11 +4806,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .ds-total-number {
     font-family: 'Monda', sans-serif;
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 400;
     color: #FF32CD;
     letter-spacing: -10%;
-    line-height: 65px;
+    line-height: 4.0625rem;
 }
 
 /* Two-column split with vertical divider (male | female) */
@@ -4843,11 +4843,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .ds-stat-num {
     font-family: 'Monda', sans-serif;
-    font-size: 45px;
+    font-size: 2.8125rem;
     font-weight: 400;
     color: #565A5F;
     letter-spacing: -8%;
-    line-height: 40px;
+    line-height: 2.5rem;
 }
 
 .ds-stat-num-pink {
@@ -4855,10 +4855,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .ds-stat-pct {
-    font-size: 25px;
+    font-size: 1.5625rem;
     color: #86868B;
     letter-spacing: -10%;
-    line-height: 32px;
+    line-height: 2rem;
 }
 
 .ds-stat-pct-pink {
@@ -4954,13 +4954,13 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .ds-age-row .ds-stat-num {
-    font-size: 34px;
-    line-height: 34px;
+    font-size: 2.125rem;
+    line-height: 2.125rem;
 }
 
 .ds-age-row .ds-stat-pct {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1.25rem;
 }
 
 /* Staff Turnover */
@@ -5015,7 +5015,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .ds-train-label {
     font-family: 'Monda', sans-serif;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 700;
     color: #414646;
     margin-bottom: 10px;
@@ -5023,7 +5023,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .ds-train-unit {
     font-family: 'Monda', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #FF32CD;
 }
@@ -5048,7 +5048,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .ds-train-sub {
     font-family: 'Monda', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     color: #565A5F;
 }
@@ -5110,20 +5110,20 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .ds-hs-label {
     font-family: 'Monda', sans-serif;
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 700;
     color: #414646;
     margin-bottom: 12px;
 }
 
 .ds-stat-num-sm {
-    font-size: 26px;
-    line-height: 26px;
+    font-size: 1.625rem;
+    line-height: 1.625rem;
 }
 
 .ds-hs-unit-sm {
     font-family: 'Monda', sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 700;
     color: #FF32CD;
 }
@@ -5135,30 +5135,30 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .ds-conviction-upper-caption {
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 700;
     color: #FF32CD;
-    line-height: 20px;
+    line-height: 1.25rem;
     letter-spacing: -1%;
     margin-bottom: 0 !important;
 }
 
 .ds-conviction-number {
     font-family: 'Monda', sans-serif;
-    font-size: 45px;
+    font-size: 2.8125rem;
     font-weight: 400;
     color: #FF32CD;
-    line-height: 40px;
+    line-height: 2.5rem;
     letter-spacing: -8%;
     margin-bottom: 0 !important;
 }
 
 .ds-conviction-lower-caption {
     font-family: 'Monda', sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 700;
     color: #FF32CD;
-    line-height: 21px;
+    line-height: 1.3125rem;
     letter-spacing: -1.5%;
     margin-bottom: 0 !important;
 }
@@ -5521,10 +5521,45 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
    Each SVG's left edge aligns with its bar segment start (cumulative bar
    widths 0 / 14 / 196 / 394 / 536 of 669 total SVG units); all bottom-aligned
    so the proportional bar strips join into one continuous bar. */
-.ds-grade-chart {position: relative; width: 100%; aspect-ratio: 669 / 200;}
-.ds-grade-img {position: absolute; bottom: 0; height: auto;}
-.ds-grade-img-1 {left: 0; width: 25.71%;}      /* Directorate  172 @ 0   */
-.ds-grade-img-2 {left: 2.09%; width: 27.35%;}  /* Professional 183 @ 14  */
-.ds-grade-img-3 {left: 29.30%; width: 29.75%;} /* Site supervisory 199 @ 196 */
-.ds-grade-img-4 {left: 58.89%; width: 21.38%;} /* Technical 143 @ 394 */
-.ds-grade-img-5 {left: 80.12%; width: 19.88%;} /* Admin & Support 133 @ 536 */
+.ds-grade-chart {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 669 / 200;
+}
+
+.ds-grade-img {
+    position: absolute;
+    bottom: 0;
+    height: auto;
+}
+
+.ds-grade-img-1 {
+    left: 0;
+    width: 25.71%;
+}
+
+/* Directorate  172 @ 0   */
+.ds-grade-img-2 {
+    left: 2.09%;
+    width: 27.35%;
+}
+
+/* Professional 183 @ 14  */
+.ds-grade-img-3 {
+    left: 29.30%;
+    width: 29.75%;
+}
+
+/* Site supervisory 199 @ 196 */
+.ds-grade-img-4 {
+    left: 58.89%;
+    width: 21.38%;
+}
+
+/* Technical 143 @ 394 */
+.ds-grade-img-5 {
+    left: 80.12%;
+    width: 19.88%;
+}
+
+/* Admin & Support 133 @ 536 */
