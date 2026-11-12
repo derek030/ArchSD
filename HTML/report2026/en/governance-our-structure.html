@@ -176,18 +176,22 @@
                                     </svg>
                                 </button>
 
-                                <!-- Left: big initial, wipe-in portrait, name/position, magenta bar -->
+                                <!-- Left: big letter mask (image), wipe-in portrait, name/position -->
                                 <div class="gp-left">
-                                    <div class="gp-letter" id="gpLetter">M</div>
+                                    <img class="gp-letter" id="gpLetter"
+                                        src="../assets/images/group-photo/E Mask.svg" alt="">
                                     <img class="gp-portrait" id="gpPortrait" src="" alt="">
                                     <div class="gp-caption">
                                         <h3 class="gp-name" id="gpName"></h3>
                                         <p class="gp-pos" id="gpPos"></p>
                                     </div>
                                 </div>
-                                <div class="gp-bar" id="gpBar"></div>
 
-                                <!-- Right: quote bio -->
+                                <!-- Bottom pink line — letter & portrait rest on it -->
+                                <div class="gp-pinkline" id="gpPinkLine"></div>
+
+                                <!-- Right: quote bio (anchored above the name caption,
+                                     grows upward when the text is long) -->
                                 <div class="gp-right">
                                     <p class="gp-bio"><span class="gp-q gp-q-open">&ldquo;</span><span
                                             id="gpBio"></span><span class="gp-q gp-q-close">&rdquo;</span></p>
@@ -642,23 +646,27 @@
                 //      replace them with real individual portraits of the same file names.
                 // 13 SSF members — listed in LEFT-TO-RIGHT photo order.
                 // Photo positions 1-13 map to member ids: 7,6,8,11,9,2,1,13,12,4,3,5,10
-                // (confirmed by client). img = placeholder portrait per photo position;
-                // replace person-XX.png with the real portrait of the person STANDING
-                // at that photo position.
+                // (confirmed by client).
+                // Portrait: designer hasn't delivered individual portraits yet, so ALL
+                // members fall back to DEFAULT_PORTRAIT (02 Edward WONG images.svg).
+                // When real portraits arrive, add e.g. img: 'person-XX.png' back to the
+                // member STANDING at that photo position.
+                // Letter mask: every member now has its own mask SVG (X Mask.svg)
+                // mapped via maskImg. DEFAULT_MASK remains as a safety fallback.
                 const ssfMembers = [
-                    { id: 7,  name: 'Mr C. Y. KAN',       initial: 'C', pos: 'Assistant Director (Structural Engineering)', bio: 'Pioneering structural integrity and state-of-the-art construction technologies to secure public safety.', img: 'person-01.png', box: [7.2, 30.2, 8.4, 50.4],  z: 30 },
-                    { id: 6,  name: 'Mr Felix CHENG',     initial: 'F', pos: 'Assistant Director (Quantity Surveying)',   bio: 'Balancing sustainability parameters with optimal budget metrics, cost management, and resource allocation.', img: 'person-02.png', box: [15.1, 25.9, 9.2, 47.1], z: 10 },
-                    { id: 8,  name: 'Ms Ivy YU',          initial: 'I', pos: 'Departmental Secretary',                    bio: 'Fostering strategic communication channels, governance protocols, and optimal administrative management frameworks.', img: 'person-03.png', box: [18.9, 43.5, 10.5, 39.5], z: 30 },
-                    { id: 11, name: 'Mr Anthony WONG',    initial: 'A', pos: 'Project Director/2',                        bio: 'Developing high-quality, highly functional community facilities and landmark green public spaces.', img: 'person-04.png', box: [25.2, 29.2, 9.1, 42.4],  z: 10 },
-                    { id: 9,  name: 'Ms Athena FUNG',     initial: 'A', pos: 'Project Director/1',                        bio: 'Coordinating large-scale municipal programs while promoting OHS best practices and community well-being.', img: 'person-05.png', box: [30.9, 43.2, 7.8, 35.8], z: 30 },
-                    { id: 2,  name: 'Mr Edward WONG',     initial: 'E', pos: 'Deputy Director of Architectural Services', bio: 'Driving architectural innovations while ensuring resilience, health, safety, and green design features across every project.', img: 'person-06.png', box: [36.7, 22.6, 10.3, 60.4], z: 15 },
-                    { id: 1,  name: 'Mr Michael LI, JP',  initial: 'M', pos: 'Director of Architectural Services',        bio: 'ArchSD creates positive impacts through sustainable buildings and communities. ArchSD is committed to excellence in public works and environmental stewardship.', img: 'person-07.png', box: [43.5, 27.6, 9.8, 63.0],  z: 25 },
-                    { id: 13, name: 'Mr Ben YEUNG',       initial: 'B', pos: 'Project Director/4',                        bio: 'Spearheading future smart-city schemes and resilient infrastructure designs for sustainable city growth.', img: 'person-08.png', box: [53.2, 24.6, 8.5, 54.5], z: 10 },
-                    { id: 12, name: 'Ms Lilian CHEUNG',   initial: 'L', pos: 'Project Director/3',                        bio: 'Integrating user-centric concepts and sustainable land-use principles within major institutional projects.', img: 'person-09.png', box: [59.8, 40.8, 8.5, 40.8], z: 30 },
-                    { id: 4,  name: 'Mr M.Y.CHAN, JP',    initial: 'M', pos: 'Assistant Director (Building Services)',    bio: 'Transforming smart grids and energy efficiency systems within public structures to achieve net-zero targets.', img: 'person-10.png', box: [65.4, 26.6, 9.4, 51.3], z: 10 },
-                    { id: 3,  name: 'Mr Peter LAU',       initial: 'P', pos: 'Assistant Director (Architectural)',        bio: 'Enriching spatial designs with community well-being, cultural preservation, and modern heritage integration.', img: 'person-11.png', box: [72.9, 43.8, 9.5, 35.2], z: 30 },
-                    { id: 5,  name: 'Mr Raymond CHAN',    initial: 'R', pos: 'Assistant Director (Property Services)',    bio: 'Extending building life-cycles and facility maintenance performance parameters under reliable asset frameworks.', img: 'person-12.png', box: [76.6, 25.2, 9.6, 53.1], z: 10 },
-                    { id: 10, name: 'Mr Paul LEE',        initial: 'P', pos: 'Project Director/2',                        bio: 'Adopting modular integrated construction (MiC) techniques to compress development timelines and reduce carbon footprint.', img: 'person-13.png', box: [83.2, 29.9, 9.5, 49.1],  z: 15 }
+                    { id: 7,  name: 'Mr C. Y. KAN',       initial: 'C', pos: 'Assistant Director (Structural Engineering)', bio: 'Pioneering structural integrity and state-of-the-art construction technologies to secure public safety.', maskImg: 'C Mask.svg', box: [7.2, 30.2, 8.4, 50.4],  z: 30 },
+                    { id: 6,  name: 'Mr Felix CHENG',     initial: 'F', pos: 'Assistant Director (Quantity Surveying)',   bio: 'Balancing sustainability parameters with optimal budget metrics, cost management, and resource allocation.', maskImg: 'F Mask.svg', box: [15.1, 25.9, 9.2, 47.1], z: 10 },
+                    { id: 8,  name: 'Ms Ivy YU',          initial: 'I', pos: 'Departmental Secretary',                    bio: 'Fostering strategic communication channels, governance protocols, and optimal administrative management frameworks.', maskImg: 'I Mask.svg', box: [18.9, 43.5, 10.5, 39.5], z: 30 },
+                    { id: 11, name: 'Mr Anthony WONG',    initial: 'A', pos: 'Project Director/2',                        bio: 'Developing high-quality, highly functional community facilities and landmark green public spaces.', maskImg: 'A Mask.svg', box: [25.2, 29.2, 9.1, 42.4],  z: 10 },
+                    { id: 9,  name: 'Ms Athena FUNG',     initial: 'A', pos: 'Project Director/1',                        bio: 'Coordinating large-scale municipal programs while promoting OHS best practices and community well-being.', maskImg: 'A Mask.svg', box: [30.9, 43.2, 7.8, 35.8], z: 30 },
+                    { id: 2,  name: 'Mr Edward WONG',     initial: 'E', pos: 'Deputy Director of Architectural Services', bio: 'Driving architectural innovations while ensuring resilience, health, safety, and green design features across every project.', maskImg: 'E Mask.svg', box: [36.7, 22.6, 10.3, 60.4], z: 15 },
+                    { id: 1,  name: 'Mr Michael LI, JP',  initial: 'M', pos: 'Director of Architectural Services',        bio: 'ArchSD creates positive impacts through sustainable buildings and communities. ArchSD is committed to excellence in public works and environmental stewardship.', maskImg: 'M Mask.svg', box: [43.5, 27.6, 9.8, 63.0],  z: 25 },
+                    { id: 13, name: 'Mr Ben YEUNG',       initial: 'B', pos: 'Project Director/4',                        bio: 'Spearheading future smart-city schemes and resilient infrastructure designs for sustainable city growth.', maskImg: 'B Mask.svg', box: [53.2, 24.6, 8.5, 54.5], z: 10 },
+                    { id: 12, name: 'Ms Lilian CHEUNG',   initial: 'L', pos: 'Project Director/3',                        bio: 'Integrating user-centric concepts and sustainable land-use principles within major institutional projects.', maskImg: 'L Mask.svg', box: [59.8, 40.8, 8.5, 40.8], z: 30 },
+                    { id: 4,  name: 'Mr M.Y.CHAN, JP',    initial: 'M', pos: 'Assistant Director (Building Services)',    bio: 'Transforming smart grids and energy efficiency systems within public structures to achieve net-zero targets.', maskImg: 'M Mask.svg', box: [65.4, 26.6, 9.4, 51.3], z: 10 },
+                    { id: 3,  name: 'Mr Peter LAU',       initial: 'P', pos: 'Assistant Director (Architectural)',        bio: 'Enriching spatial designs with community well-being, cultural preservation, and modern heritage integration.', maskImg: 'P Mask.svg', box: [72.9, 43.8, 9.5, 35.2], z: 30 },
+                    { id: 5,  name: 'Mr Raymond CHAN',    initial: 'R', pos: 'Assistant Director (Property Services)',    bio: 'Extending building life-cycles and facility maintenance performance parameters under reliable asset frameworks.', maskImg: 'R Mask.svg', box: [76.6, 25.2, 9.6, 53.1], z: 10 },
+                    { id: 10, name: 'Mr Paul LEE',        initial: 'P', pos: 'Project Director/2',                        bio: 'Adopting modular integrated construction (MiC) techniques to compress development timelines and reduce carbon footprint.', maskImg: 'P Mask.svg', box: [83.2, 29.9, 9.5, 49.1],  z: 15 }
                 ];
 
                 const widget   = document.getElementById('groupPhotoWidget');
@@ -672,6 +680,16 @@
                 const elImg    = document.getElementById('gpPortrait');
 
                 if (!widget || !hotspots || !panel) return;
+
+                // Shared panel assets (in ../assets/images/group-photo/):
+                // - Portrait: designer hasn't delivered individual portraits yet, so ALL
+                //   members temporarily use the Edward WONG sample portrait.
+                //   When real portraits arrive, set m.img back to e.g. 'person-XX.png'.
+                // - Letter mask: each member's big initial letter comes from a mask SVG.
+                //   Only "E Mask.svg" exists so far — when the designer delivers the rest
+                //   (C Mask.svg, F Mask.svg, ...), set m.maskImg per member.
+                const DEFAULT_PORTRAIT = '02 Edward WONG images.svg';
+                const DEFAULT_MASK     = 'E Mask.svg';
 
                 let currentId = null;
 
@@ -705,21 +723,22 @@
                         b.setAttribute('aria-expanded', b.getAttribute('aria-label') === m.name ? 'true' : 'false'));
                     currentId = m.id;
 
-                    elLetter.textContent = m.initial;
                     elName.textContent   = m.name;
                     elPos.textContent    = m.pos;
                     elBio.textContent    = m.bio;
-                    elImg.src            = '../assets/images/group-photo/' + m.img;
+                    elImg.src            = '../assets/images/group-photo/' + (m.img || DEFAULT_PORTRAIT);
                     elImg.alt            = m.name;
+                    elLetter.src         = '../assets/images/group-photo/' + (m.maskImg || DEFAULT_MASK);
+                    elLetter.alt         = '';
 
-                    gsap.killTweensOf([panel, elLetter, elImg, '.gp-caption', '.gp-right', '#gpBar']);
+                    gsap.killTweensOf([panel, elLetter, elImg, '.gp-caption', '.gp-right', '#gpPinkLine']);
                     gsap.set(panel, { visibility: 'visible' });
 
                     const tl = gsap.timeline();
                     tl.fromTo(panel, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' })
                       .fromTo(elLetter, { scale: 0.4, opacity: 0, transformOrigin: '50% 50%' },
                                         { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.6)' }, '-=0.05')
-                      .fromTo('#gpBar', { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: 'power2.out' }, '-=0.3')
+                      .fromTo('#gpPinkLine', { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: 'power2.out', transformOrigin: 'left center' }, '-=0.3')
                       .fromTo(elImg, { clipPath: 'inset(0% 0% 100% 0%)' },
                                      { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.55, ease: 'power3.inOut' }, '-=0.35')
                       .fromTo('.gp-caption', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '-=0.25')

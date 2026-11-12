@@ -5676,37 +5676,49 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     height: max(3cqw, 18px);
 }
 
-/* Big neon-green initial — cap height ≈ 42% of panel height, visual top ≈ 20% */
+/* Big neon-green initial — now an IMAGE (mask SVG per member).
+   Latest design: left side, resting on the bottom pink line. */
 .gp-letter {
     position: absolute;
-    left: 10%;
-    top: 13%;
-    font-family: "Monda", sans-serif;
-    font-weight: 700;
-    font-size: 29cqw;
-    line-height: 1;
-    color: var(--mainGreenColor, #82EF00);
+    left: 8%;
+    bottom: 4.8%;
+    height: 65%;
+    width: auto;
+    max-width: none;
     z-index: 1;
     pointer-events: none;
 }
 
-/* Person cutout portrait — overlaps the letter's right edge,
-   bottom resting on the magenta bar */
+/* Person cutout portrait — next to the letter, overlapping its right edge,
+   top slightly ABOVE the letter's top (height a touch bigger, same bottom). */
 .gp-portrait {
     position: absolute;
-    left: 36%;
-    bottom: 19.5%;
-    height: 57%;
+    left: 21%;
+    bottom: 4.8%;
+    height: 66%;
     width: auto;
     max-width: none;
     z-index: 2;
 }
 
-/* Name (green) + position (white) just above the magenta bar */
+/* Bottom pink line — spans under letter + portrait, per latest design */
+.gp-pinkline {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: 3.5%;
+    height: max(0.5cqw, 4px);
+    background-color: var(--mainPinkColor, #ff31cd);
+    transform-origin: left center;
+    z-index: 3;
+}
+
+/* Name (green) + position (white) — bottom of the RIGHT column.
+   FIXED anchor: the bio above it grows upward and never collapses into it. */
 .gp-caption {
     position: absolute;
-    left: 10%;
-    bottom: 21%;
+    left: 52%;
+    bottom: 10%;
     z-index: 3;
 }
 .gp-name {
@@ -5716,34 +5728,29 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: var(--mainGreenColor, #82EF00);
     margin: 0 0 0.35em;
     line-height: 1.25;
+    white-space: nowrap; /* the name defines the caption width */
 }
+/* Position text wraps within the NAME's width:
+   width:0 removes it from the caption's shrink-to-fit calculation,
+   min-width:100% pulls it back to the caption width (= name width). */
 .gp-pos {
     font-family: "Inter", sans-serif;
     font-size: max(1.7cqw, 10px);
     color: #ffffff;
     margin: 0;
     line-height: 1.3;
+    width: 0;
+    min-width: 100%;
 }
 
-/* Magenta underline bar — from letter's left edge to ~88% of panel */
-.gp-bar {
-    position: absolute;
-    left: 10%;
-    width: 78%;
-    bottom: 18.6%;
-    height: max(0.45cqw, 3px);
-    background-color: var(--mainPinkColor, #ff31cd);
-    transform-origin: left center;
-    z-index: 3;
-}
-
-/* Right: quote bio — aligned with the portrait's upper half */
+/* Right: quote bio — sits ABOVE the name caption (caption top ≈ 24% from
+   bottom, so the bio floor is set below-collision at 28%): bottom-anchored,
+   so longer text expands UPWARD, never down into the caption. */
 .gp-right {
     position: absolute;
-    left: 58.5%;
-    top: 52%;
-    transform: translateY(-50%);
-    width: 30%;
+    left: 52%;
+    bottom: 28%;
+    width: 37%;
     z-index: 3;
 }
 .gp-bio {
@@ -5756,12 +5763,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .gp-q {
     font-family: Georgia, "Times New Roman", serif;
     font-weight: 700;
-    font-size: 1.5em;
     line-height: 0;
-    vertical-align: -0.15em;
 }
-.gp-q-open { color: var(--mainGreenColor, #82EF00); margin-right: 0.25em; }
-.gp-q-close { color: var(--mainPinkColor, #ff31cd); margin-left: 0.25em; }
+/* Open quote: its own line above the bio text (per latest design) */
+.gp-q-open {
+    display: block;
+    font-size: 2em;
+    color: var(--mainGreenColor, #82EF00);
+    margin: 0 0 0.15em -0.05em;
+}
+/* Latest design has no closing quote */
+.gp-q-close { display: none; }
 
 /* Small screens: keep everything proportional; give text a readable floor */
 @media (max-width: 575.9px) {
