@@ -5605,10 +5605,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 -----------------------------------------------------------------*/
 
 /* Transparent hotspot buttons over each person (positioned by JS).
-   Each person's clickable area is framed; hover shows a stronger frame.
-   Kept ABOVE the panel so clicking another person switches directly.
-   The container itself must NOT intercept clicks (so the panel's X
-   button stays clickable) — only the buttons receive pointer events. */
+   The green frame appears ONLY on hover/focus (default invisible);
+   the container itself never intercepts clicks — only the buttons do. */
 .gp-hotspots {
     position: absolute;
     inset: 0;
@@ -5619,7 +5617,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     position: absolute;
     pointer-events: auto;
     background: transparent;
-    border: 1px solid rgba(130, 239, 0, 0.45);
+    border: 1px solid transparent;
     border-radius: 6px;
     padding: 0;
     cursor: pointer;
@@ -5627,13 +5625,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 .gp-hotspot:hover,
 .gp-hotspot:focus-visible {
-    border-color: var(--mainGreenColor, #82EF00);
+    border-color: rgba(130, 239, 0, 0.45);
     background-color: rgba(130, 239, 0, 0.08);
     box-shadow: 0 0 0 1px rgba(130, 239, 0, 0.45);
-}
-.gp-hotspot[aria-expanded="true"] {
-    border-color: var(--mainGreenColor, #82EF00);
-    background-color: rgba(130, 239, 0, 0.12);
 }
 .gp-hotspot:focus-visible {
     outline: 2px solid var(--mainGreenColor, #82EF00);
