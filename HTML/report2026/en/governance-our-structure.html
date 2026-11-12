@@ -707,9 +707,11 @@
                     b.style.zIndex = m.z;
                     b.setAttribute('aria-label', m.name);
                     b.setAttribute('aria-expanded', 'false');
-                    // Click to open; clicking another person switches directly.
-                    // The layer can ONLY be closed via the X button.
+                    // Click to open. While the layer is open the hotspots are
+                    // NOT clickable (frames hidden, pointer-events disabled) —
+                    // the layer can ONLY be closed via the X button.
                     b.addEventListener('click', () => {
+                        if (widget.classList.contains('gp-open')) return;
                         if (currentId !== m.id) openPanel(m);
                     });
                     hotspots.appendChild(b);
