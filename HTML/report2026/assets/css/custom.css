@@ -5387,11 +5387,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .summary-data-table td.val-col {
     width: 8% !important;
 }
-/* Header styles */
+/* Header styles — typography from h4-title-style class on th;
+   Inter override mirrors GRI's .gri-table-head th pattern */
 .summary-data-table thead th {
-    font-family: 'Monda', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
+    font-family: 'Inter', sans-serif;
     color: #000000;
     text-align: center;
     padding: 12px 15px;
@@ -5408,13 +5407,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .summary-data-table thead tr {
     border-bottom: 4px solid var(--mainPinkColor);
 }
-/* Category column (rowspan) */
+/* Category column (rowspan) — typography from h4-title-style class; pink color is table-specific */
 .summary-data-table td.category-cell {
-    font-family: "Monda", sans-serif !important;
-    font-size: 1.25rem !important; /* 20px */
-    font-weight: 700 !important;
-    line-height: 1.5625rem !important; /* 25px */
-    letter-spacing: -3% !important;
     color: var(--mainPinkColor) !important;
     text-align: left !important;
     vertical-align: top;
@@ -5423,29 +5417,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border: none;
 }
 
-/* Sub-headers inside table */
+/* Sub-headers inside table — typography from h4-title-style class */
 .summary-data-table tr.sub-header-row td {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
     color: var(--darkGreyColor);
-    letter-spacing: -2%;
-    line-height: 0.75rem; /* 12px at default; rem so it scales with font-size setting */
     padding: 15px 15px 15px 0;
     text-align: left;
 }
 .summary-data-table tr.sub-header-row td.sub-header-title {
-    font-weight: 700;
     border-bottom: 2px solid var(--darkGreyColor);
 }
-/* Data rows */
+/* Data rows — typography from p5-table-body class */
 .summary-data-table tr.data-row td {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem; /* 12px at default; rem so it scales with font-size setting (like GRI table) */
-    font-weight: 500;
-    color: var(--darkGreyColor);
-    letter-spacing: -1.56%;
-    line-height: 1rem;
     padding: 12px 15px 12px 0;
     border-bottom: 0.5px solid var(--darkGreyColor);
     text-align: left;
