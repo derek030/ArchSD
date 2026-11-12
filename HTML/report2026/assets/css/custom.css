@@ -5520,28 +5520,51 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 25.71%;
 }
 
-/* Directorate  172 @ 0   */
 .ds-grade-img-2 {
     left: 2.09%;
     width: 27.35%;
 }
 
-/* Professional 183 @ 14  */
 .ds-grade-img-3 {
     left: 29.30%;
     width: 29.75%;
 }
 
-/* Site supervisory 199 @ 196 */
 .ds-grade-img-4 {
     left: 58.89%;
     width: 21.38%;
 }
 
-/* Technical 143 @ 394 */
 .ds-grade-img-5 {
     left: 80.12%;
     width: 19.88%;
 }
 
-/* Admin & Support 133 @ 536 */
+/* ============================================================
+   Data Summary Highlight page - designer Figma feedback
+   (scoped to .data-summary-page so other pages are not affected)
+   ============================================================ */
+/* 1. Pink line to "Energy Usage" title space: halved (20px -> 10px) */
+.data-summary-page .section-border-pink {
+    padding-top: 0.625rem !important; /* 10px */
+}
+/* 2. "Energy Usage" title to green-bar sub-header space: doubled (8px -> 16px) */
+.data-summary-page .section-border-pink > .h3-title-style {
+    margin-bottom: 1rem; /* 16px */
+}
+/* 3. "More Details..." hyperlink: pink + bold, underline on hover only */
+.ds-more-link {
+    color: var(--mainPinkColor);
+    font-weight: 700;
+    text-decoration: none;
+}
+.ds-more-link:hover,
+.ds-more-link:focus-visible {
+    color: var(--mainPinkColor);
+    text-decoration: underline;
+}
+/* 4. Grey divider line between sub-sections (per Figma): 30px spacing above and below */
+.ds-sub-divider {
+    border-top: 0.5px solid var(--darkGreyColor);
+    margin: 1.875rem 0; /* 30px */
+}
