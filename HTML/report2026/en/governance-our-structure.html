@@ -786,9 +786,10 @@
                           //    overflow:hidden clip box (fast)
                           .fromTo(elLetter, { xPercent: -100 },
                                             { xPercent: 0, duration: FAST, ease: 'power2.out' }, '-=0.15')
-                          // 3) portrait: same — from the left edge of its own box (fast)
+                          // 3) portrait: same clip-box slide (fast), but starts
+                          //    a beat AFTER the letter so they don't rush together
                           .fromTo(elImg, { xPercent: -100 },
-                                         { xPercent: 0, duration: FAST, ease: 'power2.out' }, '-=0.3')
+                                         { xPercent: 0, duration: FAST, ease: 'power2.out' }, '<0.2')
                           // 6) pink line: left → right (fast) — kept as before
                           .fromTo('#gpPinkLine', { scaleX: 0 },
                                   { scaleX: 1, duration: FAST, ease: 'power2.out', transformOrigin: 'left center' }, '-=0.25')
