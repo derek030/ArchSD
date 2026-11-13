@@ -640,8 +640,54 @@
     <script src="../assets/js/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
 
     <script>
+        // Floating table header: clones the GRI index table's thead into a
+        // fixed bar that pins below the fixed site header while the table is
+        // scrolled through (CSS position:sticky cannot be used because the
+        // table container has overflow-x:auto).
+        (function () {
+            var container = document.querySelector('.gri-index-table-container');
+            var table = container ? container.querySelector('table.gri-table') : null;
+            var siteHeader = document.querySelector('header.fixed-header');
+            if (!container || !table || !table.tHead) return;
 
+            var wrap = document.createElement('div');
+            wrap.className = 'gri-table-head-floating';
+            wrap.setAttribute('aria-hidden', 'true'); // clone is decorative
+            var cloneTable = document.createElement('table');
+            cloneTable.className = 'gri-table';
+            cloneTable.appendChild(table.tHead.cloneNode(true));
+            wrap.appendChild(cloneTable);
+            document.body.appendChild(wrap);
 
+            var ticking = false;
+            function update() {
+                ticking = false;
+                var r = table.getBoundingClientRect();
+                var headH = table.tHead.getBoundingClientRect().height;
+                var siteH = siteHeader ? siteHeader.getBoundingClientRect().height : 0;
+                // Show only once the real thead has fully slid behind the site
+                // header (no visual duplicate) and rows are still on screen.
+                var show = (r.top + headH <= siteH) && (r.bottom > siteH);
+                wrap.classList.toggle('is-visible', show);
+                if (show) {
+                    wrap.style.top = siteH + 'px';
+                    var cr = container.getBoundingClientRect();
+                    wrap.style.left = cr.left + 'px';
+                    wrap.style.width = cr.width + 'px';
+                    cloneTable.style.width = r.width + 'px';
+                    // Keep the clone's columns aligned with the real table
+                    // (covers container padding and horizontal scrolling)
+                    cloneTable.style.marginLeft = (r.left - cr.left) + 'px';
+                }
+            }
+            function onScroll() {
+                if (!ticking) { ticking = true; requestAnimationFrame(update); }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            container.addEventListener('scroll', onScroll, { passive: true });
+            update();
+        })();
     </script>
 </body>
 

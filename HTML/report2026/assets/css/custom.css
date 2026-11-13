@@ -4464,6 +4464,31 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-bottom: 2px solid #565A5F;
 }
 
+/* --- Floating table header (GRI content index) ---
+   Built by JS in gri-index.html: the real thead is cloned into this fixed
+   bar which pins below the fixed site header while the table is in view.
+   A JS clone is required because the table lives inside an
+   overflow-x:auto scroll container, which disables CSS position:sticky. */
+.gri-table-head-floating {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500; /* above content, below the site header (999) and nav (1000) */
+    background: #ffffff;
+    overflow: hidden; /* clips the clone when the table is wider than the viewport */
+    display: none;
+}
+
+.gri-table-head-floating.is-visible {
+    display: block;
+}
+
+.gri-table-head-floating table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    min-width: 1000px; /* mirrors .gri-table so the cloned column widths line up */
+}
+
 .icon-circle-green {
     display: inline-block;
     width: 20px;
