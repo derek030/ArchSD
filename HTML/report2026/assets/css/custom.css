@@ -3576,6 +3576,18 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-left: 4px solid var(--mainPinkColor) !important; /* Replaces inline style for the pink vertical line */
     min-height: 150px;
 }
+/* Mobile: desktop reserves a spacer column (col-md-1) that disappears below
+   md, leaving pink bars glued to the screen edge (8px). Indent so they align
+   with the page's mobile content edge (~20px).
+   NOTE: the counter/header overrides live in the LATER media query after
+   the .total-count-wrapper base rule (same breakpoint, needs to win). */
+@media (max-width: 767.98px) {
+    .fund-details-block,
+    .budget-graphics-container {
+        margin-left: 12px;
+        width: calc(100% - 12px);
+    }
+}
 
 .fund-icon {
     max-height: 80px;
