@@ -3454,6 +3454,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         max-width: 100%; /* remove the 326px desktop cap so they fill the column */
         max-height: none;
     }
+    /* Space between the GovRoles org chart and the paragraph below */
+    .core-function-content-img {
+        margin-bottom: 1.875rem; /* 30px */
+    }
 }
 
 .core-function-title-style {
