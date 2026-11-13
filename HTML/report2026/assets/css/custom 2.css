@@ -37,9 +37,15 @@ body.menu-open {overflow: hidden;}
 .body-dim {opacity: 0; transition: all 0.3s ease;}
 .menu-open .body-dim {position: fixed; top: 0; left: 0; display: block; width: 100%; height: 100dvh; background-color: #787878; opacity: 0.6; z-index: 1000;}
 .container, .container-fluid {max-width: 1380px; --bs-gutter-x: var(--gutter-x); /*padding-right: calc(var(--gutter-x) / 2 + 45px);*/}
+/* JT */ .container.exten-left {padding-left: 0;}
+/* JT */ .container.exten-right {padding-right: 0;}
 h1, h2, h3, h4, h5, h6, .main-nav li, .cat-title {font-family: 'Monda', sans-serif;}
 p, .p, li {font-family: 'Inter', sans-serif; color: #000000;}
 /* JT */ p:last-of-type:not(:only-of-type) {margin-bottom: 0 !important;}
+/* JT */ a {font-size: inherit; color: var(--mainPinkColor); text-decoration: none;}
+/* JT */ a:hover {text-decoration: underline; text-decoration-color: var(--mainPinkColor);}
+/* JT */ a.inline-link {font-size: inherit; font-weight: 700; color: var(--mainPinkColor); text-decoration: none;}
+/* JT */ a.inline-link:hover, a.inline-link:focus-visible {text-decoration: underline;}
 img {width: 100%; height: auto;}
 /* accessibility */
 .accessibility {height: 0px; width: 0px; display: inline-block; overflow: hidden; margin: 0; padding: 0; font-size: 0; text-indent: -9999px; position: absolute;}
@@ -64,6 +70,7 @@ button {margin: 0; padding: 0; border: none; background: none; font: inherit; co
 .col-custom-105 {flex: 0 0 auto; width: calc(100% * (10.5 / 12));}
 .col-custom-15 {flex: 0 0 auto; width: calc(100% * (1.5 / 12)); position: relative;}
 /* JT */ .white {color: #ffffff !important;}
+/* JT */ .nowrap {text-wrap: nowrap;}
 
 /* header */
 header.fixed-header {
@@ -138,10 +145,10 @@ header.fixed-header.scrolled {background-color: #fff;}
 .nav-1st {font-size: 2.5rem; font-weight: 900; color: #fff; line-height: 1.2; text-decoration: none; margin-right: 3px; display: inline; transition: all 0.3s ease;}
 .nav-2nd {font-size: 1.375rem; font-weight: 900; color: #fff; line-height: 1.25; text-decoration: none; margin-right: 3px; display: inline; transition: all 0.3s ease;}
 .nav-appendix {font-size: 1rem; font-weight: 900; color: #fff; line-height: 1.25; text-align: right; text-decoration: none; width: 100%; display: inline-block; transition: all 0.3s ease;}
-.appendix-row.by-order .nav-appendix:hover, .appendix-row.by-order .nav-appendix.current {color: #82f000;}
+.nav-appendix:hover, .appendix-row.by-order .nav-appendix:hover, .appendix-row.by-order .nav-appendix.current {color: #82f000; text-decoration: none;}
 .nav-appendix.extra-toggle {width: 100%;}
-.nav-1st:hover, .nav-1st:focus, .nav-1st.current, .nav-1st.plus-sub.open-sub {color: #82f000;}
-.nav-2nd:hover, .nav-2nd:focus, .nav-2nd.current {color: #ff7adc;}
+.nav-1st:hover, .nav-1st:focus, .nav-1st.current, .nav-1st.plus-sub.open-sub {color: #82f000; text-decoration: none;}
+.nav-2nd:hover, .nav-2nd:focus, .nav-2nd.current {color: #ff7adc; text-decoration: none;}
 .nav-1st:active, .nav-2nd:active, .appendix-row.by-order .nav-appendix:active, 
 .appendix-row.download:active, button.extra-toggle:active, .extra-submenu .menu-icon:active {transform: translateY(1px) scale(0.9); filter: brightness(0.8);}
 .nav-1st.plus-sub {position: relative;}
@@ -151,7 +158,7 @@ header.fixed-header.scrolled {background-color: #fff;}
 .nav-1st.plus-sub.open-sub + ul {}
 .appendix-menu {min-width: 290px;}
 .appendix-row {display: flex; flex-wrap: wrap; margin-top: 7rem;}
-.appendix-row.by-order {display: grid; grid-template-rows: repeat(4, auto); grid-template-columns: repeat(2, 1fr); grid-auto-flow: column; gap: 0rem 0rem; margin-top: 2.1rem;}
+.appendix-row.by-order {display: grid; grid-template-rows: repeat(5, auto); grid-template-columns: repeat(2, 1fr); grid-auto-flow: column; gap: 0rem 0rem; margin-top: 2.1rem;}
 .appendix-row.by-order .appendix-cell {width: 100%}
 .appendix-row.download {margin-top: 0rem; transition: all 0.3s ease;}
 .appendix-cell {position: relative; display: flex; flex-wrap: wrap; align-content: center; justify-content: flex-end; padding-top: 1rem; padding-bottom: 1rem;}
@@ -213,8 +220,9 @@ header.fixed-header.scrolled {background-color: #fff;}
 .searchbtn .search {display: inline-block; width: 26px; height: 26px; background: url("../images/search-icon.svg") center center / contain no-repeat;}
 /* page nav */
 .page-nav-link {text-decoration: none; transition: all 0.3s ease}
+.page-nav-link:hover {text-decoration: none;}
 .page-nav-link:hover .page-nav-icon, .page-nav-link:focus .page-nav-icon, .page-nav-link:focus-visible .page-nav-icon {filter: none;}
-.page-nav-link:hover .page-nav-title {color: #000;}
+.page-nav-link:hover .page-nav-title {color: #000; text-decoration: none;}
 .page-nav-link .page-nav {display: flex; align-items: center;}
 .page-nav-link .page-nav-icon {width: 44px; height: auto; filter: invert(66%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(89%) contrast(90%);}
 .page-nav-link .page-nav-back .page-nav-icon {padding: 8px 8px 8px 0px;}
@@ -239,11 +247,11 @@ footer .footer-green-bar {width: 100px; height: 6px; background-color: var(--mai
 /* page-content */
 .white-header main {padding-top: var(--header-height);}
 section {padding-bottom: 50px;}
-.section-line {width: 100%; padding-top: 50px; border-bottom: 1px solid #565a5f;}
+.section-line {width: 100%; padding-top: 50px; border-bottom: 0.03125rem solid var(--darkGreyColor) !important}
 .XXXXbar {width: 8rem; height: auto;}
 .title-block {padding-top: 38px; padding-bottom: 3rem;}
-h2.section-title {font-size: 3.375rem; font-weight: 900; line-height: 1.11; color: var(--darkGreyColor); margin-bottom: 0 !important;}
-h2 {font-size: 3rem; font-weight: 400; line-height: 1.25; color: var(--mainPinkColor); letter-spacing: -0.025rem;}
+h2.section-title {font-family: 'Monda', sans-serif; font-size: 3.375rem; font-weight: 900; line-height: 1.11; color: var(--darkGreyColor); margin-bottom: 0 !important;}
+h2, .section-subtitle {font-family: 'Monda', sans-serif; font-size: 3rem; font-weight: 400; line-height: 1.25; color: var(--mainPinkColor); letter-spacing: -0.025rem; margin-bottom: .5rem;}
 h3 {font-size: 2.125rem; font-weight: 900; line-height: 1.06; color: var(--darkGreyColor); margin-bottom: .75rem;}
 h4 {font-size: 1.25rem; font-weight: 900; line-height: 1.06; color: var(--darkGreyColor); margin-bottom: .5rem;}
 p, ul, li {font-size: 1rem; font-weight: 300; line-height: 1.5;}
@@ -274,8 +282,22 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .grid-container .block.interactive:focus-visible .svg-mask-icon {transform: scale(1.1); background-color: var(--hover-icon);}
 
 .green-list {list-style: none; padding: 0; margin: 0;}
-.green-list li {position: relative; padding-left: 20px; margin-bottom: 1rem; line-height: 1.5;}
-.green-list li::before {content: ""; position: absolute; left: 0; top: 4px; width: 6px; height: 35px; background-color: #82f000;}
+.green-list li {position: relative; padding-left: 0; margin-bottom: 1rem; line-height: 1.5;}
+/* Green line now comes from the .green-bar inside each item (same pattern as green-bar-text headers) */
+.green-list .green-bar-text-item {padding-top: 0; padding-bottom: 0;}
+/* Design: green bar is 6x35 (Figma spec), top-aligned; text indented 20px after it.
+   The text sits ~8px lower than the bar top (bar is vertically centred on the name line). */
+.green-list .green-bar-text-item {
+    align-items: flex-start; /* .green-bar-text base is center — that fights the text offset */
+}
+.green-list .green-bar-text-item .green-bar {
+    width: 6px;
+    height: 35px;
+    margin-right: 20px;
+}
+.green-list .green-bar-text-item > div:last-child {
+    padding-top: 3px;
+}
 .green-list li:last-child {/*margin-bottom: 0;*/}
 .green-list.special li {color: var(--darkGreyColor);}
 .green-bar-text-group {display: flex; flex-wrap: wrap; padding-top: 1.5rem; padding-bottom: 1.5rem;}
@@ -324,20 +346,63 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .stakeholder-block:hover .stakeholder-layer-switch, .stakeholder-block:active .stakeholder-layer-switch,
 .stakeholder-block:focus .stakeholder-layer-switch, .stakeholder-block:focus-visible .stakeholder-layer-switch {transform: rotate(180deg); visibility: hidden; opacity: 0;}
 
+/* Director Message */
+.director-hero-section {padding-bottom: 0;}
+.extra-space {padding-top: 120px;}
+.extra-space .section-line {padding-top: 120px;}
+.director-top-container .hero-text-overlay {position: absolute; bottom: 0;}
+.director.title-block {padding-top: clamp(10px, -13.756rem + 23.196vw, 100px);}
+.director-top-container {display: block; position: relative; overflow-x: visible; overflow-y: hidden; min-height: 624px;}
+.director-hero-image {position: absolute; right: 0; bottom: 0; display: block; z-index: 0; overflow: hidden;}
+.director-hero-section .section-title {margin-bottom: 16px !important;}
+.director-hero-section .svg-director {max-width: calc(456px + clamp(82px, -17.406rem + 36.34vw, 223px)); padding-left: clamp(82px, -17.406rem + 36.34vw, 223px);}
+.director-hero-section .hero-greencross {width: 10.5%; max-width: 86px; height: auto; display: block; padding-bottom: 13%;}
+.director-hero-section .director-building {position: absolute; left: 0; bottom: 0;}
+.director-quote-wrap {display: flex; flex-direction: column; justify-content: center;}
+.director-quote-wrap img {min-width: 50px; max-width: 50px;}
+.director-quote-block {position: relative;}
+.director-quote-block .hero-greencross {position: absolute; top: calc(102px - 55px); left: 0; width: 65px; height: auto;}
+.director-quote {font-family: Monda, sans-serif; font-size: 1.875rem; font-weight: 700; line-height: 1.4; letter-spacing: -3%; color: var(--mainPinkColor, #ff32cd); 
+	padding: 102px 0; box-sizing: border-box; position: relative;}
+.h3-subtitle {font-family: Monda, sans-serif; font-size: 1.5625rem; font-weight: 700; line-height: 1.28 !important; letter-spacing: -3%; color: var(--darkGreyColor); display: block}
+.director-photo-wrap {padding-bottom: calc(var(--bs-gutter-x) * .5);}
+
+/* Green Env */
+.green-h4-title {color: var(--mainPinkColor); margin-top: 20px;}
+.mb-20 {margin-bottom: 20px;}
+
 @media (min-width: 1380px) {.grid-container {grid-auto-rows: minmax(calc((1380px / 3) - 35px), auto);}}
-@media (max-width: 1380px) {.grid-container {grid-auto-rows: minmax(calc((1380px / 3) - 35px), auto);}}
+@media (max-width: 1380px) {
+	.grid-container {grid-auto-rows: minmax(calc((1380px / 3) - 35px), auto);}
+	.director-top-container {min-height: 45vw;}
+}
 @media (max-width: 1199px) {
 	.grid-container {grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(calc((1200px / 3) - 35px), auto);}
 	/*.grid-container .block .svg-mask-icon {width: calc((100vw * 0.7) / 2);}*/
+	.director-top-container {min-height: 45vw;}
 }
 
 @media (max-width: 992px) {
-	.grid-container .block:first-child {padding: 0px 20% 0px 0px;}
 	.nav-1st {font-size: 2rem;}
 	.nav-2nd {font-size: 1.25rem;}
+	.grid-container .block:first-child {padding: 0px 20% 0px 0px;}
+	.director.title-block {padding-top: 50px; padding-bottom: 14px;}
+	.director-hero-section .hero-greencross {padding-bottom: 18%;}
+	.director-hero-section .svg-director {max-width: 592; padding-left: 136px;}
+	.director-quote {padding: 0;}
+	#section4 .director-quote {padding: 120px 0;}
+	#section4 .director-quote-block .hero-greencross {top: calc(120px - 55px);}
+	#section5 .director-quote {padding: 120px 0;}
+	#section5 .director-quote-block .hero-greencross {top: calc(120px - 55px);}
+	#section6 .director-quote-block {top: calc(120px - 55px);}
+	#section6 .director-quote {padding: 120px 0;}
+	.director-quote-block .hero-greencross {top: calc(0px - 55px);}
+	#section6 .director-quote-block .hero-greencross {top: calc(120px - 55px);}
 }
 @media (max-width: 767.9px) {
 	.container, .container-fluid {padding-right: calc(var(--gutter-x) / 2 + 15px);}
+	/* JT */ .container.exten-left {padding-left: 0; padding-right: 0;}
+	/* JT */ .container.exten-right {padding-right: 0;}
 	header .container, header .container-fluid {padding-right: calc(var(--gutter-x) / 2);}
 	header.fixed-header {padding-top: 26px;}
 	.asd-logo img, .site-title img {padding-bottom: 0.75rem;}
@@ -398,6 +463,15 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 	.stakeholder-header span {font-size: 1.25rem;}
 	.stakeholder-name {font-size: 1.125rem;}
 	.stakeholder-title {font-size: 0.875rem;}
+	.extra-space {padding-top: 80px;}
+	.extra-space .section-line {padding-top: 80px;}
+	.director-top-container {min-height: 48vw;}
+	.director.title-block {padding-top: 40px; padding-bottom: 0px;}
+	.director-hero-section .svg-director {max-width: 52vw; padding-left: clamp(50px, -3.363rem + 23.593vw, 180px);}
+	.director-quote {padding-bottom: 100px;}
+	#section4 .director-quote-wrap {padding-top: 120px;}
+	#section4 .director-quote {padding-top: 0; padding-bottom: 100px;}
+	#section4 .director-quote-block .hero-greencross {top: calc(0px - 55px);}
 }
 @media (max-width: 576px) {
 	.nav-1st {font-size: 1.625rem;}
@@ -415,6 +489,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 	.stakeholder-name {font-size: 1rem;}
 	.stakeholder-title {font-size: 0.75rem;}
 	.page-nav-line {border-top: 1px solid #565a5f; margin-top: 1rem; margin-bottom: 1rem;}
+	.director-top-container {min-height: 48vw;}
+	.director-hero-section .svg-director {max-width: calc(266px + clamp(50px, -3.363rem + 23.593vw, 180px)); padding-left: clamp(50px, -3.363rem + 23.593vw, 180px);}
 }
 @media (max-width: 400px) {
 	.grid-container {grid-template-columns: repeat(1, 1fr); grid-auto-rows: minmax(calc((80vw / 1) - 20px), auto);}
@@ -447,7 +523,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 #tagline {background-color: #0dc9f0;}
 #project {background-color: #bebebe;}
 .lottie-box {width: 100%; max-width: 1380px; height: 100%; max-height: 100dvh; margin: 0 auto; position: relative; overflow: hidden;}
-/* JT */ .animation-box {width: 100%; max-width: 1380px; height: 100%; min-height: 768px; max-height: 100dvh; margin: 0 auto; position: relative; overflow: hidden;}
+/* JT */ .animation-box {width: 100%; max-width: 1380px; height: 100%; min-height: 768px; max-height: 100dvh; margin: 0 auto; position: relative;}
 /* JT */ #xxxx-hero {background-color: #888888;}
 
 @media (max-width: 767px) {
@@ -537,7 +613,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-family: "Monda", sans-serif;
     font-size: 2.125rem; /* 34px */
     font-weight: 700;
-    line-height: 2.625rem; /* 42px */
+    line-height: 1.2353; /* 42px *//* JT */ 
     letter-spacing: -3%;
     text-align: left;
     color: var(--darkGreyColor);
@@ -582,7 +658,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: #000000;
 }
 
-.p4-table-title {
+.p4-table-title, .p4-table-title a {
     font-family: "Monda", sans-serif;
     font-size: 1.25rem; /* 20px */
     font-weight: 700;
@@ -602,24 +678,25 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     color: #000000;
 }
 
-.p6-caption-style {
-    font-family: "Inter", sans-serif;
-    font-size: 0.75rem; /* 12px */
-    font-weight: 600;
-    line-height: 1rem; /* 16px */
-    letter-spacing: -2%;
-    text-align: left;
-    color: #000000;
+/* JT */ .p6-caption-style {
+	display: inline-block;
+	font-family: "Inter", sans-serif;
+	font-size: 0.75rem; /* 12px */
+	font-weight: 600;
+	line-height: 1rem; /* 16px */
+	letter-spacing: -2%;
+	color: #000000;
+	text-align: left;
 }
 
 .p6-caption-light-style {
-    font-family: "Inter", sans-serif;
-    font-size: 0.75rem; /* 12px */
-    font-weight: 300;
-    line-height: 1rem; /* 16px */
-    letter-spacing: -2%;
-    text-align: left;
-    color: #000000;
+	font-family: "Inter", sans-serif;
+	font-size: 0.75rem; /* 12px */
+	font-weight: 300;
+	line-height: 1rem; /* 16px */
+	letter-spacing: -2%;
+	color: #000000;
+	text-align: left;
 }
 
 /* --- Mobile Responsive Typography --- */
@@ -1901,8 +1978,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     width: 100%;
 }
 
-.monitoring-target-item {
+/* JT */ .monitoring-target-item {
     padding-left: 3.125rem; /* 50px */
+    padding-left: 0rem; /* 50px */
 }
 
 .monitoring-target-cell {
@@ -2519,9 +2597,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding-right: 2.5rem;
 }
 
-#showcase-content-container {
+/* JT */ #showcase-content-container {
     position: relative;
-    padding: 3.75rem 4.063rem 3.125rem 3.75rem;
+    padding: 3.75rem 4.063rem 4.375rem 3.75rem;
     background-color: var(--tableGreyColor);
 }
 
@@ -2623,9 +2701,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     height: 0.938rem;
 }
 
-.showcase-divider-wrapper {
+/* JT */ .showcase-divider-wrapper {
     position: absolute;
-    right: -1.938rem; /* Half of the icon's width (62px) to position it halfway out */
+    right: -1.938rem; right: -35px; /* Half of the icon's width (62px) to position it halfway out */
 }
 
 .showcase-divider-icon {
@@ -2644,16 +2722,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-bottom: 1.563rem; /* 25px */
 }
 
-.sidebar-title {
+/* JT */ .sidebar-title {
     padding-bottom: 1.25rem; /* 20px */
     margin-bottom: 1.25rem; /* 20px */
-    border-bottom: 0.125rem solid var(--mainPinkColor);
+    border-bottom: 0.25rem solid var(--mainPinkColor);
 }
 
 /* --- Project Highlights Section --- */
 .sidebar-highlight-item {
     padding: 1.25rem 0; /* 20px 0 */
-    border-bottom: 0.063rem solid var(--darkGreyColor);
+    border-bottom: 0.063rem solid var(--darkGreyColor); /* JT */ border-bottom: 0.031rem solid var(--darkestGreyColor);
 }
 
 .sidebar-highlight-item:first-of-type {
@@ -2715,10 +2793,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     border-bottom: 0.031rem solid var(--darkestGreyColor);
 }
 
-.sidebar-case-list .hover-arrow-icon {
+/* JT */ .sidebar-case-list .hover-arrow-icon {
     position: absolute;
     /* Negative left pushes the arrow outside the box, into the gutter */
-    left: -1.5rem; 
+    left: -1.35rem; 
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
@@ -2727,7 +2805,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     transition: opacity 0.25s ease;
 }
 
-.sidebar-case-list a {
+/* JT */ .sidebar-case-list a {
     font-family: "Inter", sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
@@ -2739,7 +2817,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding: 0.938rem 0; /* Standard padding */
     background-color: transparent;
     transition: background-color 0.25s ease;
-    /* NO margin-left */
+	margin-left: -2rem;
+	padding-left: 2rem;
 }
 
 /* --- State Logic --- */
@@ -2819,11 +2898,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* Navigation Arrows */
-.kfs-nav {
+/* JT */ .kfs-nav {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 33.3%;
+    width: 25%;
     border: none;
     padding: 0;
     cursor: pointer;
@@ -2893,17 +2972,18 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* Slide Content */
-.kfs-content-container {
+/* JT */ .kfs-content-container {
     display: flex;
     flex-direction: column; /* Stacks the logo on top of the text grid */
+    align-items: flex-start;
     gap: 1rem;              /* Space between the logo and the text grid */
     padding-top: 1rem;    
-    min-height: 25rem;
+    min-height: 18rem;
 }
 
-.kfs-content-logo {
-    width: 6.063rem; 
-    height: auto;
+/* JT */ .kfs-content-logo {
+    width: auto; 
+    height: 30px;
 }
 
 .kfs-text-grid {
@@ -2930,15 +3010,16 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .hero-meta-link {
-    font-weight: 300;
-    text-decoration: none; /* Removes the default underline */
-    transition: color 0.2s ease-in-out; /* Smooth color transition on hover */
+	font-weight: 300;
+	text-decoration: none; /* Removes the default underline */
+	transition: color 0.2s ease-in-out; /* Smooth color transition on hover */
 }
 
 /* Add a hover effect for better user experience */
-.hero-meta-link:hover {
+/* JT */ .hero-meta-link:hover {
     color: var(--mainPinkColor); /* Changes color to pink on hover */
     text-decoration: underline;  /* Adds an underline on hover */
+	text-decoration: none; /* Removes the default underline */
 }
 
 .landscape-media-container video {
@@ -2949,11 +3030,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 /* --- Video Control Button --- */
-.landscape-media-container {
-    position: relative; /* Establishes a positioning context for the button */
-}
+/* JT */ .landscape-media-container {aspect-ratio: 16 / 9; position: relative; /* Establishes a positioning context for the button */}
 
-#video-control-btn {
+/* JT */ #video-control-btn {
     position: absolute;
     /* Centering technique */
     top: 50%;
@@ -2972,7 +3051,10 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     background-repeat: no-repeat;
     background-position: center;
     background-size: 55%;
+    opacity: 1;
 }
+
+/* JT */ #video-control-btn.is-hidden {opacity: 0;}
 
 #video-control-btn:hover {
     background-color: rgba(0, 0, 0, 0.7);
@@ -2997,64 +3079,93 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 /* ==========================================================================
    MOBILE & TABLET LAYOUT (Stacked Mode - Screens up to 991px)
    ========================================================================== */
-.hero-image-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+/* JT */ .hero-image-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 730px;
+	overflow: hidden;
 }
 
-.hero-text-overlay {
-    position: relative;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    order: 1; /* Moves text block above image */
-    padding-top: 4rem;
+/* JT */ .hero-text-overlay {
+	position: relative;
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	order: 1; /* Moves text block above image */
+	padding-top: 3.5rem;
 }
 
 /* Graphic background acts as the LOWER block layer */
-.hero-background-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    order: 2; /* Moves image below text block */
-    margin-top: -6%;
-    margin-left: 4rem;
+/* JT */ .hero-background-image {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	width: calc(100% - 45px);
+	height: auto;
+	display: block;
+	margin-right: 45px;
+	order: 2; /* Moves image below text block */
+	z-index: 0;
+	overflow: hidden;
 }
 
 /* --- Typography & Elements for Mobile/Tablet --- */
-.hero-meta-line {
-    margin-bottom: 0.25rem;
+/* JT */ .hero-meta-line {
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+	display: inline-block;
+	border-bottom: 0.031rem solid var(--darkestGreyColor);
 }
 
-.hero-breadcrumb {
-    margin-bottom: 1rem;
+/* JT */ .hero-breadcrumb {
+    margin-bottom: 30px;
 }
 
-.hero-title-erudite {
-    width: 50%; /* Fills half the viewport width on narrow layouts */
-    max-width: 371px;
-    height: auto;
-    margin-bottom: 0.75rem;
+/* JT */ .hero-title-erudite {
+	width: 50%; /* Fills half the viewport width on narrow layouts */
+	min-width: 244px;
+	max-width: 371px;
+	height: auto;
+	margin-bottom: 0.75rem;
 }
+/* JT */ .case-study-hero-title {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: auto;
+	margin-bottom: 0px;
+}
+/* JT */ .case-study-hero-title {
+	width: 100%;         
+	max-width: 900px;   
+	height: auto;
+}
+
+/* JT */ .case-study-hero-title img {width: auto; height: 68px; padding-right: 45px; margin-bottom: 16px;}
+
 .hero-title-erudite img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.hero-subtitle-school {
-    font-family: 'Monda', sans-serif;
-    font-size: clamp(1.8rem, 5.5vw, 2.8rem); /* Fluid scaling suited for tablet bounds */
-    line-height: 1.2;
-    font-weight: 700;
-    color: var(--darkGreyColor);
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
+/* JT */ .hero-subtitle-school {
+	font-family: 'Monda', sans-serif;
+	font-size: clamp(2.25rem, 5.5vw, 3.325rem); /* Fluid scaling suited for tablet bounds */
+	line-height: 1.1;
+	font-weight: 700;
+	color: var(--darkGreyColor);
+	letter-spacing: -0.02em;
+	margin-bottom: 2.5rem;
 }
 
-.hero-greencross {
-    width: 4.5rem; /* Compact cross asset for mobile fingers */
+/* JT */ .hero-greencross {
+    width: 14%; /* Compact cross asset for mobile fingers */
+    min-width: 55px;
+    max-width: 120px;
     height: auto;
     display: block;
 }
@@ -3063,22 +3174,38 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
    Desktop Layout Override (Screens wider than 992px)
    ========================================================================== */
 @media (min-width: 992px) {
-    .hero-image-container {
+    /* JT */ .hero-image-container {
         display: block; /* Restores standard block wrapper */
         position: relative;
         overflow: hidden;
+        min-height: 730px;
     }
 
     /* Restores absolute layout floating over the image */
-    .hero-text-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-        box-sizing: border-box;
-    }
+	/* JT */ .hero-text-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		box-sizing: border-box;
+		padding-top: 54px;
+	}
+
+	/* JT */ .hero-background-image {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		max-width: 68%;
+		height: auto;
+		display: block;
+		margin-right: 45px;
+		order: 2; /* Moves image below text block */
+		z-index: 0;
+		overflow: hidden;
+	}
 
     .hero-title-erudite {
         width: 32%;         
@@ -3097,12 +3224,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         font-family: 'Monda', sans-serif;
         font-size: clamp(1.5rem, 4.35vw, 3.375rem); 
         line-height: 1.1; 
-        
         font-weight: 700;
         color: var(--darkGreyColor);
         letter-spacing: -0.025em;
+        display: block;
         margin-bottom: 2%;
-        width: 45%;        
+        width: 60%;        
     }
 
     .hero-greencross {
@@ -3115,13 +3242,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 @media (min-width: 768px) {
-  .sticky-sidebar {
-    position: -webkit-sticky; /* For Safari */
-    position: sticky;
-    top: calc(var(--header-height)); /* Position below the fixed header with some spacing */
-    height: fit-content; /* Ensures the sticky container doesn't exceed its content's height */
-    align-self: start; /* Aligns the item to the start of the flex container */
-  }
+	.sticky-sidebar {
+		position: -webkit-sticky; /* For Safari */
+		position: sticky;
+		top: calc(var(--header-height)); /* Position below the fixed header with some spacing */
+		height: fit-content; /* Ensures the sticky container doesn't exceed its content's height */
+		align-self: start; /* Aligns the item to the start of the flex container */
+	}
+	/* JT */ .kfs-nav {
+		width: 30px;
+	}
+
 }
 
 @media (max-width: 1249.98px) {
@@ -3144,9 +3275,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         margin-left: 0;
     }
 
-    .kfs-content-container {
-        min-height: 31.25rem;
-    }
+    /* JT */ .kfs-content-container {min-height: 20rem;}
+
+    /* JT */ .kfs-text-grid {grid-template-columns: 1fr; gap: 1.875rem;}
 
     .kfs-content-title {
         overflow-wrap: break-word;
@@ -3190,11 +3321,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         display: none !important;
     }
 
-    .kfs-content-container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        min-height: 21.875rem;
-    }
+	/* JT */ .hero-background-image {width: 100%; margin-right: 0;}
+	/* JT */ #kfs-slider {padding-left: 1.25rem;}
+    /* JT */ .kfs-content-container {grid-template-columns: 1fr; gap: 1rem; min-height: 18rem;}
 
     .meta-box {
         padding-bottom: 1.25rem;
@@ -3245,7 +3374,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 
     .mobile-highlights-grid .sidebar-highlight-item:not(:last-child) {
-        border-right: 1px solid var(--darkGreyColor);
+        border-right: 1px solid var(--darkGreyColor); /* JT */ border-right: 0.031rem solid var(--darkestGreyColor);
     }
 
     .mobile-highlights-grid .sidebar-highlight-label,
@@ -3259,6 +3388,15 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding-left: 2rem;
         padding-right: 2rem;
     }
+}
+/* JT */ @media (max-width: 575.98px) {
+	.hero-image-container {min-height: 618px;}
+	.hero-text-overlay {padding-top: 1rem;}
+	.hero-breadcrumb {margin-bottom: 3.75rem;}
+	.sidebar-highlight-label {font-size: 0.9rem;}
+	.sidebar-highlight-value {font-size: 2rem;}
+	.sidebar-highlight-value2 {font-size: 1.5rem;}
+	.sidebar-highlight-desc, .sidebar-highlight-unit {font-size: 0.8rem;}
 }
 
 /* --- ArchSD at a Glance Page Styles --- */
@@ -3481,9 +3619,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .total-count-wrapper {
     font-family: 'Monda',  sans-serif;
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 400;
-    line-height: 74px;
+    line-height: 4.625rem;
     letter-spacing: -4.3%;
     color: var(--darkestGreyColor);
 }
@@ -3491,9 +3629,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 .total-count-wrapper .currency-symbol,
 .total-count-wrapper .unit-symbol {
     font-family: 'Monda',  sans-serif;
-    font-size: 45px;
+    font-size: 2.8125rem;
     font-weight: 400;
-    line-height: 74px;
+    line-height: 4.625rem;
     letter-spacing: -4.3%;
     color: var(--darkestGreyColor);
 }
@@ -3854,7 +3992,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
   .assurance-table th, 
   .assurance-table td {
     padding: 16px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -3891,7 +4029,6 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     content: "";
     position: absolute;
     left: 0;
-    top: 2px; /* Vertically aligns the indicator with the first line of text */
     width: 6px;
     height: 35px;
     background-color: var(--mainGreenColor);
@@ -3991,12 +4128,25 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
     
     .widget-icon-wrapper {
-        width: 50px;
+        width: auto; /* was 50px, which squeezed the icons tiny */
+        margin-left: 0.75rem; /* 12px gutter, aligns icons with the pink titles */
         margin-right: 1rem;
     }
-    
+
     .widget-icon {
-        max-height: 50px;
+        max-height: 110px;
+    }
+
+    /* Cancel the Bootstrap row -12px gutter so the pink left border
+       aligns with the "Our Profile" / "Our Offices" section titles */
+    .profile-row,
+    .offices-row {
+        margin-left: 0;
+    }
+
+    /* Align HQ address text and the office green lines with the row titles */
+    .offices-row > .col-md-7 {
+        padding-left: 0.75rem !important; /* overrides Bootstrap .ps-0 */
     }
 
     .widget-number {
@@ -4009,6 +4159,33 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     
     .widget-date-sub {
         font-size: 1.2rem;
+    }
+}
+
+/* --- Tablet: stack the "(As at 31 March 2026)" caption below the graphic --- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .profile-widget {
+        flex-direction: column;
+    }
+
+    .widget-icon-wrapper {
+        width: 70%;
+    }
+
+    .widget-text-block {
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+
+    /* Breathing room so the pink titles never touch the graphics/text */
+    .profile-row > .col-md-5,
+    .offices-row > .col-md-5 {
+        padding-right: 2.5rem;
+    }
+
+    .profile-row > .col-md-7,
+    .offices-row > .col-md-7 {
+        padding-left: 2.5rem !important;
     }
 }
 
@@ -4041,6 +4218,12 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 .gri-intro-text {
     margin-top: 2.625rem !important; /* 42px */
+}
+
+@media (max-width: 576px) {
+	.gri-index-page .title-block {
+		padding-bottom: 2.625rem !important; /* 42px, same rhythm as .gri-intro-text */
+	}
 }
 
 /* --- GRI Intro Section 1 Grey Table Styles --- */
@@ -4083,12 +4266,17 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-top: 50px;
     margin-bottom: 50px;
     width: 100%;
+    /* Horizontal scroll whenever the table needs more room than the viewport;
+       on desktop the table fits and no scrollbar appears */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .gri-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed; /* Enforces columns to strictly follow defined width percentages */
+    min-width: 1000px; /* Below this the container scrolls horizontally instead of squashing */
 }
 
 .gri-table-head {
@@ -4126,11 +4314,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-hkex-col {
-    width: 8%;
+    width: 10%;
 }
 
 .gri-sasb-col {
-    width: 8%;
+    width: 10%;
 }
 
 .gri-location-col {
@@ -4138,11 +4326,11 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .gri-remarks-col {
-    width: 19%;
+    width: 20%;
 }
 
 .gri-assurance-col {
-    width: 8%;
+    width: 10%;
     text-align: center;
     vertical-align: middle;
 }
@@ -4220,20 +4408,9 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 
 /* ==========================================================================
    Responsive Mobile Layout for GRI Tables (Sections 1 & 2)
+   Note: the main GRI table scrolls horizontally at any viewport width when
+   space is tight (see .gri-index-table-container / .gri-table min-width).
    ========================================================================== */
-@media (max-width: 767.9px) {
-    /* Section 2 Table: Standard Scrollable Container to prevent squashing */
-    .gri-index-table-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 15px;
-    }
-    
-    .gri-table {
-        min-width: 1000px; /* Maintains full width and legibility on narrow viewports */
-    }
-}
-
 @media (max-width: 575.9px) {
     /* Section 1 Intro Table: Stacks columns vertically on mobile screens */
     .gri-intro-table tr {
@@ -4261,3 +4438,1408 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     }
 }
 
+.text-decoration-underline {
+    text-decoration: underline;
+    color: var(--mainPinkColor);
+    font-weight: 700;
+}
+
+.feature-icon-img {
+    max-height: 60px;
+}
+
+.feature-label {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Other Key Awards Section Styling
+   ========================================================================== */
+.award-item {
+    border-top: 4px solid #B8BDC5; /* Matches the grey border in design */
+    padding-top: 10px;
+    height: 100%;
+}
+
+.award-title {
+    color: #000000;
+    margin-bottom: 1.25rem;
+}
+
+.award-point {
+    margin-bottom: 1.25rem;
+}
+
+.award-name-line {
+    position: relative;
+    padding-left: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+    line-height: 1.25rem; /* 20px */
+    letter-spacing: -1%;
+    color: #000000;
+    margin-bottom: 0.25rem;
+}
+
+.award-name-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 4px;
+    height: 1rem;
+    background-color: var(--mainGreenColor); /* Using site variable for brand lime green */
+}
+
+.award-details {
+    padding-left: 14px;
+}
+
+/* ==========================================================================
+   BEAM Plus-Certified Buildings Section Styling
+   ========================================================================== */
+.beam-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+}
+.beam-table th, .beam-table td {
+    padding: 14px 10px;
+    vertical-align: middle;
+}
+.beam-table thead tr.beam-header-row {
+    border-bottom: 4px solid var(--mainPinkColor);
+}
+.beam-table thead th {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.25rem;
+    letter-spacing: -1.5%;
+    padding-bottom: 12px;
+}
+/* Aligns the main 'Rating' header over both columns */
+.beam-table thead th.beam-th-rating {
+    text-align: left;
+    padding-right: 4.5rem; /* Centering helper for the Rating header label above columns */
+}
+.beam-table .beam-subheader-row td {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    line-height: 1.25rem;
+    letter-spacing: -1.5%;
+    border-bottom: 2px solid var(--darkGreyColor); /* Thin grey line separating subheader from data rows */
+}
+
+.beam-table .beam-data-row {
+    border-bottom: 1px solid var(--darkGreyColor); /* Thin grey line separating subheader from data rows */
+}
+
+.beam-table .beam-sub-label {
+    font-weight: 700;
+    line-height: 1.3125rem;
+    color: var(--darkGreyColor)
+}
+
+.beam-table .cert-name {
+    padding-left: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem; /* 16px */
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: -2%;
+    color: var(--darkGreyColor)
+}
+
+.beam-table .rating-val {
+    letter-spacing: -1%;
+    color: #000000;
+}
+
+.beam-table .subtotal-val {
+    letter-spacing: -1%;
+    color: #000000;
+}
+
+/* BEAM Plus-Certified Buildings up to 2025 table styling */
+.beam-table th.beam-th-cert {
+    width: 55%;
+}
+.beam-table th.beam-th-rating,
+.beam-table th.beam-th-rating-spacer,
+.beam-table th.beam-th-subtotal {
+    width: 15%;
+}
+
+.beam-remarks {
+    display: flex; 
+    align-items: flex-start;
+}
+
+.beam-remarks .remarks-asterisk {
+    margin-right: 6px;
+}
+
+.remarks-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: #000000;
+    line-height: 1.3125rem;
+    letter-spacing: -2%;
+    margin-bottom: 0;
+}
+
+/* Considerate Contractors Site Award Scheme Section Styling */
+.scheme-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+}
+.scheme-table th, .scheme-table td {
+    padding: 14px 10px;
+    vertical-align: top;
+}
+.scheme-table thead tr.scheme-header-row {
+    border-bottom: 4px solid var(--mainPinkColor);
+}
+.scheme-table thead th {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000000;
+    padding-bottom: 12px;
+}
+.scheme-table .scheme-subheader-row td {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #7C8282;
+    padding-top: 1.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--darkGreyColor);
+}
+.scheme-table .scheme-data-row {
+    border-bottom: 1px solid var(--darkGreyColor);
+}
+.scheme-table .cat-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    letter-spacing: -2%;
+    color: var(--darkGreyColor);
+}
+.scheme-table .rating-val, 
+.scheme-table .contractor-val, 
+.scheme-table .contracts-val {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.25rem;
+}
+.scheme-th-cat {
+    width: 20%;
+}
+.scheme-th-award {
+    width: 24%;
+}
+.scheme-th-contractor {
+    width: 23%;
+}
+.scheme-th-contracts {
+    width: 33%;
+}
+
+/* Mobile: keep the tables at their tablet column widths instead of squishing;
+   the surrounding Bootstrap .table-responsive provides the horizontal scroll */
+@media (max-width: 767.98px) {
+    .beam-table,
+    .scheme-table {
+        min-width: 696px; /* = tablet (768px viewport) container content width */
+    }
+}
+
+/* ==========================================================================
+   Key Awards Grid Gallery Styles
+   ========================================================================== */
+.key-award-img-container {
+    background-color: #D3F3B3; /* Branding light-green color as background/placeholder */
+    aspect-ratio: 16 / 9;      /* Locks modern responsive horizontal frame ratio */
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.key-award-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Crops the image to cleanly fill the 16:9 container */
+}
+.key-award-title {
+    font-family: "Monda", sans-serif;
+    font-size: 1.563rem; /* 25px */
+    font-weight: 700;
+    line-height: 2rem; /* 32px */
+    letter-spacing: -1.5%;
+    text-align: left;
+    color: var(--mainPinkColor);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.key-award-title strong {
+    font-family: "Monda", sans-serif;
+    font-size: 1rem; /* 16px */
+    line-height: 1.3125rem; /* 21px */
+    letter-spacing: -1.5%;
+}
+.key-award-point {
+    margin-bottom: 1.25rem;
+}
+.key-award-name-line {
+    position: relative;
+    padding-left: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    color: #000000;
+    margin-bottom: 0.25rem;
+}
+/* Vertical green bar next to award scheme title */
+.key-award-name-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 4px;
+    height: 1rem;
+    background-color: var(--mainGreenColor);
+}
+.key-award-details {
+    padding-left: 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: #565A5F;
+}
+
+/* ==========================================================================
+   Key Awards Grid Gallery Styles
+   ========================================================================== */
+.key-award-img-container {
+    position: relative;
+    background-color: #D3F3B3; /* Branding light-green color as background/placeholder */
+    aspect-ratio: 16 / 9;      /* Locks modern responsive horizontal frame ratio */
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+.key-award-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Crops the image to cleanly fill the 16:9 container */
+    transition: opacity 0.3s ease-in-out;
+}
+.key-award-img.img-hover {
+    opacity: 0;
+}
+.key-award-item:hover .key-award-img.img-default {
+    opacity: 0;
+}
+.key-award-item:hover .key-award-img.img-hover {
+    opacity: 1;
+}
+
+/* Mobile/touch: no hover effect available, always show the hover.svg artwork.
+   display:none (not opacity) so there is no flash of img-default on viewport switch. */
+@media (max-width: 767.98px) {
+    .key-award-img.img-default {
+        display: none;
+    }
+    .key-award-img.img-hover {
+        opacity: 1;
+    }
+}
+.grecaptcha-badge {
+    bottom: 86px !important;
+}
+
+/* --- Data Summary Highlight Page (designer SVG charts) --- */
+.margin-top-100 {
+    margin-top: 100px;
+}
+
+.margin-top-120 {
+    margin-top: 120px;
+}
+
+.margin-top-150 {
+    margin-top: 150px;
+}
+
+.ds-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ds-img-auto {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Vertical stack of chart banners */
+.ds-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* Layered composite (front + back SVG on the same canvas) */
+.ds-overlay {
+    display: grid;
+}
+
+.ds-overlay img {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: auto;
+}
+
+/* Horizontal proportional row - flush edge to edge (e.g. employees male/female halves, age groups) */
+.ds-row-flush {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.ds-row-flush img {
+    height: auto;
+}
+
+/* Resource Usage - Office Materials: ONE 700x407 composite canvas -
+   Paper Back + Front + Envelope03 are full-canvas layers;
+   Title SVGs (75.5x298 / 107.5x298) absolutely positioned on the canvas */
+.ds-office-canvas {
+    position: relative;
+}
+
+.ds-overlay .ds-office-layer {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+.ds-overlay .ds-office-layer-paper {
+    left: 0;
+    top: 14.7%;
+    width: 10.8%;
+}
+
+.ds-overlay .ds-office-layer-envelope {
+    left: 65%;
+    top: 14.7%;
+    width: 15.4%;
+}
+
+/* Social Performance: Total number of employees */
+.ds-total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.ds-total-number {
+    font-family: 'Monda', sans-serif;
+    font-size: 5rem;
+    font-weight: 400;
+    color: #FF32CD;
+    letter-spacing: -10%;
+    line-height: 4.0625rem;
+}
+
+/* Two-column split with vertical divider (male | female) */
+.ds-split-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+}
+
+.ds-split-row:last-child {
+    margin-bottom: 0;
+}
+
+.ds-split-col-main {
+    flex: 0 0 60%;
+}
+
+.ds-split-col-side {
+    flex: 1 1 auto;
+    border-left: 1px solid #c9cdcd;
+    padding-left: 2rem;
+}
+
+.ds-stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.ds-stat-num {
+    font-family: 'Monda', sans-serif;
+    font-size: 2.8125rem;
+    font-weight: 400;
+    color: #86868B;
+    letter-spacing: -8%;
+    line-height: 2.5rem;
+}
+
+.ds-stat-num-pink {
+    color: #FF32CD;
+}
+
+.ds-stat-pct {
+    font-size: 1.5625rem;
+    color: #86868B;
+    letter-spacing: -10%;
+    line-height: 2rem;
+}
+
+.ds-stat-pct-pink {
+    color: #FF32CD;
+}
+
+/* Civil / Non-Civil rows: number columns + full-width layered strip, divider spans both */
+.ds-civil-block {
+    position: relative;
+    margin-bottom: 2.25rem;
+}
+
+.ds-civil-block::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c9cdcd;
+}
+
+.ds-civil-block::after {
+    content: '';
+    position: absolute;
+    left: 60.5%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c9cdcd;
+}
+
+.ds-civil-block .ds-split-col-side {
+    border-left: none;
+    padding-left: 13px;
+}
+
+.ds-civil-block .ds-split-col-main {
+    padding-left: 10px;
+}
+
+/* Employees split row: number aligns start, percentage aligns end (near the divider) */
+.ds-split-row:not(.ds-split-row-tight) .ds-stat-row {
+    justify-content: space-between;
+}
+
+.ds-split-row:not(.ds-split-row-tight) .ds-split-col-main {
+    padding-right: 29px;
+}
+
+.ds-split-row:not(.ds-split-row-tight) .ds-split-col-side {
+    padding-left: 21px;
+}
+
+.ds-split-row-tight {
+    margin-bottom: 0.75rem;
+}
+
+/* Employees by age: legend right + three columns with dividers */
+.ds-age-legend-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.ds-age-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ds-age-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.ds-age-col-1 {
+    flex: 0 0 17%;
+    padding-right: 10px;
+}
+
+.ds-age-col-2 {
+    flex: 1 1 auto;
+    border-left: 1px solid #c9cdcd;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ds-age-col-3 {
+    flex: 0 0 23%;
+    border-left: 1px solid #c9cdcd;
+    padding-left: 10px;
+}
+
+.ds-age-row .ds-stat-num {
+    font-size: 2.125rem;
+    line-height: 2.125rem;
+}
+
+.ds-age-row .ds-stat-pct {
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+
+/* Staff Turnover */
+.ds-inline-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.ds-to-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ds-to-col-main {
+    flex: 1 1 50%;
+    padding-right: 21px;
+}
+
+.ds-to-col-side {
+    flex: 1 1 50%;
+    border-left: 1px solid #c9cdcd;
+    padding-left: 21px;
+}
+
+/* Staff Training Hour Received */
+.ds-train-row {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.ds-train-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c9cdcd;
+}
+
+.ds-train-col {
+    flex: 1 1 50%;
+    padding-left: 10px;
+}
+
+.ds-train-col-side {
+    border-left: 1px solid #c9cdcd;
+    padding-left: 10px;
+}
+
+.ds-train-label {
+    font-family: 'Monda', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #414646;
+    margin-bottom: 10px;
+}
+
+.ds-train-unit {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FF32CD;
+}
+
+.ds-train-substats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin-top: 14px;
+}
+
+.ds-train-substat {
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+}
+
+.ds-gender-ico {
+    height: 36px;
+    width: auto;
+}
+
+.ds-train-sub {
+    font-family: 'Monda', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #565A5F;
+}
+
+.ds-train-sub-pink {
+    color: #FF32CD;
+}
+
+/* Anti-corruption pictogram grids built from single icons */
+.ds-pict-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 9px;
+    align-items: flex-start;
+}
+
+.ds-pict-ico {
+    height: 30px;
+    width: auto;
+    display: block;
+}
+
+.ds-pict-partial {
+    display: inline-block;
+    overflow: hidden;
+    height: 30px;
+}
+
+.ds-pict-partial .ds-pict-ico {
+    height: 30px;
+}
+
+/* Health and Safety */
+.ds-hs-row {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.ds-hs-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #c9cdcd;
+}
+
+.ds-hs-col {
+    flex: 1 1 50%;
+    padding-left: 10px;
+}
+
+.ds-hs-col-side {
+    border-left: 1px solid #c9cdcd;
+    padding-left: 10px;
+}
+
+.ds-hs-label {
+    font-family: 'Monda', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #414646;
+    margin-bottom: 12px;
+}
+
+.ds-stat-num-sm {
+    font-size: 1.625rem;
+    line-height: 1.625rem;
+}
+
+.ds-hs-unit-sm {
+    font-family: 'Monda', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #FF32CD;
+}
+
+/* Environmental Convictions of Contractors */
+.ds-conviction-block {
+    margin-bottom: 0.5rem;
+}
+
+.ds-conviction-upper-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #FF32CD;
+    line-height: 1.25rem;
+    letter-spacing: -1%;
+    margin-bottom: 0 !important;
+}
+
+.ds-conviction-number {
+    font-family: 'Monda', sans-serif;
+    font-size: 2.8125rem;
+    font-weight: 400;
+    color: #FF32CD;
+    line-height: 2.5rem;
+    letter-spacing: -8%;
+    margin-bottom: 0 !important;
+}
+
+.ds-conviction-lower-caption {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #FF32CD;
+    line-height: 1.3125rem;
+    letter-spacing: -1.5%;
+    margin-bottom: 0 !important;
+}
+
+/* Air Emissions & Water Usage: horizontal gap so the two sections read as separate boxes in one row
+   (side-by-side at ALL widths incl. mobile, per designer) */
+.ds-air-water-row>.col-6 {
+    width: calc(50% - 1.25rem);
+}
+
+.ds-air-water-row>.col-6+.col-6 {
+    margin-left: 2.5rem;
+}
+
+@media (max-width: 575.98px) {
+    .ds-air-water-row>.col-6 {
+        width: calc(50% - 0.5rem);
+    }
+
+    .ds-air-water-row>.col-6+.col-6 {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .ds-stack {
+        gap: 1.5rem;
+    }
+
+    .ds-row-flush {
+        flex-wrap: wrap;
+    }
+
+    .ds-row-flush img {
+        width: 100% !important;
+    }
+
+    .ds-split-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-split-col-side {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .ds-total-number {
+        font-size: 2.75rem;
+    }
+
+    .ds-civil-block::before {
+        content: none;
+    }
+
+    .ds-civil-block::after {
+        content: none;
+    }
+
+    .ds-age-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-age-col-2,
+    .ds-age-col-3 {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .ds-to-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-to-col-side {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .ds-train-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-train-row::before {
+        content: none;
+    }
+
+    .ds-train-col {
+        padding-left: 0;
+    }
+
+    .ds-train-col-side {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .ds-hs-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .ds-hs-row::before {
+        content: none;
+    }
+
+    .ds-hs-col {
+        padding-left: 0;
+    }
+
+    .ds-hs-col-side {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+/* Sticky section header columns (Environmental / Social Performance) */
+.ds-sticky-col {
+    position: sticky;
+    top: 120px; /* = fixed header height (desktop/tablet); no gap for content to peek through */
+    align-self: flex-start;
+    z-index: 10;
+    background-color: #ffffff; /* opaque so scrolling content hides behind the sticky block */
+    padding-bottom: 1rem;
+}
+
+@media (max-width: 767.98px) {
+    .ds-sticky-col {
+        top: 100px; /* mobile fixed header is shorter (100px) */
+    }
+}
+/* ==========================================================================
+   Data Summary Accordion & Table Styles
+   ========================================================================== */
+
+/* Accordion Container */
+.data-summary-accordion {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 2rem;
+    background: transparent;
+}
+
+/* Accordion Header - Collapse State */
+.accordion-header-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--tableGreyColor);
+    border: none;
+    border-top: 4px solid var(--mainGreenColor);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    outline: none;
+}
+
+/* Accordion Header - Hover State */
+.accordion-header-btn:hover,
+.accordion-header-btn:focus-visible {
+    border-top: 4px solid #B8BDC5; 
+    background-color: color-mix(in srgb, var(--mainGreenColor) 30%, transparent);
+    outline: none;
+}
+
+/* Accordion Icon Container */
+.accordion-icon {
+    width: 30px;
+    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.accordion-icon img {
+    width: 100%;
+    height: auto;
+    max-width: 30px;
+    max-height: 30px;
+    display: block;
+}
+/* Accordion Title */
+.accordion-title {
+    font-family: 'Monda', sans-serif;
+    font-size: 1.875rem; /* ~30px */
+    font-weight: 700;
+    color: var(--darkGreyColor);
+    line-height: 1.2;
+}
+/* When active/expanded */
+.accordion-item.active .accordion-header-btn {
+    background-color: transparent; /* No header background when expanded, as seen in mockup */
+    border-top: 5px solid var(--mainGreenColor);
+}
+/* Accordion Content */
+.accordion-content {
+    background-color: #ffffff;
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+}
+.accordion-content-inner {
+    padding-bottom: 2rem;
+    padding-left: 78px;
+}
+/* Table styles */
+.summary-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 60px !important;
+}
+.summary-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+.summary-data-table td.category-cell {
+    width: 16% !important;
+}
+.summary-data-table td.metric-col {
+    width: 50% !important;
+}
+.summary-data-table th.unit-header,
+.summary-data-table td.unit-col {
+    width: 8% !important;
+}
+.summary-data-table th.year-header,
+.summary-data-table td.val-col {
+    width: 8% !important;
+}
+/* Header styles — typography from h4-title-style class on th;
+   Inter override mirrors GRI's .gri-table-head th pattern */
+.summary-data-table thead th {
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    text-align: center;
+    padding: 12px 15px;
+    border-bottom: none;
+}
+.summary-data-table thead th.unit-header {
+    text-align: center !important;
+    padding-left: 15px !important; /* Balanced left padding for centering */
+}
+/* Center align Year column headers (2023, 2024, 2025) */
+.summary-data-table thead th.year-header {
+    text-align: center !important;
+}
+.summary-data-table thead tr {
+    border-bottom: 4px solid var(--mainPinkColor);
+}
+/* Category column (rowspan) — typography from h4-title-style class; pink color is table-specific */
+.summary-data-table td.category-cell {
+    color: var(--mainPinkColor) !important;
+    text-align: left !important;
+    vertical-align: top;
+    padding: 20px 24px 20px 0;
+    width: 20%;
+    border: none;
+}
+
+/* Sub-headers inside table — typography from h4-title-style class */
+.summary-data-table tr.sub-header-row td {
+    color: var(--darkGreyColor);
+    padding: 15px 15px 15px 0;
+    text-align: left;
+}
+.summary-data-table tr.sub-header-row td.sub-header-title {
+    border-bottom: 2px solid var(--darkGreyColor);
+}
+/* Data rows — typography from p5-table-body class */
+.summary-data-table tr.data-row td {
+    padding: 12px 15px 12px 0;
+    border-bottom: 0.5px solid var(--darkGreyColor);
+    text-align: left;
+}
+.summary-data-table tr.data-row td.metric-col {
+    text-align: left;
+}
+.summary-data-table tr.data-row td.unit-col {
+    text-align: center !important;
+    padding-left: 15px !important; /* Balanced left padding for perfect centering */
+}
+.summary-data-table tr.data-row td.val-col {
+    text-align: center !important;
+    padding-left: 15px !important; /* Balanced left padding for perfect centering */
+}
+/* Ends of sub-sections have black borders */
+.summary-data-table tr.section-end-row td {
+    border-bottom: 0.5px solid var(--darkGreyColor);
+    border-bottom: none; /* JT */
+}
+/* Highlighted Column (2025) */
+.summary-data-table .col-highlight {
+    background-color: var(--tableGreyColor);
+    font-weight: 700;
+    border-bottom: 2px solid var(--darkGreyColor);
+}
+/* Footnotes Row alignment rule */
+.summary-data-table tr.footnote-row td {
+    border: none !important;
+    padding: 0 !important;
+    padding-top: 1rem !important;
+}
+.summary-data-table td.table-footnotes-cell {
+    padding: 0 !important;
+    border: none !important;
+    text-align: left;
+}
+.summary-data-table td.table-footnotes-cell p {
+    margin-bottom: 4px !important;
+    color: var(--darkGreyColor);
+}
+/* Responsive Accordion and Table */
+@media (max-width: 767.98px) {
+    .accordion-header-btn {
+        padding: 1rem;
+    }
+    .accordion-title {
+        font-size: 1.25rem;
+    }
+    .accordion-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 1rem;
+    }
+    .accordion-content-inner {
+        padding: 1.5rem 0;
+        padding-left: 0; /* Remove offset on mobile to provide full screen width for the table */
+    }
+    .summary-data-table {
+        min-width: 650px; /* Forces table to have a comfortable scrolling width on mobile instead of squishing columns */
+    }
+    .summary-data-table td.category-cell {
+        /* Maintain table cell display on mobile so rowspan is not corrupted */
+        display: table-cell;
+        width: 15%;
+        padding-right: 15px;
+    }
+    .summary-data-table tr.sub-header-row td,
+    .summary-data-table tr.data-row td {
+        padding: 8px 10px 8px 0;
+    }
+}
+/* By grade based on Civil Service Staff: 5 overlapping grade SVGs.
+   Each SVG's left edge aligns with its bar segment start (cumulative bar
+   widths 0 / 14 / 196 / 394 / 536 of 669 total SVG units); all bottom-aligned
+   so the proportional bar strips join into one continuous bar. */
+.ds-grade-chart {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 669 / 200;
+}
+
+.ds-grade-img {
+    position: absolute;
+    bottom: 0;
+    height: auto;
+}
+
+.ds-grade-img-1 {
+    left: 0;
+    width: 25.71%;
+}
+
+.ds-grade-img-2 {
+    left: 2.09%;
+    width: 27.35%;
+}
+
+.ds-grade-img-3 {
+    left: 29.30%;
+    width: 29.75%;
+}
+
+.ds-grade-img-4 {
+    left: 58.89%;
+    width: 21.38%;
+}
+
+.ds-grade-img-5 {
+    left: 80.12%;
+    width: 19.88%;
+}
+
+/* ============================================================
+   Data Summary Highlight page - designer Figma feedback
+   (scoped to .data-summary-page so other pages are not affected)
+   ============================================================ */
+/* 1. Pink line to "Energy Usage" title space: halved (20px -> 10px) */
+.data-summary-page .section-border-pink {
+    padding-top: 0.625rem !important; /* 10px */
+}
+/* 2. "Energy Usage" title to green-bar sub-header space: doubled (8px -> 16px) */
+.data-summary-page .section-border-pink > .h3-title-style {
+    margin-bottom: 1rem; /* 16px */
+}
+/* 3. "More Details..." hyperlink: pink + bold, underline on hover only */
+.ds-more-link {
+    color: var(--mainPinkColor);
+    font-weight: 700;
+    text-decoration: none;
+}
+.ds-more-link:hover,
+.ds-more-link:focus-visible {
+    color: var(--mainPinkColor);
+    text-decoration: underline;
+}
+/* 4. Grey divider line between sub-sections (per Figma): 30px spacing above and below */
+.ds-sub-divider {
+    border-top: 0.5px solid var(--darkGreyColor);
+    margin: 1.875rem 0; /* 30px */
+}
+
+/* Governance pages wrap .col-md-7 to full width below the title col at <=1090px.
+   Sticky stays enabled at all widths per design; the white bg on .ds-sticky-col
+   keeps scrolling content hidden behind it. */
+
+/* At <=1090px the governance layout stacks (content col full width below).
+   Make the sticky title col a full-width white bar so charts slide cleanly
+   underneath instead of being sliced by a 33%-wide block. */
+@media (max-width: 68.125em) { /* 1090px */
+    .data-summary-page .ds-sticky-col {
+        width: 100%;
+    }
+}
+
+/* Group Photo Wrapper */
+.group-photo-wrapper {
+    position: relative;
+    background-color: #e8eaea;
+    container-type: inline-size; /* enables cqw units so the panel scales with the photo */
+}
+
+/* ----------------------------------------------------------------
+   Interactive Group Photo — hover profile panel (replicates AE demo)
+-----------------------------------------------------------------*/
+
+/* Transparent hotspot buttons over each person (positioned by JS).
+   The green frame appears ONLY on hover/focus (default invisible);
+   the container itself never intercepts clicks — only the buttons do. */
+.gp-hotspots {
+    position: absolute;
+    inset: 0;
+    z-index: 15;
+    pointer-events: none;
+}
+.gp-hotspot {
+    position: absolute;
+    pointer-events: auto;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.gp-hotspot:hover,
+.gp-hotspot:focus-visible {
+    border-color: rgba(130, 239, 0, 0.45);
+    background-color: rgba(130, 239, 0, 0.08);
+    box-shadow: 0 0 0 1px rgba(130, 239, 0, 0.45);
+}
+.gp-hotspot:focus-visible {
+    outline: 2px solid var(--mainGreenColor, #82EF00);
+    outline-offset: 2px;
+}
+/* While the profile layer is open, the green frames are hidden AND
+   not clickable — the layer is closed ONLY via its X button */
+.group-photo-wrapper.gp-open .gp-hotspot {
+    pointer-events: none;
+    border-color: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+.group-photo-wrapper.gp-open .gp-hotspot:focus-visible {
+    outline: none;
+}
+
+/* Dark panel that covers the photo (photo visible around it, per designer spec) */
+.gp-panel {
+    position: absolute;
+    inset: 10% 0 10% 6%;
+    background-color: #59595B;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Close (X) button — above the hotspots */
+.gp-close {
+    position: absolute;
+    top: 4.5%;
+    right: 3.5%;
+    z-index: 20;
+    line-height: 0;
+    transition: transform 0.2s ease;
+}
+.gp-close:hover { transform: scale(1.15); }
+.gp-close svg {
+    width: max(3cqw, 18px);
+    height: max(3cqw, 18px);
+}
+
+/* Big neon-green initial — now an IMAGE (mask SVG per member).
+   Designer CONTENT margins (top 142 / L+R 136 / bottom 82 around the
+   content group): letter flush at the group's LEFT edge, resting on the
+   pink line → left 11.9%, bottom 9.3% (line at 8.5% + line height).
+   Height 72.6% ≈ content-group height, trimmed slightly so the wider
+   Edward portrait still fits before the right text column. */
+.gp-letter {
+    position: absolute;
+    left: 11.9%;
+    bottom: 9.3%;
+    height: 72.6%;
+    width: auto;
+    max-width: none;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Person cutout portrait — next to the letter, slightly overlapping its
+   right edge, top a touch ABOVE the letter's top (same bottom anchor). */
+.gp-portrait {
+    position: absolute;
+    left: 25%;
+    bottom: 9.3%;
+    height: 73.4%;
+    width: auto;
+    max-width: none;
+    z-index: 2;
+}
+
+/* Bottom pink line — the content group's bottom edge:
+   spans between the 136 left/right margins, 82 above the panel bottom. */
+.gp-pinkline {
+    position: absolute;
+    left: 11.9%;
+    right: 11.9%;
+    bottom: 8.5%;
+    height: max(0.5cqw, 4px);
+    background-color: var(--mainPinkColor, #ff31cd);
+    transform-origin: left center;
+    z-index: 3;
+}
+
+/* Name (green) + position (white) — bottom of the RIGHT column,
+   left-aligned with the quote text (136 margin + text offset).
+   FIXED anchor: the bio above it grows upward and never collapses into it. */
+.gp-caption {
+    position: absolute;
+    left: 60%;
+    bottom: 9.5%;
+    z-index: 3;
+}
+.gp-name {
+    color: var(--mainGreenColor, #82EF00);    
+    margin: 0 0 0.35rem;
+    white-space: nowrap; /* the name defines the caption width */
+}
+/* Position text wraps within the NAME's width:
+   width:0 removes it from the caption's shrink-to-fit calculation,
+   min-width:100% pulls it back to the caption width (= name width). */
+.gp-pos {
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem; /* 20px */
+    font-weight: 300;    
+    line-height: 1.5625rem; /* 25px */
+    letter-spacing: -1.5%;
+    color: #ffffff;
+    margin-bottom: 1.875rem; /* 30px */
+    width: 0;
+    min-width: 100%;
+}
+
+/* Right: quote bio — sits ABOVE the name caption, left-aligned with it:
+   bottom-anchored, so longer text expands UPWARD, never down into the
+   caption. Width 28% ends at the right 136-margin (60% + 28% = 88.1%). */
+.gp-right {
+    position: absolute;
+    left: 60%;
+    bottom: 28%;
+    width: 28%;
+    z-index: 3;
+}
+.gp-bio {
+    position: relative; /* anchor for the quotation-mark image */
+    font-family: "Monda", sans-serif;
+    font-size: 1.5625rem; /* 25px */
+    font-weight: 700;  
+    line-height: 1.48rem; /* 37px */
+    letter-spacing: -1.5%;
+    color: #ffffff;
+    margin-bottom: 55px; /* space for the name caption below */
+}
+/* Quotation mark: designer's SVG, capped at 35×30.
+   Sits just LEFT of the bio text, slightly ABOVE its first line (per mock),
+   so it takes no space inside the text block. */
+.gp-q {
+    line-height: 0;
+}
+.gp-q-open {
+    position: absolute;
+    right: calc(100% + 6px);
+    bottom: calc(100% + 6px);
+    width: auto;
+    height: auto;
+    max-width: 35px;
+    max-height: 30px;
+}
+/* Latest design has no closing quote */
+.gp-q-close { display: none; }
+
+/* Small screens: keep everything proportional; give text a readable floor */
+@media (max-width: 575.9px) {
+    .gp-panel { inset: 4% 4% 6%; }
+}

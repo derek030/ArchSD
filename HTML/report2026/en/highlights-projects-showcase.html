@@ -291,30 +291,36 @@
 									<ul class="splide__list">
 										<!-- Slide 1 -->
 										<li class="splide__slide"
+											data-icon="../assets/images/ArchSD-3A-amplify.svg"
 											data-title="Standardized Low-Carbon Steel MiC Assembly"
 											data-content="Deploying 125 highly standardized steel MiC modules increased spatial efficiency by 5% and reduced transportation carbon emissions by 25%, drastically lowering embodied carbon and site disturbance.">
 											<img src="../assets/images/Government-Primary-School-slide-1.jpg" alt="">
 										</li>
 										<!-- Slide 2 -->
 										<li class="splide__slide"
+											data-icon="../assets/images/ArchSD-3A-accelerate.svg"
 											data-title="Smart Energy & Resource Management Systems"
 											data-content="Targeting BEAM Plus Platinum, the campus incorporates roof-mounted photovoltaic (PV) arrays for renewable energy harvesting, energy-saving smart IoT sensors, and a greywater recycling system for landscape irrigation.">
 											<img src="../assets/images/Government-Primary-School-slide-2.jpg"
 												alt="Modern building with automated ventilation louvers">
 										</li>
 										<!-- Slide 3 -->
-										<li class="splide__slide" data-title="Hoisting-Optimized Circular Eco-Geometry"
+										<li class="splide__slide" 
+											data-icon="../assets/images/ArchSD-3A-act-together.svg"
+											data-title="Hoisting-Optimized Circular Eco-Geometry"
 											data-content="The circular building plan was engineered to maximize crane lifting efficiency during MiC installation, while naturally optimizing cross-ventilation and daylight penetration through a central courtyard.">
 											<img src="../assets/images/Government-Primary-School-slide-3.jpg" alt="">
 										</li>
 										<!-- Slide 4 -->
 										<li class="splide__slide"
+											data-icon="../assets/images/ArchSD-3A-amplify.svg"
 											data-title="Acoustic Buffer Massing & Passive Energy Reduction"
 											data-content="Positioning larger active volumes along the external roadway forms a built acoustic barrier against traffic noise. Combined with deep podium voids and green roofs, the passive layout reduces reliance on artificial lighting and HVAC cooling.">
 											<img src="../assets/images/Government-Primary-School-slide-4.jpg" alt="">
 										</li>
 										<!-- Slide 5 -->
 										<li class="splide__slide"
+											data-icon="../assets/images/ArchSD-3A-amplify.svg"
 											data-title="Land-Efficient Multi-Tier Spatial Integration"
 											data-content="Elevating the basketball court above ground-level parking optimizes land use, transforming infrastructure into a multi-level recreational space seamlessly connected to primary circulation routes.">
 											<img src="../assets/images/Government-Primary-School-slide-5.jpg" alt="">
@@ -343,8 +349,7 @@
 							<!-- Slide Content -->
 							<div class="kfs-content-container">
 								<!-- 1. Add the logo image -->
-								<img src="../assets/images/ArchSD-3A-amplify.svg" alt="Amplify"
-									class="kfs-content-logo">
+								<img src="../assets/images/ArchSD-3A-amplify.svg" alt="Amplify" class="kfs-content-logo">
 
 								<!-- 2. Wrap title and text in a new grid container -->
 								<div class="kfs-text-grid">
@@ -673,7 +678,7 @@ if (prefersReducedMotion) {
     gsap.utils.toArray(".fadeIn-right").forEach(elem => {
         const delayTime = elem.dataset.delay ? parseFloat(elem.dataset.delay) : 0;
         gsap.fromTo(elem,
-            { autoAlpha: 0, x: 100 },
+            { autoAlpha: 0, x: 80 },
             {
                 autoAlpha: 1,
                 x: 0,
@@ -683,7 +688,7 @@ if (prefersReducedMotion) {
                 scrollTrigger: {
                     trigger: elem,
                     start: "top 90%",
-                    toggleActions: "play none none reverse"
+                    toggleActions: "play none none none"
                 }
             }
         );
@@ -693,7 +698,7 @@ if (prefersReducedMotion) {
     gsap.utils.toArray(".fadeIn-left").forEach(elem => {
         const delayTime = elem.dataset.delay ? parseFloat(elem.dataset.delay) : 0;
         gsap.fromTo(elem,
-            { autoAlpha: 0, x: -100 },
+            { autoAlpha: 0, x: -80 },
             {
                 autoAlpha: 1,
                 x: 0,
@@ -703,7 +708,7 @@ if (prefersReducedMotion) {
                 scrollTrigger: {
                     trigger: elem,
                     start: "top 90%",
-                    toggleActions: "play none none reverse"
+                    toggleActions: "play none none none"
                 }
             }
         );
@@ -805,6 +810,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const slides = splideElement.querySelectorAll('.splide__slide');
                 const titleEl = splideElement.querySelector('.kfs-content-title');
                 const textEl = splideElement.querySelector('.kfs-content-text');
+                const logoEl = splideElement.querySelector('.kfs-content-logo'); // 抓取 icon 元素
 
                 // Function to update content based on the active slide
                 function updateContent(slideIndex) {
@@ -814,6 +820,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (currentSlide && titleEl && textEl) {
                         titleEl.textContent = currentSlide.dataset.title || '';
                         textEl.textContent = currentSlide.dataset.content || '';
+                        // 同步更新 icon 圖片
+                        if (logoEl && currentSlide.dataset.icon) {
+                        	logoEl.src = currentSlide.dataset.icon;
+                        }
                     }
                 }
 

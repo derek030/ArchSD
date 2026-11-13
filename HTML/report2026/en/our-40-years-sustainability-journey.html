@@ -26,7 +26,7 @@
 
     <!-- Accessibility: Skip Link -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
+	<div class="body-dim"></div>
     <!-- Page header and site logos -->
     <header class="fixed-header d-flex align-items-center">
         <div class="container h-100">
@@ -61,12 +61,12 @@
             <!-- 1st SECTION: Second Hero Title, Image / Animation                 -->
             <!-- ================================================================= -->
         <!-- Hero Section -->
-        <section id="xxxx-hero" class="second-hero-section">
-            <div class="container" style="background-image: url('../assets/images/bg-40a.jpg');">
+        <section id="xxxx-hero" class="second-hero-section" style="background-image: url('../assets/images/bg-40a.jpg'); background-size: cover; background-position: top; background-repeat: no-repeat;">
+            <div class="container">
                 <div id="" class="animation-box">
-                	<div id="xxxxth"><img src="../assets/images/40th.svg" alt="" class="animate-from-right" data-delay="0.2"></div>
+                	<div id="xxxxth"><img src="../assets/images/40th.svg" alt="" class="fadeIn-right" data-delay="0.2"></div>
                 	<div id="curve"><img src="../assets/images/curve.png" alt="" class="fade-in" data-delay="0.8"></div>
-					<div id="hero-title" class="hero-title animate-from-left">
+					<div id="hero-title" class="hero-title fadeIn-left">
 						<div class="hero-title-block" style="--mw: 362px;">
 							<img src="../assets/images/40bar-alone.svg" alt="" class=" " style="margin-left: 1px;" data-delay="0.4">
 							<h2 class="hero-page-title white">Sustainability <br>Journey</h2>
@@ -93,7 +93,7 @@
 				<div class="row">
 					<div class="col-12 col-lg-7 me-auto">
 						<div class="section-header-image-large">
-							<img src="../assets/images/40bar-alone.svg" alt="" aria-hidden="true" class="img-fluid animate-from-left">
+							<img src="../assets/images/40bar-alone.svg" alt="" aria-hidden="true" class="img-fluid fadeIn-left">
 						</div>
 					</div>
 				</div>
@@ -130,7 +130,7 @@
 				<div class="row">
 					<div class="col-12 col-lg-12">
 						<div class="section-header-image-large">
-							<img src="../assets/images/40bar-alone.svg" alt="" aria-hidden="true" class="img-fluid animate-from-right">
+							<img src="../assets/images/40bar-alone.svg" alt="" aria-hidden="true" class="img-fluid fadeIn-right">
 						</div>
 					</div>
 				</div>
@@ -170,13 +170,15 @@
 						<div class="splide esg-report-slider" aria-label="ESG Reports Slider">
 							<div class="splide__arrows">
 								<button class="splide__arrow splide__arrow--prev" aria-label="Previous slide">
-									<svg width="46" height="46" viewBox="0 0 24 24">
-										<path d="M18 17L13 12L18 7"></path><path d="M11 17L6 12L11 7"></path>
+									<svg viewBox="0 0 36 36" width="36" height="36" class="custom-arrow-icon">
+										<polyline fill="none" stroke="currentColor" stroke-linejoin="bevel" stroke-linecap="butt" stroke-width="4" points="17.6 1.5 34.1 18 17.6 34.5"/>
+										<polyline fill="none" stroke="currentColor" stroke-linejoin="bevel" stroke-linecap="butt" stroke-width="4" points="1.9 1.5 18.4 18 1.9 34.5"/>
 									</svg>
 								</button>
 								<button class="splide__arrow splide__arrow--next" aria-label="Next slide">
-									<svg width="46" height="46" viewBox="0 0 24 24">
-										<path d="M6 17L11 12L6 7"></path><path d="M13 17L18 12L13 7"></path>
+									<svg viewBox="0 0 36 36" width="36" height="36" class="custom-arrow-icon">
+										<polyline fill="none" stroke="currentColor" stroke-linejoin="bevel" stroke-linecap="butt" stroke-width="4" points="17.6 1.5 34.1 18 17.6 34.5"/>
+										<polyline fill="none" stroke="currentColor" stroke-linejoin="bevel" stroke-linecap="butt" stroke-width="4" points="1.9 1.5 18.4 18 1.9 34.5"/>
 									</svg>
 								</button>
 							</div>
@@ -343,7 +345,7 @@
 				<div class="row">
 					<div class="col-12 col-lg-12 pt-5">
 						<div class="section-header-image-large">
-							<img src="../assets/images/40bar-alone.svg" alt="" aria-hidden="true" class="img-fluid animate-from-right">
+							<img src="../assets/images/40bar-alone.svg" alt="" aria-hidden="true" class="img-fluid fadeIn-right">
 						</div>
 					</div>
 				</div>
@@ -412,8 +414,8 @@
                     <div class="row mx-0 g-0">
 
                         <!-- Previous Page Link -->
-                        <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-start animate-from-right">
-                            <a href="#" class="page-nav-link text-decoration-none" aria-label="Previous page">
+                        <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-start fadeIn-right">
+                            <a href="message-from-the-director.html" class="page-nav-link text-decoration-none" aria-label="Previous page">
                                 <div class="page-nav d-flex align-items-center">
                                     <div class="page-nav-back d-flex align-items-center" aria-hidden="true">
                                         <img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt="">
@@ -431,7 +433,7 @@
                         </div>
 
                         <!-- Next Page Link -->
-                        <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-end animate-from-left">
+                        <div class="col-12 col-sm-6 p-0 d-flex flex-wrap justify-content-end fadeIn-left">
                             <a href="governance-our-strategy.html" class="page-nav-link text-decoration-none"
                                 aria-label="Next page">
                                 <div class="page-nav d-flex align-items-center justify-content-sm-end">
@@ -450,7 +452,7 @@
                     </div>
                 </nav>
             </div>
-            
+          
     </div>
         </main>
 
@@ -517,7 +519,7 @@
 			
 			if (prefersReducedMotion) {
 				// Accessibility mode: Display all elements directly, without executing animations
-				gsap.set(".animate-from-right, .animate-from-left, .fade-in, .graphic-title-block, .section-intro, .body-text, .celebrate-highlight-icon", {
+				gsap.set(".fadeIn-right, .fadeIn-left, .fade-in, .graphic-title-block, .section-intro, .body-text, .celebrate-highlight-icon", {
 					autoAlpha: 1,
 					x: 0,
 					y: 0
@@ -538,7 +540,7 @@
 							scrollTrigger: {
 								trigger: elem,
 								start: "top 80%",
-								toggleActions: "play none none reverse" // Plays when scrolling down; fades out in reverse when scrolling back up.
+								toggleActions: "play none none none"
 								// markers: true // uncomment to debug and inspect the trigger line.
 							}
 						}
@@ -546,7 +548,7 @@
 				});
 			
 				// --- [Group 2: From right to left] ---
-				gsap.utils.toArray(".animate-from-right").forEach(elem => {
+				gsap.utils.toArray(".fadeIn-right").forEach(elem => {
 					// Check whether the HTML element has a `data-delay` attribute set; if it does, convert it to a number; otherwise, default to 0.
 					const delayTime = elem.dataset.delay ? parseFloat(elem.dataset.delay) : 0;
 					gsap.fromTo(elem,
@@ -560,14 +562,14 @@
 							scrollTrigger: {
 								trigger: elem,
 								start: "top 90%",
-								toggleActions: "play none none reverse"
+								toggleActions: "play none none none"
 							}
 						}
 					);
 				});
 			
 				// --- [Group 3: From left to right] ---
-				gsap.utils.toArray(".animate-from-left").forEach(elem => {
+				gsap.utils.toArray(".fadeIn-left").forEach(elem => {
 					// Check whether the HTML element has a `data-delay` attribute set; if it does, convert it to a number; otherwise, default to 0.
 					const delayTime = elem.dataset.delay ? parseFloat(elem.dataset.delay) : 0;
 					gsap.fromTo(elem,
@@ -581,7 +583,7 @@
 							scrollTrigger: {
 								trigger: elem,
 								start: "top 90%",
-								toggleActions: "play none none reverse"
+								toggleActions: "play none none none"
 							}
 						}
 					);
@@ -602,7 +604,7 @@
 							scrollTrigger: {
 								trigger: elem,
 								start: "top 80%",
-								toggleActions: "play none none reverse"
+								toggleActions: "play none none none"
 							}
 						}
 					);

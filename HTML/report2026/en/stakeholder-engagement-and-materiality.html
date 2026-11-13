@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ArchSD SR2026 | Stakeholder Engagement and Materiality</title>
+	<title>ArchSD SR2026 | Governance | Stakeholder Engagement and Materiality</title>
 	<meta name="description" content="ArchSD SR2026 | Governance | Stakeholder Engagement and Materiality">
 	<link rel="canonical" href="https://www.archsd.gov.hk/archsd/html/report2026/en/stakeholder-engagement-and-materiality.html">
 	<!-- Open Graph (Facebook, WhatsApp, LINE, LinkedIn, WeChat)-->
@@ -55,7 +55,7 @@
 		<h1 class="accessibility">Stakeholder Engagement and Materiality</h1>
 		<div class="page-title d-none" aria-hidden="true">Stakeholder Engagement and Materiality</div>
 		<!-- Section 1 -->
-        <section id="section1" class="general-section">
+        <section id="section1" class="general-section fadeIn-up">
             <div class="container">
                 
 				<!-- ================================================================= -->
@@ -68,7 +68,7 @@
 						<div class="col-12 col-md-7">
 							<div class="title-block">
 								<h2 class="section-title">Governance</h2>
-                    			<h2>Stakeholder Engagement and Materiality</h2>
+                    			<p class="section-subtitle">Stakeholder Engagement and Materiality</p>
 							</div>
 						</div>
 						<!-- Right: UNSDG Image -->
@@ -93,7 +93,7 @@
 							<h3 class="h2-title-style">Listening to our Stakeholders</h3>
 							<p class="p2-body-style">The ArchSD maintains an active dialogue with various stakeholders through robust two-way communication channels. This engagement strategy enables us to gain insights into stakeholder concerns, priorities and values.</p>
 						</div>
-					<div class="grid-container">
+					<div class="grid-container fadeIn-up">
 						<div class="block d-none d-md-block">
 							<div class="section-header-image">
                                 <img src="../assets/images/H2 Graphic.svg" alt="" aria-hidden="true" class="img-fluid">
@@ -178,7 +178,7 @@
         </section>
 
         <!-- Section 2 -->
-        <section id="section2" class="general-section">
+        <section id="section2" class="general-section fadeIn-up">
             <div class="container">
 				<div class="row">
 					<div class="col-12 col-xl-4 me-auto">
@@ -240,7 +240,7 @@
         </section>
 
         <!-- Section 3 -->
-        <section id="section3" class="general-section">
+        <section id="section3" class="general-section fadeIn-up">
             <div class="container">
 				<div class="row">
 					<div class="col-12 col-xl-4 me-auto">
@@ -410,7 +410,7 @@
         </section>
 
         <!-- Section 4 -->
-        <section id="section4" class="general-section">
+        <section id="section4" class="general-section fadeIn-up">
             <div class="container">
 				<div class="col-12 col-lg-6 pb-4">
 					<p class="p2-body-style">After scrutinising the feedback from all stakeholder groups, we identified 6 material topics (most significant impacts) that are disclosed in detail in the Report.</p>
@@ -465,7 +465,7 @@
         </section>
 
         <!-- Section 5 -->
-        <section id="section5" class="general-section">
+        <section id="section5" class="general-section fadeIn-up">
             <div class="container">
 				<div class="row">
 					<div class="col-12 col-lg-4 pb-4 me-auto">
@@ -535,9 +535,9 @@
 					</div>
 					<div class="col-12 d-block d-sm-none"><div class="col page-nav-line"></div></div>
 					<div class="col-12 col-sm-6 d-flex flex-wrap justify-content-md-end justify-content-end">
-						<a href="#" class="page-nav-link" aria-label="Next page">
+						<a href="low-carbon-transformation.html" class="page-nav-link" aria-label="Next page">
 							<div class="page-nav d-flex">
-								<p class="page-nav-title text-end"><span class="visually-hidden">Next page: </span>Stakeholder Interview</p>
+								<p class="page-nav-title text-end"><span class="visually-hidden">Next page: </span><strong>Green Environments</strong> | Low Carbon Transformation</p>
 								<div class="page-nav-next d-flex align-items-center" aria-hidden="true"><img src="../assets/images/page-nav-icon.svg" class="page-nav-icon" alt=""></div>
 							</div>
 						</a>
@@ -575,46 +575,99 @@
 
     <!-- 6. 動態與互動腳本 -->
 	<script>
-		 // GSAP Scroll-Triggered Animations (Dynamic Enter & Exit)
-            gsap.registerPlugin(ScrollTrigger);
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-            // Define the common selector for the elements to animate
-            const animatedElements = ".grid-container, .section-line, .general-section";
+gsap.registerPlugin(ScrollTrigger);
 
-            // Set the initial "hidden" state for all target blocks.
-            gsap.set(animatedElements, {
-                autoAlpha: 0,
-                y: 100
-            });
+if (prefersReducedMotion) {
+    // Accessibility mode: Display all elements directly, without executing animations
+    gsap.set(".fadeIn-up, .fadeIn-right, .fadeIn-left, .fade-in", {
+        autoAlpha: 1,
+        x: 0,
+        y: 0
+    });
+} else {
+    // --- [Group 1: Bottom-up Elements (fadeIn-up)] ---
+    gsap.utils.toArray(".fadeIn-up").forEach(elem => {
+        // Check whether the HTML element has a `data-delay` attribute set; if it does, convert it to a number; otherwise, default to 0.
+        const delayTime = elem.dataset.delay ? parseFloat(elem.dataset.delay) : 0;
+        gsap.fromTo(elem, 
+            { autoAlpha: 0, y: 80 },
+            {
+                autoAlpha: 1,
+                y: 0,
+                duration: 1.1,
+                delay: delayTime, // Dynamically apply the respective delay times
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    });
 
-            // Animate each block dynamically based on scroll direction.
-            ScrollTrigger.batch(animatedElements, {
-                start: "top 80%", // Trigger when entering from the bottom
-                end: "bottom 20%", // Trigger when exiting through the top
+    // --- [Group 2: From right to left] ---
+    gsap.utils.toArray(".fadeIn-right").forEach(elem => {
+        const delayTime = elem.dataset.delay ? parseFloat(elem.dataset.delay) : 0;
+        gsap.fromTo(elem,
+            { autoAlpha: 0, x: 100 },
+            {
+                autoAlpha: 1,
+                x: 0,
+                duration: 1.1,
+                ease: "power2.out",
+                delay: delayTime,
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    });
 
-                // Trigger entrance animation when scrolling down
-                onEnter: batch => gsap.to(batch, {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 1.1,      // Increased from 1.2 for a slightly slower, smoother effect
-                    ease: "power2.out",
-                    stagger: 0.8,       // Reduced stagger for quicker succession
-                    overwrite: "auto"
-                }),
-                // TRIGGER EXIT: Dismiss and slide down when scrolling back UP past the trigger point
-                onLeaveBack: batch => gsap.to(batch, {
-                    autoAlpha: 0,
-                    y: 100,             // Changed from 50 to 100
-                    duration: 0.6,
-                    ease: "power2.in",
-                    stagger: 0.1,
-                    overwrite: "auto"
-                }),
+    // --- [Group 3: From left to right] ---
+    gsap.utils.toArray(".fadeIn-left").forEach(elem => {
+        const delayTime = elem.dataset.delay ? parseFloat(elem.dataset.delay) : 0;
+        gsap.fromTo(elem,
+            { autoAlpha: 0, x: -100 },
+            {
+                autoAlpha: 1,
+                x: 0,
+                duration: 1.1,
+                ease: "power2.out",
+                delay: delayTime,
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    });
 
-                // Keep elements visible when scrolling way past them
-                onLeave: () => { },
-                onEnterBack: () => { }
-            });
+    // --- [Group 4: Pure Fade In] ---
+    gsap.utils.toArray(".fade-in").forEach(elem => {
+        const delayTime = elem.dataset.delay ? parseFloat(elem.dataset.delay) : 0;
+
+        gsap.fromTo(elem,
+            { autoAlpha: 0 }, 
+            {
+                autoAlpha: 1, 
+                duration: 1.2,
+                delay: delayTime,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 80%",
+                    once: true // 關鍵：設為 true 代表「只觸發一次」，之後無論點樣上下滾動都不會再重複播動畫
+                }
+            }
+        );
+    });
+}
 	</script>
 <!-- Toast 提示框容器 -->
 <div id="copy-toast" class="copy-toast">The URL has been copied to the clipboard!</div>
