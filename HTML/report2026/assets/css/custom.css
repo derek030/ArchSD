@@ -3849,16 +3849,28 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     padding-left: 8px; /* Safe gutter space */
 }
 
-/* Numerical Value (The Width Standard) */
+/* Numerical Value (The Width Standard)
+   Figma spec: no bold; Monda 400. $ and M signs are 20px/33px, the numbers
+   inside .animated-counter are 35px/33px, letter-spacing -8% (-0.08em). */
 .abs-label-box .label-val,
 .label-content-shifted-bottom .label-val {
-    font-size: 2.1rem;
-    font-weight: 700;
+    font-family: 'Monda', sans-serif;
+    font-size: 1.25rem; /* 20px - the $ and M signs */
+    font-weight: 400;
+    letter-spacing: -0.08em;
     color: var(--darkestGreyColor);
-    line-height: 1;
-    white-space: nowrap; 
+    line-height: 2.0625rem; /* 33px per Figma */
+    white-space: nowrap;
     width: 100%;
     text-align: center;
+}
+
+/* The numeric digits are larger than the surrounding $ / M signs */
+.abs-label-box .label-val .animated-counter,
+.label-content-shifted-bottom .label-val .animated-counter {
+    font-size: 2.1875rem; /* 35px per Figma */
+    font-weight: 400;
+    letter-spacing: -0.08em;
 }
 
 /* --- Straight Pointer Lines (Desktop) --- */
