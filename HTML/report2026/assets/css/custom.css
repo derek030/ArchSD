@@ -3685,9 +3685,14 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 
 .fund-icon {
-    max-height: 80px;
+    max-height: 125px; /* Enlarged per design feedback (was 80px) */
     width: auto;
-    padding-left: 24px;
+    margin-left: 50px; /* Sit close to the pink divider like the design mock */
+}
+
+/* Cancel the nested col gutter so the icon hugs the pink divider */
+.fund-details-block .row > .col-auto {
+    padding-left: 0;
 }
 
 .fund-description {
