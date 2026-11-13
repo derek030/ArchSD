@@ -3753,6 +3753,21 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     margin-left: 21px;
 }
 
+/* Mobile: shrink the big expenditure counter so the trailing "M" clears the
+   fixed side menu (nav zone starts 35px from the right edge). Placed AFTER
+   the .total-count-wrapper base rules so it wins the cascade.
+   At 3.5rem the full "$2,804.36M" is ~265px wide vs ~295px available. */
+@media (max-width: 767.98px) {
+    .total-count-wrapper {
+        font-size: 4.5rem; /* 56px (base is 5rem/80px) */
+    }
+
+    .total-count-wrapper .currency-symbol,
+    .total-count-wrapper .unit-symbol {
+        font-size: 3rem;
+    }
+}
+
 .chart-group-title {
     color: var(--mainPinkColor);
     margin-bottom: 2rem;
