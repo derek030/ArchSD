@@ -3545,9 +3545,8 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     font-weight: 700;
     color: var(--darkestGreyColor);
     padding-top: 0.5rem;
-    overflow-wrap: break-word;  /* Modern standard: breaks words if they exceed container */
-    word-wrap: break-word;      /* Legacy fallback for older browsers */
-    word-break: break-word; 
+    overflow-wrap: normal;   /* Never break in the middle of a word */
+    word-break: normal;
 }
 
 /* Generates the custom green vertical accents */
