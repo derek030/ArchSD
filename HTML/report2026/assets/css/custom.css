@@ -5620,7 +5620,7 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
 }
 /* 2. "Energy Usage" title to green-bar sub-header space: doubled (8px -> 16px) */
 .data-summary-page .section-border-pink > .h3-title-style {
-    margin-bottom: 1rem; /* 16px */
+    margin-bottom: 1.875rem; /* 30px */
 }
 /* 3. "More Details..." hyperlink: pink + bold, underline on hover only */
 .ds-more-link {
