@@ -3569,6 +3569,57 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
         padding-left: 12px;
         padding-right: 12px;
     }
+
+    /* Mobile design: the golden-ratio spiral becomes a full-width graphic
+       under the heading; the desktop PNG behind the Mission column is unused */
+    .html-bg-graphic {
+        display: none;
+    }
+
+    .vmv-mobile-graphic {
+        margin-top: 0.5rem;
+        /* Full-bleed per design mock: cancel the site's asymmetric container
+           padding (20px left, 35px right) so the spiral touches both screen
+           edges while the heading and cards keep their 20px content margin */
+        margin-left: -20px;
+        /* Pull the VISION card up so its title sits ~2/3 down the (now wider)
+           graphic and the first list item starts near the spiral's bottom */
+        margin-bottom: -30px;
+    }
+
+    /* Design mock has a tighter title-to-list gap on mobile (~50px vs 72px) */
+    .vmv-card .vmv-title-wrapper,
+    .vmv-card-2 .vmv-title-wrapper {
+        margin-bottom: 0.75rem;
+    }
+
+    /* VALUES renders as two side-by-side columns on mobile (per design mock).
+       The xl spacer column is hidden here, so the second column carries its
+       own gutter instead. */
+    .vmv-values-col2 {
+        padding-left: 16px;
+    }
+
+    /* The stacked VISION / MISSION / VALUES cards sit 30px apart on mobile.
+       .vmv-card-2's desktop margin-top (10rem offset behind the PNG), the
+       row's 1.5rem gutter (margin-top on wrapped cols) and the last list
+       item's 1.25rem bottom margin (collapses out of the padding-less card
+       and inflates each column) are all neutralized so row-gap is exact. */
+    .vmv-card-2 {
+        margin-top: 0;
+    }
+
+    .vision-mission-section .row.g-4 {
+        row-gap: 1.875rem;
+    }
+
+    .vision-mission-section .row.g-4 > * {
+        margin-top: 0;
+    }
+
+    .vmv-list li:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .glossary-header {

@@ -206,6 +206,12 @@
                                         class="img-fluid">
                                 </div>
                                 <h3 class="h2-title-style section-header-margin">Vision and Mission</h3>
+                                <!-- Mobile-only: golden ratio graphic sits under the heading
+                                     (desktop keeps the in-column PNG background) -->
+                                <div class="d-md-none vmv-mobile-graphic">
+                                    <img src="../assets/images/3.1%20At%20A%20Glance_Vision%20Mobile%20graphic.svg"
+                                        alt="" aria-hidden="true" class="img-fluid">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -258,8 +264,8 @@
                                 </div>
                                 <!-- Splitting into two internal sub-columns for the side-by-side values list -->
                                 <div class="row g-0">
-                                    <!-- First column: Full width below xl, 5-grid width on desktop -->
-                                    <div class="col-12 col-xl-5">
+                                    <!-- First column: 2-across on mobile, stacked on tablet, 5-grid width on desktop -->
+                                    <div class="col-6 col-md-12 col-xl-5">
                                         <ul class="vmv-list">
                                             <li class="p2-body-style">Professionalism</li>
                                             <li class="p2-body-style">Commitment</li>
@@ -271,8 +277,8 @@
                                     <!-- Spacer column: Hidden below xl, visible on desktop -->
                                     <div class="d-none d-xl-block col-xl-1"></div>
 
-                                    <!-- Second column: Full width below xl, 6-grid width on desktop -->
-                                    <div class="col-12 col-xl-6">
+                                    <!-- Second column: 2-across on mobile, stacked on tablet, 6-grid width on desktop -->
+                                    <div class="col-6 col-md-12 col-xl-6 vmv-values-col2">
                                         <ul class="vmv-list">
                                             <li class="p2-body-style">Versatility</li>
                                             <li class="p2-body-style">Continuous Improvement</li>
