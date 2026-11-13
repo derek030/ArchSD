@@ -178,9 +178,16 @@
 
                                 <!-- Left: big letter mask (image), wipe-in portrait, name/position -->
                                 <div class="gp-left">
-                                    <img class="gp-letter" id="gpLetter"
-                                        src="../assets/images/group-photo/E Mask.svg" alt="">
-                                    <img class="gp-portrait" id="gpPortrait" src="" alt="">
+                                    <!-- Each element sits inside its own overflow:hidden
+                                         clip box at its FINAL position — it slides in
+                                         from the left edge of its own box (fast). -->
+                                    <div class="gp-letter-clip">
+                                        <img class="gp-letter" id="gpLetter"
+                                            src="../assets/images/group-photo/E Mask.svg" alt="">
+                                    </div>
+                                    <div class="gp-portrait-clip">
+                                        <img class="gp-portrait" id="gpPortrait" src="" alt="">
+                                    </div>
                                     <div class="gp-caption">
                                         <h3 class="h3-title-style gp-name" id="gpName"></h3>
                                         <p class="gp-pos" id="gpPos"></p>
@@ -591,48 +598,58 @@
             });
 
             // GSAP Scroll-Triggered Animations (Dynamic Enter & Exit)
-            gsap.registerPlugin(ScrollTrigger);
+            // Guarded: if GSAP fails to load (offline / blocked CDN / file://),
+            // this must not throw — the group-photo widget below lives in its
+            // own <script> and must keep working regardless.
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
 
-            // Define the common selector for the elements to animate
-            const animatedElements = ".section-border-grey, #forumsection, .monitoring-and-advisory-committee-section, .spacing-64, #section";
+                // Define the common selector for the elements to animate
+                const animatedElements = ".section-border-grey, #forumsection, .monitoring-and-advisory-committee-section, .spacing-64, #section";
 
-            // Set the initial "hidden" state for all target blocks.
-            gsap.set(animatedElements, {
-                autoAlpha: 0,
-                y: 80
-            });
-
-            // Animate each block dynamically based on scroll direction.
-            ScrollTrigger.batch(animatedElements, {
-                start: "top 80%", // Trigger when entering from the bottom
-                end: "bottom 20%", // Trigger when exiting through the top
-
-                // Trigger entrance animation when scrolling down
-                onEnter: batch => gsap.to(batch, {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 1.1,      // Increased from 1.2 for a slightly slower, smoother effect
-                    ease: "power2.out",
-                    stagger: 0.8,       // Reduced stagger for quicker succession
-                    overwrite: "auto"
-                }),
-                // TRIGGER EXIT: Dismiss and slide down when scrolling back UP past the trigger point
-                onLeaveBack: batch => gsap.to(batch, {
+                // Set the initial "hidden" state for all target blocks.
+                gsap.set(animatedElements, {
                     autoAlpha: 0,
-                    y: 100,             // Changed from 50 to 100
-                    duration: 0.6,
-                    ease: "power2.in",
-                    stagger: 0.1,
-                    overwrite: "auto"
-                }),
+                    y: 80
+                });
 
-                // Keep elements visible when scrolling way past them
-                onLeave: () => { },
-                onEnterBack: () => { }
-            });
+                // Animate each block dynamically based on scroll direction.
+                ScrollTrigger.batch(animatedElements, {
+                    start: "top 80%", // Trigger when entering from the bottom
+                    end: "bottom 20%", // Trigger when exiting through the top
 
+                    // Trigger entrance animation when scrolling down
+                    onEnter: batch => gsap.to(batch, {
+                        autoAlpha: 1,
+                        y: 0,
+                        duration: 1.1,      // Increased from 1.2 for a slightly slower, smoother effect
+                        ease: "power2.out",
+                        stagger: 0.8,       // Reduced stagger for quicker succession
+                        overwrite: "auto"
+                    }),
+                    // TRIGGER EXIT: Dismiss and slide down when scrolling back UP past the trigger point
+                    onLeaveBack: batch => gsap.to(batch, {
+                        autoAlpha: 0,
+                        y: 100,             // Changed from 50 to 100
+                        duration: 0.6,
+                        ease: "power2.in",
+                        stagger: 0.1,
+                        overwrite: "auto"
+                    }),
 
+                    // Keep elements visible when scrolling way past them
+                    onLeave: () => { },
+                    onEnterBack: () => { }
+                });
+            }
+        </script>
 
+        <!-- ================================================================= -->
+        <!-- Interactive Group Photo widget — deliberately in its OWN script    -->
+        <!-- block so a failure in the scroll animations above (e.g. GSAP not  -->
+        <!-- loaded) can never stop the hotspots from being created.           -->
+        <!-- ================================================================= -->
+        <script>
             document.addEventListener('DOMContentLoaded', function () {
                 // =====================================================================
                 // Interactive Group Photo — replicates the client's AE demo:
@@ -707,17 +724,35 @@
                     b.style.zIndex = m.z;
                     b.setAttribute('aria-label', m.name);
                     b.setAttribute('aria-expanded', 'false');
-                    // Click to open. While the layer is open the hotspots are
-                    // NOT clickable (frames hidden, pointer-events disabled) —
-                    // the layer can ONLY be closed via the X button.
+                    // Click to open. Blocked only while the layer is actually
+                    // VISIBLE (checked on the panel itself, not the gp-open class,
+                    // so an interrupted animation can never lock the widget).
                     b.addEventListener('click', () => {
-                        if (widget.classList.contains('gp-open')) return;
-                        if (currentId !== m.id) openPanel(m);
+                        if (panel.style.visibility === 'visible') return;
+                        widget.classList.remove('gp-open'); // self-heal stale state
+                        openPanel(m);
                     });
                     hotspots.appendChild(b);
                 });
 
                 // ---- Open / Close with GSAP animation ------------------------------
+                // Two speeds (per client): FAST for panel / letter / portrait /
+                // pink line, SLOW for the quote bio and name caption.
+                const FAST = 0.45;
+                const SLOW = 0.85;
+
+                // Fallback: if GSAP is missing/fails, show the layer instantly
+                // (never leave the user with a click that does nothing).
+                function showPanelStatic() {
+                    panel.style.transform = 'none';
+                    panel.style.opacity = '1';
+                    [elLetter, elImg, document.querySelector('.gp-caption'), document.querySelector('.gp-right')]
+                        .forEach(el => { if (el) { el.style.transform = 'none'; el.style.opacity = '1'; } });
+                    const line = document.getElementById('gpPinkLine');
+                    if (line) line.style.transform = 'none';
+                    panel.style.visibility = 'visible';
+                }
+
                 function openPanel(m) {
                     if (currentId === m.id && panel.style.visibility === 'visible') return;
                     // mark active hotspot
@@ -735,18 +770,37 @@
                     elLetter.src         = '../assets/images/group-photo/' + (m.maskImg || DEFAULT_MASK);
                     elLetter.alt         = '';
 
-                    gsap.killTweensOf([panel, elLetter, elImg, '.gp-caption', '.gp-right', '#gpPinkLine']);
-                    gsap.set(panel, { visibility: 'visible' });
+                    if (typeof gsap === 'undefined') { showPanelStatic(); return; }
 
-                    const tl = gsap.timeline();
-                    tl.fromTo(panel, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' })
-                      .fromTo(elLetter, { scale: 0.4, opacity: 0, transformOrigin: '50% 50%' },
-                                        { scale: 1, opacity: 1, duration: 0.5, ease: 'back.out(1.6)' }, '-=0.05')
-                      .fromTo('#gpPinkLine', { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: 'power2.out', transformOrigin: 'left center' }, '-=0.3')
-                      .fromTo(elImg, { clipPath: 'inset(0% 0% 100% 0%)' },
-                                     { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.55, ease: 'power3.inOut' }, '-=0.35')
-                      .fromTo('.gp-caption', { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '-=0.25')
-                      .fromTo('.gp-right', { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.45, ease: 'power2.out' }, '-=0.3');
+                    try {
+                        gsap.killTweensOf([panel, elLetter, elImg, '.gp-caption', '.gp-right', '#gpPinkLine']);
+                        // opacity MUST be reset to 1 here — the CSS base state is
+                        // .gp-panel { opacity: 0 } and the slide-in no longer
+                        // animates opacity (it relies on the parent's overflow clip).
+                        gsap.set(panel, { visibility: 'visible', xPercent: 0, opacity: 1 });
+
+                        const tl = gsap.timeline();
+                        // 1) grey layer: slides in from the RIGHT (fast)
+                        tl.fromTo(panel, { xPercent: 100 }, { xPercent: 0, duration: FAST, ease: 'power2.out' })
+                          // 2) letter: slides in from the left edge of its OWN
+                          //    overflow:hidden clip box (fast)
+                          .fromTo(elLetter, { xPercent: -100 },
+                                            { xPercent: 0, duration: FAST, ease: 'power2.out' }, '-=0.15')
+                          // 3) portrait: same — from the left edge of its own box (fast)
+                          .fromTo(elImg, { xPercent: -100 },
+                                         { xPercent: 0, duration: FAST, ease: 'power2.out' }, '-=0.3')
+                          // 6) pink line: left → right (fast) — kept as before
+                          .fromTo('#gpPinkLine', { scaleX: 0 },
+                                  { scaleX: 1, duration: FAST, ease: 'power2.out', transformOrigin: 'left center' }, '-=0.25')
+                          // 4) quote bio: slides in from the RIGHT (slow)
+                          .fromTo('.gp-right', { x: 60, opacity: 0 },
+                                  { x: 0, opacity: 1, duration: SLOW, ease: 'power2.out' }, '-=0.35')
+                          // 5) name caption: same, from the right, slightly delayed (slow)
+                          .fromTo('.gp-caption', { x: 60, opacity: 0 },
+                                  { x: 0, opacity: 1, duration: SLOW, ease: 'power2.out' }, '<0.15');
+                    } catch (err) {
+                        showPanelStatic();
+                    }
                 }
 
                 function closePanel() {
@@ -754,11 +808,17 @@
                     currentId = null;
                     widget.classList.remove('gp-open');
                     hotspots.querySelectorAll('.gp-hotspot').forEach(b => b.setAttribute('aria-expanded', 'false'));
-                    gsap.killTweensOf(panel);
-                    gsap.to(panel, {
-                        opacity: 0, duration: 0.25, ease: 'power2.in',
-                        onComplete: () => gsap.set(panel, { visibility: 'hidden' })
-                    });
+                    if (typeof gsap === 'undefined') { panel.style.visibility = 'hidden'; return; }
+                    try {
+                        gsap.killTweensOf(panel);
+                        // 7) close: slides back out to the RIGHT (fast)
+                        gsap.to(panel, {
+                            xPercent: 100, duration: FAST, ease: 'power2.in',
+                            onComplete: () => gsap.set(panel, { visibility: 'hidden' })
+                        });
+                    } catch (err) {
+                        panel.style.visibility = 'hidden';
+                    }
                 }
 
                 // The X button is the ONLY way to close the layer

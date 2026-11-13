@@ -5742,33 +5742,49 @@ strong {font-size: inherit; font-weight: 700; line-height: inherit;}
     height: max(3cqw, 18px);
 }
 
-/* Big neon-green initial — now an IMAGE (mask SVG per member).
-   Designer CONTENT margins (top 142 / L+R 136 / bottom 82 around the
-   content group): letter flush at the group's LEFT edge, resting on the
-   pink line → left 11.9%, bottom 9.3% (line at 8.5% + line height).
-   Height 72.6% ≈ content-group height, trimmed slightly so the wider
-   Edward portrait still fits before the right text column. */
-.gp-letter {
+/* Clip layer for the letter + portrait slide-in animations.
+   Fills the panel (inset 0) so absolute children keep the same coordinates,
+   and overflow:hidden crops them while they slide in from the left. */
+.gp-left {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+/* Letter + portrait each live inside their own overflow:hidden clip box
+   positioned at the element's FINAL spot (designer content margins) —
+   the img inside slides in from the LEFT edge of its OWN box (fast),
+   not from the panel's edge. */
+.gp-letter-clip {
     position: absolute;
     left: 11.9%;
     bottom: 9.3%;
     height: 72.6%;
-    width: auto;
-    max-width: none;
+    overflow: hidden;
     z-index: 1;
     pointer-events: none;
 }
+.gp-letter {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: none;
+}
 
-/* Person cutout portrait — next to the letter, slightly overlapping its
-   right edge, top a touch ABOVE the letter's top (same bottom anchor). */
-.gp-portrait {
+.gp-portrait-clip {
     position: absolute;
     left: 25%;
     bottom: 9.3%;
     height: 73.4%;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+.gp-portrait {
+    display: block;
+    height: 100%;
     width: auto;
     max-width: none;
-    z-index: 2;
 }
 
 /* Bottom pink line — the content group's bottom edge:
